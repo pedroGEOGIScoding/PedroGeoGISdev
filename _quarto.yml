@@ -1,0 +1,128 @@
+project:
+  type: website            # Project type: "website" for multi-page website projects
+  output-dir: _site        # Output directory for rendered website files
+  # render:                  # Specify files or patterns to render (default: all files)
+  # execute-dir:             # Directory where computations occur; controls reproducibility scope
+  # lib-dir:                 # Directory for supporting JS, CSS, and other library assets
+  # resources:               # Additional resource files to copy to output (e.g., images, data)
+  preview:
+    # port:                  # Port number for local preview server (default random 3000-8000)
+    # browser:               # Whether to open browser on preview (true/false)
+    # host:                  # Host address for preview server (e.g., 'localhost')
+    serve:
+      # cmd:                 # Shell command to run custom preview server
+      # args:                # Command line arguments for preview server command
+      # env:                 # Environment variables set for preview command
+      # ready:               # Regex pattern to detect when preview server is ready
+    # watch-inputs:          # Automatically re-render site on input file changes (true/false)
+    # navigate:              # Auto reload browser on rebuilds (true/false)
+    # timeout:               # Time (seconds) to close preview server if no active clients
+  # pre-render:              # List of scripts or commands to run before site rendering
+  # post-render:             # List of scripts or commands to run after site rendering
+
+website:
+  # title:                   # Website title displayed in page headers and browser tab
+  # description:             # Website meta description for SEO and social media sharing
+  # favicon:                 # Relative path to favicon icon file (shown in browser tab)
+  # site-url:                # Full URL where website will be published (for canonical links)
+  # site-path:               # Path within domain if site published in a subdirectory
+  # repo-url:                # URL to source code repository (used for repo link in site)
+  # repo-link-target:        # target attribute for repo link (e.g., "_blank" to open new tab)
+  # repo-link-rel:           # rel attribute for repo links (e.g., "nofollow", "noopener")
+  # repo-subdir:             # Subdirectory within repo where site content resides
+  # repo-branch:             # Branch name of website content repo (defaults to main/master)
+  # issue-url:               # URL for reporting issues or feedback (issue tracker link)
+  # repo-actions:            # List of repo action buttons like "edit", "issue", displayed on pages
+  # reader-mode:             # Enables a toggle to show simplified "reader mode" layout (true/false)
+  # google-analytics:        # Google Analytics Tracking ID for site visitor analytics (e.g., "UA-xxxxxx")
+  announcement:
+    # content:               # Text or markdown to display in site-wide announcement banner
+    # dismissable:           # Can users dismiss the announcement (true/false)
+    # icon:                  # Bootstrap icon name to include alongside announcement text
+    # position:              # Position of announcement banner ("top", "bottom", "below-navbar")
+    # type:                  # Visual style of announcement: "info", "warning", "success", "danger"
+  # cookie-consent:          # Enable cookie consent banner for GDPR/CCPA compliance (true/false)
+  search:
+    # location:              # Location of search UI on page ("navbar", "sidebar", "footer", "hidden")
+    # type:                  # Type of search UI ("default", "overlay", "algolia")
+    # limit:                 # Max number of search results before collapsing
+    # collapse-after:        # Number of results shown before collapsing extras
+    # copy-button:           # Enable button to copy search result URL (true/false)
+    # merge-navbar-crumbs:   # Merge breadcrumbs from search with navbar navigation (true/false)
+    # keyboard-shortcut:     # Keyboard shortcut(s) to activate search (e.g., "cmd+k", "ctrl+f")
+    # show-item-context:     # Show parent page context for search results (true/false)
+    algolia:
+      # index-name:          # Algolia index name for site search integration
+      # application-id:      # Algolia application ID
+      # search-only-api-key: # Algolia public API key for search-only access
+      # analytics-events:    # Enable Algolia search analytics tracking (true/false)
+      # show-logo:           # Show Algolia logo on search results (true/false)
+      # index-fields:        # Fields in Algolia index to search (e.g., title, text, href)
+      # params:              # Additional parameters for customizing Algolia search queries
+
+  navbar:                  # Define top navigation bar config (links, dropdowns, logo)
+    left:                  # List of items on left side of navbar
+      - href: "index.qmd"  # Link target for a navbar item
+        text: "Home"       # Text for the navbar item
+    right:                 # List of items on right side of navbar
+      - icon: "search"     # Icon item on navbar
+        action: "search"   # Action triggered by the icon (e.g., open search)
+    # logo:                   # Site logo path or configuration (optional)
+
+  sidebar:                 # Define sidebar navigation and settings
+    style: docked          # Sidebar style: "docked" (fixed visible) or "floating" (toggleable)
+    title: "Menu"          # Sidebar title label
+    collapse-level: 2      # Header depth level at which sidebar items collapse
+    background: "#f0f0f0"  # Sidebar background color (CSS color name or hex code)
+    contents:              # List of pages or sections for sidebar navigation
+      - index.qmd
+      - about.qmd
+      - section:
+          text: "Guide"
+          contents:
+            - guide/setup.qmd
+            - guide/usage.qmd
+
+  # body-header:             # Markdown to insert at the top of each page body (below title)
+  # body-footer:             # Markdown to insert at the bottom of each page body
+  # margin-header:           # Markdown content above the margin column content
+  # margin-footer:           # Markdown content below the margin column content
+  page-navigation: true    # Enable next/previous page navigation buttons (true/false)
+  # back-to-top-navigation:  # Enable 'Back to Top' button on pages (true/false)
+  # bread-crumbs:            # Show breadcrumb navigation for subpages (true/false)
+  # page-footer:             # Content or configuration for page footer (text or file reference)
+  # image:                   # Default image for social sharing and previews (path)
+  # image-alt:               # Alt text for default site image (for accessibility & SEO)
+  # comments:                # Configuration for commenting system (e.g., Disqus, Giscus)
+  open-graph:              # Open Graph metadata options for Facebook/LinkedIn sharing
+    # title:                 # OG title override (default: page title)
+    # description:           # OG description override
+    # image:                 # OG image override
+  twitter-card:            # Metadata for Twitter summary cards (large image, description)
+    card: "summary_large_image"
+    # title:
+    # description:
+    # image:
+  # other-links:             # List of additional links shown below table of contents
+  # code-links:              # Links to code/repository displayed with pages
+  # drafts:                  # List of document files treated as drafts (excluded by default)
+  # draft-mode:              # How to handle drafts: ignore, render, or publish
+
+format:
+  html:
+    theme:                 # HTML theme or list of themes and CSS files applied
+      light: cosmo
+      dark: darkly           
+    # css:                   # List of custom CSS files to include in HTML format
+    toc: true              # Show table of contents (true/false or detailed config)
+    grid:
+      sidebar-width: 300px   # Width of the sidebar column
+      body-width: 900px      # Width of the main content body column
+      margin-width: 200px    # Width of the margin column (0 to disable)
+      gutter-width: 1.5rem   # Horizontal spacing between columns (sidebar/body/margin)
+    page-layout: default    # Page layout style (default, custom, full, etc.)
+
+  pdf:
+    toc: true              # Show table of contents in PDF output
+
+  # Additional formats (epub, docx, slides) can have their own configurations here
