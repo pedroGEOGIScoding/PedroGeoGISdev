@@ -53,13 +53,13 @@ website:
     # show-item-context:     # Show parent page context for search results (true/false)
 
   navbar:                   # Define top navigation bar config (links, dropdowns, logo)
-    background: primary   
+    background: primary
+    logo: images/logos/pedrologo.png   
     left:                   # List of items on left side of navbar
       - href: "index.qmd"   # Link target for a navbar item
         text: "Home"        # Text for the navbar item
     right:                  # List of items on right side of navbar
-      - icon: "search"      # Enable search functionality
-    logo: images/pedrologo.png                  # Site logo path or configuration (optional)
+      - icon: "search"      # Enable search functionality                  # Site logo path or configuration (optional)
 
   sidebar:                  # Define sidebar navigation and settings
     style: docked          # Sidebar style: "docked" (fixed visible) or "floating" (toggleable)
