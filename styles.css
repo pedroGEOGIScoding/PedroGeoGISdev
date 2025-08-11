@@ -49,8 +49,8 @@ border-radius: 3px;
 }
 
 .navbar-brand, .navbar-title {
-  font-size: 24px !important;
-  font-weight: bold !important;
+  font-size: 28px !important;
+  font-weight: normal !important;
   color: var(--primary-blue) !important;
 }
 
@@ -65,7 +65,10 @@ border-radius: 3px;
   font-weight: bold;
 }
 
-.navbar-brand:hover, .navbar-title:hover {
+/* Hover effects - must come after base styles */
+.navbar-brand:hover, 
+.navbar-title:hover,
+.navbar-nav .nav-link:hover {
   color: var(--hover-white) !important;
   transition: color 0.3s ease;
 }

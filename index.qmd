@@ -66,9 +66,9 @@ repo-actions: false
 :::{.column-screen}
 <!-- Visitor Location Map -->
 <div style="text-align: center; margin: 20px 40px;">
-  <h3 style="color: #666; margin-bottom: 10px;">📍 Your Location according your browser</h3>
+  <h2 style="color: #666; margin-bottom: 10px;">📍 Your Location according your browser</h2>
   <div id="map" style="height: 600px; width: 80vw; max-width: 80vw; margin: 0 auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"></div>
-  <div id="coordinates" style="margin-top: 10px; font-family: monospace; color: #555; font-size: 14px;">🌍 Getting your location...</div>
+  <div id="coordinates" style="margin-top: 10px; font-family: monospace; color: #555; font-size: 18px;">🌍 Getting your location...</div>
 </div>
 :::
 
