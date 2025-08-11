@@ -1,0 +1,40 @@
+---
+title: "Programming ArcGIS Pro with Python"
+author: "Pimpler, Eric"
+subtitle: "Automate Your Workflow with Python"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to automating ArcGIS Pro workflows with Python"
+categories: [gis]
+subcategories: [arcgis pro, python, programming]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/ProgrammingArcGISProPython.png){width="60%"}
+
+## More info
+
+This comprehensive guide teaches you how to automate ArcGIS Pro workflows using Python, from basic scripting to advanced automation techniques.
+
+The book provides practical examples and step-by-step instructions for using Python with ArcGIS Pro's arcpy module to automate repetitive tasks, extend functionality, and create custom tools. It's designed for GIS professionals, analysts, and developers who want to enhance their productivity by automating ArcGIS Pro workflows with Python.
+
+Key topics include:
+- Python fundamentals for ArcGIS Pro
+- Working with the ArcGIS Pro Python environment
+- Automating map production and layout
+- Geoprocessing with arcpy
+- Working with vector and raster data
+- Creating custom geoprocessing tools
+- Debugging and error handling
+- Working with map series and layouts
+- Automating data management tasks
+- Integrating with other Python libraries
+- Best practices for ArcGIS Pro Python development
+
+## Book
+
+- [Book .pdf](/books/ProgrammingArcGISProPython.pdf){width="60%"}

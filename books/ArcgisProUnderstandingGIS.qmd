@@ -1,0 +1,39 @@
+---
+title: "ArcGIS Pro: Understanding GIS"
+author: "David Smith, Nathan Strout, Christian Harder, Steven D. Moore, Tim Ormsby, Thomas Balstrøm"
+subtitle: "Comprehensive Guide to Understanding GIS with ArcGIS Pro"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Complete guide to understanding Geographic Information Systems using ArcGIS Pro"
+categories: [gis]
+subcategories: [arcgis pro]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/ArcgisProUnderstandingGIS.png){width="60%"}
+
+## More info
+
+This comprehensive guide provides a thorough understanding of Geographic Information Systems (GIS) concepts and their practical implementation using ArcGIS Pro, covering fundamental principles through advanced applications.
+
+The book explores GIS theory, spatial data concepts, analysis techniques, and real-world applications using ArcGIS Pro's powerful tools and capabilities. It's designed for GIS students, professionals, researchers, and anyone seeking to understand the fundamentals of geographic information systems and their practical applications in various fields.
+
+Key topics include:
+- Fundamental GIS concepts and spatial thinking
+- Understanding coordinate systems and projections
+- Spatial data types, structures, and management
+- Essential GIS analysis and geoprocessing tools
+- Cartographic principles and map design
+- Spatial analysis workflows and methodologies
+- Database design and geodatabase management
+- Integration with web GIS and cloud platforms
+- Real-world applications across multiple disciplines
+- Best practices in GIS project management
+
+## Book
+
+- [Book .pdf](/books/ArcgisProUnderstandingGIS.pdf){width="60%"}

@@ -1,0 +1,40 @@
+---
+title: "Database System Concepts"
+author: "Abraham Silberschatz, Henry F. Korth, and S. Sudarshan"
+subtitle: "Comprehensive Database Management Systems"
+date: "2025-08-04"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to database systems, design principles, and management for students and professionals"
+categories: [databases]
+subcategories: [database systems, sql, data management]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/DatabaseSystemConcepts6.png){width="60%"}
+
+## More info
+
+This comprehensive textbook provides a thorough introduction to database system concepts, covering both theoretical foundations and practical applications. It's designed for students, database administrators, software developers, and IT professionals who want to master database design, implementation, and management.
+
+The book presents database concepts in a clear and systematic manner, progressing from basic principles to advanced topics. It includes extensive coverage of relational database theory, SQL programming, database design methodologies, transaction processing, and modern database technologies.
+
+Key topics include:
+- Relational model and relational algebra
+- SQL programming and advanced query techniques
+- Database design using Entity-Relationship (ER) modeling
+- Normalization theory and functional dependencies
+- Transaction processing and concurrency control
+- Recovery systems and database security
+- Distributed databases and parallel processing
+- Object-oriented and object-relational databases
+- Data warehousing and mining concepts
+- XML databases and web-based applications
+- NoSQL databases and big data systems
+
+## Book
+
+- [Book .pdf](/books/DatabaseSystemConcepts6.pdf){width="60%"}

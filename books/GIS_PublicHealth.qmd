@@ -1,0 +1,42 @@
+---
+title: "GIS and Public Health"
+author: "Ellen K. Cromley and Sara L. McLafferty"
+subtitle: "Essential Methods and Applications for Public Health Analysis"
+date: "2025-08-04"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to applying GIS in public health research and practice"
+categories: [gis]
+subcategories: [public health, spatial analysis, epidemiology]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/GIS_PublicHealth.png){width="60%"}
+
+## More info
+
+This essential textbook provides a thorough introduction to the use of geographic information systems (GIS) in public health research and practice. It offers a comprehensive overview of spatial concepts, methods, and tools for analyzing and visualizing health-related data, making it an invaluable resource for public health professionals, researchers, and students.
+
+The book bridges the gap between theoretical concepts and practical applications, demonstrating how GIS can be used to address critical public health challenges, from disease surveillance to health services planning and environmental health assessment.
+
+Key topics include:
+- Fundamentals of GIS in public health
+- Spatial data sources and management
+- Mapping and visualizing health data
+- Spatial analysis of disease patterns
+- Access to healthcare services analysis
+- Environmental health applications
+- Disease surveillance and outbreak investigation
+- Health disparities and social determinants of health
+- Spatial statistics for public health
+- Web-based mapping and mobile health applications
+- Policy and program planning
+- Case studies in public health GIS
+- Ethical considerations and future directions
+
+## Book
+
+- [Book .pdf](/books/GIS_PublicHealth.pdf){width="60%"}

@@ -6,23 +6,21 @@ website:
   page-navigation: true    # Enable next/previous page navigation buttons (true/false)
   back-to-top-navigation: true  # Enable 'Back to Top' button on pages (true/false)
   # site-url:                # Full URL where website will be published (for canonical links)
-  # site-path:               # Path within domain if site published in a subdirectory
-  # repo-url:                # URL to source code repository (used for repo link in site)
-  # repo-link-target:        # target attribute for repo link (e.g., "_blank" to open new tab)
-  # repo-link-rel:           # rel attribute for repo links (e.g., "nofollow", "noopener")
-  # repo-subdir:             # Subdirectory within repo where site content resides
-  # repo-branch:             # Branch name of website content repo (defaults to main/master)
+  repo-url: https://github.com/pedroGEOGIScoding/PedroGeoGISdev
+  repo-link-target: "_blank"
+  repo-link-rel: "noopener"
+  repo-branch: master
   # issue-url:               # URL for reporting issues or feedback (issue tracker link)
-  # repo-actions:            # List of repo action buttons like "edit", "issue", displayed on pages
-  # reader-mode:             # Enables a toggle to show simplified "reader mode" layout (true/false)
-  # google-analytics:        # Google Analytics Tracking ID for site visitor analytics (e.g., "UA-xxxxxx")
-  #announcement:
-    # content:               # Text or markdown to display in site-wide announcement banner
-    # dismissable:           # Can users dismiss the announcement (true/false)
-    # icon:                  # Bootstrap icon name to include alongside announcement text
-    # position:              # Position of announcement banner ("top", "bottom", "below-navbar")
-    # type:                  # Visual style of announcement: "info", "warning", "success", "danger"
-  # cookie-consent:          # Enable cookie consent banner for GDPR/CCPA compliance (true/false)
+  repo-actions: [edit, source, issue]
+  reader-mode: false
+  #google-analytics: "UA-123456789-1"
+  announcement:
+    content: "This website is built with [Quarto](https://quarto.org/)."
+    dismissable: true
+    icon: "info"
+    position: "below-navbar"
+    type: "info"
+  cookie-consent: true
   search:
     location: navbar             
     type: overlay                  
@@ -32,10 +30,12 @@ website:
     merge-navbar-crumbs: true   
     keyboard-shortcut: "ctrl+f"     # Keyboard shortcut(s) to activate search (e.g., "cmd+k", "ctrl+f")
     show-item-context: true     # Show parent page context for search results (true/false)
-
   navbar:
-    title: "Pedro<span class='geo-text'>Geo</span><span class='gis-text'>GIS</span>dev wiki"                   # Define top navigation bar config (links, dropdowns, logo)
+    title: "Pedro<span class='geo-text'>Geo</span><span class='gis-text'>GIS</span>dev wiki"     
     background: primary
+    collapse: true
+    collapse-level: 1
+    collapse-below: xl
     left:                   # List of items on left side of navbar
       - text: Home
         file: index.qmd
@@ -61,495 +61,500 @@ website:
             href: https://github.com/pedroGEOGIScoding/PedroGeoGISdev
           - text: LinkedIn
             href: https://www.linkedin.com/in/pedromartinezduran/
-  sidebar:                  # Define sidebar navigation and settings
-    style: docked          # Sidebar style: "docked" (fixed visible) or "floating" (toggleable)
-    title: "Menu"          # Sidebar title label
-    logo: images/logos/pedrologo-blue.png
-    collapse-level: 2      # Header depth level at which sidebar items collapse
-    background: "#f0f0f0"  # Sidebar background color (CSS color name or hex code)
-    contents:
-      - text: "Linux OS"
-      - text: "---"
-      - section: "Linux: concepts"
-        contents:
-          - linux/linux-what-basics.qmd
-          - linux/linux-what-bash.qmd
-          - linux/linux-what-sudo.qmd
-          - linux/linux-what-pipes.qmd
-          - linux/linux-what-fsys.qmd
-          - linux/linux-what-vm.qmd
-      - text: "---"
-      - section: "Linux: distros"
-        contents:
-          - linux/linux-distros-ubuntu.qmd
-          - linux/linux-distros-mint.qmd
-          - linux/linux-distros-debian.qmd
-          - linux/linux-distros-opensuse.qmd
-          - linux/linux-distros-manjaro.qmd
-          - linux/linux-distros-redhat.qmd
-      - text: "---"
-      - section: "Linux: laboratories"
-        contents:
-          - linux/lilab01-1.qmd
-          - linux/lilab01-2.qmd
-          - linux/lilab01-3.qmd
-          - linux/lilab02-1.qmd
-          - linux/lilab03-1.qmd
-          - linux/lilab03-2.qmd
-          - linux/lilab03-3.qmd
-          - linux/lilab03-4.qmd
-          - linux/lilab04-1.qmd
-          - linux/lilab04-2.qmd
-          - linux/lilab04-3.qmd
-      - text: "---"
-      - section: "Linux readings"
-        contents:
-          - linux/resources.qmd
-      - text: "---"
-      - text: "DevOps"
-      - text: "---"
-      - section: "What is DevOps"
-        contents:
-          - devops/devops-what-intro.qmd
-          - devops/devops-what-agile-microservice.qmd
-          - devops/devops-what-infraascode.qmd
-          - devops/devops-what-immutable.qmd
-          - devops/devops-what-lifecycle.qmd
-      - text: "---"
-      - section: "Documentation"
-        contents:
-          - devops/devops-doc-quarto.qmd
-      - text: "---"
-      - section: "Network protocols"
-        contents:
-          - devops/devops-network-basics.qmd
-          - devops/devops-network-clientserver.qmd
-          - devops/devops-network-protocols.qmd
-          - devops/devops-network-dns.qmd
-          - devops/devops-network-rest.qmd
-          - devops/devops-network-grpc.qmd
-          - devops/devops-network-websocket.qmd
-          - devops/devops-network-smtp.qmd
-          - devops/devops-network-ping.qmd
-          - devops/devops-network-udp.qmd
-          - devops/devops-network-webhook.qmd
-          - devops/devops-network-soap.qmd
-          - devops/devops-network-graphql.qmd
-      - text: "---"
-      - section: "Version Control"
-        contents:
-          - devops/devops-vc-git.qmd
-          - devops/devops-vc-github.qmd
-          - devops/devops-vc-ideagithub.qmd
-          - devops/devops-vc-gitgh.qmd
-      - text: "---"
-      - section: "IDEs"
-        contents:
-          - devops/devops-ide-visualcode.qmd
-          - devops/devops-ide-intelljidea.qmd
-      - text: "---"
-      - section: "DevOps tools"
-        contents:
-          - devops/devops-tools-aws.qmd
-          - devops/devops-tools-docker.qmd
-          - devops/devops-tools-jenkins.qmd
-          - devops/devops-tools-k8s.qmd
-          - devops/devops-tools-digitalocean.qmd
-          - devops/devops-tools-nagios.qmd
-          - devops/devops-tools-ansible.qmd
-      - text: "---"
-      - section: "DevOps Laboratories"
-        contents:
-          - devops/devops-lab-chatapp.qmd
-          - devops/devops-lab-springbooksintro.qmd
-          - devops/devops-lab-springbookss3.qmd
-          - devops/devops-lab-springbooksdocker.qmd
-          - devops/devops-lab-k8sdigitalocean.qmd
-          - devops/devops-lab-springawsdeploy.qmd
-      - text: "---"
-      - section: "DevOps readings"
-        contents:
-          - devops/resources.qmd
-      - text: "---"
-      - id: "markup"
-        title: "MarkUp"
-        contents:
-          - text: "MarkUp Languages and Styling"
-          - text: "---"
-          - section: "MarkUp Languages"
-            contents:
-              - markup/markup-lang-intro.qmd
-              - markup/markup-lang-html.qmd
-              - markup/markup-lang-md.qmd
-              - markup/markup-lang-html-md.qmd
-          - text: "---"
-          - section: "Quarto Markdown"
-            contents:
-              - markup/markup-quarto-basics.qmd
-              - markup/markup-quarto-create.qmd
-              - markup/markup-quarto-publish.qmd
-              - markup/markup-quarto-code.qmd
-              - markup/markup-quarto-api-rest.qmd
-              - markup/markup-quarto-api-rest-v2.qmd
-              - markup/markup-quarto-cheatsheet.qmd
-          - text: "---"
-          - section: "Styling: CSS"
-            contents:
-              - markup/markup-css-basics.qmd
-              - markup/markup-css-box-containers.qmd
-              - markup/markup-css-w3css.qmd
-          - text: "---"
-          - section: "MarkUp Languages Laboratories"
-            contents:
-              - markup/mulab1.qmd
-          - text: "---"
-          - section: "MarkUp Languages readings"
-            contents:
-              - markup/resources.qmd
-      - id: "javase"
-        title: "Java SE"
-        contents:
-          - text: "Java Standard Edition"
-          - text: "---"
-          - section: "What is Java SE"
-            contents:
-              - javase/se-what-basics.qmd
-              - javase/se-what-principles.qmd
-              - javase/se-what-moochelsinki.qmd
-              - javase/se-what-moocsyllabus.qmd
-          - text: "---"
-          - section: "Java Create Project"
-            contents:
-              - javase/se-concepts-maven.qmd
-              - javase/se-concepts-createproject.qmd
-              - javase/se-concepts-projectgit.qmd
-              - javase/se-concepts-tdd.qmd
-          - text: "---"
-          - section: "Java Concepts"
-            contents:
-              - javase/se-concepts-objects.qmd
-              - javase/se-concepts-scope.qmd
-              - javase/se-concepts-static.qmd
-              - javase/se-concepts-coupling.qmd
-              - javase/se-concepts-package.qmd
-              - javase/se-concepts-interface.qmd
-              - javase/se-concepts-java8.qmd
-          - text: "---"
-          - section: "Java Principles"
-            contents:
-              - javase/se-principles-encapsulation.qmd
-              - javase/se-principles-abstraction.qmd
-              - javase/se-principles-inheritance.qmd
-              - javase/se-principles-polymorphism.qmd
-          - text: "---"
-          - section: "Java Design Patterns"
-            contents:
-              - javase/se-pattern-uml.qmd
-              - javase/se-pattern-intro.qmd
-              - text: "<b>Creational</b>"
-              - javase/se-pattern-singleton.qmd
-              - javase/se-pattern-factory.qmd
-              - javase/se-pattern-abstractfactory.qmd
-              - javase/se-pattern-builder.qmd
-              - text: "<b>Structural</b>"
-              - javase/se-pattern-facade.qmd
-              - javase/se-pattern-bridge.qmd
-              - javase/se-pattern-decorator.qmd
-              - javase/se-pattern-composite.qmd
-              - text: "<b>Behavioral</b>"
-              - javase/se-pattern-observer.qmd
-              - javase/se-pattern-strategy.qmd
-              - javase/se-pattern-state.qmd
-              - javase/se-pattern-commander.qmd
-          - text: "---"
-          - section: "Java SE Laboratories"
-            contents:
-              - javase/selab0-1.qmd
-              - javase/selab0-2.qmd
-              - javase/selab0-3.qmd
-              - javase/selab0-4.qmd
-              - text: "---"
-              - javase/selab1-1.qmd
-              - javase/selab1-2.qmd
-              - text: "---"
-              - javase/selab2-1.qmd
-              - javase/selab2-2.qmd
-              - javase/selab2-3.qmd
-              - javase/selab2-4.qmd
-              - javase/selab2-5.qmd
-              - text: "---"
-              - javase/selab3-1.qmd
-              - javase/selab3-2.qmd
-              - javase/selab3-3.qmd
-              - text: "---"
-              - javase/selab4-1.qmd
-          - text: "---"
-          - section: "Java SE readings"
-            contents:
-              - javase/resources.qmd
-      - id: "python"
-        title: "Python"
-        contents:
-          - text: "Python"
-          - text: "---"
-          - section: "Python Basics"
-            contents:
-              - python/python-basic-concepts.qmd
-              - python/python-tips.qmd
-      - id: "js"
-        title: "JavaScript"
-        contents:
-          - text: "JavaScript"
-          - text: "---"
-          - section: "JavaScript Basics"
-            contents:
-              - js/js-basic-concepts.qmd
-              - js/js-tips.qmd
-      - id: "spring"
-        title: "Spring"
-        contents:
-          - text: "Spring"
-          - text: "---"
-          - section: "Spring Legacy"
-            contents:
-              - spring/spring-basics.qmd
-              - spring/spring-mvc.qmd
-              - spring/spring-servlets.qmd
-          - text: "---"
-          - section: "Spring Boot Basics"
-            contents:
-              - springboot/boot-what-basics.qmd
-              - springboot/boot-what-create.qmd
-              - springboot/boot-what-create-th-h2.qmd
-              - springboot/boot-what-cycle.qmd
-          - text: "---"
-          - section: "Spring Boot Concepts"
-            contents:
-              - springboot/boot-concepts-injection.qmd
-              - springboot/boot-concepts-annotations.qmd
-              - springboot/boot-concepts-controller.qmd
-              - springboot/boot-concepts-view.qmd
-              - springboot/boot-concepts-th.qmd
-              - springboot/boot-concepts-vaadin-flow.qmd
-              - springboot/boot-concepts-vaadin-hilla.qmd
-              - springboot/boot-concepts-model.qmd
-              - springboot/boot-concepts-rest.qmd
-              - springboot/boot-concepts-data.qmd
-              - springboot/boot-concepts-jpa.qmd
-              - springboot/boot-concepts-jpa-2.qmd
-              - springboot/boot-concepts-jpa-3.qmd
-              - springboot/boot-concepts-jpa-4.qmd
-              - springboot/boot-concepts-jpa-5.qmd
-              - springboot/boot-concepts-scaling.qmd
-          - text: "---"
-          - section: "Spring Boot Laboratories"
-            contents:
-              - springboot/sblab0-1.qmd
-              - springboot/sblab0-2.qmd
-              - springboot/sblab0-3.qmd
-              - springboot/sblab0-4.qmd
-              - springboot/sblab0-5.qmd
-              - springboot/sblab0-6.qmd
-              - springboot/sblab0-7.qmd
-              - text: "---"
-              - springboot/sblab1.qmd
-              - springboot/sblab2.qmd
-              - springboot/sblab3.qmd
-              - springboot/sblab4.qmd
-              - springboot/sblab5.qmd
-              - text: "---"
-              - springboot/sblab6.qmd
-              - text: "---"
-              - springboot/sblab7.qmd
-              - text: "---"
-              - springboot/sblab8-1.qmd
-              - springboot/sblab8-2.qmd
-              - springboot/sblab8-3.qmd
-              - springboot/sblab8-4.qmd
-              - springboot/sblab8-5.qmd
-              - text: "---"
-              - springboot/sblab9-1.qmd
-          - text: "---"
-          - section: "Spring Boot readings"
-            contents:
-              - springboot/resources.qmd
-      - id: "reactjs"
-        title: "ReactJS"
-        contents:
-          - text: "ReactJS"
-          - text: "---"
-          - section: "ReactJS: Principles"
-            contents:
-              - reactjs/reactjs-what-principles.qmd
-              - reactjs/reactjs-what-render-dom.qmd
-              - reactjs/reactjs-what-create.qmd
-              - reactjs/reactjs-what-components.qmd
-              - reactjs/reactjs-what-jsx.qmd
-              - reactjs/reactjs-what-props.qmd
-          - text: "---"
-          - section: "JavaScript: web scripting"
-            contents:
-              - reactjs/reactjs-js-basics.qmd
-              - reactjs/reactjs-js-functions.qmd
-              - reactjs/reactjs-js-objects.qmd
-              - reactjs/reactjs-js-variables.qmd
-              - reactjs/reactjs-js-flux.qmd
-          - text: "---"
-          - section: "ES6: ECMAScript 6"
-            contents:
-              - reactjs/reactjs-es6-arrow.qmd
-              - reactjs/reactjs-es6-import.qmd
-              - reactjs/reactjs-es6-data.qmd
-              - reactjs/reactjs-es6-destructuring.qmd
-              - reactjs/reactjs-es6-spread.qmd
-          - text: "---"
-          - section: "ReacJS 18: Hooks"
-            contents:
-              - reactjs/reactjs-hook-rules.qmd
-              - reactjs/reactjs-hook-state.qmd
-              - reactjs/reactjs-hook-reducer.qmd
-              - reactjs/reactjs-hook-ref.qmd
-              - reactjs/reactjs-hook-effect.qmd
-              - reactjs/reactjs-hook-context.qmd
-              - reactjs/reactjs-hook-memo.qmd
-              - reactjs/reactjs-hook-custom.qmd
-          - text: "---"
-          - section: "ReactJS: Designing an App"
-            contents:
-              - reactjs/reactjs-app-async.qmd
-              - reactjs/reactjs-app-events.qmd
-              - reactjs/reactjs-app-router.qmd
-              - reactjs/reactjs-app-conditional-render.qmd
-              - reactjs/reactjs-app-styling.qmd
-          - text: "---"
-          - section: "React JS: Laboratories"
-            contents:
-              - reactjs/rjslab1.qmd
-              - text: "---"
-              - reactjs/rjslab2.qmd
-              - text: "---"
-              - reactjs/rjslab3.qmd
-              - reactjs/rjslab3-2.qmd
-              - reactjs/rjslab3-3.qmd
-              - reactjs/rjslab3-4.qmd
-              - reactjs/rjslab3-5.qmd
-              - text: "---"
-              - reactjs/rjslab4.qmd
-              - reactjs/rjslab4-2.qmd
-              - text: "---"
-              - reactjs/rjslab5-1.qmd
-              - reactjs/rjslab5-2.qmd
-              - reactjs/rjslab5-3.qmd
-              - reactjs/rjslab5-4.qmd
-              - reactjs/rjslab5-5.qmd
-              - reactjs/rjslab5-6.qmd
-              - text: "---"
-              - reactjs/rjslab6-1.qmd
-              - reactjs/rjslab6-1-PR.qmd
-              - text: "---"
-              - reactjs/rjslab7-1.qmd
-          - text: "---"
-          - section: "React JS readings"
-            contents:
-              - reactjs/resources.qmd
-      - id: "learning"
-        title: "Learning"
-        contents:
-          - section: "Vocabulary"
-            contents:
-              - learning/learning-vocab-general.qmd
-              - learning/learning-vocab-scrum.qmd
-              - learning/learning-vocab-devops.qmd
-              - learning/learning-vocab-java-se.qmd
-              - learning/learning-vocab-spring-boot.qmd
-              - learning/learning-vocab-data-base.qmd
-              - learning/learning-vocab-reactjs.qmd
-              - learning/learning-vocab-web.qmd
-          - text: "---"
-          - section: "Learning"
-            contents:
-              - learning/learning-how-questions.qmd
-              - learning/learning-how-tips.qmd
-              - learning/learning-how-writing.qmd
-              - learning/learning-how-take-notes.qmd
-              - learning/learning-how-write-comments.qmd
-              - learning/learning-how-document.qmd
-              - learning/learning-how-auto-evaluate.qmd
-          - text: "---"
-          - section: "Books & Articles"
-            contents:
-              - learning/learning-listing-books.qmd
-              - learning/learning-listing-articles.qmd
-          - text: "---"
-          - section: "What is SCRUM"
-            contents:
-              - scrum/scrum-what-concepts.qmd
-              - scrum/scrum-what-agile-manifesto.qmd
-              - scrum/scrum-what-guide.qmd
-          - text: "---"
-          - section: "Scrum Steps"
-            contents:
-              - scrum/scrum1.qmd
-              - scrum/scrum2.qmd
-              - scrum/scrum3.qmd
-              - scrum/scrum4.qmd
-              - scrum/scrum5.qmd
-              - scrum/scrum6.qmd
-              - scrum/scrum7.qmd
-              - scrum/scrum8.qmd
-              - scrum/scrum9.qmd
-              - scrum/scrum10.qmd
-              - scrum/scrum11.qmd
-              - scrum/scrum12.qmd
-              - scrum/scrum13.qmd
-              - scrum/scrum14.qmd
-              - scrum/scrum15.qmd
-          - text: "---"
-          - section: "Resources"
-            contents:
-              - scrum/resources.qmd
-      - id: "qgis"
-        title: "QGIS"
-        contents:
-          - text: "QGIS"
-          - text: "---"
-          - section: "QGIS basics"
-            contents:
-              - qgis/qgis-basics.qmd
-          - text: "---"
-          - section: "QGIS laboratories"
-            contents:
-              - qgis/qgis-lab1.qmd
-      - id: "arcgispro"
-        title: "ArcGIS Pro"
-        contents:
-          - text: "ArcGIS Pro"
-          - text: "---"
-          - section: "ArcGIS Pro basics"
-            contents:
-              - arcgispro/arcgispro-basics.qmd
-          - text: "---"
-          - section: "ArcGIS Pro laboratories"
-            contents:
-              - arcgispro/arcgispro-lab1.qmd
-      - id: "about"
-        title: "About"
-        contents:
-          - text: "About"
-          - text: "---"
-          - section: "About me and this site"
-            contents:
-              - about/about-this-me.qmd
-              - about/about-this-site.qmd
-              - about/about-this-images-credit.qmd
-      - id: "bookmarks"
-        title: "Bookmarks"
-        contents:
-          - text: "Online Resources"
-          - text: "---"
-          - section: "Online Resources"
-            contents:
-              - bookmarks/bookmarks.qmd
+  sidebar:
+    - id: "linux"
+      title: "Linux OS"
+      border: true
+      collapse: true
+      collapse-level: 1
+      collapse-below: xl
+      background: light
+      search: false
+      style: "docked"
+      contents:
+        - text: "Linux OS"
+        - text: "---"
+        - section: "Linux: concepts"
+          contents:
+            - linux/linux-what-basics.qmd
+            - linux/linux-what-bash.qmd
+            - linux/linux-what-sudo.qmd
+            - linux/linux-what-pipes.qmd
+            - linux/linux-what-fsys.qmd
+            - linux/linux-what-vm.qmd
+        - text: "---"
+        - section: "Linux: distros"
+          contents:
+            - linux/linux-distros-ubuntu.qmd
+            - linux/linux-distros-mint.qmd
+            - linux/linux-distros-debian.qmd
+            - linux/linux-distros-opensuse.qmd
+            - linux/linux-distros-manjaro.qmd
+            - linux/linux-distros-redhat.qmd
+        - text: "---"
+        - section: "Linux: laboratories"
+          contents:
+            - linux/lilab01-1.qmd
+            - linux/lilab01-2.qmd
+            - linux/lilab01-3.qmd
+            - linux/lilab02-1.qmd
+            - linux/lilab03-1.qmd
+            - linux/lilab03-2.qmd
+            - linux/lilab03-3.qmd
+            - linux/lilab03-4.qmd
+            - linux/lilab04-1.qmd
+            - linux/lilab04-2.qmd
+            - linux/lilab04-3.qmd
+        - text: "---"
+        - section: "Linux readings"
+          contents:
+            - linux/resources.qmd
+    - id: "devops"
+      title: "DevOps"
+      contents:
+        - text: "DevOps"
+        - text: "---"
+        - section: "What is DevOps"
+          contents:
+            - devops/devops-what-intro.qmd
+            - devops/devops-what-agile-microservice.qmd
+            - devops/devops-what-infraascode.qmd
+            - devops/devops-what-immutable.qmd
+            - devops/devops-what-lifecycle.qmd
+        - text: "---"
+        - section: "Documentation"
+          contents:
+            - devops/devops-doc-quarto.qmd
+        - text: "---"
+        - section: "Network protocols"
+          contents:
+            - devops/devops-network-basics.qmd
+            - devops/devops-network-clientserver.qmd
+            - devops/devops-network-protocols.qmd
+            - devops/devops-network-dns.qmd
+            - devops/devops-network-rest.qmd
+            - devops/devops-network-grpc.qmd
+            - devops/devops-network-websocket.qmd
+            - devops/devops-network-smtp.qmd
+            - devops/devops-network-ping.qmd
+            - devops/devops-network-udp.qmd
+            - devops/devops-network-webhook.qmd
+            - devops/devops-network-soap.qmd
+            - devops/devops-network-graphql.qmd
+        - text: "---"
+        - section: "Version Control"
+          contents:
+            - devops/devops-vc-git.qmd
+            - devops/devops-vc-github.qmd
+            - devops/devops-vc-ideagithub.qmd
+            - devops/devops-vc-gitgh.qmd
+        - text: "---"
+        - section: "IDEs"
+          contents:
+            - devops/devops-ide-visualcode.qmd
+            - devops/devops-ide-intelljidea.qmd
+        - text: "---"
+        - section: "DevOps tools"
+          contents:
+            - devops/devops-tools-aws.qmd
+            - devops/devops-tools-docker.qmd
+            - devops/devops-tools-jenkins.qmd
+            - devops/devops-tools-k8s.qmd
+            - devops/devops-tools-digitalocean.qmd
+            - devops/devops-tools-nagios.qmd
+            - devops/devops-tools-ansible.qmd
+        - text: "---"
+        - section: "DevOps Laboratories"
+          contents:
+            - devops/devops-lab-chatapp.qmd
+            - devops/devops-lab-springbooksintro.qmd
+            - devops/devops-lab-springbookss3.qmd
+            - devops/devops-lab-springbooksdocker.qmd
+            - devops/devops-lab-k8sdigitalocean.qmd
+            - devops/devops-lab-springawsdeploy.qmd
+        - text: "---"
+        - section: "DevOps readings"
+          contents:
+            - devops/resources.qmd
+    - id: "markup"
+      title: "MarkUp"
+      contents:
+        - text: "MarkUp Languages and Styling"
+        - text: "---"
+        - section: "MarkUp Languages"
+          contents:
+            - markup/markup-lang-intro.qmd
+            - markup/markup-lang-html.qmd
+            - markup/markup-lang-md.qmd
+            - markup/markup-lang-html-md.qmd
+        - text: "---"
+        - section: "Quarto Markdown"
+          contents:
+            - markup/markup-quarto-basics.qmd
+            - markup/markup-quarto-create.qmd
+            - markup/markup-quarto-publish.qmd
+            - markup/markup-quarto-code.qmd
+            - markup/markup-quarto-api-rest.qmd
+            - markup/markup-quarto-api-rest-v2.qmd
+            - markup/markup-quarto-cheatsheet.qmd
+        - text: "---"
+        - section: "Styling: CSS"
+          contents:
+            - markup/markup-css-basics.qmd
+            - markup/markup-css-box-containers.qmd
+            - markup/markup-css-w3css.qmd
+        - text: "---"
+        - section: "MarkUp Languages Laboratories"
+          contents:
+            - markup/mulab1.qmd
+        - text: "---"
+        - section: "MarkUp Languages readings"
+          contents:
+            - markup/resources.qmd
+    - id: "javase"
+      title: "Java SE"
+      contents:
+        - text: "Java Standard Edition"
+        - text: "---"
+        - section: "What is Java SE"
+          contents:
+            - javase/se-what-basics.qmd
+            - javase/se-what-principles.qmd
+            - javase/se-what-moochelsinki.qmd
+            - javase/se-what-moocsyllabus.qmd
+        - text: "---"
+        - section: "Java Create Project"
+          contents:
+            - javase/se-concepts-maven.qmd
+            - javase/se-concepts-createproject.qmd
+            - javase/se-concepts-projectgit.qmd
+            - javase/se-concepts-tdd.qmd
+        - text: "---"
+        - section: "Java Concepts"
+          contents:
+            - javase/se-concepts-objects.qmd
+            - javase/se-concepts-scope.qmd
+            - javase/se-concepts-static.qmd
+            - javase/se-concepts-coupling.qmd
+            - javase/se-concepts-package.qmd
+            - javase/se-concepts-interface.qmd
+            - javase/se-concepts-java8.qmd
+        - text: "---"
+        - section: "Java Principles"
+          contents:
+            - javase/se-principles-encapsulation.qmd
+            - javase/se-principles-abstraction.qmd
+            - javase/se-principles-inheritance.qmd
+            - javase/se-principles-polymorphism.qmd
+        - text: "---"
+        - section: "Java Design Patterns"
+          contents:
+            - javase/se-pattern-uml.qmd
+            - javase/se-pattern-intro.qmd
+            - text: "<b>Creational</b>"
+            - javase/se-pattern-singleton.qmd
+            - javase/se-pattern-factory.qmd
+            - javase/se-pattern-abstractfactory.qmd
+            - javase/se-pattern-builder.qmd
+            - text: "<b>Structural</b>"
+            - javase/se-pattern-facade.qmd
+            - javase/se-pattern-bridge.qmd
+            - javase/se-pattern-decorator.qmd
+            - javase/se-pattern-composite.qmd
+            - text: "<b>Behavioral</b>"
+            - javase/se-pattern-observer.qmd
+            - javase/se-pattern-strategy.qmd
+            - javase/se-pattern-state.qmd
+            - javase/se-pattern-commander.qmd
+        - text: "---"
+        - section: "Java SE Laboratories"
+          contents:
+            - javase/selab0-1.qmd
+            - javase/selab0-2.qmd
+            - javase/selab0-3.qmd
+            - javase/selab0-4.qmd
+            - text: "---"
+            - javase/selab1-1.qmd
+            - javase/selab1-2.qmd
+            - text: "---"
+            - javase/selab2-1.qmd
+            - javase/selab2-2.qmd
+            - javase/selab2-3.qmd
+            - javase/selab2-4.qmd
+            - javase/selab2-5.qmd
+            - text: "---"
+            - javase/selab3-1.qmd
+            - javase/selab3-2.qmd
+            - javase/selab3-3.qmd
+            - text: "---"
+            - javase/selab4-1.qmd
+        - text: "---"
+        - section: "Java SE readings"
+          contents:
+            - javase/resources.qmd
+    - id: "python"
+      title: "Python"
+      contents:
+        - text: "Python"
+        - text: "---"
+        - section: "Python Basics"
+          contents:
+            - python/python-basic-concepts.qmd
+            - python/python-tips.qmd
+    - id: "js"
+      title: "JavaScript"
+      contents:
+        - text: "JavaScript"
+        - text: "---"
+        - section: "JavaScript Basics"
+          contents:
+            - js/js-basic-concepts.qmd
+            - js/js-tips.qmd
+    - id: "spring"
+      title: "Spring"
+      contents:
+        - text: "Spring"
+        - text: "---"
+        - section: "Spring Legacy"
+          contents:
+            - spring/spring-basics.qmd
+            - spring/spring-mvc.qmd
+            - spring/spring-servlets.qmd
+        - text: "---"
+        - section: "Spring Boot Basics"
+          contents:
+            - springboot/boot-what-basics.qmd
+            - springboot/boot-what-create.qmd
+            - springboot/boot-what-create-th-h2.qmd
+            - springboot/boot-what-cycle.qmd
+        - text: "---"
+        - section: "Spring Boot Concepts"
+          contents:
+            - springboot/boot-concepts-injection.qmd
+            - springboot/boot-concepts-annotations.qmd
+            - springboot/boot-concepts-controller.qmd
+            - springboot/boot-concepts-view.qmd
+            - springboot/boot-concepts-th.qmd
+            - springboot/boot-concepts-vaadin-flow.qmd
+            - springboot/boot-concepts-vaadin-hilla.qmd
+            - springboot/boot-concepts-model.qmd
+            - springboot/boot-concepts-rest.qmd
+            - springboot/boot-concepts-data.qmd
+            - springboot/boot-concepts-jpa.qmd
+            - springboot/boot-concepts-jpa-2.qmd
+            - springboot/boot-concepts-jpa-3.qmd
+            - springboot/boot-concepts-jpa-4.qmd
+            - springboot/boot-concepts-jpa-5.qmd
+            - springboot/boot-concepts-scaling.qmd
+        - text: "---"
+        - section: "Spring Boot Laboratories"
+          contents:
+            - springboot/sblab0-1.qmd
+            - springboot/sblab0-2.qmd
+            - springboot/sblab0-3.qmd
+            - springboot/sblab0-4.qmd
+            - springboot/sblab0-5.qmd
+            - springboot/sblab0-6.qmd
+            - springboot/sblab0-7.qmd
+            - text: "---"
+            - springboot/sblab1.qmd
+            - springboot/sblab2.qmd
+            - springboot/sblab3.qmd
+            - springboot/sblab4.qmd
+            - springboot/sblab5.qmd
+            - text: "---"
+            - springboot/sblab6.qmd
+            - text: "---"
+            - springboot/sblab7.qmd
+            - text: "---"
+            - springboot/sblab8-1.qmd
+            - springboot/sblab8-2.qmd
+            - springboot/sblab8-3.qmd
+            - springboot/sblab8-4.qmd
+            - springboot/sblab8-5.qmd
+            - text: "---"
+            - springboot/sblab9-1.qmd
+        - text: "---"
+        - section: "Spring Boot readings"
+          contents:
+            - springboot/resources.qmd
+    - id: "reactjs"
+      title: "ReactJS"
+      contents:
+        - text: "ReactJS"
+        - text: "---"
+        - section: "ReactJS: Principles"
+          contents:
+            - reactjs/reactjs-what-principles.qmd
+            - reactjs/reactjs-what-render-dom.qmd
+            - reactjs/reactjs-what-create.qmd
+            - reactjs/reactjs-what-components.qmd
+            - reactjs/reactjs-what-jsx.qmd
+            - reactjs/reactjs-what-props.qmd
+        - text: "---"
+        - section: "JavaScript: web scripting"
+          contents:
+            - reactjs/reactjs-js-basics.qmd
+            - reactjs/reactjs-js-functions.qmd
+            - reactjs/reactjs-js-objects.qmd
+            - reactjs/reactjs-js-variables.qmd
+            - reactjs/reactjs-js-flux.qmd
+        - text: "---"
+        - section: "ES6: ECMAScript 6"
+          contents:
+            - reactjs/reactjs-es6-arrow.qmd
+            - reactjs/reactjs-es6-import.qmd
+            - reactjs/reactjs-es6-data.qmd
+            - reactjs/reactjs-es6-destructuring.qmd
+            - reactjs/reactjs-es6-spread.qmd
+        - text: "---"
+        - section: "ReacJS 18: Hooks"
+          contents:
+            - reactjs/reactjs-hook-rules.qmd
+            - reactjs/reactjs-hook-state.qmd
+            - reactjs/reactjs-hook-reducer.qmd
+            - reactjs/reactjs-hook-ref.qmd
+            - reactjs/reactjs-hook-effect.qmd
+            - reactjs/reactjs-hook-context.qmd
+            - reactjs/reactjs-hook-memo.qmd
+            - reactjs/reactjs-hook-custom.qmd
+        - text: "---"
+        - section: "ReactJS: Designing an App"
+          contents:
+            - reactjs/reactjs-app-async.qmd
+            - reactjs/reactjs-app-events.qmd
+            - reactjs/reactjs-app-router.qmd
+            - reactjs/reactjs-app-conditional-render.qmd
+            - reactjs/reactjs-app-styling.qmd
+        - text: "---"
+        - section: "React JS: Laboratories"
+          contents:
+            - reactjs/rjslab1.qmd
+            - text: "---"
+            - reactjs/rjslab2.qmd
+            - text: "---"
+            - reactjs/rjslab3.qmd
+            - reactjs/rjslab3-2.qmd
+            - reactjs/rjslab3-3.qmd
+            - reactjs/rjslab3-4.qmd
+            - reactjs/rjslab3-5.qmd
+            - text: "---"
+            - reactjs/rjslab4.qmd
+            - reactjs/rjslab4-2.qmd
+            - text: "---"
+            - reactjs/rjslab5-1.qmd
+            - reactjs/rjslab5-2.qmd
+            - reactjs/rjslab5-3.qmd
+            - reactjs/rjslab5-4.qmd
+            - reactjs/rjslab5-5.qmd
+            - reactjs/rjslab5-6.qmd
+            - text: "---"
+            - reactjs/rjslab6-1.qmd
+            - reactjs/rjslab6-1-PR.qmd
+            - text: "---"
+            - reactjs/rjslab7-1.qmd
+        - text: "---"
+        - section: "React JS readings"
+          contents:
+            - reactjs/resources.qmd
+    - id: "learning"
+      title: "Learning"
+      contents:
+        - section: "Vocabulary"
+          contents:
+            - learning/learning-vocab-general.qmd
+            - learning/learning-vocab-scrum.qmd
+            - learning/learning-vocab-devops.qmd
+            - learning/learning-vocab-java-se.qmd
+            - learning/learning-vocab-spring-boot.qmd
+            - learning/learning-vocab-data-base.qmd
+            - learning/learning-vocab-reactjs.qmd
+            - learning/learning-vocab-web.qmd
+        - text: "---"
+        - section: "Learning"
+          contents:
+            - learning/learning-how-questions.qmd
+            - learning/learning-how-tips.qmd
+            - learning/learning-how-writing.qmd
+            - learning/learning-how-take-notes.qmd
+            - learning/learning-how-write-comments.qmd
+            - learning/learning-how-document.qmd
+            - learning/learning-how-auto-evaluate.qmd
+        - text: "---"
+        - section: "Books & Articles"
+          contents:
+            - learning/learning-listing-books.qmd
+            - learning/learning-listing-articles.qmd
+        - text: "---"
+        - section: "What is SCRUM"
+          contents:
+            - scrum/scrum-what-concepts.qmd
+            - scrum/scrum-what-agile-manifesto.qmd
+            - scrum/scrum-what-guide.qmd
+        - text: "---"
+        - section: "Scrum Steps"
+          contents:
+            - scrum/scrum1.qmd
+            - scrum/scrum2.qmd
+            - scrum/scrum3.qmd
+            - scrum/scrum4.qmd
+            - scrum/scrum5.qmd
+            - scrum/scrum6.qmd
+            - scrum/scrum7.qmd
+            - scrum/scrum8.qmd
+            - scrum/scrum9.qmd
+            - scrum/scrum10.qmd
+            - scrum/scrum11.qmd
+            - scrum/scrum12.qmd
+            - scrum/scrum13.qmd
+            - scrum/scrum14.qmd
+            - scrum/scrum15.qmd
+        - text: "---"
+        - section: "Resources"
+          contents:
+             - scrum/resources.qmd
+    - id: "qgis"
+      title: "QGIS"
+      contents:
+        - text: "QGIS"
+        - text: "---"
+        - section: "QGIS basics"
+          contents:
+            - qgis/qgis-basics.qmd
+        - text: "---"
+        - section: "QGIS laboratories"
+          contents:
+            - qgis/qgis-lab1.qmd
+    - id: "arcgispro"
+      title: "ArcGIS Pro"
+      contents:
+        - text: "ArcGIS Pro"
+        - text: "---"
+        - section: "ArcGIS Pro basics"
+          contents:
+            - arcgispro/arcgispro-basics.qmd
+        - text: "---"
+        - section: "ArcGIS Pro laboratories"
+          contents:
+            - arcgispro/arcgispro-lab1.qmd
+    - id: "about"
+      title: "About"
+      contents:
+        - text: "About"
+        - text: "---"
+        - section: "About me and this site"
+          contents:
+            - about/about-this-me.qmd
+            - about/about-this-site.qmd
+            - about/about-this-images-credit.qmd
+    - id: "bookmarks"
+      title: "Bookmarks"
+      contents:
+        - text: "Online Resources"
+        - text: "---"
+        - section: "Online Resources"
+          contents:
+            - bookmarks/bookmarks.qmd
   page-footer:
     background: primary
     left: "This website is built with [Quarto](https://quarto.org/)." 

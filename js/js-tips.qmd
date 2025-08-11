@@ -1,0 +1,63 @@
+---
+title: "JavaScript: Tips"
+subtitle: JavaScript Tips
+author: pedromartinezduran
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: JavaScript Tips
+categories: [javascript, tips]
+toc: true
+number-sections: true
+highlight-style: pygments
+format:
+  html
+---
+
+::: {.summary}
+
+📘 **JavaScript**
+
+A **pipe** is a command that allows you to **redirect the output of one command as the input to another command**. 
+
+It is represented by the vertical bar symbol ``|``.
+
+:::
+
+---
+
+#  JavaScript
+
+## Introduction
+
+*TODO* Create an example file that demonstrates the formatting and features of your format.
+
+## More Information
+
+You can learn more about controlling the appearance of HTML output here: <https://quarto.org/docs/output-formats/html-basics.html>
+
+
+
+<!--- navLinks -->
+<br><br>
+<div class=row>
+<br>
+<div class='column left previous'>
+<br>
+[{{< fa solid arrow-left >}} JavaScript: Basics](/js/js-basic-concepts.qmd)
+<br>
+</div>
+<br>
+<div class='column center'>
+<br>
+[{{< fa solid arrow-up >}} top](#top)
+<br>
+</div>
+<br>
+<div class='column right next'>
+<br>
+[JavaScript: Tips {{< fa solid arrow-right >}}](/js/js-tips.qmd)
+<br>
+</div>
+<br>
+</div>

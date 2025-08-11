@@ -1,0 +1,41 @@
+---
+title: "Introduction to GIS Programming and Fundamentals with Python and ArcGIS"
+author: "Chaowei Yang"
+subtitle: "Automating Geoprocessing and Data Analysis with Python"
+date: "2025-08-04"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to automating GIS workflows with Python in ArcGIS"
+categories: [gis, programming]
+subcategories: [python, arcgis, geoprocessing]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/GIS_PythonArcGIS.png){width="60%"}
+
+## More info
+
+This practical guide provides a comprehensive introduction to using Python for automating ArcGIS workflows. It's designed for GIS professionals and students who want to enhance their productivity by leveraging Python's capabilities for spatial data processing, analysis, and mapping within the ArcGIS platform.
+
+The book combines fundamental programming concepts with practical examples, demonstrating how to automate repetitive tasks, develop custom tools, and extend ArcGIS functionality through Python scripting.
+
+Key topics include:
+- Python programming fundamentals for GIS
+- Working with ArcPy and ArcGIS Python modules
+- Automating map production and data management
+- Geoprocessing with Python
+- Creating custom tools and functions
+- Working with spatial data and geometries
+- Map scripting and layout automation
+- Error handling and debugging
+- Integrating Python with ArcGIS ModelBuilder
+- Working with raster and 3D data
+- Performance optimization techniques
+- Case studies and real-world applications
+
+## Book
+
+- [Book .pdf](/books/GIS_PythonArcGIS.pdf){width="60%"}

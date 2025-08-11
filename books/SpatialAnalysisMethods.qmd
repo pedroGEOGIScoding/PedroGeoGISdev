@@ -1,0 +1,42 @@
+---
+title: "Spatial Analysis Methods and Practice"
+author: "Georhe Grekousis"
+subtitle: "Describe–Explore–Explain through GIS"
+date: "2025-08-04"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to spatial analysis techniques and their applications in GIS"
+categories: [gis]
+subcategories: [spatial analysis, statistics, geostatistics, modeling]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/SpatialAnalysisMethods.png){width="60%"}
+
+## More info
+
+This comprehensive textbook provides an in-depth exploration of spatial analysis methods and their practical applications in geographic information systems. It bridges the gap between theoretical concepts and real-world implementation, making it an essential resource for students, researchers, and professionals working with spatial data.
+
+The book covers a wide range of spatial analysis techniques, from fundamental concepts to advanced methods, with clear explanations, practical examples, and hands-on exercises using popular GIS software.
+
+Key topics include:
+- Fundamentals of spatial analysis
+- Spatial data models and structures
+- Spatial statistics and geostatistics
+- Point pattern analysis
+- Spatial autocorrelation and regression
+- Network analysis and routing
+- Surface analysis and terrain modeling
+- Spatial interpolation techniques
+- Geographically weighted regression
+- Spatial decision support systems
+- Big data and spatial analysis
+- Case studies and practical applications
+- Emerging trends in spatial analysis
+
+## Book
+
+- [Book .pdf](/books/SpatialAnalysisMethods.pdf){width="60%"}

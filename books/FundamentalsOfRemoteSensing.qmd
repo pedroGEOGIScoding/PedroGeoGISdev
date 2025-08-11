@@ -1,0 +1,40 @@
+---
+title: "Fundamentals of Remote Sensing"
+author: "Canada Centre for Remote Sensing"
+subtitle: "A Comprehensive Guide to Earth Observation Principles"
+date: "2025-08-04"
+date-modified: last-modified
+date-format: full
+description: "Foundational principles and practical applications of remote sensing technologies"
+categories: [gis]
+subcategories: [remote sensing, earth observation, gis]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/FundamentalsOfRemoteSensing.png){width="60%"}
+
+## More info
+
+This essential guide provides a thorough introduction to the fundamental principles of remote sensing, offering a solid foundation for students and professionals in geospatial sciences. The book covers the basic concepts, sensors, and applications of remote sensing in an accessible yet comprehensive manner.
+
+Designed as both a learning resource and a reference, it bridges the gap between theory and practical applications, making it ideal for beginners in the field of geospatial analysis and environmental monitoring.
+
+Key topics include:
+- Electromagnetic radiation principles
+- Remote sensing platforms and sensors
+- Aerial photography and photogrammetry
+- Digital image processing techniques
+- Multispectral and hyperspectral imaging
+- Thermal and microwave remote sensing
+- Image interpretation and analysis
+- Remote sensing applications in various fields
+- Data integration with Geographic Information Systems (GIS)
+- Accuracy assessment and validation
+- Emerging trends in remote sensing technology
+
+## Book
+
+- [Book .pdf](/books/FundamentalsOfRemoteSensing.pdf){width="60%"}

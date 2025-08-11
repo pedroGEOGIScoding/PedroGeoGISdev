@@ -1,0 +1,40 @@
+---
+title: "Cartography and Visualization of Geospatial Data"
+author: "Menno-Jan Kraak and Ferjan Ormeling"
+subtitle: "Principles and Techniques for Effective Geospatial Data Visualization"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to cartographic principles and visualization techniques for geospatial data"
+categories: [gis, cartography]
+subcategories: [visualization]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/CartographyVisualizationGeospatialData.png){width="60%"}
+
+## More info
+
+This comprehensive guide explores the art and science of cartography and geospatial data visualization, covering fundamental principles, design techniques, and modern digital mapping approaches.
+
+The book combines traditional cartographic theory with contemporary visualization methods, addressing both static and interactive mapping techniques. It's designed for cartographers, GIS professionals, data scientists, researchers, and students who want to create effective and compelling visual representations of spatial information.
+
+Key topics include:
+- Fundamental principles of cartographic design
+- Visual variables and symbolization techniques
+- Color theory and typography in cartography
+- Map composition and layout design
+- Statistical mapping and thematic cartography
+- Interactive and web-based mapping
+- 3D visualization and terrain representation
+- Multi-scale and multi-temporal visualization
+- User experience design for maps
+- Modern tools and technologies for map creation
+- Best practices in geospatial data storytelling
+
+## Book
+
+- [Book .pdf](/books/CartographyVisualizationGeospatialData.pdf){width="60%"}

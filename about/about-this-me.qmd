@@ -1,0 +1,116 @@
+---
+title: "About me"
+categories: [about]
+---
+
+![](/images/about/pedrologo.svg){width=35%}
+
+## Professional Profile
+
+[Download CV](/about/CV-Pedro-Martinez.pdf){.highlight width="10%"}
+
+
+Hi, I'm **Pedro Martinez Duran** - a **Senior Petroleum Geologist &  passionate FullStack WebGIS Developer** with over 25 years of international experience in geosciences, exploration, geospatial analysis and management.
+
+I obtained a B.Sc. in Geology at the University of Zaragoza (Spain) in 1993 studying the last two years at Burgundy University (France) and University of Aberdeen. Later I gained an M.Phil. in carbonate sedimentology and sequence stratigraphy at the University of Zaragoza, publishing several papers.
+
+For some years, I pursued a career as an exploration mining geologist (working in Chile, Argentina, Bolivia, USA, Turkey, Portugal, France, and Italy). The MBA, and the ESIC Master in Marketing and Sales brought me to several management roles for almost 8 years as managing director in three positions. Finally, this career in management was completed with the IESE PDG in 2007. In 2010 I moved back geology becoming a petroleum geologist after completing the M.Sc. in Petroleum Geoscience at Royal Holloway in 2011.
+
+I was based on UK for 14 years as exploration petroleum geologist and seismic interpreter working at CGG. My role was focused on studies related to Reservoir Geology, Carbon Capture and H2 Storage involving seismic interpretation of 3D and 2D regional scale surveys carrying out the full structural analysis, seismic interpretation of the pre and syn-rift packages and salt basins in North and West Africa, North Sea, Gulf of Mexico, NZ, Australia as well as in several blocks’ assessment in Asia, and complex unitisation oil fields process in Algeria and Tunisia.
+
+In the last few years, I completed internal and external trainings in geographical information techniques, especially with Remote Sensing datasets using ArcGIS Pro, and Google Earth Engine coding in JavaScript coupled with SQL and Python training to tackle with complex geographical datasets to carry out any sort of analytical approaches. 
+
+This wide-ranging international expertise has given abroad personal and working skills in any environment such as critical thinking, problem-solving, collaborative skills, strong emotional intelligence, cognitive flexibility, and decision-making focused on customer service and negotiation skills.
+
+
+### Expertise & Specializations
+
+> **Petroleum Geoscience & Exploration** - Senior petroleum geologist and seismic interpreter with extensive experience in basin analysis, structural geology, and tectono-stratigraphy across multiple continents.
+
+> **Carbon Capture & Storage (CCUS) & Hydrogen exploration** - Specialized in Carbon Capture, Utilization and Storage projects, including geological site selection and reservoir evaluation for sustainable energy solutions.
+
+> **Geographic Information Systems (GIS)** - GIS and remote sensing analyst with advanced skills in ArcGIS Pro, QGIS, and Google Earth Engine for complex geographical datasets and spatial analysis.
+
+> **WebGIS Development** - Passionate FullStack WebGIS Developer with expertise in creating interactive and user-friendly web mapping applications using modern web technologies using the following tech stack:
+>
+> - **Frontend**: JavaScript (React), TypeScript (Vaadin Hilla), Python
+> - **Backend**: Java (Spring Boot), Python  
+> - **Databases**: SQL/NoSQL (DynamoDB)
+> - **APIs**: RESTful services
+> - **Cloud**: AWS Services
+> - **Featured Projects:**
+>     - [Dashboard to track event participants](https://dashboardfest2fun-production.up.railway.app/){.external target='_blank'} - Event tracking dashboard
+>     - [FullStack Real-Time Flight Tracking Application](https://pedrogeogiscoding.github.io/Flight_Tracker_PedroGeoGISdev/){.external target='_blank'} - Real-time flight tracking system
+>     - [FullStack Renting Car Application with full CRUD funcionalities and car tracking map](https://rentingcar-production.up.railway.app/){.external target='_blank'} - Complete car rental management system
+
+> **International Project Management** - Proven track record in managing multidisciplinary geological projects across North and West Africa, North Sea, Gulf of Mexico, New Zealand, Australia, and Asia.
+
+### Educational Background
+
+- **Full Stack Developer** (2024-2025) - Professional Certificate Level C (Barcelona, Spain)
+- **MSc. Geographical Information Science** (2021-2023) - University of Lund (Sweden)
+- **MSc. Petroleum Geoscience** (2011) - Royal Holloway, University of London (Full scholarship, Distinction)
+- **General Management Program** (2007) - IESE Business School
+- **MBA** (2001) - European Business School of Aragon
+- **M.Phil. Carbonate Sedimentology & Sequential Stratigraphy** (1997) - University of Zaragoza
+- **BSc. Geology** (1993) - University of Zaragoza, with the 4th and 5th years at University of Burgundy (France) and University of Aberdeen (UK)
+
+### Current Role
+
+Currently, I am actively looking for a new opportunity to work as a **WebGIS Developer** focusing on:
+- FullStack WebGIS Development, Web Mapping, scalable architectures, and backend development
+- Geospatial analysis
+- Cartography (Leaflet, Mapbox, OpenLayers)
+
+
+### 📊 GitHub Stats
+
+<p align="center">
+  <a href="https://github.com/pedroGEOGIScoding">
+    <img height="320em" width="90%" src="https://github-readme-stats-eight-theta.vercel.app/api?username=pedroGEOGIScoding&show_icons=true&theme=algolia&include_all_commits=true&count_private=true" alt="GitHub Stats" style="display: inline-block; vertical-align: middle;"/>
+  </a>
+  <a href="https://github.com/pedroGEOGIScoding">
+    <img height="320em" width="90%" src="https://github-readme-stats-eight-theta.vercel.app/api/top-langs/?username=pedroGEOGIScoding&layout=compact&langs_count=8&theme=algolia" alt="Top Languages" style="display: inline-block; vertical-align: middle;"/>
+  </a>
+</p>
+
+### Publications
+
+:::{.column-}
+
+| Date | Author | Title | Journal or Publisher |
+| -- | -- | :-- | :-- |
+| 2022 | **Pedro Martinez Duran** and Jarrad Grahame | New insights in the offshore fold-and-thrust belt in Timor Trough | AAPG Workshop Structural Styles and Hydrocarbon Prospectivity in Thrust Belt Settings: A Global Perspective. Barcelona |
+| 2020 | Jarrad Grahame and **Pedro Martinez Duran** | New broadband imaging reveals prospectivity insights | GEO ExPro Magazine, Vol. 17, No. 3 |
+| 2019 | **Martinez Duran, P.**, Baillie, P., Carrillo, E. & Duval, G. | Geological Development of the Timor Orogen | Geological Society, London, Special Publications, 490 |
+| 2019 | Baillie, P., Keep, Myra., **Martinez Duran, P.**, Carrillo, E. & Duval, G. | Broadband seismic imaging around the Banda Arc: changes in the anatomy of offshore fold-and-thrust belts | Geological Society, London, Special Publications, 490 |
+| 2019 | Baillie, P., Carter, Paul. & **Martinez Duran, P.** | Evolution and Plays of the Banda Arc | AAPG. Search and Discovery Article #11245 |
+| 2018 | **Martinez Duran, P.**, Parsons, M., & Duval, G. | Revealing the Complexities of the Gabon Southern Margin through Gravity, Magnetics and Seismic Data Integration | AAPG International Conference and Exhibition. Cape Town, South Africa |
+| 2018 | **Martinez Duran, P.**, Parsons, M., Soyer, W., & Duval, G. | Evidence for a more complex crustal setting offshore Gabon: support from a high-resolution regional seismic dataset integrated with 3D grav/mag modelling | 80th EAGE Annual Conference, Copenhagen |
+| 2017 | **Martinez Duran, P.**, Baillie, P., Carrillo, E., & Duval, G. | Geological development of the offshore Timor Orogen | Petroleum Group of the Geological Society of London, Burlington House, London |
+| 2017 | Baillie, P., **Martinez Duran, P.**, Carrillo, E., & Duval, G. | Fold & Thrust Belts of the Banda Arc | Petroleum Group of the Geological Society of London, Burlington House, London |
+| 2017 | Parsons, M., **Martinez Duran, P.**, Soyer, W., & Duval, G. | Understanding the tectonic history offshore Southern Gabon with high resolution seismic, gravity and magnetics | First Break, 35(September), 1–8 |
+| 2017 | Edwards, R., Sanderson, M., King, M. Duval, G., and **Martinez Duran, P.** | Enhancing SAR seep interpretation with broadband seismic data: A case study from the Timor Trough | The APPEA Journal |
+| 2015 | **Martinez-Duran, P.**, Duval, G. and Baillie, P. | New Broadband Seismic Unveils the Complexity of the Timor-Leste Offshore Subduction Zone | AAPG Melbourne, Australia |
+| 2015 | **Martinez-Duran, P.**, Gater, R., Chesser, K., et al. | The Petroleum Potential of the Late Cretaceous-Palaeogene Sediments of the Reinga, Northland and Deepwater Taranaki Basins | AAPG Melbourne, Australia |
+| 2015 | **Martinez-Duran, P.**, Gater, R., Chesser, K., et al. | Insights into the reservoir quality of the Cretaceous to Miocene sediments of the Reinga/Northland and deepwater Taranaki basins: An integrated approach | New Zealand Petroleum Conference, Auckland |
+| 2013 | **Martinez Duran, P.** et al. | Implications of a new analytical programme on the petroleum potential of the late Cretaceous-Palaeocene sediments of the Great South and Canterbury Basins | New Zealand Petroleum Conference, Auckland |
+| 2012 | Pueyo, E.L., Calvin, P., Casas, A.M., et al. | A research plan for a large potential CO2 reservoir in the Southern Pyrenees | Geo-Temas, 13, pp.1970-1973 |
+| 2000 | Regueiro, M., **Martinez Duran, P.**, Gonzalo, F. | Rocas y Minerales Industriales de España | Instituto Tecnológico Geominero de España |
+| 2000 | **Martinez Duran, P.** | Industrial Minerals in the South Cone | European Geologist, nº 9. Journal of the European Federation of Geologists |
+| 2000 | Gajardo, A., **Martinez Duran, P.**, Regueiro, M. | Industrial Minerals in South America: European future industrial minerals grain-stock? | 36th Forum on Geology of Industrial Minerals and 11th Extractive Industry Geology Conference. Bath (U.K) |
+| 1997 | **Martinez Duran, P.**, Melendez, A., Floquet, M. | Spatial distribution of parasequences controlled by paleogeographical local features. Examples from the Central Iberian Range | 18th Regional Meeting of Sedimentology (I.A.S). Heidelberg, Germany |
+| 1995 | **Martinez Duran, P.**, Melendez, A. | Identification of sequences boundaries in epicontinental carbonate platform. Examples from Late Cenomanian-Middle Turonian. Central Iberian Range, Spain | 16th Regional Meeting of Sedimentology. Aix-les-Bains, France |
+
+:::
+
+#### Contact 
+
+- **Email:** [professional](mailto:pedromartinezduran@gmail.com)
+
+#### Linkedin
+  
+[linkedin.com/in/pedromartinezduran/](https://www.linkedin.com/in/pedromartinezduran/)
+
+
+

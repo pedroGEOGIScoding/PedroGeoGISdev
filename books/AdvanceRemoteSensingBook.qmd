@@ -1,0 +1,37 @@
+---
+title: "Advanced Remote Sensing"
+author: "Shunlin Liang and Jindi Wang"
+subtitle: "Advanced Techniques and Applications in Remote Sensing"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Advanced remote sensing techniques, methodologies and applications for professional practitioners"
+categories: [gis]
+subcategories: [remote sensing]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/AdvanceRemoteSensingBook.jpg){width="60%"}
+
+## More info
+
+This advanced guide delves into sophisticated remote sensing techniques and cutting-edge applications for experienced practitioners and researchers in the field of geospatial analysis.
+
+The book covers advanced image processing algorithms, machine learning applications in remote sensing, hyperspectral analysis, radar interferometry, and emerging technologies in Earth observation. It's designed for advanced GIS professionals, remote sensing specialists, researchers, and graduate students who want to master state-of-the-art remote sensing methodologies.
+
+Key topics include:
+- Advanced image processing and enhancement techniques
+- Machine learning and AI applications in remote sensing
+- Hyperspectral and multispectral data analysis
+- Synthetic Aperture Radar (SAR) and interferometry
+- Time series analysis and change detection
+- Advanced classification and feature extraction methods
+- Integration with cloud computing platforms
+- Emerging technologies and future trends in remote sensing
+
+## Book
+
+- [Book .pdf](/books/AdvanceRemoteSensingBook.pdf){width="60%"}

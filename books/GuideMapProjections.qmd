@@ -1,0 +1,39 @@
+---
+title: "Guide to Map Projections"
+author: "Margaret M. Maher"
+subtitle: "Understanding and Using Map Projections"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to understanding, selecting, and working with map projections"
+categories: [gis]
+subcategories: [cartography, projections]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/GuideMapProjections.png){width="60%"}
+
+## More info
+
+This essential guide provides a thorough understanding of map projections, their properties, and their appropriate use in various mapping applications and GIS workflows.
+
+The book covers the fundamental principles of map projections, their mathematical foundations, and practical considerations for choosing the right projection for different mapping needs. It's designed for cartographers, GIS professionals, geographers, and anyone who works with spatial data and needs to understand how to represent the Earth's surface accurately on flat maps.
+
+Key topics include:
+- Fundamentals of map projections and coordinate systems
+- Understanding distortion properties and their impact
+- Common projection families and their characteristics
+- Choosing appropriate projections for different scales and regions
+- Working with projections in GIS software
+- Custom projections and coordinate reference systems
+- Datums and their relationship to projections
+- Practical examples and case studies
+- Troubleshooting common projection issues
+- Best practices for working with projections in GIS
+
+## Book
+
+- [Book .pdf](/books/GuideMapProjections.pdf){width="60%"}

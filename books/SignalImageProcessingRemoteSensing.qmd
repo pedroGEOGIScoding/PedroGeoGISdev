@@ -1,0 +1,41 @@
+---
+title: "Signal and Image Processing for Remote Sensing"
+author: "C.H. Chen"
+subtitle: "Advanced Algorithms and Applications"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to signal and image processing techniques in remote sensing"
+categories: [remote-sensing]
+subcategories: [signal-processing, image-processing, algorithms]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/SignalImageProcessingRemoteSensing.png){width="60%"}
+
+## More info
+
+This comprehensive reference provides in-depth coverage of advanced signal and image processing techniques specifically designed for remote sensing applications.
+
+The book bridges the gap between signal/image processing theory and practical remote sensing applications, offering both fundamental concepts and cutting-edge methodologies. It's designed for researchers, engineers, and graduate students working in remote sensing, earth observation, and related fields who need to process and analyze remote sensing data effectively.
+
+Key topics include:
+- Fundamentals of signal and image processing
+- Advanced filtering and enhancement techniques
+- Feature extraction and classification
+- Hyperspectral and multispectral image analysis
+- Radar and SAR signal processing
+- Time-series analysis of remote sensing data
+- Machine learning applications in remote sensing
+- Data fusion and integration
+- High-performance computing for remote sensing
+- Quality assessment and validation
+- Real-world applications and case studies
+- Emerging trends and future directions
+
+## Book
+
+- [Book .pdf](/books/SignalImageProcessingRemoteSensing.pdf){width="60%"}

@@ -1,0 +1,40 @@
+---
+title: "Interfacing Geostatistics and GIS"
+author: "Editor: Jurgen Pilz"
+subtitle: "Spatial Prediction and Risk Assessment"
+date: "2025-08-04"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to integrating geostatistics with GIS for spatial analysis"
+categories: [gis]
+subcategories: [geostatistics, spatial analysis, risk assessment]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/InterfacingGeoStatisticsGIS.png){width="60%"}
+
+## More info
+
+This essential reference bridges the gap between geostatistics and geographic information systems (GIS), providing a comprehensive guide to spatial prediction and risk assessment. The book offers a practical approach to applying geostatistical methods within a GIS framework, making complex spatial statistical techniques accessible to researchers and practitioners.
+
+Designed for both beginners and experienced users, it covers fundamental concepts, advanced techniques, and real-world applications, with a strong emphasis on practical implementation and interpretation of results.
+
+Key topics include:
+- Fundamentals of geostatistics and spatial analysis
+- Variogram analysis and modeling
+- Kriging and other spatial prediction methods
+- Uncertainty and error assessment
+- Risk analysis and decision making
+- Integration with GIS software
+- Environmental and ecological applications
+- Case studies in various fields
+- Practical exercises and examples
+- Emerging trends in spatial statistics
+- Best practices for implementation
+
+## Book
+
+- [Book .pdf](/books/InterfacingGeoStatisticsGIS.pdf){width="60%"}

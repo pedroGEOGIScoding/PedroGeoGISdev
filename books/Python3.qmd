@@ -1,0 +1,41 @@
+---
+title: "Python 3"
+author: "Sebastien Chazallet"
+subtitle: "An Introduction to Computer Science"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive introduction to computer science using Python 3"
+categories: [programming]
+subcategories: [python, computer-science]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/Python3.png){width="60%"}
+
+## More info
+
+This comprehensive textbook introduces computer science using the Python programming language, covering fundamental programming concepts and problem-solving techniques.
+
+The book takes a traditional approach to teaching computer science, focusing on problem solving, algorithm development, and programming as a means of implementing solutions. It's designed for beginners with no prior programming experience, as well as those with some programming background who want to learn Python.
+
+Key topics include:
+- Python programming fundamentals
+- Control structures and algorithms
+- Functions and modular programming
+- Object-oriented programming
+- Data structures and collections
+- File processing and exceptions
+- Recursion and algorithm analysis
+- Graphical user interfaces
+- Event-driven programming
+- Computer science concepts and principles
+- Problem-solving strategies
+- Software development best practices
+
+## Book
+
+- [Book .pdf](/books/Python3.pdf){width="60%"}

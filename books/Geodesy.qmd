@@ -1,0 +1,40 @@
+---
+title: "Geodesy"
+author: "Wolfgang Torge and Jürgen Müller"
+subtitle: "Fundamentals of Earth Measurement and Coordinate Systems"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to geodetic principles, Earth measurement, and coordinate system fundamentals"
+categories: [gis]
+subcategories: [geodesy, coordinates]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/Geodesy.png){width="60%"}
+
+## More info
+
+This comprehensive guide explores the fundamental principles of geodesy, the science of measuring and understanding Earth's geometric shape, orientation in space, and gravity field variations.
+
+The book covers classical and modern geodetic concepts, including ellipsoid theory, coordinate systems, datum transformations, and satellite geodesy. It's designed for geodesists, surveyors, GIS professionals, geophysicists, and students seeking to understand the mathematical and physical foundations of Earth measurement and positioning systems.
+
+Key topics include:
+- Fundamental geodetic concepts and Earth's shape
+- Reference ellipsoids and geodetic datums
+- Coordinate systems and transformations
+- Classical surveying and triangulation methods
+- Satellite geodesy and GNSS positioning
+- Gravity field modeling and geoid determination
+- Geodetic networks and adjustment theory
+- Modern positioning techniques and applications
+- Geodetic reference frames and their maintenance
+- Integration with GIS and mapping systems
+- Practical applications in surveying and navigation
+
+## Book
+
+- [Book .pdf](/books/Geodesy.pdf){width="60%"}

@@ -1,0 +1,41 @@
+---
+title: "Earth Observation and Global Change"
+author: "Various Contributors"
+subtitle: "Satellite Remote Sensing Applications for Environmental Monitoring"
+date: "2025-08-04"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to Earth observation technologies and their applications in monitoring global environmental changes"
+categories: [gis]
+subcategories: [remote sensing, earth observation, environmental monitoring]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/EarthObservationGlobalChange.png){width="60%"}
+
+## More info
+
+This comprehensive resource explores the critical role of Earth observation technologies in understanding and monitoring global environmental changes. It's designed for environmental scientists, remote sensing specialists, climate researchers, and policy makers who need to understand how satellite data can inform environmental decision-making.
+
+The book provides detailed coverage of satellite-based monitoring systems, data analysis techniques, and practical applications for tracking environmental changes at local, regional, and global scales. It emphasizes the integration of multiple Earth observation platforms and sensors for comprehensive environmental assessment.
+
+Key topics include:
+- Satellite remote sensing fundamentals and platforms
+- Climate change monitoring and assessment
+- Land use and land cover change detection
+- Ocean and atmospheric observation systems
+- Vegetation dynamics and ecosystem monitoring
+- Natural disaster monitoring and early warning systems
+- Urban growth and environmental impact assessment
+- Carbon cycle monitoring and greenhouse gas emissions
+- Water resources management and hydrological monitoring
+- Biodiversity conservation and habitat mapping
+- Integration of Earth observation with climate models
+- Policy applications and environmental reporting
+
+## Book
+
+- [Book .pdf](/books/EarthObservationGlobalChange.pdf){width="60%"}

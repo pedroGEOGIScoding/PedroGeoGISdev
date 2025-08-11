@@ -1,0 +1,36 @@
+---
+title: "Introduction to Satellite Remote Sensing"
+author: "William Emery and Adriano Camps"
+subtitle: "Atmosphere, Ocean, Land and Cryosphere Applications"
+date: "2025-07-30"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive introduction to remote sensing principles, technologies, and applications"
+categories: [gis]
+subcategories: [remote sensing]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/Introduction-Remote-Sensing.jpg){width="60%"}
+
+## More info
+
+This comprehensive guide provides essential knowledge about remote sensing fundamentals, covering the principles, technologies, and applications of remote sensing in modern geospatial analysis.
+
+The book explores electromagnetic radiation theory, sensor technologies, image processing techniques, and practical applications across various fields including environmental monitoring, agriculture, forestry, urban planning, and natural resource management. It's an invaluable resource for GIS professionals, environmental scientists, researchers, and students seeking to understand remote sensing technologies and their applications.
+
+Key topics include:
+- Electromagnetic spectrum and radiation principles
+- Satellite and airborne sensor systems
+- Image acquisition and preprocessing
+- Digital image processing and analysis
+- Classification techniques and accuracy assessment
+- Applications in environmental monitoring and resource management
+- Integration with GIS and spatial analysis workflows
+
+## Book
+
+- [Book .pdf](/books/Introduction-Remote-Sensing.pdf){width="60%"}

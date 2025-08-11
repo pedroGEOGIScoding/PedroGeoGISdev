@@ -1,0 +1,41 @@
+---
+title: "Remote Sensing Intelligent Interpretation for Geology"
+author: "Weitao Chen, Xianju Li, Xuwen Qin, Lizhe Wang"
+subtitle: "From prespective of geological exploration"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to remote sensing applications in geological exploration"
+categories: [geology]
+subcategories: [remote-sensing, geology, earth-sciences]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/RemoteSensingGeologicalExploration.png){width="60%"}
+
+## More info
+
+This comprehensive reference covers the principles and applications of remote sensing in geological exploration, providing both theoretical foundations and practical case studies.
+
+The book presents a systematic approach to using remote sensing data for geological mapping, mineral exploration, and natural resource assessment. It's designed for geologists, exploration professionals, remote sensing specialists, and earth science students who need to understand and apply remote sensing techniques in geological contexts.
+
+Key topics include:
+- Fundamentals of remote sensing for geology
+- Satellite and airborne sensor systems
+- Image processing and analysis techniques
+- Spectral properties of rocks and minerals
+- Structural geology and lineament analysis
+- Lithological and mineral mapping
+- Hydrothermal alteration mapping
+- Integration with GIS and other geodata
+- Case studies from various geological settings
+- Emerging technologies and future trends
+- Best practices for geological remote sensing
+- Field validation techniques
+
+## Book
+
+- [Book .pdf](/books/RemoteSensingGeologicalExploration.pdf){width="60%"}

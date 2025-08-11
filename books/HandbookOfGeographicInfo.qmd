@@ -1,0 +1,41 @@
+---
+title: "Handbook of Geographic Information"
+author: "Wolfgang Kresse and David M. Danko"
+subtitle: "Standards, Practices, and Applications"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive reference on geographic information standards, technologies, and applications"
+categories: [gis]
+subcategories: [standards, reference]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/HandbookOfGeographicInfo.png){width="60%"}
+
+## More info
+
+This comprehensive handbook serves as an authoritative reference on geographic information systems, standards, and best practices, providing essential knowledge for professionals and researchers in the field of geospatial technologies.
+
+The book covers the full spectrum of geographic information science and technology, from fundamental concepts to advanced applications, with contributions from leading experts worldwide. It's designed for GIS professionals, researchers, educators, and students who need a reliable reference on the latest developments in geographic information standards and practices.
+
+Key topics include:
+- Core concepts of geographic information science
+- International standards and specifications (ISO/TC 211, OGC)
+- Spatial data infrastructure and interoperability
+- Data quality and metadata standards
+- Web services and distributed geospatial systems
+- Spatial databases and data management
+- Cartographic visualization and map production
+- Remote sensing and image analysis
+- Mobile and location-based services
+- Legal and policy aspects of geographic information
+- Future trends in geospatial technologies
+- Case studies and practical applications
+
+## Book
+
+- [Book .pdf](/books/HandbookOfGeographicInfo.pdf){width="60%"}

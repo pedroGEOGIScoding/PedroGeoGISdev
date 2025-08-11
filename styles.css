@@ -1,14 +1,14 @@
-/* css styles */
 :root {
   /* Color Palette */
   --primary-brown: #4a3b30;
   --primary-blue: #33a0d6;
   --hover-white: #FFFFFF;
   --success-green: #117441;
-  --light-green: #a2f868;
+  --light-green: #b3ff93;
   --light-gray: #ebedf1;
   --tab-blue: #91b1f3;
-  --sidebar-colour: lab(82.51% 2.07 0.73);
+  --sidebar-colour: #dcd6d1;
+  --margin-sidebar-colour: #dcd6d1;
   
   /* Spacing */
   --border-radius: 10px;
@@ -16,19 +16,19 @@
   
   /* Font sizes */
   --navbar-font-size-desktop: 24px;
-  --navbar-font-size-mobile: 14px;
-  --navbar-font-size-tablet: 18px;
+  --navbar-font-size-mobile: 16px;
+  --navbar-font-size-tablet: 20px;
   --footer-font-size-desktop: 24px;
-  --footer-font-size-mobile: 14px;
-  --footer-font-size-tablet: 18px;
+  --footer-font-size-mobile: 16px;
+  --footer-font-size-tablet: 20px;
 
-
-  --navbar-icon-size-desktop: 24px;
+  /* Icon sizes*/
+  --navbar-icon-size-desktop: 22px;
   --navbar-icon-size-mobile: 18px;
-  --navbar-icon-size-tablet: 24px;
-  --footer-icon-size-desktop: 24px;
+  --navbar-icon-size-tablet: 22px;
+  --footer-icon-size-desktop: 22px;
   --footer-icon-size-mobile: 18px;
-  --footer-icon-size-tablet: 24px;
+  --footer-icon-size-tablet: 22px;
 }
 /*highlight text*/
 .highlight {
@@ -37,11 +37,21 @@ padding: 2px 5px;
 border-radius: 3px;
 }
 
-/* Navbar styles */
+/* ===== NAVBAR TITLE STYLING ===== */
 .navbar {
   background-color: var(--primary-brown) !important;
   font-size: var(--navbar-font-size-desktop) !important;
+}
 
+.navbar-brand, 
+.navbar-nav .nav-link {
+  color: var(--primary-blue) !important;
+}
+
+.navbar-brand, .navbar-title {
+  font-size: 24px !important;
+  font-weight: bold !important;
+  color: var(--primary-blue) !important;
 }
 
 /* Colored text for navbar title */
@@ -58,6 +68,15 @@ border-radius: 3px;
 .navbar-brand:hover, .navbar-title:hover {
   color: var(--hover-white) !important;
   transition: color 0.3s ease;
+}
+
+/* ===== SIDEBAR AND MARGIN STYLES ===== */
+.sidebar {
+  background-color: var(--sidebar-colour) !important;
+}
+
+.margin-sidebar {
+  background-color: var(--margin-sidebar-colour) !important;
 }
 
 /* ===== FOOTER STYLES ===== */
@@ -99,4 +118,31 @@ footer.footer,
 
 .nav-footer .bi {
   font-size: var(--footer-icon-size-desktop) !important;
+}
+
+/* ===== CARD COMPONENTS ===== */
+.summary {
+  padding: var(--padding-standard);
+  background: var(--light-green);
+  border: #ffffff6b;
+  color: var(--success-green);
+  border-radius: var(--border-radius);
+}
+
+.homecard {
+  padding: var(--padding-standard);
+  background: radial-gradient(circle, rgba(197,197,215,1) 35%, rgba(142,176,182,1) 100%);
+  border: #ffffff6b;
+  color: #003366;
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-family: Papyrus, fantasy;
+}
+
+.keywords {
+  padding: var(--padding-standard);
+  background: var(--light-gray);
+  border: #ffffff6b;
+  color: var(--success-green);
+  border-radius: var(--border-radius);
 }

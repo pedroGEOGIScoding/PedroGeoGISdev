@@ -1,0 +1,41 @@
+---
+title: "Remote Sensing Handbook"
+author: "Prasad S. Thenkabail"
+subtitle: "A Comprehensive Reference for Earth Observation"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Multi-volume reference work covering all aspects of remote sensing"
+categories: [remote-sensing]
+subcategories: [earth-observation, reference, geospatial]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/RemoteSensingHandbook.png){width="60%"}
+
+## More info
+
+This comprehensive multi-volume reference work provides a thorough treatment of the science, technology, and applications of remote sensing across various disciplines.
+
+The handbook brings together contributions from leading experts worldwide, offering both theoretical foundations and practical applications of remote sensing technologies. It serves as an essential resource for researchers, practitioners, and students in fields such as environmental science, geography, agriculture, forestry, urban planning, and natural resource management.
+
+Key topics include:
+- Fundamentals of remote sensing
+- Sensor systems and platforms
+- Image processing and analysis techniques
+- Land cover and land use mapping
+- Vegetation and agricultural monitoring
+- Water resources assessment
+- Urban and built environment analysis
+- Climate change studies
+- Disaster monitoring and management
+- Emerging technologies and future trends
+- Case studies and real-world applications
+- Data fusion and integration with GIS
+
+## Book
+
+- [Book .pdf](/books/RemoteSensingHandbook.pdf){width="60%"}

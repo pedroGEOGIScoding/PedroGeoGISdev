@@ -1,0 +1,40 @@
+---
+title: "Geospatial Analysis with Python"
+author: "Joel Lawhead"
+subtitle: "Python Tools and Techniques for Spatial Data Analysis"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to geospatial analysis using Python programming language and spatial libraries"
+categories: [gis]
+subcategories: [python, programming]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/GeospatialAnalysisPython.png){width="60%"}
+
+## More info
+
+This comprehensive guide explores geospatial analysis techniques using Python programming language, covering essential libraries, tools, and methodologies for spatial data processing and analysis.
+
+The book provides hands-on examples and practical applications using popular Python geospatial libraries such as GeoPandas, Shapely, Fiona, Rasterio, and Folium. It's designed for Python developers, GIS professionals, data scientists, researchers, and students who want to leverage Python's powerful ecosystem for geospatial analysis and visualization.
+
+Key topics include:
+- Python fundamentals for geospatial programming
+- Working with vector data using GeoPandas and Shapely
+- Raster data processing with Rasterio and NumPy
+- Spatial analysis algorithms and techniques
+- Coordinate reference systems and projections
+- Interactive mapping with Folium and Plotly
+- Web mapping and geospatial web services
+- Machine learning applications in geospatial analysis
+- Performance optimization for large datasets
+- Integration with databases and cloud platforms
+- Best practices in geospatial Python development
+
+## Book
+
+- [Book .pdf](/books/GeospatialAnalysisPython.pdf){width="60%"}

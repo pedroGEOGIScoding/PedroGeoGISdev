@@ -1,0 +1,41 @@
+---
+title: "Simulation of the Sea Surface for Remote Sensing"
+author: "Alexander Zapevalov, Konstantin Pokazeev, and Tatiana Chaplina"
+subtitle: "Methods and Applications for Ocean Surface Analysis"
+date: "2025-08-04"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to remote sensing techniques for ocean surface observation and analysis"
+categories: [gis]
+subcategories: [remote sensing, marine science, satellite oceanography]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/SeaSurfaceRemoteSensing.png){width="60%"}
+
+## More info
+
+This authoritative reference provides a comprehensive overview of remote sensing techniques for observing and analyzing the ocean surface. It offers an in-depth examination of the physical principles, instrumentation, and methodologies used in satellite and airborne remote sensing of the world's oceans.
+
+Designed for researchers, graduate students, and professionals in oceanography and marine science, the book bridges the gap between theoretical concepts and practical applications, with numerous examples and case studies from around the globe.
+
+Key topics include:
+- Principles of ocean remote sensing
+- Satellite and sensor systems for ocean observation
+- Sea surface temperature measurement
+- Ocean color and water quality monitoring
+- Sea surface salinity retrieval
+- Ocean wind and wave measurement
+- Altimetry and sea level monitoring
+- Sea ice detection and monitoring
+- Oil spill and pollution detection
+- Climate change and ocean monitoring
+- Data processing and analysis techniques
+- Future trends in ocean remote sensing
+
+## Book
+
+- [Book .pdf](/books/SeaSurfaceRemoteSensing.pdf){width="60%"}

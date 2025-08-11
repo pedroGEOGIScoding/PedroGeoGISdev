@@ -1,0 +1,40 @@
+---
+title: "GIS Tutorial for ArcGIS Pro"
+author: "Wilpen L. Gorr and Kristen S. Kurland"
+subtitle: "A Platform Workbook"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive tutorial for learning ArcGIS Pro through hands-on exercises and real-world applications"
+categories: [gis]
+subcategories: [arcgis pro, tutorial]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/GISTutorialArcgisPro.png){width="60%"}
+
+## More info
+
+This comprehensive tutorial provides a hands-on introduction to ArcGIS Pro, guiding users through essential GIS concepts and practical applications using Esri's premier desktop GIS software.
+
+The book features step-by-step exercises that cover fundamental GIS operations, spatial analysis techniques, and cartographic design principles. It's designed for GIS students, professionals transitioning to ArcGIS Pro, and anyone seeking to build or enhance their GIS skills through practical, project-based learning.
+
+Key topics include:
+- ArcGIS Pro interface and project organization
+- Working with vector and raster data
+- Geoprocessing and spatial analysis tools
+- Map creation and cartographic design
+- Geocoding and network analysis
+- 3D visualization and analysis
+- Geodatabase design and management
+- Python automation with ArcPy
+- Sharing and publishing GIS content
+- Real-world case studies and applications
+- Best practices for GIS project workflows
+
+## Book
+
+- [Book .pdf](/books/GISTutorialArcgisPro.pdf){width="60%"}

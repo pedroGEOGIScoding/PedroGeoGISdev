@@ -1,0 +1,35 @@
+---
+title: "Datums and Map Projections"
+author: "Jonathan Iliffe"
+subtitle: "For Remote Sensing, GIS and Surveying"
+date: "2003"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to datums and map projections for remote sensing, GIS and surveying applications"
+categories: [gis]
+subcategories: [cartography, projections]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/Datums-Map-Projections.png){width="60%"}
+
+## More info
+
+This comprehensive guide provides essential knowledge about datums and map projections, fundamental concepts for anyone working with geospatial data in remote sensing, GIS, and surveying applications.
+
+The book covers coordinate systems, geodetic datums, map projections, and their practical applications in modern geospatial workflows. It's an invaluable resource for GIS professionals, surveyors, remote sensing specialists, and students seeking to understand the mathematical foundations of spatial data representation.
+
+Key topics include:
+- Understanding coordinate systems and reference frames
+- Geodetic datums and their transformations
+- Map projection theory and classification
+- Practical applications in GIS and remote sensing
+- Common projection systems and their use cases
+- Datum transformations and accuracy considerations
+
+## Book
+
+- [Book .pdf](/books/Datums-Map-Projections.pdf){width="60%"}

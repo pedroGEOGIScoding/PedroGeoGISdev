@@ -1,0 +1,41 @@
+---
+title: "Mastering ArcGIS Pro"
+author: "Maribeth Price"
+subtitle: "A Comprehensive Guide to ArcGIS Pro"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to mastering Esri's ArcGIS Pro for GIS professionals"
+categories: [gis]
+subcategories: [arcgis pro, tutorial, reference]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/MasteringArcGISPro.png){width="60%"}
+
+## More info
+
+This comprehensive guide provides in-depth coverage of ArcGIS Pro, Esri's premier desktop GIS application, offering both fundamental concepts and advanced techniques for GIS professionals.
+
+The book combines conceptual knowledge with practical, hands-on exercises to help users master ArcGIS Pro's powerful tools and capabilities. It's designed for both new and experienced GIS users, analysts, and professionals who want to enhance their skills with ArcGIS Pro.
+
+Key topics include:
+- ArcGIS Pro interface and project organization
+- Working with 2D and 3D maps and scenes
+- Geoprocessing and spatial analysis tools
+- Data management and editing techniques
+- Cartographic design and map production
+- Geodatabase design and management
+- Python automation with ArcPy
+- Sharing and publishing GIS content
+- Advanced analysis and modeling
+- Integration with ArcGIS Online and Enterprise
+- Best practices for efficient workflows
+- Real-world case studies and applications
+
+## Book
+
+- [Book .pdf](/books/MasteringArcGISPro.pdf){width="60%"}

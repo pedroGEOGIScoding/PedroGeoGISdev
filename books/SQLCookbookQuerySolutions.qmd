@@ -1,0 +1,41 @@
+---
+title: "SQL Cookbook Query Solutions"
+author: "Anthony Molinaro and Robert de Graaf"
+subtitle: "Query Solutions and Techniques for Database Developers"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Practical solutions to common and complex SQL problems"
+categories: [databases, sql]
+subcategories: [query-optimization, database-development]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/SQLCookbookQuerySolutions.png){width="60%"}
+
+## More info
+
+This practical cookbook provides solutions to common and complex SQL problems, offering ready-to-use query patterns and techniques for database developers and analysts.
+
+The book presents a collection of real-world SQL challenges along with their solutions, organized by problem domain. It's designed for SQL practitioners of all levels who want to improve their query-writing skills and learn efficient techniques for data manipulation and analysis.
+
+Key topics include:
+- Basic and advanced SQL query techniques
+- Data filtering and transformation
+- Date and time manipulation
+- Complex joins and subqueries
+- Window functions and analytics
+- Hierarchical queries
+- Pivoting and unpivoting data
+- Common table expressions (CTEs)
+- Performance optimization
+- Cross-platform SQL variations
+- Best practices and anti-patterns
+- Real-world case studies
+
+## Book
+
+- [Book .pdf](/books/SQLCookbookQuerySolutions.pdf){width="60%"}

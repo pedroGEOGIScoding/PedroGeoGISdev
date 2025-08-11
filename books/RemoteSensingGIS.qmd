@@ -1,0 +1,41 @@
+---
+title: "Remote Sensing and GIScience"
+author: "Pavan Kumar, Haroon Sajjad, Bhagwan Singh Chaudhary, J. S. Rawat and Meenu Rani"
+subtitle: "Challenges and Future Directions"
+date: "2025-08-04"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to integrating remote sensing data with geographic information systems"
+categories: [gis]
+subcategories: [remote sensing, spatial analysis, image processing]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/RemoteSensingGIS.png){width="60%"}
+
+## More info
+
+This comprehensive textbook provides a thorough introduction to the integration of remote sensing and geographic information systems (GIS). It offers a balanced approach between theoretical foundations and practical applications, making it an essential resource for students, researchers, and professionals in geospatial sciences.
+
+The book covers the entire process from data acquisition to final output, with a strong emphasis on the practical aspects of integrating these powerful geospatial technologies for environmental monitoring, natural resource management, and spatial analysis.
+
+Key topics include:
+- Fundamentals of remote sensing and GIS integration
+- Image acquisition and preprocessing
+- Image classification techniques
+- Change detection and time series analysis
+- Terrain analysis and 3D visualization
+- Accuracy assessment and validation
+- Environmental applications
+- Urban and regional planning
+- Natural resource management
+- Disaster monitoring and assessment
+- Emerging trends and future directions
+- Case studies and practical examples
+
+## Book
+
+- [Book .pdf](/books/RemoteSensingGIS.pdf){width="60%"}

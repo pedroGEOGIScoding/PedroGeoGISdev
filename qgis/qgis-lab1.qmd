@@ -1,0 +1,238 @@
+---
+title: "QGIS Laboratory 1: Introduction to Open Source GIS"
+subtitle: First Steps with QGIS
+author: pedromartinezduran
+date: "2025-07-29"
+date-modified: last-modified
+date-format: full
+description: Introduction to QGIS interface and fundamental GIS operations
+categories: [gis, qgis, laboratory, open-source, beginner]
+toc: true
+number-sections: true
+format:
+  html
+---
+
+# Laboratory Overview
+
+This laboratory introduces you to QGIS (Quantum GIS), a powerful open-source Geographic Information System. You will learn to navigate the interface, manage spatial data, and perform basic GIS analysis operations.
+
+## Learning Objectives
+
+By the end of this laboratory, you will be able to:
+
+- Navigate the QGIS user interface
+- Load and display vector and raster data
+- Use the attribute table and selection tools
+- Apply symbology and create thematic maps
+- Perform basic spatial queries and analysis
+- Create and export map compositions
+
+## Prerequisites
+
+- QGIS 3.x installed on your system
+- Basic understanding of GIS concepts
+- Sample datasets (provided)
+
+# Getting Started with QGIS
+
+## Exercise 1: QGIS Interface Exploration
+
+### Step 1: Launch QGIS
+1. Open QGIS from your applications menu
+2. Familiarize yourself with the startup screen
+3. Create a new project
+
+### Step 2: Interface Components
+Explore the main interface elements:
+
+- **Menu Bar**: Access to all QGIS functions
+- **Toolbars**: Quick access to common tools
+- **Layers Panel**: Manages map layers
+- **Map Canvas**: Displays spatial data
+- **Status Bar**: Shows coordinate information
+
+### Navigation Tools
+Practice using essential navigation tools:
+- Zoom in/out
+- Pan
+- Zoom to full extent
+- Zoom to layer
+- Identify features tool
+
+# Data Loading and Management
+
+## Exercise 2: Adding Vector Data
+
+### Loading Shapefiles
+1. Use "Layer" → "Add Layer" → "Add Vector Layer"
+2. Browse and select sample shapefiles:
+   - Administrative boundaries
+   - Road network
+   - Point locations (cities, facilities)
+
+### Data Source Manager
+1. Open the Data Source Manager (Ctrl+L)
+2. Explore different data source options
+3. Add data from various formats
+
+## Exercise 3: Adding Raster Data
+
+### Loading Raster Layers
+1. Add raster data (satellite imagery, DEM)
+2. Explore raster properties
+3. Adjust display settings and transparency
+
+### Coordinate Reference Systems
+1. Check layer CRS information
+2. Understand project CRS settings
+3. Reproject layers if necessary
+
+# Data Exploration and Visualization
+
+## Exercise 4: Attribute Tables and Selection
+
+### Working with Attributes
+1. Open attribute tables for vector layers
+2. Sort and filter data
+3. Calculate new fields using the field calculator
+
+### Selection Tools
+1. Select features by clicking
+2. Select by expression
+3. Select by location
+4. Invert and clear selections
+
+## Exercise 5: Symbology and Styling
+
+### Single Symbol Rendering
+1. Change layer colors and symbols
+2. Adjust symbol size and transparency
+3. Apply different marker types
+
+### Categorized Styling
+1. Create thematic maps based on attributes
+2. Use different classification methods
+3. Customize color schemes
+
+### Graduated Symbols
+1. Create choropleth maps
+2. Apply graduated symbol sizing
+3. Adjust classification breaks
+
+# Basic Spatial Analysis
+
+## Exercise 6: Measurement and Basic Tools
+
+### Measurement Tools
+1. Measure distances and areas
+2. Use the identify tool for feature information
+3. Create measurement layers
+
+### Basic Geoprocessing
+1. Create buffers around features
+2. Perform spatial joins
+3. Clip layers by extent
+
+## Exercise 7: Spatial Queries
+
+### Query Builder
+1. Build attribute queries
+2. Use SQL expressions
+3. Save and load queries
+
+### Spatial Relationships
+1. Select features by location
+2. Understand spatial predicates
+3. Combine spatial and attribute queries
+
+# Map Composition and Output
+
+## Exercise 8: Print Layout
+
+### Creating a Map Layout
+1. Open the Print Layout designer
+2. Add a map item to the layout
+3. Configure map extent and scale
+
+### Layout Elements
+1. Add title and text elements
+2. Insert legend and scale bar
+3. Add north arrow and grid
+4. Include data source information
+
+### Export Options
+1. Export as PDF
+2. Export as image (PNG, JPEG)
+3. Configure export settings
+
+# Advanced Features Preview
+
+## Exercise 9: Plugin Exploration
+
+### Plugin Manager
+1. Access the Plugin Manager
+2. Browse available plugins
+3. Install useful plugins for beginners
+
+### Processing Toolbox
+1. Open the Processing Toolbox
+2. Explore available algorithms
+3. Run a simple processing tool
+
+# Summary and Assessment
+
+## What You've Accomplished
+- Mastered QGIS interface navigation
+- Loaded and visualized spatial data
+- Applied styling and symbology
+- Performed basic spatial analysis
+- Created professional map layouts
+
+## Key QGIS Advantages
+- **Open Source**: Free and community-driven
+- **Cross-platform**: Works on Windows, Mac, Linux
+- **Extensible**: Rich plugin ecosystem
+- **Standards-compliant**: Supports OGC standards
+- **Active Development**: Regular updates and improvements
+
+## Next Steps
+In the next laboratory, you will explore:
+- Advanced geoprocessing workflows
+- Spatial analysis techniques
+- Database connectivity
+- Custom styling and expressions
+- Automation with Python scripting
+
+---
+
+## Resources
+
+- [QGIS Official Documentation](https://docs.qgis.org/)
+- [QGIS Training Manual](https://docs.qgis.org/3.28/en/docs/training_manual/)
+- [QGIS Tutorials and Tips](https://www.qgistutorials.com/)
+- [QGIS Community](https://qgis.org/en/site/getinvolved/index.html)
+
+## Troubleshooting Tips
+
+### Common Issues
+- **Data not displaying**: Check CRS compatibility
+- **Slow performance**: Reduce layer complexity or use spatial indexing
+- **Plugin errors**: Update QGIS and plugins to latest versions
+- **Export problems**: Check file permissions and disk space
+
+### Getting Help
+- QGIS documentation and help system
+- Community forums and mailing lists
+- Stack Exchange GIS community
+- Local GIS user groups
+
+## Submission Requirements
+
+Please submit the following:
+1. QGIS project file (.qgz format)
+2. Final map composition (PDF)
+3. Screenshots of key exercises
+4. Brief reflection on QGIS vs proprietary GIS software (1-2 paragraphs)
+
+**Due Date**: As specified by your instructor

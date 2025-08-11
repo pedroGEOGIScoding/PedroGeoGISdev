@@ -1,0 +1,254 @@
+---
+title: "JAR Creation Guide: Spring Boot Application Deployment"
+subtitle: Spring Boot JAR Creation and Deployment
+author: pedromartinezduran
+date: "2025-07-29"
+date-modified: last-modified
+date-format: full
+description: A comprehensive guide to creating runnable JAR files for Spring Boot applications with Maven
+categories: [devops, java, spring-boot, maven, deployment]
+toc: true
+number-sections: true
+format:
+  html
+---
+
+# Introduction to JAR File Creation
+
+> In modern Java development, creating **runnable JAR files** is essential for application deployment and distribution.
+
+A **JAR (Java ARchive)** file is like a shipping container for your Java application - everything needed to run your program is packaged together in one convenient file.
+
+## Key Benefits of JAR Deployment
+
+1. **Portability**: Run anywhere Java is installed
+2. **Self-contained**: All dependencies included
+3. **Simplified Deployment**: Single file deployment
+4. **Version Control**: Easy to manage application versions
+5. **Production Ready**: Optimized for production environments
+
+# Understanding JAR Types
+
+There are two main types of JAR files in Java development:
+
+## Regular JAR
+- Contains only your application code
+- Requires external dependencies to be available
+- Smaller file size
+- Suitable for library distribution
+
+## Fat JAR (Executable JAR)
+- Contains your code + all dependencies + embedded server
+- Also called "uber JAR" or "shaded JAR"
+- Self-contained and executable
+- **This is what we create for Spring Boot applications**
+
+# Spring Boot Application Deployment
+
+Spring Boot applications are particularly well-suited for JAR deployment due to their embedded server architecture.
+
+## Technology Stack Components
+
+### Spring Boot
+**Spring Boot** provides:
+- Pre-configured settings
+- Embedded web server (Tomcat)
+- Dependency management
+- Simplified deployment
+
+### Maven Build Tool
+**Maven** handles:
+- Dependency management
+- Code compilation
+- Test execution
+- JAR packaging
+
+### Vaadin Framework
+**Vaadin** enables:
+- Java-based web UI development
+- Production-optimized frontend builds
+- Component-based architecture
+
+# Build Process and Configuration
+
+## Maven Configuration Analysis
+
+The `pom.xml` file serves as Maven's "recipe book" for building the project:
+
+```xml
+<groupId>com.pedro.apps</groupId>
+<artifactId>world-renting-car</artifactId>
+<version>1.0-SNAPSHOT</version>
+<packaging>jar</packaging>
+```
+
+**Configuration breakdown:**
+- `groupId`: Organization identifier
+- `artifactId`: Application name
+- `version`: Current version (SNAPSHOT = development)
+- `packaging`: Output format (JAR)
+
+## Build Command Structure
+
+```bash
+JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64 ./mvnw clean package -Pproduction
+```
+
+**Command components:**
+- `JAVA_HOME`: Java installation path
+- `./mvnw`: Maven wrapper (portable Maven)
+- `clean`: Remove previous build artifacts
+- `package`: Compile and create JAR
+- `-Pproduction`: Use production profile
+
+# Common Issues and Solutions
+
+## Java Environment Configuration
+
+### Java Version Compatibility
+
+**Common Error:**
+```
+[ERROR] Fatal error compiling: error: release version 21 not supported
+```
+
+**Solution Steps:**
+
+1. **Verify Java Installation:**
+```bash
+java -version
+```
+
+2. **Set JAVA_HOME Environment Variable:**
+```bash
+export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+```
+
+3. **Verify Maven Configuration:**
+```bash
+./mvnw -version
+```
+
+### Environment Variable Importance
+
+**JAVA_HOME** is crucial because:
+- Maven is a Java program itself
+- It needs to compile Java code
+- It must know which Java version to use
+- Provides consistent build environment
+
+# Deployment and Execution
+
+## JAR File Characteristics
+
+| Property | Description |
+|----------|-------------|
+| **File Size** | ~68 MB (includes all dependencies) |
+| **Type** | Executable JAR (Fat JAR) |
+| **Dependencies** | All included |
+| **Server** | Embedded Tomcat |
+| **Frontend** | Production-optimized |
+
+## Execution Commands
+
+### Basic Execution
+```bash
+java -jar target/world-renting-car-1.0-SNAPSHOT.jar
+```
+
+### Custom Port Configuration
+```bash
+java -jar target/world-renting-car-1.0-SNAPSHOT.jar --server.port=9090
+```
+
+### Memory Optimization
+```bash
+java -Xmx1g -jar target/world-renting-car-1.0-SNAPSHOT.jar
+```
+
+# Popular Java Build Tools
+
+![](/images/devops/devops-java-build-tools.png){fig-align="center" width="70%"}
+
+Several tools are available for Java project builds:
+
+- **Maven**: [https://maven.apache.org](https://maven.apache.org)
+- **Gradle**: [https://gradle.org](https://gradle.org)
+- **SBT**: [https://www.scala-sbt.org](https://www.scala-sbt.org)
+- **Ant**: [https://ant.apache.org](https://ant.apache.org)
+
+> These tools demonstrate different approaches to Java project management and build automation.
+
+## Maven
+
+- **Purpose**: Dependency management and build automation
+- **Advantage**: Standardized project structure and lifecycle
+
+**Key Features:**
+- Declarative build configuration
+- Extensive plugin ecosystem
+- Repository-based dependency management
+- Multi-module project support
+
+## Gradle
+
+- **Specialty**: Flexible build automation
+- **Strength**: Groovy/Kotlin-based DSL
+
+**Key Features:**
+- Incremental builds for performance
+- Flexible project structure
+- Advanced dependency management
+- Build cache optimization
+
+## Spring Boot Maven Plugin
+
+The Spring Boot Maven plugin provides essential functionality:
+
+- **Executable JAR creation**: Packages application with dependencies
+- **Development tools**: Hot reload and debugging support
+- **Production optimization**: Minimized and optimized builds
+- **Docker integration**: Container-ready artifacts
+
+# Best Practices and Recommendations
+
+## Build Optimization
+
+1. **Use Production Profiles**: Enable optimizations for deployment
+2. **Dependency Management**: Keep dependencies up to date
+3. **Testing Integration**: Include comprehensive test suites
+4. **Environment Configuration**: Externalize configuration properties
+
+## Deployment Strategies
+
+1. **Environment Consistency**: Use same Java version across environments
+2. **Resource Management**: Configure appropriate memory settings
+3. **Monitoring**: Implement application health checks
+4. **Security**: Follow security best practices for production
+
+## Troubleshooting Guidelines
+
+### Build Issues
+- Clean build artifacts regularly
+- Verify Java environment configuration
+- Check dependency conflicts
+- Review Maven/Gradle logs
+
+### Runtime Issues
+- Monitor application logs
+- Verify port availability
+- Check resource utilization
+- Validate configuration properties
+
+# Conclusion
+
+Creating runnable JAR files for Spring Boot applications provides a robust deployment strategy that combines:
+
+- **Simplicity**: Single file deployment
+- **Portability**: Cross-platform compatibility
+- **Self-containment**: All dependencies included
+- **Production readiness**: Optimized for deployment
+
+This approach enables efficient application distribution and deployment across various environments while maintaining consistency and reliability.
+
+The combination of Spring Boot's embedded server architecture with Maven's build automation creates a powerful deployment pipeline suitable for modern DevOps practices.

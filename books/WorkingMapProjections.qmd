@@ -1,0 +1,40 @@
+---
+title: "Working with Map Projections"
+author: "Fritz C. Kessler and Sarah E. Battersby"
+subtitle: "A Guide to Their Selection and Use"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Practical guide to selecting and working with map projections"
+categories: [cartography]
+subcategories: [map-projections, gis, spatial-analysis]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/WorkingMapProjections.png){width="60%"}
+
+## More info
+
+This practical guide provides a hands-on approach to understanding and working with map projections, offering clear explanations and real-world examples for cartographers and GIS professionals.
+
+The book focuses on the practical aspects of selecting and using map projections, helping readers make informed decisions when working with spatial data. It's designed for cartographers, GIS analysts, geographers, and anyone who needs to work with mapped data across different coordinate reference systems.
+
+Key topics include:
+- Fundamentals of map projections and coordinate systems
+- Understanding distortion and its impact
+- Selecting appropriate projections for different purposes
+- Working with projections in GIS software
+- Reprojecting and transforming spatial data
+- Common projection families and their characteristics
+- Custom projections and parameters
+- Troubleshooting projection issues
+- Best practices for working with projections
+- Practical examples and exercises
+- Case studies from various applications
+
+## Book
+
+- [Book .pdf](/books/WorkingMapProjections.pdf){width="60%"}

@@ -1,0 +1,158 @@
+---
+title: "ArcGIS Pro Laboratory 1: Getting Started"
+subtitle: First Steps with ArcGIS Pro
+author: pedromartinezduran
+date: "2025-07-29"
+date-modified: last-modified
+date-format: full
+description: Introduction to ArcGIS Pro interface and basic operations
+categories: [gis, arcgis-pro, laboratory, beginner]
+toc: true
+number-sections: true
+format:
+  html
+---
+
+# Laboratory Overview
+
+This laboratory introduces you to the ArcGIS Pro interface and basic GIS operations. You will learn to navigate the software, create projects, and perform fundamental spatial analysis tasks.
+
+## Learning Objectives
+
+By the end of this laboratory, you will be able to:
+
+- Navigate the ArcGIS Pro interface
+- Create and manage ArcGIS Pro projects
+- Add and display spatial data
+- Use basic geoprocessing tools
+- Create simple maps and layouts
+
+## Prerequisites
+
+- ArcGIS Pro installed on your system
+- Basic understanding of GIS concepts
+- Sample datasets (provided)
+
+# Getting Started
+
+## Exercise 1: Creating Your First Project
+
+### Step 1: Launch ArcGIS Pro
+1. Open ArcGIS Pro from the Start menu
+2. Sign in with your ArcGIS Online account
+3. Choose "Create a new project"
+
+### Step 2: Project Setup
+1. Select "Map" template
+2. Name your project: "Lab1_YourName"
+3. Choose an appropriate location to save your project
+4. Click "OK" to create the project
+
+## Exercise 2: Interface Exploration
+
+### The ArcGIS Pro Interface
+Familiarize yourself with the main components:
+
+- **Ribbon**: Contains tools organized by function
+- **Contents Pane**: Shows layers in your map
+- **Map View**: Displays your spatial data
+- **Catalog Pane**: Manages project resources
+
+### Navigation Tools
+Practice using these essential tools:
+- Pan and zoom
+- Full extent
+- Bookmarks
+- Measure tool
+
+# Data Management
+
+## Exercise 3: Adding Data
+
+### Adding Vector Data
+1. Use the "Add Data" button
+2. Navigate to the sample datasets folder
+3. Add the following layers:
+   - Administrative boundaries
+   - Roads network
+   - Points of interest
+
+### Adding Raster Data
+1. Add a satellite image or elevation model
+2. Explore different display options
+3. Adjust transparency and symbology
+
+# Basic Analysis
+
+## Exercise 4: Symbology and Labeling
+
+### Changing Symbology
+1. Right-click on a layer in Contents
+2. Select "Symbology"
+3. Experiment with different classification methods
+4. Apply appropriate colors and symbols
+
+### Adding Labels
+1. Enable labels for the roads layer
+2. Configure label properties
+3. Resolve label conflicts
+
+## Exercise 5: Simple Geoprocessing
+
+### Buffer Analysis
+1. Create buffers around points of interest
+2. Set appropriate buffer distances
+3. Analyze the results
+
+### Spatial Selection
+1. Select features by location
+2. Select features by attributes
+3. Export selected features
+
+# Map Production
+
+## Exercise 6: Creating a Layout
+
+### Layout Setup
+1. Create a new layout
+2. Add a map frame
+3. Insert title and legend
+4. Add scale bar and north arrow
+
+### Final Map
+1. Adjust map extent and scale
+2. Fine-tune layout elements
+3. Export as PDF
+
+# Summary and Next Steps
+
+## What You've Learned
+- ArcGIS Pro interface navigation
+- Project creation and management
+- Data visualization techniques
+- Basic spatial analysis operations
+- Map layout and production
+
+## Next Laboratory
+In the next laboratory, you will explore:
+- Advanced geoprocessing tools
+- Spatial analysis workflows
+- 3D visualization capabilities
+- Model Builder introduction
+
+---
+
+## Resources
+
+- [ArcGIS Pro Documentation](https://pro.arcgis.com/en/pro-app/)
+- [Esri Training Catalog](https://www.esri.com/training/)
+- [Learn ArcGIS Lessons](https://learn.arcgis.com/)
+
+## Submission Requirements
+
+Submit the following deliverables:
+1. Completed ArcGIS Pro project file
+2. Final map layout (PDF format)
+3. Brief reflection on the exercises (1-2 paragraphs)
+
+**Due Date**: As specified by your instructor

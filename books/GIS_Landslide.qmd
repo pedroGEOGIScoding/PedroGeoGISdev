@@ -1,0 +1,41 @@
+---
+title: "GIS Landslide"
+author: "Editors: Hiromitsu Yamagishi and Netra Prakash Bhandary"
+subtitle: "Spatial Analysis and Risk Assessment of Landslide Hazards"
+date: "2025-08-04"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to using GIS for landslide hazard assessment and risk management"
+categories: [gis, geology]
+subcategories: [natural hazards, risk assessment, spatial analysis]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/GIS_Landslide.png){width="60%"}
+
+## More info
+
+This essential resource provides a detailed exploration of Geographic Information Systems (GIS) applications in landslide hazard assessment and risk management. The book offers a systematic approach to understanding, analyzing, and mitigating landslide risks using geospatial technologies.
+
+Designed for geologists, geotechnical engineers, and disaster management professionals, this book combines theoretical foundations with practical case studies, demonstrating how GIS can be effectively used for landslide susceptibility mapping, hazard assessment, and risk mitigation planning.
+
+Key topics include:
+- Fundamentals of landslide processes and mechanisms
+- Spatial data collection and analysis for landslide studies
+- Terrain analysis and slope stability assessment
+- Landslide susceptibility and hazard mapping techniques
+- Remote sensing applications in landslide detection
+- Multi-criteria decision analysis for risk assessment
+- Early warning systems and risk communication
+- Case studies from different geological settings
+- Integration of GIS with numerical modeling
+- Climate change impacts on landslide hazards
+- Best practices in landslide risk management
+- Policy and planning for landslide-prone areas
+
+## Book
+
+- [Book .pdf](/books/GIS_Landslide.pdf){width="60%"}

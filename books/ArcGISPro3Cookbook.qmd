@@ -1,0 +1,38 @@
+---
+title: "ArcGIS Pro 3 Cookbook"
+author: "Tripp Corbin"
+subtitle: "Practical Recipes for ArcGIS Pro 3 Development and Analysis"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive cookbook with practical recipes for ArcGIS Pro 3 workflows and development"
+categories: [gis]
+subcategories: [arcgis pro]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/ArcGISPro3Cookbook.png){width="60%"}
+
+## More info
+
+This comprehensive cookbook provides practical recipes and step-by-step solutions for working with ArcGIS Pro 3, covering everything from basic workflows to advanced spatial analysis and automation techniques.
+
+The book offers hands-on recipes for common GIS tasks, spatial analysis workflows, data management, cartographic production, and Python scripting with ArcPy. It's designed for GIS professionals, analysts, developers, and students who want to maximize their productivity with ArcGIS Pro 3 through practical, real-world examples.
+
+Key topics include:
+- Essential ArcGIS Pro 3 workflows and tools
+- Spatial analysis and geoprocessing techniques
+- Data management and geodatabase operations
+- Advanced cartographic design and map production
+- Python scripting and automation with ArcPy
+- Model Builder and workflow automation
+- 3D analysis and visualization techniques
+- Integration with ArcGIS Online and Enterprise
+- Performance optimization and best practices
+
+## Book
+
+- [Book .pdf](/books/ArcGISPro3Cookbook.pdf){width="60%"}

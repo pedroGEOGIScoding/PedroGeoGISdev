@@ -1,0 +1,40 @@
+---
+title: "Spatial Database Systems"
+author: "Albert K. W. Yeung and G. Brent Hall"
+subtitle: "Design, Implementation and Project Management"
+date: "2025-08-04"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to the design and implementation of spatial database systems"
+categories: [gis, databases]
+subcategories: [spatial databases, data management, gis programming]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/SpatialDatabaseSystems.png){width="60%"}
+
+## More info
+
+This comprehensive textbook provides an in-depth examination of spatial database systems, covering both theoretical foundations and practical implementation aspects. It serves as an essential resource for database professionals, GIS specialists, and students seeking to understand how to effectively manage and analyze spatial data.
+
+The book offers a systematic approach to spatial database design, implementation, and management, with a strong emphasis on real-world applications and performance considerations.
+
+Key topics include:
+- Fundamentals of spatial data management
+- Spatial data models and structures
+- Query languages for spatial data
+- Spatial indexing and access methods
+- Spatial data warehousing and mining
+- Distributed spatial databases
+- Performance optimization
+- Spatial data standards
+- Open source and commercial systems
+- Case studies and applications
+- Future trends in spatial databases
+
+## Book
+
+- [Book .pdf](/books/SpatialDatabaseSystems.pdf){width="60%"}

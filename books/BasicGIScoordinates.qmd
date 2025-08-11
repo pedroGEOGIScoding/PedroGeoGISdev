@@ -1,0 +1,39 @@
+---
+title: "Basic GIS Coordinates"
+author: "Jan Van Sickle"
+subtitle: "Fundamentals of Coordinate Systems in GIS"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Essential guide to understanding coordinate systems and spatial reference systems in GIS"
+categories: [gis]
+subcategories: [coordinates, cartography]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/BasicGIScoordinates.png){width="60%"}
+
+## More info
+
+This essential guide provides fundamental knowledge about coordinate systems and spatial reference systems, crucial concepts for anyone working with geographic information systems and spatial data.
+
+The book covers the mathematical foundations of coordinate systems, geodetic datums, map projections, and their practical applications in GIS workflows. It's designed for GIS students, professionals, surveyors, and anyone who needs to understand how spatial data is positioned and referenced on Earth's surface.
+
+Key topics include:
+- Fundamentals of coordinate systems and reference frames
+- Geographic vs. projected coordinate systems
+- Understanding latitude, longitude, and grid coordinates
+- Geodetic datums and ellipsoids
+- Common coordinate systems (UTM, State Plane, etc.)
+- Coordinate transformations and conversions
+- Practical applications in GIS software
+- Best practices for coordinate system selection
+- Troubleshooting coordinate system issues
+- Integration with GPS and surveying data
+
+## Book
+
+- [Book .pdf](/books/BasicGIScoordinates.pdf){width="60%"}

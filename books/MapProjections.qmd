@@ -1,0 +1,39 @@
+---
+title: "Map Projections"
+author: "Frederik Pearson II"
+subtitle: "Cartographic Information Systems"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive mathematical treatment of map projections and their applications"
+categories: [gis]
+subcategories: [cartography, projections, mathematics]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/MapProjections.png){width="60%"}
+
+## More info
+
+This comprehensive reference provides a rigorous mathematical treatment of map projections, offering both theoretical foundations and practical applications in cartography and geographic information systems.
+
+The book presents a systematic approach to understanding map projections, their mathematical properties, and their implementation in modern cartographic systems. It's designed for cartographers, geodesists, GIS professionals, and researchers who require an in-depth understanding of the mathematical principles behind map projections.
+
+Key topics include:
+- Mathematical foundations of map projections
+- Classification of projection types and their properties
+- Distortion analysis and optimization
+- Computational aspects of projection transformations
+- Implementation in GIS and cartographic software
+- Special projections for specific applications
+- Historical development of map projections
+- Advanced topics in projection mathematics
+- Practical examples and case studies
+- Software implementation considerations
+
+## Book
+
+- [Book .pdf](/books/MapProjections.pdf){width="60%"}

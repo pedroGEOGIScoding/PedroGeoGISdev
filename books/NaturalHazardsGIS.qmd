@@ -1,0 +1,40 @@
+---
+title: "Natural Hazards GIS-Based Spatial Modeling Using Data Mining Techniques"
+author: "Editors: Hamid Reza Pourghasemi and Mauro Rossi"
+date: "2025-08-04"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to using GIS for natural hazard assessment and risk management"
+categories: [gis, geology]
+subcategories: [natural hazards, risk assessment, disaster management]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/NaturalHazardsGIS.png){width="60%"}
+
+## More info
+
+This essential guide demonstrates how geographic information systems (GIS) can be effectively used to assess, analyze, and mitigate natural hazards. The book provides emergency managers, planners, and researchers with the tools and knowledge needed to understand and reduce vulnerability to natural disasters through spatial analysis.
+
+Combining theoretical foundations with practical applications, it covers a wide range of natural hazards including floods, earthquakes, wildfires, landslides, and extreme weather events, with case studies from around the world.
+
+Key topics include:
+- Fundamentals of hazard assessment using GIS
+- Spatial data collection and management for hazard analysis
+- Vulnerability and risk mapping
+- Multi-hazard assessment approaches
+- Climate change and hazard interactions
+- Emergency response and evacuation planning
+- Community resilience and adaptation strategies
+- Remote sensing for hazard monitoring
+- Decision support systems for disaster management
+- Case studies of major hazard events
+- Best practices in hazard mitigation
+- Future trends in hazard analysis
+
+## Book
+
+- [Book .pdf](/books/NaturalHazardsGIS.pdf){width="60%"}

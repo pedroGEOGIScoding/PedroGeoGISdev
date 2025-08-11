@@ -1,0 +1,41 @@
+---
+title: "Remote Sensing of Geomorphology"
+author: "Paolo Tarolli and Simon M. Mudd"
+subtitle: "Advances in Earth Observation and Geospatial Analysis"
+date: "2025-08-04"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to remote sensing applications in geomorphological studies"
+categories: [gis, geology]
+subcategories: [remote sensing, geomorphology, earth observation]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/RemoteSensingGeomorphology.png){width="60%"}
+
+## More info
+
+This comprehensive volume explores the latest advances in remote sensing technologies and their applications in geomorphological research. The book provides geoscientists, geomorphologists, and environmental scientists with cutting-edge techniques for analyzing Earth's surface processes and landforms using remote sensing data.
+
+Bridging the gap between theory and application, it covers a wide range of remote sensing platforms and sensors, from satellite imagery to LiDAR and UAV-based systems, with a focus on practical implementation and case studies.
+
+Key topics include:
+- Principles of remote sensing in geomorphology
+- Digital elevation models and terrain analysis
+- Multi-spectral and hyper-spectral remote sensing
+- LiDAR and photogrammetric techniques
+- Erosion and sediment transport monitoring
+- Glacial and periglacial geomorphology
+- Fluvial and coastal processes
+- Tectonic geomorphology and neotectonics
+- Volcanic and karst landforms
+- Anthropogenic impacts on landscapes
+- Climate change and landscape evolution
+- Emerging technologies and future directions
+
+## Book
+
+- [Book .pdf](/books/RemoteSensingGeomorphology.pdf){width="60%"}

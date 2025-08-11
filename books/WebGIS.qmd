@@ -1,0 +1,41 @@
+---
+title: "WebGIS"
+author: "Pinde Fu"
+subtitle: "Principles and Applications"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to WebGIS technologies and applications"
+categories: [gis]
+subcategories: [webgis, web-mapping, geospatial-technology]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/WebGIS.png){width="60%"}
+
+## More info
+
+This comprehensive guide explores the principles, technologies, and applications of WebGIS, providing both theoretical foundations and practical implementation strategies.
+
+The book offers a systematic approach to understanding and developing WebGIS applications, covering the full spectrum from basic concepts to advanced techniques. It's designed for GIS professionals, web developers, and students who want to master the art of delivering geographic information through web technologies.
+
+Key topics include:
+- Fundamentals of WebGIS architecture
+- Web mapping technologies and standards
+- Client-side and server-side GIS technologies
+- WebGIS application development frameworks
+- Mobile GIS and location-based services
+- Cloud computing and WebGIS
+- Big data and real-time WebGIS
+- Security and performance optimization
+- Case studies of successful WebGIS implementations
+- Emerging trends and future directions
+- Best practices in WebGIS development
+- Integration with other web technologies
+
+## Book
+
+- [Book .pdf](/books/WebGIS.pdf){width="60%"}

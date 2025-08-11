@@ -1,0 +1,425 @@
+---
+title: "Online Resources"
+date: "2025-08-07"
+date-modified: last-modified
+date-format: full
+description: Online Resources
+format: html
+---
+
+## Bookmarks Collection
+
+This document contains relevant links to web resources organized by categories.
+
+### GIS & Geospatial Data
+
+| Website Title | URL |
+|---------------|-----|
+| 10 Free GIS Data Sources | <http://gisgeography.com/best-free-gis-data-sources-raster-vector/> |
+| 25 funciones de PostGIS | <http://www.geomapik.com/analisis-gis/postgis-analisis-espacial-funciones/> |
+| A Global Map of Human Impacts to Marine Ecosystems | <https://www.nceas.ucsb.edu/globalmarine> |
+| Add a Google map to a React app | <https://developers.google.com/codelabs/maps-platform/maps-platform-101-react-js#0> |
+| AlbertProfe’s gists | <https://gist.github.com/AlbertProfe/> |
+| Alfred-Wegener-Institut DATA | <https://www.awi.de/en/science/geosciences/permafrost-research/data.html> |
+| ALOS Homepage DEM | <https://www.eorc.jaxa.jp/ALOS/en/index_e.htm> |
+| AlphaEarth Foundations - Google DeepMind | <https://deepmind.google/discover/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/> |
+| ANSS Composite Catalog Search | <http://www.quake.geo.berkeley.edu/anss/catalog-search.html> |
+| ArcGIS StoryMaps | <https://storymaps.arcgis.com/stories> |
+| Atlas of sediments and sedimentary structures | <http://www.geological-digressions.com/?page_id=2658> |
+| CARTO Academy | <https://academy.carto.com/> |
+| Centro de Descargas del CNIG (IGN) | <http://centrodedescargas.cnig.es/CentroDescargas/index.jsp> |
+| CGS Europe | <http://www.cgseurope.net/> |
+| CO2 storage British Geological Survey (BGS) | <https://www.bgs.ac.uk/research/energy/ccs/home.html> |
+| CO2 storage Sleipner | <https://www.bgs.ac.uk/science/CO2/home.html> |
+| Colour maps | <https://www.fabiocrameri.ch/colourmaps/> |
+| Compare Map Projections | <https://map-projections.net/index.php> |
+| Consejo Superior Geográfico | <https://www.idee.es/> |
+| Convert Coordinates | <https://www.earthpoint.us/Convert.aspx> |
+| Copernicus Land Monitoring Service | <https://land.copernicus.eu/> |
+| Datasets — European Environment Agency | <https://www.eea.europa.eu/data-and-maps/data#c0=5&c11=&c5=all&b_start=0> |
+| Descargar aplicaciones – GeoGebra | <https://www.geogebra.org/download?lang=es-ES> |
+| Developer Roadmaps | <https://roadmap.sh/> |
+| dinosaurpictures.org | <https://dinosaurpictures.org/ancient-earth#90> |
+| Draw focal mechanism beach balls as arcgis shapefile | <http://www.arcgis.com/home/item.html?id=380b8f93cd684dbea56083218a3b2f43> |
+| Earth AI | <http://www.earth-ai.com/#/home> |
+| EarthByte | <http://www.earthbyte.org/> |
+| EarthExplorer | <http://earthexplorer.usgs.gov/> |
+| EDGAR - The Emissions Database for Global Atmospheric Research | <https://edgar.jrc.ec.europa.eu/emissions_data_and_maps> |
+| EfrainMaps - Geografía, SIG y Cartografía Digital | <https://www.efrainmaps.es/> |
+| EMODnet Geology | <https://www.emodnet-geology.eu/> |
+| EOC Geoservice Data Guide | <https://geoservice.dlr.de/web/dataguide/tdm90/> |
+| EPSG Geodetic Parameter Dataset | <https://epsg.org/home.html> |
+| EPSG Geodetic Parameter Registry | <https://www.epsg-registry.org/> |
+| ETOPO Grid Extract | <http://maps.ngdc.noaa.gov/viewers/wcs-client/> |
+| FactMaps MapServer | <https://factmaps.npd.no/arcgis/rest/services/FactMaps/3_0/MapServer> |
+| FAO Map Catalog | <https://data.apps.fao.org/map/catalog/srv/eng/catalog.search?id=37139&currTab=distribution#/home> |
+| FINEPRINT Geovisualisations | <https://www.fineprint.global/visualisations/viewer/> |
+| Free GIS Datasets | <https://freegisdata.rtwilson.com/> |
+| Gateway to Astronaut Photography of Earth | <http://eol.jsc.nasa.gov/> |
+| Geoawesomeness | <http://geoawesomeness.com/all-map-projections-in-compared-and-visualized/> |
+| GEODE Atlas | <https://www.geodeatlas.nl/> |
+| Geodesy NOAA Software | <https://geodesy.noaa.gov/PC_PROD/index.shtml> |
+| GeoERA | <https://geoera.eu/> |
+| Geoexpro | <http://www.geoexpro.com/> |
+| Geofacets | <http://www.info.geofacets.com/> |
+| Geological Digressions | <https://www.geological-digressions.com/> |
+| Geological Maps USGS Shapefiles | <https://certmapper.cr.usgs.gov/data/apps/world-maps/> |
+| Geology Animations | <http://www.wwnorton.com/earth/> |
+| Geology.com | <http://geology.com/> |
+| GeoMapApp | <http://www.geomapapp.org/> |
+| Geomatics Committee | <http://www.epsg.org/> |
+| GeoNe.ws links archive | <https://links.geone.ws/?nolimit=1> |
+| geoplay | <http://www.geoplay.org/> |
+| GeoPortal | <https://sig.mapama.gob.es/geoportal/> |
+| Geoscience Australia | <http://www.ga.gov.au/home> |
+| Geoscience Australia | <https://ecat.ga.gov.au/geonetwork/srv/eng/catalog.search#/search> |
+| Geoscience Australia | <http://www.ga.gov.au/data-pubs/library/legacy-publications/records> |
+| Geoscience Australia: Petroleum Wells Database | <http://dbforms.ga.gov.au/www/npm.well.search> |
+| GeoScienceWorld | <https://pubs.geoscienceworld.org/> |
+| Geotrans Online | <http://www.geotrans-online.de/> |
+| GIS & IT Tools | <https://gisittools.com/index.php> |
+| GIS and Earth Observation University | <https://www.geo.university/collections?page=5> |
+| GIS tools from ET SpatialTechniques | <https://www.ian-ko.com/> |
+| GISCI Home | <https://www.gisci.org/Home.aspx> |
+| GitHub - Open Geoscience Software | <https://github.com/softwareunderground/awesome-open-geoscience#structural-geology> |
+| Global CCS Map | <https://www.sccs.org.uk/expertise/global-ccs-map> |
+| Global datasets - GRASS-Wiki | <https://grasswiki.osgeo.org/wiki/Global_datasets> |
+| Global Paleogeography | <http://jan.ucc.nau.edu/rcb7/globaltext2.html> |
+| Global Tectonics - On-Line Data and Software Tools | <http://www.serg.unicam.it/Geo.html> |
+| GOCE - Earth Online | <https://earth.esa.int/web/guest/missions/esa-operational-eo-missions/goce> |
+| google-maps-react - npm | <https://www.npmjs.com/package/google-maps-react> |
+| GSA Publications - Data Repository | <http://www.geosociety.org/datarepository/2014/> |
+| Home - Spring Academy | <https://spring.academy/> |
+| HYDROCARBON WELL INDEX OF SPAIN | <http://www6.mityc.es/aplicaciones/energia/hidrocarburos/petroleo/exploracion2011/mapas/inicio.html> |
+| IDE - Catálogo de metadatos | <https://www.mapama.gob.es/ide/metadatos/> |
+| IGP UNIL - Earth dynamics | <http://www.unil.ch/igp/page76652_en.html> |
+| InfoIGME - Proyecto ALGECO2 | <http://info.igme.es/geologiasubsuelo/AlmacenamientoCO2/Algeco2.aspx> |
+| Institute for Geophysics | <http://www-udc.ig.utexas.edu/external/plates/data.htm> |
+| Instituto de Estadística y Cartografía | <https://www.juntadeandalucia.es/institutodeestadisticaycartografia/lineav2/web/> |
+| Instituto Geográfico Nacional | <http://www.ign.es/ign/es/IGN/home.jsp> |
+| IRIS Earthquake Browser | <http://www.iris.edu/ieb/#/index.html?format=text&nodata=404&starttime=1970-01-01&endtime=2025-01-01&minmag=0&maxmag=10&mindepth=0&maxdepth=900&orderby=time-desc&limit=200&maxlat=89.29&minlat=-89.29&maxlon=180.00&minlon=-180.00&zm=1&mt=ter> |
+| kepler.gl | <https://kepler.gl/> |
+| Land Viewer EOS | <https://eos.com/landviewer/?lat=-5.72531&lng=135.48340&z=5&s=Modis&id=MCD43A4.A2018118.h30v09.006.2018129235644&b=Red,Green,Blue&ir=10,648,60,774,95,494#%2F> |
+| Mapa de cultivos y aprovechamientos de España | <https://www.mapa.gob.es/es/agricultura/temas/sistema-de-informacion-geografica-de-datos-agrarios/mca.aspx> |
+| Marine Geoscience Data System | <http://www.marine-geo.org/> |
+| Mars maps | <http://www.mars.asu.edu/> |
+| Master React | <https://master-react.georgemoller.com/> |
+| National Geophysical Data Center (NGDC) | <http://www.ngdc.noaa.gov/> |
+| Oil and Gas Authority | <https://data-ogauthority.opendata.arcgis.com/> |
+| OneGeology Portal | <https://portal.onegeology.org/OnegeologyGlobal/> |
+| OpenDEM | <https://opendem.info/index.html> |
+| OpenGHGMap Downloads | <https://openghgmap.net/data/> |
+| QGIS Training Manual | <https://docs.qgis.org/3.16/en/docs/training_manual/index.html> |
+| Relief Map | <https://maps-for-free.com/> |
+| Remote Sensing of Dynamic Permafrost Regions | <https://www.mdpi.com/journal/remotesensing/special_issues/Dynamic_Permafrost> |
+| Remote Sensing Phenology | <https://www.usgs.gov/core-science-systems/eros/phenology> |
+| RESOURCE map viewer – GeoERA | <https://geoera.eu/projects/resource9/resource-map-viewer/> |
+| Satellite Geodesy | <http://topex.ucsd.edu/index.html> |
+| Search Earthquake Archives | <http://earthquake.usgs.gov/earthquakes/search/> |
+| Seismic Atlas of SE Asian Basins | <http://geoseismic-seasia.blogspot.sk/> |
+| SEISMIC Marine Geoscience Data System Search | <https://www.marine-geo.org/tools/new_search/search_map.php?&a=1&output_info_all=off> |
+| Shuttle Radar Topography Mission | <http://www2.jpl.nasa.gov/srtm/> |
+| Spatial Data (SQL Server) | <https://docs.microsoft.com/en-us/sql/relational-databases/spatial/spatial-data-sql-server?view=sql-server-ver15> |
+| Spheres, Cones and Cylinders – Circles and Pi – Mathigon | <https://mathigon.org/course/circles/spheres-cones-cylinders#sphere-maps> |
+| Stratigraphic Unit Search Geoscience Australia | <http://dbforms.ga.gov.au/pls/www/geodx.strat_units.int> |
+| TatukGIS - Geographic Information Systems | <http://www.tatukgis.com/> |
+| Teaching resources in structural geology | <http://www.see.leeds.ac.uk/structure/learnstructure/> |
+| The EU CO2 GeoCapacity Project | <http://www.geology.cz/geocapacity> |
+| TRAINING PostGIS | <https://postgis.net/workshops/postgis-intro/> |
+| Tree Detection - Overview | <https://www.arcgis.com/home/item.html?id=4af356858b1044908d9204f8b79ced99> |
+| Udemy | <https://www.udemy.com/> |
+| University Texas Theses | <https://repositories.lib.utexas.edu/handle/2152/11/browse?type=department&value=Geological+Sciences> |
+| UTM: Projection Coordinates | <http://geokov.com/education/utm.aspx> |
+| WebGIS Development Mastery | <https://www.skool.com/webgis/about> |
+| World Magnetic Model | <http://www.ngdc.noaa.gov/geomag/WMM/DoDWMM.shtml> |
+| World Stress Map | <http://dc-app3-14.gfz-potsdam.de/pub/introduction/introduction_frame.html> |
+
+### Environmental & Climate Data
+
+| Website Title | URL |
+|---------------|-----|
+| Atmosphere Framework | <https://www.async-io.org/tutorial.html> |
+| Carbon Capture | Center for Climate and Energy Solutions | <https://www.c2es.org/content/carbon-capture/> |
+| Carbon Capture and Sequestration Technologies | <https://sequestration.mit.edu/tools/projects/index.html> |
+| Carbon Capture and Storage Database | <https://www.netl.doe.gov/coal/carbon-storage/worldwide-ccs-database> |
+| Carbon Capture Storage | Shell | <https://www.shell.com/sustainability/environment/climate-change/carbon-capture-and-storage-projects.html> |
+| Carbon Dioxide Information Analysis Center (CDIAC) | <https://cdiac.ess-dive.lbl.gov/> |
+| Carbon Pricing Dashboard | <https://carbonpricingdashboard.worldbank.org/> |
+| Carbon Storage Program | netl.doe.gov | <https://www.netl.doe.gov/coal/carbon-storage> |
+| Carbonate Atlas | <https://carbonateworld.com/> |
+| Carbonate petrology | <http://www.sepmstrata.org/caco3-petrology.html> |
+| Carbonate Reservoirs, Schlumberger | <http://www.slb.com/carbonates.aspx> |
+| Climate Copernicus Data | <https://cds.climate.copernicus.eu/#!/home> |
+| Climate TRACE | <https://climatetrace.org/> |
+| CO2 injector simulation toll RHUL | <http://nm2.rhul.ac.uk/CO2Inject.html> |
+| CO2 Monitoring Selection Tool | <https://iea.bgs.ac.uk/production/#> |
+| CO2 Stored Subscription | <http://www.co2stored.co.uk/home/about_subscription> |
+| CO2Care | <http://www.co2care.org/> |
+| CO2CRC Australia | <http://www.co2crc.com.au/> |
+| CO2RE - Global CCS Institute | <https://co2re.co/> |
+| Copernicus Atmosphere Monitoring Service Training | <https://ecmwf-projects.github.io/copernicus-training-cams/intro.html> |
+| Toolbox for Efficient Control of CO2 Storage | <https://www.bgs.ac.uk/DiSECCS/> |
+| EUROPA - European CO2 storage database | <https://setis.ec.europa.eu/european-co2-storage-database> |
+| Explore the World's Protected Areas | <https://www.protectedplanet.net/en> |
+| GCP - Carbon Budget | <https://www.globalcarbonproject.org/carbonbudget/19/presentation.htm> |
+| Global Climate Monitor | <https://www.globalclimatemonitor.org/#> |
+| Global Historical Climatology Network monthly (GHCNm) | <https://www.ncei.noaa.gov/products/land-based-station/global-historical-climatology-network-monthly> |
+| Global Precipitation Climatology Centre (GPCC) | <https://www.dwd.de/EN/ourservices/gpcc/gpcc.html> |
+| Global Wind Atlas | <https://globalwindatlas.info/> |
+| Home European Climate Assessment & Dataset | <https://eca.knmi.nl/> |
+| Information about Australia's coast | <http://www.ozcoasts.gov.au/index.jsp> |
+| INSPIRE Knowledge base - European Commission | <https://knowledge-base.inspire.ec.europa.eu/index_en> |
+| Köppen-Geiger climate classification | <http://koeppen-geiger.vu-wien.ac.at/> |
+| MiReCOL | <https://www.mirecol-co2.eu/> |
+| Odiac - Fossil fuel CO2 emission data product | <https://odiac.org/index.html> |
+| Oil and Gas Climate Initiative | <https://oilandgasclimateinitiative.com/about-us/> |
+| Oxy Low Carbon Ventures | <https://www.oxy.com/OurBusinesses/OxyLowCarbonVentures/Pages/default.aspx> |
+| Portal PTECO2 | <http://www.pteco2.es/> |
+| PTECO2 | <https://www.pteco2.es/es> |
+| Scottish Carbon Capture & Storage | <https://www.sccs.org.uk/> |
+| Servicios Climáticos - LCSC | <https://lcsc.csic.es/es/products/> |
+| Sleipner 4D Seismic Dataset | <https://co2datashare.org/dataset/sleipner-4d-seismic-dataset> |
+| Smeaheia Dataset | <https://co2datashare.org/dataset/smeaheia-dataset> |
+| SPREAD (Spanish PREcipitation At Daily scale) \[Dataset\] | DIGITAL.CSIC | <https://digital.csic.es/handle/10261/141218> |
+| Stage 2C – CO2CRC | <https://co2crc.com.au/co2research/stage-2c/> |
+
+### Geology & Earth Science
+
+| Website Title | URL |
+|---------------|-----|
+| ALIGN-CCUS | <http://alignccus.eu/> |
+| Archivo Técnico de Hidrocarburos | <http://hidrocarburos.mityc.es/ath/> |
+| ARSET - NASA Applied Science | <https://appliedsciences.nasa.gov/join-mission/training/english/arset-fundamentals-remote-sensing> |
+| Asociación Española del Hidrógeno | <http://www.aeh2.org/> |
+| AWI - Alfred-Wegener-Institut | <https://www.awi.de/en/focus/permafrost.html> |
+| Basin Analysis exe | <http://www.blackwellpublishing.com/allen/> |
+| EHEC2020 -Event | <http://www.ehec.info/> |
+| Energy-pedia | <http://www.energy-pedia.com/> |
+| European Workshop on Underground Energy Storage. Presentations | <http://www.energnet.eu/ewues-presentations> |
+| European-Mediterranean Regional Centroid Moment Tensors | <http://rcmt2.bo.ingv.it/> |
+| Foraminifera Gallery | <http://www.foraminifera.eu/> |
+| General Bathymetric Chart of the Oceans | <http://www.gebco.net/> |
+| Global CCS Institute | <https://www.globalccsinstitute.com/> |
+| Global Seismic Hazard | <http://www.seismo.ethz.ch/static/GSHAP/> |
+| Global Seismic Library | <https://www.globalseismiclibrary.com/> |
+| Global Volcanism Program | <http://volcano.si.edu/> |
+| GoldSpot Discoveries | <https://goldspot.ca/> |
+| GPlates Portal | <http://portal.gplates.org/> |
+| Home | UKCCSRC | <https://ukccsrc.ac.uk/> |
+| International Energy Agency webstore | <https://webstore.iea.org/> |
+| International Seismological Centre | <http://www.isc.ac.uk/> |
+| IRIS - Incorporated Research Institutions for Seismology | <http://www.iris.edu/hq/> |
+| Mantle Plumes | <http://www.mantleplumes.org/> |
+| NOPIMS | <https://www.nopims.gov.au/dp/controller/PLEASE_LOGIN_PAGE> |
+| Northern Lights | <https://northernlightsccs.eu/en> |
+| Norwegian CCS Research Centre | <https://www.sintef.no/projectweb/nccs/> |
+| NPC CCUS Cost Assessment | <https://www.gaffneycline.com/calculator/npc-ccus-cost-assessment-calculator> |
+| Ocean Data View | <https://odv.awi.de/> |
+| Ocean Prediction Center - Global and Regional Ocean Model Currents | <http://www.opc.ncep.noaa.gov/Current_fcasts.shtml> |
+| ODSN-Main page | <http://www.odsn.de/> |
+| OpendTect: Free Open source Seismic Interpretation Software System | <http://www.opendtect.org/> |
+| OreFox | <https://www.orefox.com/> |
+| Paleomao project | <http://www.scotese.com/Default.htm> |
+| Plate Tectonic Modeling | <http://www.serg.unicam.it/Tutorial.html> |
+| Plate tectonics Book | <http://lg.eage.org/free/00040/index.htm> |
+| SARIG South Australia Seismic Datasets | <https://www.energymining.sa.gov.au/minerals/knowledge_centre/mesa_journal/sarig> |
+| Schlumberger Oilfield Glossary | <http://www.glossary.oilfield.slb.com/> |
+| Incorporated Research Institutions for Seismology | <https://www.iris.edu/hq/inclass/search#type[]=4&language[]=1> |
+| SEG Wiki | <http://wiki.seg.org/wiki/Main_Page> |
+| SeismicPortal - Web services | <https://www.seismicportal.eu/webservices.html> |
+| SEPM Sequence Stratigraphy | <http://www.sepmstrata.org/> |
+| Shakemovie Global Princeton | <http://global.shakemovie.princeton.edu/home.jsp> |
+| Steronet Web | <https://estereo.reyuntec.ar/> |
+| Time Scale Creator | <https://engineering.purdue.edu/Stratigraphy/tscreator/index/index.php> |
+| UK school seismology | <http://www.bgs.ac.uk/schoolseismology/schoolSeismology.cfc?method=viewLatestQuake> |
+| UK-China (Guangdong) CCUS Centre | <http://www.gdccus.org/en/> |
+| Virtual Seismic Atlas | <http://seismicatlas.org/> |
+| Welcome to Strategy CCUS | Strategy CCUS | <https://www.strategyccus.eu/> |
+| World Ocean Database 2005 | <https://www.nodc.noaa.gov/OC5/WOA05/pubwoa05.html> |
+| www.sedlog.com | <http://www.sedlog.com/> |
+
+### Programming & Development
+
+| Website Title | URL |
+|---------------|-----|
+| Account Dashboard | aviationstack API | <https://aviationstack.com/dashboard> |
+| Airport Codes | <http://airportcod.es/#> |
+| AirportDB | Airport database API service | <https://airportdb.io/> |
+| albertprofe wiki | <https://albertprofe.dev/> |
+| Algorithms | <https://algs4.cs.princeton.edu/home/> |
+| Amazon Cognito | <https://eu-central-1.console.aws.amazon.com/cognito/v2/home?region=eu-central-1#> |
+| Amazon DynamoDB Documentation | <https://docs.aws.amazon.com/dynamodb/> |
+| API Documentation | Swagger | <https://swagger.io/> |
+| Arquitectura Java - Blog sobre Java EE | <https://www.arquitecturajava.com/> |
+| Atlassian Git Tutorial | <https://www.atlassian.com/es/git/glossary#commands> |
+| Auth0: Secure access for everyone | <https://auth0.com/> |
+| AWS Console Home | <https://eu-central-1.console.aws.amazon.com/console/home?region=eu-central-1#> |
+| AWS Skill Builder | <https://explore.skillbuilder.aws/learn> |
+| AWS Skill Builder | <https://skillbuilder.aws/> |
+| Axios Docs | <https://axios-http.com/es/docs/intro> |
+| Babel | <https://babeljs.io/> |
+| Bathymetry and Global Relief ngdc.noaa.gov | <https://www.ngdc.noaa.gov/mgg/bathymetry/relief.html> |
+| Bcrypt Generator | <https://bcrypt-generator.com/> |
+| Browse all - Learn Microsoft Docs | <https://docs.microsoft.com/en-us/learn/browse/> |
+| Chakra UI | <https://chakra-ui.com/> |
+| Cinnamon Spices | <https://cinnamon-spices.linuxmint.com/> |
+| CodeSandbox | <https://codesandbox.io/> |
+| Cognitive AI | <https://minervaintelligence.com/> |
+| Colour Palettes | <http://soliton.vm.bytemark.co.uk/pub/cpt-city/> |
+| Configuring Vite | Vite | <https://vite.dev/config/> |
+| Courses for Front-End Web Developers | egghead.io | <https://egghead.io/q?type=playlist> |
+| CSVJSON | <https://csvjson.com/> |
+| CUIDEN | <http://www.ciuden.es/index.asp?pagina=programas&subpagina=127&c=19> |
+| curl | <https://curl.se/> |
+| Curso de VISUAL STUDIO CODE | <https://www.youtube.com/watch?v=TbzrOz8HbFM> |
+| Curso Profesional de Typescript | <https://codigofacilito.com/cursos/typescript-profesional> |
+| Código Facilito | <https://codigofacilito.com/> |
+| Dadroit JSON Viewer | <https://dadroit.com/> |
+| Datasets Science On a Sphere | <http://sos.noaa.gov/Datasets/index.html> |
+| decimal to binary conversion | <https://www.rapidtables.com/convert/number/decimal-to-binary.html?x=107> |
+| DEV Community | <https://dev.to/> |
+| Digitalguide IONOS | <https://www.ionos.es/digitalguide/> |
+| Docker Home | <https://app.docker.com/> |
+| Dynobase - Professional DynamoDB GUI Client | <https://dynobase.dev/> |
+| Editor | JSON Crack | <https://jsoncrack.com/editor> |
+| EO AFRICA – Research and Development Facility | <https://www.eoafrica-rd.org/> |
+| Epoch Converter - Unix Timestamp Converter | <https://www.epochconverter.com/> |
+| EXCEL Energy Analysis | netl.doe.gov | <https://netl.doe.gov/energy-analysis/details?id=2403> |
+| Expert led courses for front-end web developers | <https://egghead.io/> |
+| Figma | <https://www.figma.com/> |
+| Firebase Studio IDE | <https://firebase.google.com/docs> |
+| font-awesome - Libraries | <https://cdnjs.com/libraries/font-awesome> |
+| Free VBA Course | <http://www.excel-pratique.com/en/vba.php> |
+| Getting Started  Vite | <https://vite.dev/guide/> |
+| Getting Started Axios Docs | <https://axios-http.com/docs/intro> |
+| Getting Started IntelliJ IDEA | <https://spring.io/guides/gs/intellij-idea/> |
+| Git | <https://git-scm.com/> |
+| Git Cheatsheet | <https://ndpsoftware.com/git-cheatsheet.html#loc=index;> |
+| GitDiagram | <https://gitdiagram.com/> |
+| gitignore.io | <https://www.toptal.com/developers/gitignore> |
+| Global Centroid Moment Tensor Catalog | <http://www.globalcmt.org/CMTsearch.html> |
+| Google DeepMind | <https://deepmind.google/> |
+| Google Flights | <https://www.google.es/flights/?f=0#search;f=BCN,YJB;t=LGW;d=2016-10-31;r=2016-11-14;tt=o> |
+| Guías y cursos dictados por bluuweb | <https://bluuweb.dev/> |
+| H2 Database Tutorial | <https://www.tutorialspoint.com/h2_database/index.htm> |
+| Harvard Seismology Resources | <http://www.seismology.harvard.edu/resources.html> |
+| Hilla Full-Stack React+Spring | <https://vaadin.com/hilla> |
+| Home · RHESSys/RHESSys Wiki · GitHub | <https://github.com/RHESSys/RHESSys/wiki> |
+| How Netflix Uses Java - 2025 Edition | <https://www.youtube.com/watch?v=XpunFFS-n8I> |
+| How To Create a Filter/Search Table | <https://www.w3schools.com/howto/howto_js_filter_table.asp> |
+| HowToDoInJava | <https://howtodoinjava.com/> |
+| Index of /ftp | <https://cdiac.ess-dive.lbl.gov/ftp/> |
+| Introducción a TypeScript - Training | <https://learn.microsoft.com/es-es/training/modules/typescript-get-started/> |
+| Introducing Mistral Code | <https://mistral.ai/news/mistral-code> |
+| Java 8 Features – Complete Tutorial | <https://www.geeksforgeeks.org/java-8-features/> |
+| JavaScript reference - JavaScript | <https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference> |
+| Focal Mechanism data Management | <https://github.com/Jose-Alvarez/FMC> |
+| JSON Web Tokens - jwt.io | <https://jwt.io/> |
+| kepler.gl | <https://kepler.gl/> |
+| LM Studio | <https://lmstudio.ai/> |
+| Markdown Guide | <https://www.markdownguide.org/> |
+| Maven Repository: Search | <https://mvnrepository.com/> |
+| Maven: Arquitectura Java | <https://www.arquitecturajava.com/que-es-maven/> |
+| MDN Web Docs | Good Tutorials | <https://developer.mozilla.org/en-US/> |
+| Microsoft Learn | <https://docs.microsoft.com/es-es/learn/> |
+| Microsoft SQL documentation | <https://docs.microsoft.com/en-us/sql/?view=sql-server-ver15> |
+| Miro | <https://miro.com/app/welcome/?requested_url=/app/> |
+| mockAPI | <https://mockapi.io/> |
+| MOOC Java | <https://java-programming.mooc.fi/part-1/1-starting-programming> |
+| MUI: The React component library | <https://mui.com/> |
+| Netflix Culture Deck | <https://www.eosworldwide.com/blog/103242-eos-netflix-culture-deck> |
+| Next.js by Vercel - The React Framework | <https://nextjs.org/> |
+| ngrok | API Gateway, Kubernetes Ingress | <https://ngrok.com/> |
+| Nordic CCS Competence Centre | <https://data.geus.dk/nordiccs/terminology.xhtml#Storage_efficiency_factor> |
+| Ollama library | <https://ollama.com/library> |
+| Online Compiler with Visual AI Help | <https://pythontutor.com/> |
+| Pandoc - index | <https://pandoc.org/> |
+| PartiQL AWS | <https://docs.aws.amazon.com/es_es/amazondynamodb/latest/developerguide/ql-reference.html> |
+| Perplexity | <https://www.perplexity.ai/?login-source=signupButton> |
+| PostgreSQL Tutorial | <https://www.postgresqltutorial.com/> |
+| Postman | <https://www.postman.com/> |
+| Power BI en Microsoft Learn | <https://docs.microsoft.com/es-es/learn/powerplatform/power-bi?source=learn> |
+| Programa de Acción Nacional contra la Desertifica… | <https://www.miteco.gob.es/es/biodiversidad/temas/desertificacion-restauracion/lucha-contra-la-desertificacion/lch_pand_descargas.aspx> |
+| Programación en Java | <http://elvex.ugr.es/decsai/java/> |
+| Projects | Mermaid Chart | <https://www.mermaidchart.com/app/projects> |
+| Python Documentation | <https://docs.python.org/3/> |
+| Pythonic Style Guide | <https://ioflood.com/blog/python-naming-conventions/> |
+| Python Programming MOOC 2024 | <https://programming-24.mooc.fi/part-1/1-getting-started> |
+| Python Tutorial | <https://www.w3schools.com/python/default.asp> |
+| PyWombat | <https://pywombat.com/> |
+| Píldoras Informáticas | <http://www.pildorasinformaticas.es/> |
+| QICS Project aims and deliverables | <https://www.bgs.ac.uk/qics/aims.html> |
+| Railway deploying | <https://railway.com/> |
+| React Learn | <https://react.dev/learn> |
+| React Router API Reference | <https://api.reactrouter.com/v7/modules.html> |
+| Replit | <https://replit.com/> |
+| Reqres | <https://reqres.in/> |
+| Roxs | <https://roxs.295devops.com/> |
+| sBID - Banc Integrat de Dades | <https://www.empresaiformacio.org/sBid/> |
+| Sea Level Rise Viewer | <https://coast.noaa.gov/digitalcoast/tools/slr.html> |
+| Search developer jobs around the world | Devjobsscanner | <https://www.devjobsscanner.com/> |
+| Semantic UI React | <https://react.semantic-ui.com/> |
+| Shaded Relief - Home | <https://www.shadedrelief.com/index.html> |
+| SmartGit Downloads | <https://www.syntevo.com/smartgit/download/> |
+| Spring | Guides | <https://spring.io/guides> |
+| Spring Initializr | <https://start.spring.io/> |
+| SQL style guide by Simon Holywell | <https://www.sqlstyle.guide/> |
+| SQLBolt - Learn SQL | <https://sqlbolt.com/> |
+| Stress Polygon | <https://mpxis.github.io//Stress_Polygon.html?PP=18.96&SV=41.16> |
+| Structure Slides | <http://www.rci.rutgers.edu/~schlisch/structureslides/slides.html> |
+| Table Convert Online | <https://tableconvert.com/> |
+| Table Convert Online | <https://tableconvert.com/> |
+| Tabnine AI Code Assistant | <https://www.tabnine.com/> |
+| Tailwind CSS | <https://tailwindcss.com/> |
+| The continental lithosphere | <http://www.lithosphere.info/index.html> |
+| The full-stack JavaScript framework - Meteor.js | <https://www.meteor.com/> |
+| The Global Heat Flow Database: Update 2023 | <https://dataservices.gfz-potsdam.de/panmetaworks/showshort.php?id=38ab063c-9e6d-11ed-95b8-f851ad6d1e4b> |
+| The JavaScript language | <https://javascript.info/js> |
+| The React Hooks Library | <https://usehooks.com/> |
+| Thymeleaf | <https://www.thymeleaf.org/> |
+| Transform Tools | <https://transform.tools/> |
+| Tutorial Python | <http://www.w3big.com/es/python/default.html> |
+| UCL Library Services | <http://www.ucl.ac.uk/library/> |
+| UML - draw.io | <https://app.diagrams.net/> |
+| Vaadin: The Web App Platform for Java Developers | <https://vaadin.com/> |
+| Vercel: Build and deploy the best web experiences with the AI Cloud | <https://vercel.com/> |
+| Visual Capitalist | <https://www.visualcapitalist.com/> |
+| Visual Studio Code for Education | <https://vscodeedu.com/> |
+| Vite | Next Generation Frontend Tooling | <https://vite.dev/> |
+| W3Schools Online Web Tutorials | <https://www.w3schools.com/> |
+
+### Open Data Portals & Resources
+
+| Website Title | URL |
+|---------------|-----|
+| Catálogo de Metadatos | <https://www.miteco.gob.es/es/cartografia-y-sig/ide/catalogo_metadatos/> |
+| CIEMAT | <http://www.ciemat.es/portal.do?IDM=109&NM=3> |
+| Convertbox | <https://betaportal.icgc.cat/convertbox/#> |
+| DataCamp | <https://learn.datacamp.com/> |
+| Datasets - Data Underground | <https://dataunderground.org/dataset> |
+| Full stack open MOOC Curso | <https://fullstackopen.com/es/> |
+| Global Solar Atlas | <https://globalsolaratlas.info/download/niger> |
+| High-resolution gridded datasets | <https://crudata.uea.ac.uk/cru/data/hrg/> |
+| Marine Regions | <http://www.marineregions.org/downloads.php> |
+| NASA Software Catalog | <https://software.nasa.gov/> |
+| National Snow and Ice Data Center | <https://nsidc.org/> |
+| DataEnergy | <https://www.dataenergy.ca/opendata> |
+| The Norwegian Petroleum Directorate | <https://www.npd.no/en/about-us/information-services/open-data/> |
+| Rediam Andalucia | <https://www.juntadeandalucia.es/medioambiente/portal/acceso-rediam> |
+| Shipping Routes | <https://sos.noaa.gov/catalog/datasets/shipping-routes-with-labels-one-year/> |
+| SHP Global Administrative Areas | <http://www.gadm.org/country> |
+| SRTM Data Search | <http://srtm.csi.cgiar.org/SELECTION/inputCoord.asp> |
+| Undersea Feature Names | <https://www.gebco.net/data_and_products/undersea_feature_names/> |
+| VirtualBox Parent Folder downloads | <https://download.virtualbox.org/virtualbox/> |
+| Interactive Database of the World's River Basins | <http://riverbasins.wateractionhub.org/> |
+
+### Miscellaneous
+
+| Website Title | URL |
+|---------------|-----|
+| Free Vector Graphics | <http://freewareme.com/> |
+| Interactive Historical World Atlas | <http://geacron.com/home-es/?lang=es&sid=GeaCron587783> |
+| Online trigonometry calculator | <http://easycalculation.com/trigonometry/trigonometry.php> |
+| PDF millimeter and graph paper generator | <http://lightupthestars.com/graph/> |
+| The True Size Of ... | <https://www.thetruesize.com/#?borders=1~!MTY1NjY1MDQ.Mjk3NDU4NQ*Mjk3MjM2MDM(Nzc2ODUyNQ~!CONTIGUOUS_US*MTAwMjQwNzU.MjUwMjM1MTc(MTc1> |
+| The World Factbook | <https://www.cia.gov/the-world-factbook/

@@ -1,0 +1,40 @@
+---
+title: "Discover QGIS 3.x"
+author: "Kurt Menke"
+subtitle: "A Workbook for Classroom or Independent Study"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive workbook for learning QGIS 3.x through hands-on exercises and practical applications"
+categories: [gis]
+subcategories: [qgis]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/DiscoverQGIS3px.png){width="60%"}
+
+## More info
+
+This comprehensive workbook provides a structured approach to learning QGIS 3.x through hands-on exercises and practical applications, designed for both classroom instruction and independent study.
+
+The book offers step-by-step tutorials covering essential QGIS functionality, from basic operations to advanced spatial analysis techniques. It's designed for GIS students, educators, professionals transitioning to QGIS, and anyone seeking to master this powerful open-source GIS platform through practical, real-world exercises.
+
+Key topics include:
+- QGIS 3.x interface and basic operations
+- Working with vector and raster data
+- Data acquisition and import techniques
+- Spatial analysis and geoprocessing tools
+- Cartographic design and map production
+- Database connectivity and data management
+- Plugin usage and customization
+- Advanced analysis workflows
+- Web mapping and data sharing
+- Integration with other geospatial tools
+- Best practices for QGIS project management
+
+## Book
+
+- [Book .pdf](/books/DiscoverQGIS3px.pdf){width="60%"}

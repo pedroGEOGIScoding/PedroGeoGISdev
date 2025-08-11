@@ -1,0 +1,41 @@
+---
+title: "GIS Algorithms"
+author: "Ningchuan Xiao"
+subtitle: "Theory and Applications for Geographic Information Science & Technology"
+date: "2025-08-04"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to the fundamental algorithms that power geographic information systems"
+categories: [gis]
+subcategories: [algorithms, spatial analysis, computational geometry]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/GIS_Algorithms.png){width="60%"}
+
+## More info
+
+This essential textbook provides a systematic overview of the key algorithms that form the foundation of geographic information systems. It bridges the gap between theoretical concepts and practical implementations, making complex spatial algorithms accessible to students and professionals in GIS, geography, and computer science.
+
+The book offers clear explanations of spatial data structures, computational geometry, and spatial analysis methods, complete with pseudocode and implementation details. It's an invaluable resource for anyone looking to understand the computational aspects of GIS.
+
+Key topics include:
+- Spatial data structures and indexing methods
+- Computational geometry fundamentals
+- Spatial analysis and modeling algorithms
+- Network analysis and routing algorithms
+- Terrain analysis and digital elevation models
+- Spatial interpolation techniques
+- Map projection and coordinate transformation
+- Spatial data quality and uncertainty
+- Parallel and distributed computing in GIS
+- Algorithm complexity and optimization
+- Open source GIS implementations
+- Case studies and practical applications
+
+## Book
+
+- [Book .pdf](/books/GIS_Algorithms.pdf){width="60%"}

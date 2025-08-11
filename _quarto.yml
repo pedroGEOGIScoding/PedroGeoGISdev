@@ -3,7 +3,6 @@ project:
   output-dir: _site        # Output directory for rendered website files
   # render:                  # Specify files or patterns to render (default: all files)
   # lib-dir:                 # Directory for supporting JS, CSS, and other library assets
-
   preview:
     port: 3000                  # Port number for local preview server (default random 3000-8000)
     browser: true               # Whether to open browser on preview (true/false)

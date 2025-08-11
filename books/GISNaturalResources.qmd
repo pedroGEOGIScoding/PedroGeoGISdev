@@ -1,0 +1,41 @@
+---
+title: "GIS for Natural Resources"
+author: "Geoff Wade and Matt Artz"
+subtitle: "Geographic Information Systems Applications in Natural Resource Management"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Comprehensive guide to GIS applications in natural resource management and environmental analysis"
+categories: [gis]
+subcategories: [natural resources, environmental]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/GISNaturalResources.png){width="60%"}
+
+## More info
+
+This comprehensive guide explores the application of Geographic Information Systems (GIS) in natural resource management, covering essential techniques and methodologies for environmental analysis and resource conservation.
+
+The book provides practical examples and case studies demonstrating how GIS can be used to manage forests, water resources, wildlife habitats, agricultural lands, and other natural assets. It's designed for natural resource managers, environmental scientists, conservation professionals, researchers, and students working in environmental and resource management fields.
+
+Key topics include:
+- GIS fundamentals for natural resource applications
+- Forest inventory and management systems
+- Water resource mapping and watershed analysis
+- Wildlife habitat modeling and conservation planning
+- Agricultural land use and precision farming
+- Environmental impact assessment and monitoring
+- Climate change analysis and adaptation planning
+- Biodiversity mapping and ecosystem services
+- Remote sensing integration for resource monitoring
+- Spatial modeling for resource optimization
+- Decision support systems for resource management
+- Best practices in environmental GIS applications
+
+## Book
+
+- [Book .pdf](/books/GISNaturalResources.pdf){width="60%"}

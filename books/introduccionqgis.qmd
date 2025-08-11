@@ -1,0 +1,40 @@
+---
+title: "Introducción a los Sistemas de Información Geográfica con QGIS"
+author: "Federico Javier Gazaba"
+subtitle: ""
+date: "2024-02-21"
+date-modified: last-modified
+date-format: full
+description: "Guía completa para el aprendizaje de QGIS, el Sistema de Información Geográfica de Código Abierto"
+categories: [gis]
+subcategories: [qgis]
+format:
+  html
+---
+
+## Portada del Libro
+
+![](/books/introduccionqgis.png){width="60%"}
+
+## Más información
+
+Este libro es una guía completa para el aprendizaje de QGIS, el Sistema de Información Geográfica de Código Abierto más utilizado en el mundo. Está diseñado para usuarios que desean aprender a utilizar QGIS desde cero, así como para aquellos que buscan profundizar en sus funcionalidades más avanzadas.
+
+El libro combina teoría con ejercicios prácticos, permitiendo al lector adquirir habilidades prácticas en el manejo de información geográfica.
+
+Temas principales incluyen:
+- Instalación y configuración de QGIS
+- Interfaz de usuario y herramientas básicas
+- Visualización de datos espaciales
+- Edición de datos vectoriales y ráster
+- Sistemas de referencia de coordenadas
+- Análisis espacial
+- Creación de mapas temáticos
+- Trabajo con datos GPS
+- Automatización con la consola de Python
+- Extensiones y complementos
+- Casos prácticos y ejemplos reales
+
+## Libro
+
+- [Libro .pdf](/books/introduccionqgis.pdf){width="60%"}

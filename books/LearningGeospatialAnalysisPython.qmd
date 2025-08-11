@@ -1,0 +1,40 @@
+---
+title: "Learning Geospatial Analysis with Python"
+author: "Joel Lawhead"
+subtitle: "Build GIS web applications and automate geospatial analysis with Python"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Practical guide to geospatial analysis using Python programming language"
+categories: [gis]
+subcategories: [python, programming, spatial-analysis]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/LearningGeospatialAnalysisPython.png){width="60%"}
+
+## More info
+
+This practical guide teaches you how to use Python for geospatial analysis, from basic concepts to advanced applications, with hands-on examples and real-world projects.
+
+The book covers the essential Python libraries and tools for working with geospatial data, including GDAL, OGR, GeoPandas, and more. It's designed for Python developers, GIS professionals, data scientists, and anyone interested in automating geospatial workflows and building location-aware applications.
+
+Key topics include:
+- Python fundamentals for geospatial analysis
+- Reading and writing geospatial data formats
+- Working with vector and raster data
+- Spatial analysis and geoprocessing
+- Creating thematic maps and visualizations
+- Building geospatial web applications
+- Processing remote sensing data
+- Performance optimization techniques
+- Real-world case studies and projects
+- Integration with popular geospatial libraries
+- Best practices for geospatial Python development
+
+## Book
+
+- [Book .pdf](/books/LearningGeospatialAnalysisPython.pdf){width="60%"}

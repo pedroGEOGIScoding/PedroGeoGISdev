@@ -1,0 +1,41 @@
+---
+title: "GIS in Sustainable Urban Planning and Management"
+author: "Editors: Martin van Maarseveen, Javier Martinez, and Johannes Flacke"
+subtitle: "A Comprehensive Guide to Spatial Analysis for Planning"
+date: "2025-08-04"
+date-modified: last-modified
+date-format: full
+description: "Essential guide to applying GIS in urban and regional planning"
+categories: [gis]
+subcategories: [urban planning, regional development, spatial analysis]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/GIS_UrbanPlanning.png){width="60%"}
+
+## More info
+
+This comprehensive guide demonstrates how geographic information systems (GIS) can be effectively used in urban and regional planning. The book provides planners, urban designers, and policy makers with the knowledge and tools needed to leverage spatial data and analysis for better decision-making in urban development.
+
+The content bridges the gap between theory and practice, offering practical examples, case studies, and step-by-step guidance on applying GIS techniques to real-world planning challenges.
+
+Key topics include:
+- Fundamentals of GIS for urban planning
+- Land use planning and zoning analysis
+- Transportation and infrastructure planning
+- Urban growth modeling and simulation
+- Environmental planning and impact assessment
+- Community and neighborhood planning
+- Housing and real estate market analysis
+- Public participation and decision support
+- 3D modeling and visualization
+- Smart cities and future urban technologies
+- Case studies from various urban contexts
+- Best practices in GIS implementation
+
+## Book
+
+- [Book .pdf](/books/GIS_UrbanPlanning.pdf){width="60%"}

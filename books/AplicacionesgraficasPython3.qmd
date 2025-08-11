@@ -1,0 +1,37 @@
+---
+title: "Aplicaciones Gráficas con Python 3"
+author: "Alberto Cuevas Alvarez"
+subtitle: "Desarrollo de Aplicaciones Gráficas con Python 3"
+date: "2025-07-31"
+date-modified: last-modified
+date-format: full
+description: "Guía completa para el desarrollo de aplicaciones gráficas usando Python 3"
+categories: [programming]
+subcategories: [python, graphics]
+format:
+  html
+---
+
+## Book Image
+
+![](/books/AplicacionesgraficasPython3.png){width="60%"}
+
+## More info
+
+Esta guía completa proporciona conocimientos esenciales sobre el desarrollo de aplicaciones gráficas utilizando Python 3, cubriendo desde los fundamentos hasta técnicas avanzadas de programación gráfica.
+
+El libro explora las principales librerías gráficas de Python, incluyendo Tkinter, PyQt, Matplotlib, y otras herramientas para crear interfaces de usuario y visualizaciones. Es un recurso invaluable para programadores Python, desarrolladores de software, y estudiantes que buscan dominar el desarrollo de aplicaciones gráficas con Python.
+
+Temas clave incluyen:
+- Fundamentos de programación gráfica en Python
+- Desarrollo de interfaces de usuario con Tkinter y PyQt
+- Creación de gráficos y visualizaciones con Matplotlib
+- Manejo de eventos y programación orientada a eventos
+- Diseño de aplicaciones desktop interactivas
+- Integración con bases de datos y APIs
+- Mejores prácticas en desarrollo de aplicaciones gráficas
+- Distribución y empaquetado de aplicaciones Python
+
+## Book
+
+- [Book .pdf](/books/AplicacionesgraficasPython3.pdf){width="60%"}
