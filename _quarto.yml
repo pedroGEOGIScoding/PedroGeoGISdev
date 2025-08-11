@@ -9,77 +9,33 @@ project:
     browser: true               # Whether to open browser on preview (true/false)
     host: localhost             # Host address for preview server (e.g., 'localhost')
 
-website:
-  title: pedroGeoGISdev                   # Website title displayed in page headers and browser tab
-  # description:             # Website meta description for SEO and social media sharing
-  favicon: images/logos/favicon.png                 # Relative path to favicon icon file (shown in browser tab)
-  # site-url:                # Full URL where website will be published (for canonical links)
-  # site-path:               # Path within domain if site published in a subdirectory
-  # repo-url:                # URL to source code repository (used for repo link in site)
-  # repo-link-target:        # target attribute for repo link (e.g., "_blank" to open new tab)
-  # repo-link-rel:           # rel attribute for repo links (e.g., "nofollow", "noopener")
-  # repo-subdir:             # Subdirectory within repo where site content resides
-  # repo-branch:             # Branch name of website content repo (defaults to main/master)
-  # issue-url:               # URL for reporting issues or feedback (issue tracker link)
-  # repo-actions:            # List of repo action buttons like "edit", "issue", displayed on pages
-  # reader-mode:             # Enables a toggle to show simplified "reader mode" layout (true/false)
-  # google-analytics:        # Google Analytics Tracking ID for site visitor analytics (e.g., "UA-xxxxxx")
-  #announcement:
-    # content:               # Text or markdown to display in site-wide announcement banner
-    # dismissable:           # Can users dismiss the announcement (true/false)
-    # icon:                  # Bootstrap icon name to include alongside announcement text
-    # position:              # Position of announcement banner ("top", "bottom", "below-navbar")
-    # type:                  # Visual style of announcement: "info", "warning", "success", "danger"
-  # cookie-consent:          # Enable cookie consent banner for GDPR/CCPA compliance (true/false)
-  # search:
-    # location:              # Location of search UI on page ("navbar", "sidebar", "footer", "hidden")
-    # type:                  # Type of search UI ("default", "overlay", "algolia")
-    # limit:                 # Max number of search results before collapsing
-    # collapse-after:        # Number of results shown before collapsing extras
-    # copy-button:           # Enable button to copy search result URL (true/false)
-    # merge-navbar-crumbs:   # Merge breadcrumbs from search with navbar navigation (true/false)
-    # keyboard-shortcut:     # Keyboard shortcut(s) to activate search (e.g., "cmd+k", "ctrl+f")
-    # show-item-context:     # Show parent page context for search results (true/false)
+metadata-files:
+  - _website.yml
+  - _format.yml
+  - _brand.yml
 
-  navbar:                   # Define top navigation bar config (links, dropdowns, logo)
-    background: primary
-    left:                   # List of items on left side of navbar
-      - text: "Home"        # Text for the navbar item
-      - href: "index.qmd"   # Link target for a navbar item
-    right:
-      - text: "Contact"
-        menu:
-          - text: Email
-            href: mailto:pedromartinezduran@gmail.com
-          - text: GitHub
-            href: https://github.com/pedroGEOGIScoding/PedroGeoGISdev
-          - text: LinkedIn
-            href: https://www.linkedin.com/in/pedromartinezduran/
+execute:
+  cache: true
+  freeze: auto
 
-  sidebar:                  # Define sidebar navigation and settings
-    style: docked          # Sidebar style: "docked" (fixed visible) or "floating" (toggleable)
-    title: "Menu"          # Sidebar title label
-    collapse-level: 2      # Header depth level at which sidebar items collapse
-    background: "#f0f0f0"  # Sidebar background color (CSS color name or hex code)
-    contents:              # List of pages or sections for sidebar navigation
-      - index.qmd
-      - about.qmd
-      - section:
-#          text: "Guide"
-#          contents:
-#            - guide/setup.qmd
-#            - guide/usage.qmd
+filters:
+  - quarto-ext/fontawesome
+
+lightbox: auto
+
+highlight-style: breezedark
+
+editor:
+    render-on-save: true
+
 
   # body-header:             # Markdown to insert at the top of each page body (below title)
   # body-footer:             # Markdown to insert at the bottom of each page body
   # margin-header:           # Markdown content above the margin column content
   # margin-footer:           # Markdown content below the margin column content
-  page-navigation: true    # Enable next/previous page navigation buttons (true/false)
-  back-to-top-navigation: true  # Enable 'Back to Top' button on pages (true/false)
+
   # bread-crumbs:            # Show breadcrumb navigation for subpages (true/false)
-  # page-footer:             # Content or configuration for page footer (text or file reference)
-  # image:                   # Default image for social sharing and previews (path)
-  # image-alt:               # Alt text for default site image (for accessibility & SEO)
+
   # comments:                # Configuration for commenting system (e.g., Disqus, Giscus)
   # open-graph:              # Open Graph metadata options for Facebook/LinkedIn sharing
     # title:                 # OG title override (default: page title)
@@ -90,29 +46,4 @@ website:
   # drafts:                  # List of document files treated as drafts (excluded by default)
   # draft-mode:              # How to handle drafts: ignore, render, or publish
 
-format:
-  html:
-    theme:                 # HTML theme or list of themes and CSS files applied
-      light: cosmo
-      dark: darkly           
-    css: styles.css                   # List of custom CSS files to include in HTML format
-    toc: true              # Show table of contents (true/false or detailed config)
-    grid:
-      sidebar-width: 300px   # Width of the sidebar column
-      body-width: 900px      # Width of the main content body column
-      margin-width: 200px    # Width of the margin column (0 to disable)
-      gutter-width: 1.5rem   # Horizontal spacing between columns (sidebar/body/margin)
-    page-layout: full        # Page layout style (default, custom, full, etc.)
 
-    page-footer:
-    background: secondary
-    left: "This website is built with [Quarto](https://quarto.org/)." 
-    center: "Difficulties are just things to overcome, after all. *Ernest Shackleton*"
-    right:
-      - icon: github
-        href: https://github.com/pedroGEOGIScoding/
-      - icon: linkedin
-        href: https://www.linkedin.com/in/pedromartinezduran/
-      - icon: envelope
-        href: mailto:pedromartinezduran@gmail.com
-        aria-label: Send me an email

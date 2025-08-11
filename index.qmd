@@ -1,7 +1,15 @@
 ---
-title: "PedroGeoGISdev"
+page-layout: full
 ---
 
-This is a Quarto website.
+<div class="gradient-text">
+  <div class="welcome-headline">
+    Welcome to the PedroGeoGIS website
+  </div>
+  <div class="welcome-subheadline">
+    PedroGeoGIS is a website for the development of geospatial data analysis tools
+  </div>
+</div>
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+

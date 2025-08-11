@@ -2,16 +2,23 @@ color:
   palette:
     dark-grey: "#222222"
     blue: "#ddeaf1"
-  background: blue
+  background: white
   foreground: dark-grey
   primary: black
 
-logo: 
-  medium: images/logos/pedrologo-blue.png
-
 typography:
   fonts:
-    - family: Jura
+    - family: Fuzzy Bubbles
       source: google
-  base: Jura
-  headings: Jura
+    - family: Space Mono
+      source: google
+  base: Fuzzy Bubbles
+  headings: Fuzzy Bubbles
+  link:
+    decoration: underline
+  monospace: Space Mono
+  monospace-inline:
+    color: "#222222"
+    background-color: "#ddeaf1"
+  monospace-block: 
+    background-color: "#eef4f8"

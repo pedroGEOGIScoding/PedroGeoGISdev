@@ -1,0 +1,22 @@
+format:
+  html:
+    theme:                 
+      light: cosmo
+      dark: darkly           
+    css: styles.css                   
+    toc: true
+    toc-title: "Table of Contents"
+    toc-depth: 5
+    smooth-scroll: true
+    background-color: black
+    code-link: true
+    #code-block-bg: "#29465B"
+    code-line-numbers: "true"
+    code-overflow: "wrap"
+    code-annotations: below
+    grid:
+      sidebar-width: 300px   # Width of the sidebar column
+      body-width: 900px      # Width of the main content body column
+      margin-width: 200px    # Width of the margin column (0 to disable)
+      gutter-width: 1.5rem   # Horizontal spacing between columns (sidebar/body/margin)
+    page-layout: full        # Page layout style (default, custom, full, etc.)

@@ -37,8 +37,66 @@ padding: 2px 5px;
 border-radius: 3px;
 }
 
+/* Navbar styles */
 .navbar {
   background-color: var(--primary-brown) !important;
   font-size: var(--navbar-font-size-desktop) !important;
 
+}
+
+/* Colored text for navbar title */
+.geo-text {
+  color: #2ecc71 !important; /* Green color */
+  font-weight: bold;
+}
+
+.gis-text {
+  color: #f1c40f !important; /* Yellow color */
+  font-weight: bold;
+}
+
+.navbar-brand:hover, .navbar-title:hover {
+  color: var(--hover-white) !important;
+  transition: color 0.3s ease;
+}
+
+/* ===== FOOTER STYLES ===== */
+footer.footer, 
+.nav-footer {
+  background-color: var(--primary-brown) !important;
+  color: var(--primary-blue) !important;
+}
+
+.nav-footer-left,
+.nav-footer-center,
+.nav-footer-right {
+  color: var(--primary-blue) !important;
+}
+
+.nav-footer a {
+  color: var(--primary-blue) !important;
+}
+
+.nav-footer a:hover {
+  color: var(--hover-blue) !important;
+}
+
+/* Footer icons */
+.nav-footer .bi,
+.nav-footer i {
+  color: var(--primary-blue) !important;
+}
+
+.nav-footer .bi:hover,
+.nav-footer i:hover {
+  color: var(--hover-blue) !important;
+}
+
+/* Responsive footer sizing */
+.nav-footer {
+  font-size: var(--footer-font-size-desktop) !important;
+}
+
+.nav-footer .bi {
+  font-size: var(--footer-icon-size-desktop) !important;
 }
