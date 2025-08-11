@@ -2,28 +2,17 @@ project:
   type: website            # Project type: "website" for multi-page website projects
   output-dir: _site        # Output directory for rendered website files
   # render:                  # Specify files or patterns to render (default: all files)
-  # execute-dir:             # Directory where computations occur; controls reproducibility scope
   # lib-dir:                 # Directory for supporting JS, CSS, and other library assets
-  # resources:               # Additional resource files to copy to output (e.g., images, data)
-#  preview:
-#    port:                  # Port number for local preview server (default random 3000-8000)
-#    browser:               # Whether to open browser on preview (true/false)
-#    host:                  # Host address for preview server (e.g., 'localhost')
-#    serve:
-      # cmd:                 # Shell command to run custom preview server
-      # args:                # Command line arguments for preview server command
-      # env:                 # Environment variables set for preview command
-      # ready:               # Regex pattern to detect when preview server is ready
-    # watch-inputs:          # Automatically re-render site on input file changes (true/false)
-    # navigate:              # Auto reload browser on rebuilds (true/false)
-    # timeout:               # Time (seconds) to close preview server if no active clients
-  # pre-render:              # List of scripts or commands to run before site rendering
-  # post-render:             # List of scripts or commands to run after site rendering
+
+  preview:
+    port: 3000                  # Port number for local preview server (default random 3000-8000)
+    browser: true               # Whether to open browser on preview (true/false)
+    host: localhost             # Host address for preview server (e.g., 'localhost')
 
 website:
   title: pedroGeoGISdev                   # Website title displayed in page headers and browser tab
   # description:             # Website meta description for SEO and social media sharing
-  # favicon:                 # Relative path to favicon icon file (shown in browser tab)
+  favicon: images/logos/favicon.png                 # Relative path to favicon icon file (shown in browser tab)
   # site-url:                # Full URL where website will be published (for canonical links)
   # site-path:               # Path within domain if site published in a subdirectory
   # repo-url:                # URL to source code repository (used for repo link in site)
@@ -54,12 +43,18 @@ website:
 
   navbar:                   # Define top navigation bar config (links, dropdowns, logo)
     background: primary
-    logo: images/logos/pedrologo.png   
     left:                   # List of items on left side of navbar
+      - text: "Home"        # Text for the navbar item
       - href: "index.qmd"   # Link target for a navbar item
-        text: "Home"        # Text for the navbar item
-    right:                  # List of items on right side of navbar
-      - icon: "search"      # Enable search functionality                  # Site logo path or configuration (optional)
+    right:
+      - text: "Contact"
+        menu:
+          - text: Email
+            href: mailto:pedromartinezduran@gmail.com
+          - text: GitHub
+            href: https://github.com/pedroGEOGIScoding/PedroGeoGISdev
+          - text: LinkedIn
+            href: https://www.linkedin.com/in/pedromartinezduran/
 
   sidebar:                  # Define sidebar navigation and settings
     style: docked          # Sidebar style: "docked" (fixed visible) or "floating" (toggleable)
@@ -80,7 +75,7 @@ website:
   # margin-header:           # Markdown content above the margin column content
   # margin-footer:           # Markdown content below the margin column content
   page-navigation: true    # Enable next/previous page navigation buttons (true/false)
-  # back-to-top-navigation:  # Enable 'Back to Top' button on pages (true/false)
+  back-to-top-navigation: true  # Enable 'Back to Top' button on pages (true/false)
   # bread-crumbs:            # Show breadcrumb navigation for subpages (true/false)
   # page-footer:             # Content or configuration for page footer (text or file reference)
   # image:                   # Default image for social sharing and previews (path)
@@ -90,11 +85,6 @@ website:
     # title:                 # OG title override (default: page title)
     # description:           # OG description override
     # image:                 # OG image override
-  # twitter-card:            # Metadata for Twitter summary cards (large image, description)
-    # card: "summary_large_image"
-    # title:
-    # description:
-    # image:
   # other-links:             # List of additional links shown below table of contents
   # code-links:              # Links to code/repository displayed with pages
   # drafts:                  # List of document files treated as drafts (excluded by default)
@@ -105,16 +95,24 @@ format:
     theme:                 # HTML theme or list of themes and CSS files applied
       light: cosmo
       dark: darkly           
-    # css:                   # List of custom CSS files to include in HTML format
+    css: styles.css                   # List of custom CSS files to include in HTML format
     toc: true              # Show table of contents (true/false or detailed config)
     grid:
       sidebar-width: 300px   # Width of the sidebar column
       body-width: 900px      # Width of the main content body column
       margin-width: 200px    # Width of the margin column (0 to disable)
       gutter-width: 1.5rem   # Horizontal spacing between columns (sidebar/body/margin)
-    page-layout: full    # Page layout style (default, custom, full, etc.)
+    page-layout: full        # Page layout style (default, custom, full, etc.)
 
-  pdf:
-    toc: true              # Show table of contents in PDF output
-
-  # Additional formats (epub, docx, slides) can have their own configurations here
+    page-footer:
+    background: secondary
+    left: "This website is built with [Quarto](https://quarto.org/)." 
+    center: "Difficulties are just things to overcome, after all. *Ernest Shackleton*"
+    right:
+      - icon: github
+        href: https://github.com/pedroGEOGIScoding/
+      - icon: linkedin
+        href: https://www.linkedin.com/in/pedromartinezduran/
+      - icon: envelope
+        href: mailto:pedromartinezduran@gmail.com
+        aria-label: Send me an email

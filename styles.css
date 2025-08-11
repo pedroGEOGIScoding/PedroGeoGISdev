@@ -1,1 +1,44 @@
 /* css styles */
+:root {
+  /* Color Palette */
+  --primary-brown: #4a3b30;
+  --primary-blue: #33a0d6;
+  --hover-white: #FFFFFF;
+  --success-green: #117441;
+  --light-green: #a2f868;
+  --light-gray: #ebedf1;
+  --tab-blue: #91b1f3;
+  --sidebar-colour: lab(82.51% 2.07 0.73);
+  
+  /* Spacing */
+  --border-radius: 10px;
+  --padding-standard: 16px;
+  
+  /* Font sizes */
+  --navbar-font-size-desktop: 24px;
+  --navbar-font-size-mobile: 14px;
+  --navbar-font-size-tablet: 18px;
+  --footer-font-size-desktop: 24px;
+  --footer-font-size-mobile: 14px;
+  --footer-font-size-tablet: 18px;
+
+
+  --navbar-icon-size-desktop: 24px;
+  --navbar-icon-size-mobile: 18px;
+  --navbar-icon-size-tablet: 24px;
+  --footer-icon-size-desktop: 24px;
+  --footer-icon-size-mobile: 18px;
+  --footer-icon-size-tablet: 24px;
+}
+/*highlight text*/
+.highlight {
+background-color: #fbff00;  /* Highlight background */
+padding: 2px 5px;
+border-radius: 3px;
+}
+
+.navbar {
+  background-color: var(--primary-brown) !important;
+  font-size: var(--navbar-font-size-desktop) !important;
+
+}
