@@ -14,13 +14,13 @@ website:
   repo-actions: [edit, source, issue]
   reader-mode: false
   #google-analytics: "UA-123456789-1"
-  announcement:
-    content: "This website is built with [Quarto](https://quarto.org/)."
-    dismissable: true
-    icon: "info"
-    position: "below-navbar"
-    type: "info"
-  cookie-consent: true
+  # announcement:
+  #   content: "This website is built with [Quarto](https://quarto.org/)."
+  #   dismissable: true
+  #   icon: "info"
+  #   position: "below-navbar"
+  #   type: "info"
+  # cookie-consent: true
   search:
     location: navbar             
     type: overlay                  
@@ -46,20 +46,27 @@ website:
       - sidebar:python
       - sidebar:js
       - sidebar:spring
-      - sidebar:reactjs
       - sidebar:learning
       - sidebar:qgis
       - sidebar:arcgispro
       - sidebar:bookmarks
       - sidebar:about
     right:
-      - text: "Contact"
+      - text: "Featured Projects"
         menu:
-          - text: Email
+          - text: ✈️ Flight tracker
+            href: https://pedrogeogiscoding.github.io/Flight_Tracker_PedroGeoGISdev/
+          - text: 🧑 People tracker
+            href: https://dashboardfest2fun-production.up.railway.app/
+          - text: 🚗 Renting Car
+            href: https://rentingcar-production.up.railway.app/
+      - text: "{{< fa solid address-card >}}"
+        menu:
+          - text: "{{< fa solid envelope >}} Email"
             href: mailto:pedromartinezduran@gmail.com
-          - text: GitHub
+          - text: "{{< fa brands github >}} GitHub"
             href: https://github.com/pedroGEOGIScoding/PedroGeoGISdev
-          - text: LinkedIn
+          - text: "{{< fa brands linkedin >}} LinkedIn"
             href: https://www.linkedin.com/in/pedromartinezduran/
   sidebar:
     - id: "linux"
@@ -310,78 +317,9 @@ website:
           contents:
             - js/js-basic-concepts.qmd
             - js/js-tips.qmd
-    - id: "spring"
-      title: "Spring"
-      contents:
-        - text: "Spring"
         - text: "---"
-        - section: "Spring Legacy"
+        - section: "React Framework"
           contents:
-            - spring/spring-basics.qmd
-            - spring/spring-mvc.qmd
-            - spring/spring-servlets.qmd
-        - text: "---"
-        - section: "Spring Boot Basics"
-          contents:
-            - springboot/boot-what-basics.qmd
-            - springboot/boot-what-create.qmd
-            - springboot/boot-what-create-th-h2.qmd
-            - springboot/boot-what-cycle.qmd
-        - text: "---"
-        - section: "Spring Boot Concepts"
-          contents:
-            - springboot/boot-concepts-injection.qmd
-            - springboot/boot-concepts-annotations.qmd
-            - springboot/boot-concepts-controller.qmd
-            - springboot/boot-concepts-view.qmd
-            - springboot/boot-concepts-th.qmd
-            - springboot/boot-concepts-vaadin-flow.qmd
-            - springboot/boot-concepts-vaadin-hilla.qmd
-            - springboot/boot-concepts-model.qmd
-            - springboot/boot-concepts-rest.qmd
-            - springboot/boot-concepts-data.qmd
-            - springboot/boot-concepts-jpa.qmd
-            - springboot/boot-concepts-jpa-2.qmd
-            - springboot/boot-concepts-jpa-3.qmd
-            - springboot/boot-concepts-jpa-4.qmd
-            - springboot/boot-concepts-jpa-5.qmd
-            - springboot/boot-concepts-scaling.qmd
-        - text: "---"
-        - section: "Spring Boot Laboratories"
-          contents:
-            - springboot/sblab0-1.qmd
-            - springboot/sblab0-2.qmd
-            - springboot/sblab0-3.qmd
-            - springboot/sblab0-4.qmd
-            - springboot/sblab0-5.qmd
-            - springboot/sblab0-6.qmd
-            - springboot/sblab0-7.qmd
-            - text: "---"
-            - springboot/sblab1.qmd
-            - springboot/sblab2.qmd
-            - springboot/sblab3.qmd
-            - springboot/sblab4.qmd
-            - springboot/sblab5.qmd
-            - text: "---"
-            - springboot/sblab6.qmd
-            - text: "---"
-            - springboot/sblab7.qmd
-            - text: "---"
-            - springboot/sblab8-1.qmd
-            - springboot/sblab8-2.qmd
-            - springboot/sblab8-3.qmd
-            - springboot/sblab8-4.qmd
-            - springboot/sblab8-5.qmd
-            - text: "---"
-            - springboot/sblab9-1.qmd
-        - text: "---"
-        - section: "Spring Boot readings"
-          contents:
-            - springboot/resources.qmd
-    - id: "reactjs"
-      title: "ReactJS"
-      contents:
-        - text: "ReactJS"
         - text: "---"
         - section: "ReactJS: Principles"
           contents:
@@ -457,6 +395,74 @@ website:
         - section: "React JS readings"
           contents:
             - reactjs/resources.qmd
+    - id: "spring"
+      title: "Backend"
+      contents:
+        - text: "Spring"
+        - text: "---"
+        - section: "Spring Legacy"
+          contents:
+            - spring/spring-basics.qmd
+            - spring/spring-mvc.qmd
+            - spring/spring-servlets.qmd
+        - text: "---"
+        - section: "Spring Boot Basics"
+          contents:
+            - springboot/boot-what-basics.qmd
+            - springboot/boot-what-create.qmd
+            - springboot/boot-what-create-th-h2.qmd
+            - springboot/boot-what-cycle.qmd
+        - text: "---"
+        - section: "Spring Boot Concepts"
+          contents:
+            - springboot/boot-concepts-injection.qmd
+            - springboot/boot-concepts-annotations.qmd
+            - springboot/boot-concepts-controller.qmd
+            - springboot/boot-concepts-view.qmd
+            - springboot/boot-concepts-th.qmd
+            - springboot/boot-concepts-vaadin-flow.qmd
+            - springboot/boot-concepts-vaadin-hilla.qmd
+            - springboot/boot-concepts-model.qmd
+            - springboot/boot-concepts-rest.qmd
+            - springboot/boot-concepts-data.qmd
+            - springboot/boot-concepts-jpa.qmd
+            - springboot/boot-concepts-jpa-2.qmd
+            - springboot/boot-concepts-jpa-3.qmd
+            - springboot/boot-concepts-jpa-4.qmd
+            - springboot/boot-concepts-jpa-5.qmd
+            - springboot/boot-concepts-scaling.qmd
+        - text: "---"
+        - section: "Spring Boot Laboratories"
+          contents:
+            - springboot/sblab0-1.qmd
+            - springboot/sblab0-2.qmd
+            - springboot/sblab0-3.qmd
+            - springboot/sblab0-4.qmd
+            - springboot/sblab0-5.qmd
+            - springboot/sblab0-6.qmd
+            - springboot/sblab0-7.qmd
+            - text: "---"
+            - springboot/sblab1.qmd
+            - springboot/sblab2.qmd
+            - springboot/sblab3.qmd
+            - springboot/sblab4.qmd
+            - springboot/sblab5.qmd
+            - text: "---"
+            - springboot/sblab6.qmd
+            - text: "---"
+            - springboot/sblab7.qmd
+            - text: "---"
+            - springboot/sblab8-1.qmd
+            - springboot/sblab8-2.qmd
+            - springboot/sblab8-3.qmd
+            - springboot/sblab8-4.qmd
+            - springboot/sblab8-5.qmd
+            - text: "---"
+            - springboot/sblab9-1.qmd
+        - text: "---"
+        - section: "Spring Boot readings"
+          contents:
+            - springboot/resources.qmd
     - id: "learning"
       title: "Learning"
       contents:
