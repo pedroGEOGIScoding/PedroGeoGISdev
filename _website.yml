@@ -1,11 +1,11 @@
 website:
   title: pedroGeoGISdev                 # Website title displayed in page headers and browser tab
-  # description: "PedroGeoGISdev"             # Website meta description for SEO and social media sharing
+  description: geology, GIS, remote sensing, geospatial analysis, WebGIS
   # logo: images/logos/pedrologo.png
   favicon: images/logos/favicon.png
   page-navigation: true    # Enable next/previous page navigation buttons (true/false)
   back-to-top-navigation: true  # Enable 'Back to Top' button on pages (true/false)
-  # site-url:                # Full URL where website will be published (for canonical links)
+  site-url: https://pedrogeogisdev.com/
   repo-url: https://github.com/pedroGEOGIScoding/PedroGeoGISdev
   repo-link-target: "_blank"
   repo-link-rel: "noopener"
@@ -37,8 +37,6 @@ website:
     collapse-level: 1
     collapse-below: xl
     left:                   # List of items on left side of navbar
-      - text: Home
-        file: index.qmd
       - sidebar:linux
       - sidebar:devops
       - sidebar:markup

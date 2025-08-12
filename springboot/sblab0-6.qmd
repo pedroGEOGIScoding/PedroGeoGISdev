@@ -161,10 +161,6 @@ To connect a Spring Boot application to MongoDB, you can use the spring.data.mon
 
 The `connection string` typically consists of the username, password, host, port, and database name. 
 
-```java
-spring.data.mongodb.uri=mongodb+srv://cifo:1234@clustertest.0h8fd.mongodb.net/LibraryManagementRest
-spring.data.mongodb.database=LibraryManagementRest
-```
 ::: {.column-margin}
 You can also use a `connection string` with additional options like SSL, authentication mechanisms, and connection pooling. By placing the connection string in the `application.properties` file, you can easily configure the connection and change it without modifying the source code.
 :::

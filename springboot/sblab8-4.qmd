@@ -36,7 +36,6 @@ All [Commits](https://github.com/AlbertProfe/restaurantManager/commits/master/){
 <details>
 <summary>Commits master branch table </summary>
 
-{{< include labsb08-4-commits/commits-table-restaurantManager.qmd >}}
 : `AlbertProfe / restaurantManager` (Public) commits table {tbl-colwidths="[10,20,55,5]"}
 
 </details>
@@ -1975,7 +1974,6 @@ All [Commits](https://github.com/AlbertProfe/restaurantManager/commits/master/){
 
 ::: {.column-page-right}
 
-{{< include labsb08-4-commits/commits-table-restaurantManager.qmd >}}
 : `AlbertProfe / restaurantManager` (Public) commits table {tbl-colwidths="[10,20,55,5]"}
 
 :::

@@ -138,7 +138,6 @@ type, validate, secure and populate your data and configuration TypeBox
 ? Which database are you connecting to? Databases can be added at any time 
 MongoDB
 ? Enter your database connection string 
-mongodb+srv://cifo:1234@clustertest.0h5f7.mongodb.net/todo
 ```
 
 

@@ -22,7 +22,7 @@ repo-actions: false
 
   .animated-text {
     font-size: 80px;
-    color: #000;
+    color: #fff;
     font-family: 'Cabin Sketch';
     text-align: center;
     vertical-align: middle;
@@ -37,16 +37,34 @@ repo-actions: false
   /* Simple Carousel Styles */
   .tech-carousel {
     display: inline-block;
-    padding: 25px 40px;
-    border-radius: 25px;
+    padding: 20px 20px;
+    border-radius: 50px;
     color: white;
     font-weight: bold;
-    font-size: 40px;
-    margin: 15px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    font-size: 60px;
+    margin: 5px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 0 0 1px rgba(255,255,255,0.1);
     min-width: 400px;
     text-align: center;
     transition: all 0.5s ease;
+    background-color: rgba(128, 128, 128, 0.2) !important;
+    backdrop-filter: blur(15px) saturate(180%);
+    -webkit-backdrop-filter: blur(15px) saturate(180%);
+    border: none;
+    filter: blur(0.5px);
+  }
+  
+  .tech-carousel::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
+    border-radius: 52px;
+    z-index: -1;
+    filter: blur(2px);
   }
 
   .tech-carousel .icon {
@@ -57,7 +75,7 @@ repo-actions: false
 
 ::: {.column-screen}
 
-<div class="animated-text">
+<div style="color: #FFFFFF;" class="animated-text">
   <p>WebGIS Full Stack Developments</p>
   <div id="tech-carousel" class="tech-carousel">
     <span class="icon">🗺️</span><span class="text">QGIS</span>
@@ -67,19 +85,19 @@ repo-actions: false
 
 <script>
 const technologies = [
-  { icon: '🗺️', text: 'QGIS', bg: 'linear-gradient(135deg, #4c6ef5, #5b7cfa)' },
-  { icon: '🛰️', text: 'ARCGIS PRO', bg: 'linear-gradient(135deg, #5b7cfa, #6a8aff)' },
-  { icon: '🔍', text: 'GEOSPATIAL ANALYSIS', bg: 'linear-gradient(135deg, #6a8aff, #7c3aed)' },
-  { icon: '📡', text: 'REMOTE SENSING', bg: 'linear-gradient(135deg, #7c3aed, #8b5cf6)' },
-  { icon: '🌐', text: 'WEB GIS', bg: 'linear-gradient(135deg, #8b5cf6, #a855f7)' },
-  { icon: '⚛️', text: 'REACT', bg: 'linear-gradient(135deg, #a855f7, #c084fc)' },
-  { icon: '☕', text: 'SPRING BOOT', bg: 'linear-gradient(135deg, #c084fc, #d8b4fe)' },
-  { icon: '🐚', text: 'BASH & LINUX', bg: 'linear-gradient(135deg, #d8b4fe, #e879f9)' },
-  { icon: '🛠️', text: 'DEVOPS', bg: 'linear-gradient(135deg, #e879f9, #f0abfc)' },
-  { icon: '☁️', text: 'AWS', bg: 'linear-gradient(135deg, #f0abfc, #f472b6)' },
-  { icon: '📄', text: 'MARKDOWN', bg: 'linear-gradient(135deg, #f472b6, #fb7185)' },
-  { icon: '☕', text: 'JAVA', bg: 'linear-gradient(135deg, #fb7185, #fda4af)' },
-  { icon: '🐍', text: 'PYTHON', bg: 'linear-gradient(135deg, #fda4af, #fecaca)' }
+  { icon: '🗺️', text: 'QGIS', bg: 'linear-gradient(135deg, rgba(245, 245, 245, 0.2), rgba(224, 224, 224, 0.2))' },
+  { icon: '🛰️', text: 'ARCGIS PRO', bg: 'linear-gradient(135deg, rgba(232, 232, 232, 0.2), rgba(208, 208, 208, 0.2))' },
+  { icon: '🔍', text: 'GEOSPATIAL ANALYSIS', bg: 'linear-gradient(135deg, rgba(220, 220, 220, 0.2), rgba(192, 192, 192, 0.2))' },
+  { icon: '📡', text: 'REMOTE SENSING', bg: 'linear-gradient(135deg, rgba(208, 208, 208, 0.2), rgba(176, 176, 176, 0.2))' },
+  { icon: '🌐', text: 'WEB GIS', bg: 'linear-gradient(135deg, rgba(196, 196, 196, 0.2), rgba(160, 160, 160, 0.2))' },
+  { icon: '⚛️', text: 'REACT', bg: 'linear-gradient(135deg, rgba(184, 184, 184, 0.2), rgba(144, 144, 144, 0.2))' },
+  { icon: '☕', text: 'SPRING BOOT', bg: 'linear-gradient(135deg, rgba(172, 172, 172, 0.2), rgba(128, 128, 128, 0.2))' },
+  { icon: '🐚', text: 'BASH & LINUX', bg: 'linear-gradient(135deg, rgba(160, 160, 160, 0.2), rgba(112, 112, 112, 0.2))' },
+  { icon: '🛠️', text: 'DEVOPS', bg: 'linear-gradient(135deg, rgba(148, 148, 148, 0.2), rgba(96, 96, 96, 0.2))' },
+  { icon: '☁️', text: 'AWS', bg: 'linear-gradient(135deg, rgba(136, 136, 136, 0.2), rgba(80, 80, 80, 0.2))' },
+  { icon: '📄', text: 'MARKDOWN', bg: 'linear-gradient(135deg, rgba(124, 124, 124, 0.2), rgba(64, 64, 64, 0.2))' },
+  { icon: '☕', text: 'JAVA', bg: 'linear-gradient(135deg, rgba(112, 112, 112, 0.2), rgba(48, 48, 48, 0.2))' },
+  { icon: '🐍', text: 'PYTHON', bg: 'linear-gradient(135deg, rgba(100, 100, 100, 0.2), rgba(32, 32, 32, 0.2))' }
 ];
 
 let currentIndex = 0;
@@ -87,7 +105,7 @@ const carousel = document.getElementById('tech-carousel');
 
 function updateCarousel() {
   const tech = technologies[currentIndex];
-  carousel.style.background = tech.bg;
+  carousel.style.background = `linear-gradient(rgba(128, 128, 128, 0.4), rgba(128, 128, 128, 0.4)), ${tech.bg}`;
   carousel.innerHTML = `<span class="icon">${tech.icon}</span><span class="text">${tech.text}</span>`;
   
   currentIndex = (currentIndex + 1) % technologies.length;
