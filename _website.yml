@@ -31,7 +31,7 @@ website:
     keyboard-shortcut: "ctrl+f"     # Keyboard shortcut(s) to activate search (e.g., "cmd+k", "ctrl+f")
     show-item-context: true     # Show parent page context for search results (true/false)
   navbar:
-    title: "Pedro<span class='geo-text'>Geo</span><span class='gis-text'>GIS</span>dev wiki"     
+    title: "Pedro<span class='geo-text'>Geo</span><span class='gis-text'>GIS</span>dev"     
     background: primary
     collapse: true
     collapse-level: 1

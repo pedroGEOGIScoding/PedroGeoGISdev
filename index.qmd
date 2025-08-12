@@ -39,32 +39,63 @@ repo-actions: false
     display: inline-block;
     padding: 20px 20px;
     border-radius: 50px;
+    position: relative;
     color: white;
     font-weight: bold;
     font-size: 60px;
-    margin: 5px;
-    box-shadow: 0 8px 32px rgba(0,0,0,0.2), inset 0 0 0 1px rgba(255,255,255,0.1);
+    margin: 25px;
     min-width: 400px;
     text-align: center;
     transition: all 0.5s ease;
-    background-color: rgba(128, 128, 128, 0.2) !important;
-    backdrop-filter: blur(15px) saturate(180%);
-    -webkit-backdrop-filter: blur(15px) saturate(180%);
-    border: none;
-    filter: blur(0.5px);
+    background: 
+      linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.1)),
+      radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1), transparent 70%),
+      radial-gradient(circle at 70% 70%, rgba(255,255,255,0.05), transparent 60%);
+    backdrop-filter: blur(50px) saturate(180%);
+    -webkit-backdrop-filter: blur(50px) saturate(180%);
+    border: 3px solid transparent;
+    background-clip: padding-box;
+    box-shadow: 
+      0 0 0 1px rgba(255,255,255,0.1),
+      0 0 30px rgba(255,255,255,0.2),
+      0 8px 32px rgba(0,0,0,0.3),
+      inset 0 1px 0 rgba(255,255,255,0.2);
   }
   
   .tech-carousel::before {
     content: '';
     position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.05));
-    border-radius: 52px;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: 
+      radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.2) 40%, transparent 70%);
+    border-radius: 60px;
     z-index: -1;
-    filter: blur(2px);
+    filter: blur(15px);
+    opacity: 0.8;
+  }
+
+  .tech-carousel::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: 
+      conic-gradient(from 0deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1), rgba(255,255,255,0.3));
+    border-radius: 70px;
+    z-index: -2;
+    filter: blur(25px);
+    opacity: 0.6;
+    animation: rotate 10s linear infinite;
+  }
+
+  @keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
   }
 
   .tech-carousel .icon {
@@ -76,19 +107,19 @@ repo-actions: false
 ::: {.column-screen}
 
 <div style="color: #FFFFFF;" class="animated-text">
-  <p>WebGIS Full Stack Developments</p>
+  <p>Geology and WebGIS Full Stack Developments</p>
   <div id="tech-carousel" class="tech-carousel">
     <span class="icon">🗺️</span><span class="text">QGIS</span>
   </div>
-  <p>Exploring the unknown</p>
+  <p>Exploring to uncover the unknown</p>
 </div>
 
 <script>
 const technologies = [
   { icon: '🗺️', text: 'QGIS', bg: 'linear-gradient(135deg, rgba(245, 245, 245, 0.2), rgba(224, 224, 224, 0.2))' },
-  { icon: '🛰️', text: 'ARCGIS PRO', bg: 'linear-gradient(135deg, rgba(232, 232, 232, 0.2), rgba(208, 208, 208, 0.2))' },
+  { icon: '🌍', text: 'ARCGIS PRO', bg: 'linear-gradient(135deg, rgba(232, 232, 232, 0.2), rgba(208, 208, 208, 0.2))' },
   { icon: '🔍', text: 'GEOSPATIAL ANALYSIS', bg: 'linear-gradient(135deg, rgba(220, 220, 220, 0.2), rgba(192, 192, 192, 0.2))' },
-  { icon: '📡', text: 'REMOTE SENSING', bg: 'linear-gradient(135deg, rgba(208, 208, 208, 0.2), rgba(176, 176, 176, 0.2))' },
+  { icon: '🛰️', text: 'REMOTE SENSING', bg: 'linear-gradient(135deg, rgba(208, 208, 208, 0.2), rgba(176, 176, 176, 0.2))' },
   { icon: '🌐', text: 'WEB GIS', bg: 'linear-gradient(135deg, rgba(196, 196, 196, 0.2), rgba(160, 160, 160, 0.2))' },
   { icon: '⚛️', text: 'REACT', bg: 'linear-gradient(135deg, rgba(184, 184, 184, 0.2), rgba(144, 144, 144, 0.2))' },
   { icon: '☕', text: 'SPRING BOOT', bg: 'linear-gradient(135deg, rgba(172, 172, 172, 0.2), rgba(128, 128, 128, 0.2))' },
