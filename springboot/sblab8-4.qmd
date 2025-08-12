@@ -14,8 +14,9 @@ format:
 lightbox: true
 ---
 
-:::: {.labs}
-📘 Spring Boot Lab#SB00-4: `RestaurantManager` JPA, Queries, Mappings and Relationships
+::: {.labs}
+📘Spring Boot Lab#SB00-4: `RestaurantManager` JPA, Queries, Mappings and Relationships
+
 ## Summary
 
 The Spring Boot `RestaurantManagement` System utilizes `JPA` to efficiently manage restaurant operations:
@@ -25,20 +26,14 @@ The Spring Boot `RestaurantManagement` System utilizes `JPA` to efficiently mana
 - Custom `queries` enhance data retrieval, enabling functionalities like fetching recent orders or customer-specific orders.
 
 This architecture not only facilitates effective data management but also provides a robust foundation for building scalable restaurant applications, leveraging the power of Spring Boot and JPA for seamless integration and performance.
-:::
 
-</br>
+:::
 
 All [Commits](https://github.com/AlbertProfe/restaurantManager/commits/master/){.external target='_blank'} from `master branch`, repo `AlbertProfe / restaurantManager` (Public) table:
 
 ::: {.column-page-right}
 
-<details>
-<summary>Commits master branch table </summary>
 
-: `AlbertProfe / restaurantManager` (Public) commits table {tbl-colwidths="[10,20,55,5]"}
-
-</details>
 
 :::
 
@@ -2002,13 +1997,6 @@ To fix this, the test should be refactored to:
 3. Update the `order` creation process to use the new relationship structure.
 4. Adjust `assertions` to verify the new relationship.
 
-This **refactoring** ensures that the test <mark>accurately reflects the new data model and relationships</mark>.
+This **refactoring** ensures that the test <mark> accurately reflects the new data model and relationships </mark>.
 
 It also helps maintain the integrity of the test suite as the project evolves, ensuring that tests remain valid and useful for catching potential issues in the updated codebase.
-
-## commit `d65b4a9`
-
-In this commit we update `TestCreateOrder()` to reflect the new relationship structure and create a new test.
-
-- [TestCreateOrderMenu() and update TestCreateOrder()](https://github.com/AlbertProfe/restaurantManager/tree/d65b4a959ffe9b8d489e7ad0ef322b707482bb0c){.external target='_blank'}
-

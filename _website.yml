@@ -563,7 +563,7 @@ website:
             - bookmarks/bookmarks.qmd
   page-footer:
     background: primary
-    left: "This website is built with [Quarto](https://quarto.org/)." 
+    left: "License: CC0 1.0 Universal" 
     center: "Difficulties are just things to overcome, after all. *Ernest Shackleton*"
     right:
       - icon: github
