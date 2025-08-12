@@ -69,12 +69,3 @@ quarto publish gh-pages
 
 ---
 
-**License**: You can specify an open-source license (MIT, Apache, etc.) or mark as “All Rights Reserved”.
-
----
-
-### 💡 Tip:
-
-If you want, I can also include **a dynamic GitHub profile badge** that automatically shows your latest projects and tech stack icons.
-
----
