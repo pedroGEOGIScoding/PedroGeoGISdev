@@ -37,6 +37,8 @@ padding: 2px 5px;
 border-radius: 3px;
 }
 
+
+
 /* ===== NAVBAR TITLE STYLING ===== */
 .navbar {
   background-color: var(--primary-brown) !important;
@@ -81,6 +83,16 @@ border-radius: 3px;
 
 .margin-sidebar {
   background-color: var(--margin-sidebar-colour) !important;
+}
+
+/* Desktop (xl and above) - when navbar is expanded */
+@media (min-width: 1200px) {
+  .navbar-brand { font-size: var(--navbar-font-size-desktop) !important; }
+}
+
+/* Tablet and below - when navbar collapses */
+@media (max-width: 1199px) {
+  .navbar-brand { font-size: var(--navbar-font-size-mobile) !important; }
 }
 
 /* ===== FOOTER STYLES ===== */

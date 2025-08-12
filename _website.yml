@@ -52,6 +52,8 @@ website:
       - sidebar:bookmarks
       - sidebar:about
     right:
+      - text: Maps
+        file: maps.qmd
       - text: "Featured Projects"
         menu:
           - text: ✈️ Flight tracker
