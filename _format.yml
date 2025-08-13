@@ -2,7 +2,7 @@ format:
   html:
     theme:                 
       light: sketchy
-      dark: darkly           
+#      dark: darkly           
     css: styles.css
     line-numbers: true
     linestretch: 1.5                 
