@@ -1,0 +1,380 @@
+---
+title: "GeoGIS Portfolio"
+format: html
+---
+
+## What I Do
+
+<div style="position: fixed; top: 10px; left: 10px; background: rgba(0,0,0,0.9); color: white; padding: 15px; border-radius: 8px; z-index: 9999; font-family: monospace; max-width: 300px;">
+  <h3 style="margin: 0 0 10px 0; color: #4caf50;">Carousel Test</h3>
+  <div id="carouselDebug">Running test...</div>
+</div>
+
+```{=html}
+<div style="margin: 50px auto; max-width: 1000px; background: #f8f9fa; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+  <h2>My Services</h2>
+  <div class="carousel-wrapper" style="position: relative; overflow: hidden; border-radius: 8px; background: white; padding: 30px 0;">
+    <div id="testCarousel" style="display: flex; will-change: transform;">
+      <!-- Items will be duplicated here by JavaScript -->
+    </div>
+    <div class="carousel-overlay left" style="position: absolute; left: 0; top: 0; bottom: 0; width: 100px; background: linear-gradient(90deg, #f8f9fa 0%, rgba(248,249,250,0) 100%); pointer-events: none; z-index: 2;"></div>
+    <div class="carousel-overlay right" style="position: absolute; right: 0; top: 0; bottom: 0; width: 100px; background: linear-gradient(270deg, #f8f9fa 0%, rgba(248,249,250,0) 100%); pointer-events: none; z-index: 2;"></div>
+  </div>
+</div>
+```
+
+## What Clients Say
+
+<div class="testimonial-container" id="testimonialCarousel">
+  <div class="testimonial-track" id="testimonialTrack"></div>
+  <div class="testimonial-nav" id="testimonialNav"></div>
+</div>
+
+<style>
+/* Diagnostic Styles */
+body { 
+  background-color: #f8f9fa;
+  padding: 20px;
+  margin: 0;
+  min-height: 100vh;
+}
+
+/* Simple Carousel Styles */
+.simple-carousel-container {
+  width: 100%;
+  position: relative;
+  margin: 2rem 0;
+  overflow: hidden;
+  background: #f0f0f0;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+}
+
+.simple-carousel {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  transition: transform 0.3s ease;
+  width: 100% !important;
+  padding: 20px 50px !important;
+  overflow-x: auto !important;
+  overflow-y: visible !important;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+  background-color: rgba(255, 0, 0, 0.1); /* Temporary background */
+  outline: 2px dashed blue; /* Temporary outline */
+  min-height: 400px; /* Ensure minimum height */
+  position: relative;
+  z-index: 1;
+}
+
+.simple-carousel::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome/Safari */
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.left-arrow { left: 5px; }
+.right-arrow { right: 5px; }
+
+.carousel-item {
+  flex: 0 0 300px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  scroll-snap-align: start;
+}
+
+.carousel-item img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.carousel-content {
+  padding: 1.5rem;
+}
+
+/* Testimonial Styles */
+.testimonial-container {
+  max-width: 800px;
+  margin: 4rem auto;
+  text-align: center;
+}
+
+.testimonial-slide {
+  display: none;
+  padding: 1rem;
+}
+
+.testimonial-slide.active {
+  display: block;
+  animation: fadeIn 0.6s;
+}
+
+.testimonial-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 2rem;
+}
+
+.testimonial-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #ccc;
+  cursor: pointer;
+}
+
+.testimonial-dot.active {
+  background: #000;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+</style>
+
+<script>
+// Carousel Data
+const carouselItems = [
+  {
+    title: "Field Surveys",
+    description: "Comprehensive geological field surveys and data collection.",
+    icon: "🌍"
+  },
+  {
+    title: "Landslides Monitoring",
+    description: "Advanced monitoring systems for landslide risk assessment.",
+    icon: "⛰️"
+  },
+  {
+    title: "Drilling Supervision",
+    description: "Professional supervision of geotechnical drilling operations.",
+    icon: "⛏️"
+  },
+  {
+    title: "Remote Sensing",
+    description: "Advanced satellite and aerial data analysis.",
+    icon: "🛰️"
+  },
+  {
+    title: "GeoSpatial Analysis",
+    description: "Advanced spatial analysis and modeling.",
+    icon: "🗺️"
+  },
+  {
+    title: "Cartography",
+    description: "Professional map design and data visualization.",
+    icon: "📍"
+  }
+];
+
+const testimonials = [
+  {
+    text: "Outstanding work on our geological survey project. The team delivered exceptional results on time.",
+    author: "John Smith",
+    role: "Project Manager, GeoConsult Ltd"
+  },
+  {
+    text: "The remote sensing analysis provided crucial insights for our environmental impact assessment.",
+    author: "Maria Garcia",
+    role: "Environmental Scientist, EcoTech"
+  },
+  {
+    text: "Professional and thorough in their approach to landslide risk assessment.",
+    author: "David Kim",
+    role: "Civil Engineer, BuildRight Inc"
+  }
+];
+
+// Initialize when DOM is fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('Initializing carousels...');
+  
+  // Small delay to ensure all elements are rendered
+  setTimeout(() => {
+    initMainCarousel();
+    initTestimonialCarousel();
+    console.log('Carousels initialized successfully');
+  }, 100);
+});
+
+function initMainCarousel() {
+  console.log('Initializing continuous carousel...');
+  const container = document.getElementById('testCarousel');
+  const debugDiv = document.getElementById('carouselDebug');
+  
+  if (!container) {
+    const error = 'Carousel container not found!';
+    console.error(error);
+    if (debugDiv) debugDiv.textContent = error;
+    return;
+  }
+  
+  // Clear container and ensure it's visible
+  container.innerHTML = '';
+  container.style.opacity = '1';
+  container.style.visibility = 'visible';
+  
+  // Carousel items
+  const carouselItems = [
+    { icon: '🌍', title: 'Field Surveys', description: 'Comprehensive geological field surveys and data collection.' },
+    { icon: '⛰️', title: 'Landslides Monitoring', description: 'Advanced monitoring systems for landslide risk assessment.' },
+    { icon: '🗺️', title: 'Geological Mapping', description: 'Detailed geological maps and spatial analysis.' },
+    { icon: '📊', title: 'GIS Analysis', description: 'Advanced geospatial data processing and visualization.' },
+    { icon: '🛰️', title: 'Remote Sensing', description: 'Satellite and aerial imagery analysis.' },
+    { icon: '📈', title: 'Data Visualization', description: 'Interactive maps and data dashboards.' }
+  ];
+
+  // Duplicate items for seamless looping
+  const items = [...carouselItems, ...carouselItems, ...carouselItems];
+  let currentPosition = 0;
+  let animationId;
+  let isPaused = false;
+  const speed = 0.8; // Increased from 0.5 to 0.8 for faster scrolling
+
+  // Create carousel items
+  items.forEach((item, index) => {
+    const itemDiv = document.createElement('div');
+    itemDiv.style.cssText = `
+      flex: 0 0 250px;
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      margin: 0 10px;
+      transition: all 0.3s ease;
+    `;
+    
+    itemDiv.innerHTML = `
+      <div style="font-size: 40px; text-align: center; margin-bottom: 15px;">
+        ${item.icon}
+      </div>
+      <h3 style="margin: 0 0 10px 0; color: #333; font-size: 1.2em;">
+        ${item.title}
+      </h3>
+      <p style="margin: 0; color: #666; font-size: 0.9em;">
+        ${item.description}
+      </p>
+    `;
+
+    // Add hover effects
+    itemDiv.addEventListener('mouseenter', () => {
+      itemDiv.style.transform = 'translateY(-5px)';
+      itemDiv.style.boxShadow = '0 8px 15px rgba(0,0,0,0.1)';
+    });
+    
+    itemDiv.addEventListener('mouseleave', () => {
+      itemDiv.style.transform = 'translateY(0)';
+      itemDiv.style.boxShadow = '0 2px 5px rgba(0,0,0,0.1)';
+    });
+    
+    container.appendChild(itemDiv);
+  });
+
+  // Auto-scroll animation with seamless loop
+  function animate() {
+    if (!isPaused) {
+      currentPosition -= speed;
+      const maxScroll = (container.scrollWidth / 3); // Total width of one set of items
+      const viewportWidth = container.parentElement.offsetWidth;
+      
+      // When we've scrolled one full set of items, 
+      // reset position without animation for seamless transition
+      if (Math.abs(currentPosition) >= maxScroll) {
+        // Jump back to start without animation
+        container.style.transition = 'none';
+        currentPosition = 0;
+        // Force reflow
+        void container.offsetHeight;
+        // Re-enable animation
+        container.style.transition = 'transform 0.5s ease-out';
+      }
+      
+      container.style.transform = `translateX(${currentPosition}px)`;
+    }
+    
+    animationId = requestAnimationFrame(animate);
+  }
+
+  // Pause on hover
+  container.parentElement.addEventListener('mouseenter', () => {
+    isPaused = true;
+    container.style.transition = 'transform 0.3s ease-out';
+  });
+
+  container.parentElement.addEventListener('mouseleave', () => {
+    isPaused = false;
+    container.style.transition = 'transform 0.5s ease-out';
+  });
+
+  // Start animation
+  animate();
+}
+
+function initTestimonialCarousel() {
+  const container = document.getElementById('testimonialTrack');
+  const nav = document.getElementById('testimonialNav');
+  let currentSlide = 0;
+
+  // Create testimonial slides and dots
+  testimonials.forEach((testimonial, i) => {
+    // Create slide
+    const slide = document.createElement('div');
+    slide.className = `testimonial-slide ${i === 0 ? 'active' : ''}`;
+    slide.innerHTML = `
+      <p class="testimonial-text">${testimonial.text}</p>
+      <div class="testimonial-author">${testimonial.author}</div>
+      <div class="testimonial-role">${testimonial.role}</div>
+    `;
+    container.appendChild(slide);
+
+    // Create nav dot
+    const dot = document.createElement('div');
+    dot.className = `testimonial-dot ${i === 0 ? 'active' : ''}`;
+    dot.onclick = () => showTestimonial(i);
+    nav.appendChild(dot);
+  });
+
+  // Auto-rotate testimonials
+  setInterval(() => {
+    currentSlide = (currentSlide + 1) % testimonials.length;
+    showTestimonial(currentSlide);
+  }, 5000);
+}
+
+function showTestimonial(index) {
+  const slides = document.querySelectorAll('.testimonial-slide');
+  const dots = document.querySelectorAll('.testimonial-dot');
+  
+  // Hide all slides and dots
+  slides.forEach(slide => slide.classList.remove('active'));
+  dots.forEach(dot => dot.classList.remove('active'));
+  
+  // Show selected slide and update dot
+  if (slides[index]) slides[index].classList.add('active');
+  if (dots[index]) dots[index].classList.add('active');
+}
+</script>

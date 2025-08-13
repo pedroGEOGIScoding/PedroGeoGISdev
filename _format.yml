@@ -1,7 +1,7 @@
 format:
   html:
     theme:                 
-      light: sketchy
+      light: flatly
 #      dark: darkly           
     css: styles.css
     line-numbers: true

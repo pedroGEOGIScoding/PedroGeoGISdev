@@ -36,7 +36,9 @@ website:
     collapse: true
     collapse-level: 1
     collapse-below: xl
-    left:                   # List of items on left side of navbar
+    left:
+      - text: Home
+        href: index2.qmd
       - sidebar:linux
       - sidebar:devops
       - sidebar:markup
