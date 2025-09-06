@@ -97,7 +97,7 @@ repo-actions: false
     background: rgba(225, 215, 215, 0.4);
     white-space: nowrap;
     position: relative;
-    border: 1px solid rgba(221, 221, 221, 0.2);
+    border: 1px solid rgba(225, 215, 215, 0.6);
     border-radius: 45px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     width: 99%;
@@ -131,6 +131,7 @@ repo-actions: false
 
   .skills-slide {
     display: inline-block;
+    vertical-align: middle;
     animation: 50s skillsMove infinite linear;
   }
 
@@ -164,7 +165,7 @@ repo-actions: false
     font-family: 'Cabin Sketch';
     font-weight: bold;
     font-size: 25px;
-    background: rgba(234, 234, 234, 0.8);
+    background: rgba(225, 215, 215, 0.6);
     border: 0.5px solid #ddd;
     border-radius: 25px;
     z-index: 4;
@@ -173,10 +174,10 @@ repo-actions: false
   .services {
     overflow: hidden;
     padding: 20px 0;
-    background: rgba(225, 215, 215, 0.4);
+    background: rgba(225, 215, 215, 0.6);
     white-space: nowrap;
     position: relative;
-    border: 1px solid rgba(221, 221, 221, 0.2);
+    border: 1px solid rgba(225, 215, 215, 0.6);
     border-radius: 45px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     margin: 15px auto;
@@ -211,6 +212,7 @@ repo-actions: false
 
   .services-slide {
     display: inline-block;
+    vertical-align: middle;
     animation: 60s serviceMove infinite linear;
   }
 
