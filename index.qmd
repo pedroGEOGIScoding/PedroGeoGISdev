@@ -28,123 +28,316 @@ repo-actions: false
     vertical-align: middle;
   }
 
-  @keyframes letterAnimation {
-    0% { opacity: 0; transform: translateY(-10px); }
-    10% { opacity: 1; transform: translateY(0); }
-    100% { opacity: 0; transform: translateY(10px); }
+  /* ========== ANIMATIONS ========== */
+  @keyframes skillsMove {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
   }
 
-  /* Simple Carousel Styles */
-  .tech-carousel {
-    display: inline-block;
-    padding: 20px 20px;
-    border-radius: 50px;
+  @keyframes serviceMove {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+  /* ========== SKILLS SECTION ========== */
+  .skills-carousel {
     position: relative;
-    color: white;
+    align-items: center;
+  }
+
+  .header-skills {
+    position: absolute;
+    top: -3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 6em;
+    padding: 0.1em 0.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cabin Sketch';
     font-weight: bold;
-    font-size: 60px;
-    margin: 25px;
-    min-width: 400px;
+    font-size: 25px;
+    background: rgba(225, 215, 215, 0.6);
+    border: 0.5px solid #ddd;
+    border-radius: 25px;
+    z-index: 2;
+  }
+
+  .bottom-message-skills {
+    position: absolute;
+    top: 102%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 6em;
+    padding: 0.1em 0.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cabin Sketch';
+    font-weight: bold;
+    font-size: 25px;
+    background: rgba(225, 215, 215, 0.6);
+    border: 0.5px solid #ddd;
+    border-radius: 25px;
+    z-index: 2;
+  }
+
+  .skills {
+    overflow: hidden;
+    padding: 20px 0;
+    background: rgba(225, 215, 215, 0.4);
+    white-space: nowrap;
+    position: relative;
+    border: 1px solid rgba(221, 221, 221, 0.2);
+    border-radius: 45px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    width: 99%;
+    z-index: 1;
+  }
+
+  .skills:before,
+  .skills:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .skills:before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+  }
+
+  .skills:after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+  }
+
+  .skills:hover .skills-slide {
+    animation-play-state: paused !important;
+  }
+
+  .skills-slide {
+    display: inline-block;
+    animation: 50s skillsMove infinite linear;
+  }
+
+  .skills-slide img {
+    height: 80px;
+    margin: 0 40px;
+    transition: transform 0.3s ease;
+  }
+
+  .skills-slide img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+  /* ========== SERVICES SECTION ========== */
+  .services-carousel {
+    position: relative;
+    align-items: center;
+  }
+
+  .header-services {
+    position: absolute;
+    top: -3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 6em;
+    padding: 0.1em 0.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cabin Sketch';
+    font-weight: bold;
+    font-size: 25px;
+    background: rgba(234, 234, 234, 0.8);
+    border: 0.5px solid #ddd;
+    border-radius: 25px;
+    z-index: 4;
+  }
+
+  .services {
+    overflow: hidden;
+    padding: 20px 0;
+    background: rgba(225, 215, 215, 0.4);
+    white-space: nowrap;
+    position: relative;
+    border: 1px solid rgba(221, 221, 221, 0.2);
+    border-radius: 45px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    margin: 15px auto;
+    width: 95%;
+    z-index: 1;
+  }
+
+  .services:before,
+  .services:after {
+    position: absolute;
+    top: 0;
+    width: 250px;
+    height: 100%;
+    content: "";
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .services:before {
+    left: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+  }
+
+  .services:after {
+    right: 0;
+    background: linear-gradient(to left, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+  }
+
+  .services:hover .services-slide {
+    animation-play-state: paused !important;
+  }
+
+  .services-slide {
+    display: inline-block;
+    animation: 60s serviceMove infinite linear;
+  }
+
+  .services-slide img {
+    height: 80px;
+    margin: 0 40px;
+    transition: transform 0.3s ease;
+  }
+
+  .services-slide img:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
+  .service-item {
+    display: inline-block;
     text-align: center;
-    transition: all 0.5s ease;
-    background: 
-      linear-gradient(rgba(128, 128, 128, 0.3), rgba(128, 128, 128, 0.1)),
-      radial-gradient(circle at 30% 30%, rgba(255,255,255,0.1), transparent 70%),
-      radial-gradient(circle at 70% 70%, rgba(255,255,255,0.05), transparent 60%);
-    backdrop-filter: blur(50px) saturate(180%);
-    -webkit-backdrop-filter: blur(50px) saturate(180%);
-    border: 3px solid transparent;
-    background-clip: padding-box;
-    box-shadow: 
-      0 0 0 1px rgba(255,255,255,0.1),
-      0 0 30px rgba(255,255,255,0.2),
-      0 8px 32px rgba(0,0,0,0.3),
-      inset 0 1px 0 rgba(255,255,255,0.2);
-  }
-  
-  .tech-carousel::before {
-    content: '';
-    position: absolute;
-    top: -10px;
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    background: 
-      radial-gradient(circle, rgba(255,255,255,0.4) 0%, rgba(255,255,255,0.2) 40%, transparent 70%);
-    border-radius: 60px;
-    z-index: -1;
-    filter: blur(15px);
-    opacity: 0.8;
+    margin: 0 20px;
+    vertical-align: top;
   }
 
-  .tech-carousel::after {
-    content: '';
-    position: absolute;
-    top: -20px;
-    left: -20px;
-    right: -20px;
-    bottom: -20px;
-    background: 
-      conic-gradient(from 0deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1), rgba(255,255,255,0.3));
-    border-radius: 70px;
-    z-index: -2;
-    filter: blur(25px);
-    opacity: 0.6;
-    animation: rotate 10s linear infinite;
-  }
-
-  @keyframes rotate {
-    from { transform: rotate(0deg); }
-    to { transform: rotate(360deg); }
-  }
-
-  .tech-carousel .icon {
-    font-size: 60px;
-    margin-right: 15px;
+  .service-item span {
+    display: block;
+    margin-top: 10px;
+    font-family: 'Cabin Sketch';
+    font-size: 20px;
+    color: #333;
+    font-weight: bold;
   }
 </style>
 
-::: {.column-screen}
+<div style="color: #FFFFFF;" class="animated-text">
+  <p>Geology and Full Stack WebGIS</p>
+</div>
+
+<div class="skills-carousel">
+  <span class="header-skills">I am using these tools</span>
+
+<div class="skills">
+<div class="skills-slide">
+<img src="images/logos/Amazon_Web_Services_Logo.svg" alt="AWS" />
+<img src="images/logos/GitHub_Logo.svg" alt="GitHub" />
+<img src="images/logos/git_logo.svg" alt="Git" />
+<img src="images/logos/gnu_bash.svg" alt="Bash" />
+<img src="images/logos/linux-icon.svg" alt="Linux" />
+<img src="images/logos/HTML5_logo.svg" alt="HTML5" />
+<img src="images/logos/CSS3_logo.svg" alt="CSS3" />
+<img src="images/logos/javascript_logo.svg" alt="JavaScript" />
+<img src="images/logos/python_logo.svg" alt="Python" />
+<img src="images/logos/java_logo.svg" alt="Java" />
+<img src="images/logos/sql_logo.svg" alt="SQL" />
+<img src="images/logos/mysql_logo.svg" alt="MySQL" />
+<img src="images/logos/aws-dynamodb.svg" alt="DynamoDB" />
+<img src="images/logos/postgis_logo.svg" alt="PostGIS" />
+<img src="images/logos/postgresql_logo.svg" alt="PostgreSQL" />
+<img src="images/logos/mongodb_logo.svg" alt="MongoDB" />
+<img src="images/logos/IntelliJ_IDEA_Icon.svg" alt="IntelliJ IDEA" />
+<img src="images/logos/visualstudio_logo.svg" alt="Visual Studio" />
+<img src="images/logos/Eclipse-Luna-Logo.svg" alt="Eclipse Luna" />
+<img src="images/logos/Esri_Logo.svg" alt="Esri" />
+<img src="images/logos/QGIS_logo.svg" alt="QGIS" />
+<img src="images/logos/grasslogo.svg" alt="GRASS GIS" />
+<img src="images/logos/GDALLogoColor.svg" alt="GDAL" />
+<img src="images/logos/GeoServer_Logo.svg" alt="GeoServer" />
+<img src="images/logos/openlayers.svg" alt="OpenLayers" />
+<img src="images/logos/maplibre.svg" alt="MapLibre" />
+<img src="images/logos/leafletjs_logo.svg" alt="Leaflet" />
+<img src="images/logos/geemap_logo.png" alt="Geemap" />
+<img src="images/logos/leafmap_logo.png" alt="Leafmap" />
+<img src="images/logos/google_maps.svg" alt="Google Maps" />
+<img src="images/logos/googleearth-engine.svg" alt="Google Earth Engine" />
+<img src="images/logos/cesiumjs_logo.svg" alt="Cesium" />
+<img src="images/logos/reactjs_logo.svg" alt="React" />
+<img src="images/logos/springio_logo.svg" alt="Spring" />
+<img src="images/logos/Vaadin_Logo.svg" alt="Vaadin" />
+<img src="images/logos/bootstrap_logo.svg" alt="Bootstrap" />
+<img src="images/logos/vitejs_logo.svg" alt="Vite" />
+<img src="images/logos/IHS_Kingdom_logo.png" alt="IHS Kingdom" />
+<img src="images/logos/logo-eliis.svg" alt="Eliis" />
+<img src="images/logos/Petrel.svg" alt="Petrel" />
+</div>
+</div>
+</div>
 
 <div style="color: #FFFFFF;" class="animated-text">
-  <p>Geology and WebGIS Full Stack Developments</p>
-  <div id="tech-carousel" class="tech-carousel">
-    <span class="icon">🗺️</span><span class="text">QGIS</span>
-  </div>
-  <p>Exploring to uncover the unknown</p>
+  <p>for exploring Earth to uncover the unknown</p>
+</div>
+
+<br>
+
+<div class="services-carousel">
+<span class="header-services">What I do</span>
+<div class="services">
+<div class="services-slide">
+<div class="service-item">
+<img src="images/logos/cartography.svg" alt="cartography" />
+<span>Cartography</span>
+</div>
+<div class="service-item">
+<img src="images/logos/remote_sensing1.svg" alt="remotesensing" />
+<span>Remote Sensing</span>
+</div>
+<div class="service-item">
+<img src="images/logos/geodata_analysis.png" alt="geodataanalysis" />
+<span>Geodata Analysis</span>
+</div>
+<div class="service-item">
+<img src="images/logos/geospatial_analysis.png" alt="geospatialanalysis" />
+<span>Geospatial Analysis</span>
+</div>
+<div class="service-item">
+<img src="images/logos/paleogeographic_mapping.png" alt="paleogeographicmapping" />
+<span>Paleogeographic Mapping</span>
+</div>
+<div class="service-item">
+<img src="images/logos/gis_eco.png" alt="giseco" />
+<span>GIS Eco</span>
+</div>
+</div>
+</div>
 </div>
 
 <script>
-const technologies = [
-  { icon: '🗺️', text: 'QGIS', bg: 'linear-gradient(135deg, rgba(245, 245, 245, 0.2), rgba(224, 224, 224, 0.2))' },
-  { icon: '🌍', text: 'ARCGIS PRO', bg: 'linear-gradient(135deg, rgba(232, 232, 232, 0.2), rgba(208, 208, 208, 0.2))' },
-  { icon: '🔍', text: 'GEOSPATIAL ANALYSIS', bg: 'linear-gradient(135deg, rgba(220, 220, 220, 0.2), rgba(192, 192, 192, 0.2))' },
-  { icon: '🛰️', text: 'REMOTE SENSING', bg: 'linear-gradient(135deg, rgba(208, 208, 208, 0.2), rgba(176, 176, 176, 0.2))' },
-  { icon: '🌐', text: 'WEB GIS', bg: 'linear-gradient(135deg, rgba(196, 196, 196, 0.2), rgba(160, 160, 160, 0.2))' },
-  { icon: '⚛️', text: 'REACT', bg: 'linear-gradient(135deg, rgba(184, 184, 184, 0.2), rgba(144, 144, 144, 0.2))' },
-  { icon: '☕', text: 'SPRING BOOT', bg: 'linear-gradient(135deg, rgba(172, 172, 172, 0.2), rgba(128, 128, 128, 0.2))' },
-  { icon: '🐚', text: 'BASH & LINUX', bg: 'linear-gradient(135deg, rgba(160, 160, 160, 0.2), rgba(112, 112, 112, 0.2))' },
-  { icon: '🛠️', text: 'DEVOPS', bg: 'linear-gradient(135deg, rgba(148, 148, 148, 0.2), rgba(96, 96, 96, 0.2))' },
-  { icon: '☁️', text: 'AWS', bg: 'linear-gradient(135deg, rgba(136, 136, 136, 0.2), rgba(80, 80, 80, 0.2))' },
-  { icon: '📄', text: 'MARKDOWN', bg: 'linear-gradient(135deg, rgba(124, 124, 124, 0.2), rgba(64, 64, 64, 0.2))' },
-  { icon: '☕', text: 'JAVA', bg: 'linear-gradient(135deg, rgba(112, 112, 112, 0.2), rgba(48, 48, 48, 0.2))' },
-  { icon: '🐍', text: 'PYTHON', bg: 'linear-gradient(135deg, rgba(100, 100, 100, 0.2), rgba(32, 32, 32, 0.2))' }
-];
+var copy = document.querySelector(".skills-slide").cloneNode(true);
+document.querySelector(".skills").appendChild(copy);
 
-let currentIndex = 0;
-const carousel = document.getElementById('tech-carousel');
+var copy = document.querySelector(".services-slide").cloneNode(true);
+document.querySelector(".services").appendChild(copy);
 
-function updateCarousel() {
-  const tech = technologies[currentIndex];
-  carousel.style.background = `linear-gradient(rgba(128, 128, 128, 0.4), rgba(128, 128, 128, 0.4)), ${tech.bg}`;
-  carousel.innerHTML = `<span class="icon">${tech.icon}</span><span class="text">${tech.text}</span>`;
-  
-  currentIndex = (currentIndex + 1) % technologies.length;
-}
-
-// Initialize and start carousel
-updateCarousel();
-setInterval(updateCarousel, 2000); // Change every 2 seconds
 </script>
-
-:::
