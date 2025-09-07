@@ -338,7 +338,7 @@ repo-actions: false
     }
     
     .bottom-about-services {
-      font-size: 18px;
+      font-size: 12px;
       padding: 0.1em 0.3em;
       min-width: 4em;
     }
@@ -389,7 +389,7 @@ repo-actions: false
     }
     
     .bottom-about-services {
-      font-size: 22px;
+      font-size: 18px;
     }
   }
   
@@ -466,7 +466,7 @@ repo-actions: false
     }
     
     .bottom-about-services {
-      font-size: 16px;
+      font-size: 12px;
       padding: 0.1em 0.2em;
       min-width: 3em;
     }
