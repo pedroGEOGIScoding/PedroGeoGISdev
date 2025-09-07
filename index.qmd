@@ -93,12 +93,12 @@ repo-actions: false
 
   .skills {
     overflow: hidden;
-    padding: 20px 0;
+    padding: 20px 10px 0px 10px;
     background: rgba(225, 215, 215, 0.4);
     white-space: nowrap;
     position: relative;
     border: 1px solid rgba(225, 215, 215, 0.6);
-    border-radius: 45px;
+    border-radius: 25px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     width: 99%;
     z-index: 1;
@@ -131,13 +131,13 @@ repo-actions: false
 
   .skills-slide {
     display: inline-block;
-    vertical-align: middle;
-    animation: 50s skillsMove infinite linear;
+    animation: 60s skillsMove infinite linear;
   }
 
   .skills-slide img {
     height: 80px;
     margin: 0 40px;
+    padding: 10px 0px 0px 0px;
     transition: transform 0.3s ease;
   }
 
@@ -173,7 +173,7 @@ repo-actions: false
 
   .services {
     overflow: hidden;
-    padding: 20px 0;
+    padding: 20px 10px 0px 0px;
     background: rgba(225, 215, 215, 0.6);
     white-space: nowrap;
     position: relative;
@@ -181,7 +181,7 @@ repo-actions: false
     border-radius: 45px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     margin: 15px auto;
-    width: 95%;
+    width: 80%;
     z-index: 1;
   }
 
@@ -213,7 +213,7 @@ repo-actions: false
   .services-slide {
     display: inline-block;
     vertical-align: middle;
-    animation: 60s serviceMove infinite linear;
+    animation: 50s serviceMove infinite linear;
   }
 
   .services-slide img {
@@ -242,6 +242,7 @@ repo-actions: false
     color: #333;
     font-weight: bold;
   }
+
 </style>
 
 <div style="color: #FFFFFF;" class="animated-text">
@@ -252,7 +253,7 @@ repo-actions: false
   <span class="header-skills">I am using these tools</span>
 
 <div class="skills">
-<div class="skills-slide">
+<div class="skills-slide" style="vertical-align: middle !important;">
 <img src="images/logos/Amazon_Web_Services_Logo.svg" alt="AWS" />
 <img src="images/logos/GitHub_Logo.svg" alt="GitHub" />
 <img src="images/logos/git_logo.svg" alt="Git" />
@@ -260,9 +261,9 @@ repo-actions: false
 <img src="images/logos/linux-icon.svg" alt="Linux" />
 <img src="images/logos/HTML5_logo.svg" alt="HTML5" />
 <img src="images/logos/CSS3_logo.svg" alt="CSS3" />
-<img src="images/logos/javascript_logo.svg" alt="JavaScript" />
-<img src="images/logos/python_logo.svg" alt="Python" />
-<img src="images/logos/java_logo.svg" alt="Java" />
+<img src="images/logos/javascript-icon.svg" alt="JavaScript" />
+<img src="images/logos/python-icon.svg" alt="Python" />
+<img src="images/logos/java-icon.svg" alt="Java" />
 <img src="images/logos/sql_logo.svg" alt="SQL" />
 <img src="images/logos/mysql_logo.svg" alt="MySQL" />
 <img src="images/logos/aws-dynamodb.svg" alt="DynamoDB" />
@@ -282,7 +283,7 @@ repo-actions: false
 <img src="images/logos/leafletjs_logo.svg" alt="Leaflet" />
 <img src="images/logos/geemap_logo.png" alt="Geemap" />
 <img src="images/logos/leafmap_logo.png" alt="Leafmap" />
-<img src="images/logos/google_maps.svg" alt="Google Maps" />
+<img src="images/logos/google_maps-icon.svg" alt="Google Maps" />
 <img src="images/logos/googleearth-engine.svg" alt="Google Earth Engine" />
 <img src="images/logos/cesiumjs_logo.svg" alt="Cesium" />
 <img src="images/logos/reactjs_logo.svg" alt="React" />
@@ -324,16 +325,41 @@ repo-actions: false
 <span>Geospatial Analysis</span>
 </div>
 <div class="service-item">
+<img src="images/logos/gis_mapping.png" alt="gismapping" />
+<span>GIS Mapping</span>
+</div>
+<div class="service-item">
+<img src="images/logos/geolocation_apps.png" alt="geolocationapps" />
+<span>Geolocation Apps</span>
+</div>
+<div class="service-item">
+<img src="images/logos/gis_eco.png" alt="giseco" />
+<span>GIS Ecology</span>
+</div>
+<div class="service-item">
+<img src="images/logos/geolayers.png" alt="geolayers" />
+<span>GIS and Geology integration</span>
+</div>
+<div class="service-item">
+<img src="images/logos/banda.png" alt="seismicInterpretation" />
+<span>2D & 3D Seismic Interpretation</span>
+</div>
+<div class="service-item">
 <img src="images/logos/paleogeographic_mapping.png" alt="paleogeographicmapping" />
 <span>Paleogeographic Mapping</span>
 </div>
 <div class="service-item">
-<img src="images/logos/gis_eco.png" alt="giseco" />
-<span>GIS Eco</span>
+<img src="images/logos/devops.png" alt="devops" />
+<span>DevOps</span>
+</div>
+
+
 </div>
 </div>
 </div>
 </div>
+
+
 
 <script>
 var copy = document.querySelector(".skills-slide").cloneNode(true);

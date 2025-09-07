@@ -3,7 +3,7 @@ title: "About me"
 categories: [about]
 ---
 
-![](/images/about/pedrologo.svg){width=35%}
+![](/images/about/pedrologo.svg){width=35% align="center"}
 
 ## Professional Profile
 

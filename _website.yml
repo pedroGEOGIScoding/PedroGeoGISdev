@@ -38,7 +38,7 @@ website:
     collapse-below: xl
     left:
       - text: Home
-        href: index2.qmd
+        href: index.qmd
       - sidebar:linux
       - sidebar:devops
       - sidebar:markup
