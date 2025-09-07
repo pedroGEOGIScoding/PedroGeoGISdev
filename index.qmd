@@ -14,10 +14,39 @@ repo-actions: false
   body {
     background-image: url('images/home/mosaic.png');
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
+  }
+
+  /* Responsive background adjustments */
+  @media screen and (max-width: 768px) {
+    body {
+      background-attachment: scroll;
+      background-size: cover;
+      background-position: center top;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    body {
+      background-attachment: scroll;
+      background-size: cover;
+      background-position: center center;
+      min-height: 100vh;
+    }
+  }
+
+  /* Landscape orientation on mobile */
+  @media screen and (max-width: 768px) and (orientation: landscape) {
+    body {
+      background-size: cover;
+      background-position: center center;
+      min-height: 100vh;
+    }
   }
 
   .animated-text {
@@ -72,25 +101,6 @@ repo-actions: false
     z-index: 2;
   }
 
-  .bottom-message-skills {
-    position: absolute;
-    top: 102%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    min-width: 6em;
-    padding: 0.1em 0.4em;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Cabin Sketch';
-    font-weight: bold;
-    font-size: 25px;
-    background: rgba(225, 215, 215, 0.6);
-    border: 0.5px solid #ddd;
-    border-radius: 25px;
-    z-index: 2;
-  }
-
   .skills {
     overflow: hidden;
     padding: 20px 10px 0px 10px;
@@ -100,7 +110,7 @@ repo-actions: false
     border: 1px solid rgba(225, 215, 215, 0.6);
     border-radius: 25px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    width: 99%;
+    width: 100%;
     z-index: 1;
   }
 
@@ -171,6 +181,36 @@ repo-actions: false
     z-index: 4;
   }
 
+  .bottom-about-services {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 6em;
+    padding: 0.1em 0.4em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Cabin Sketch';
+    font-weight: bold;
+    font-size: 25px;
+    background: rgba(225, 215, 215, 0.6);
+    border: 0.5px solid #ddd;
+    border-radius: 25px;
+    z-index: 4;
+    text-decoration: none;
+    color: #333;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .bottom-about-services:hover {
+    background: rgba(225, 215, 215, 0.9);
+    transform: translate(-50%, -50%) scale(1.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #000;
+  }
+
   .services {
     overflow: hidden;
     padding: 20px 10px 0px 0px;
@@ -181,7 +221,7 @@ repo-actions: false
     border-radius: 45px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     margin: 15px auto;
-    width: 80%;
+    width: 75%;
     z-index: 1;
   }
 
@@ -243,6 +283,195 @@ repo-actions: false
     font-weight: bold;
   }
 
+  /* ========== RESPONSIVE DESIGN ========== */
+  /* Mobile devices (up to 768px) */
+  @media screen and (max-width: 768px) {
+    .animated-text {
+      font-size: 40px;
+    }
+    
+    .header-skills,
+    .header-services {
+      font-size: 18px;
+      padding: 0.1em 0.3em;
+      min-width: 4em;
+    }
+    
+    .skills {
+      width: 95%;
+      padding: 15px 5px 0px 5px;
+    }
+    
+    .services {
+      width: 95%;
+      padding: 15px 5px 0px 0px;
+    }
+    
+    .skills-slide img,
+    .services-slide img {
+      height: 50px;
+      margin: 0 20px;
+    }
+    
+    .skills:before,
+    .skills:after,
+    .services:before,
+    .services:after {
+      width: 100px;
+    }
+    
+    .service-item {
+      margin: 0 15px;
+    }
+    
+    .service-item span {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+    
+    .skills-slide {
+      animation: 40s skillsMove infinite linear;
+    }
+    
+    .services-slide {
+      animation: 35s serviceMove infinite linear;
+    }
+    
+    .bottom-about-services {
+      font-size: 18px;
+      padding: 0.1em 0.3em;
+      min-width: 4em;
+    }
+  }
+  
+  /* Tablet devices (769px to 1024px) */
+  @media screen and (min-width: 769px) and (max-width: 1024px) {
+    .animated-text {
+      font-size: 60px;
+    }
+    
+    .header-skills,
+    .header-services {
+      font-size: 22px;
+    }
+    
+    .skills {
+      width: 97%;
+    }
+    
+    .services {
+      width: 90%;
+    }
+    
+    .skills-slide img,
+    .services-slide img {
+      height: 65px;
+      margin: 0 30px;
+    }
+    
+    .skills:before,
+    .skills:after,
+    .services:before,
+    .services:after {
+      width: 180px;
+    }
+    
+    .service-item span {
+      font-size: 18px;
+    }
+    
+    .skills-slide {
+      animation: 50s skillsMove infinite linear;
+    }
+    
+    .services-slide {
+      animation: 42s serviceMove infinite linear;
+    }
+    
+    .bottom-about-services {
+      font-size: 22px;
+    }
+  }
+  
+  /* Large screens (1025px and up) */
+  @media screen and (min-width: 1025px) {
+    .animated-text {
+      font-size: 80px;
+    }
+    
+    .skills-slide img,
+    .services-slide img {
+      height: 80px;
+      margin: 0 40px;
+    }
+    
+    .skills-slide {
+      animation: 60s skillsMove infinite linear;
+    }
+    
+    .services-slide {
+      animation: 50s serviceMove infinite linear;
+    }
+  }
+  
+  /* Extra small devices (up to 480px) */
+  @media screen and (max-width: 480px) {
+    .animated-text {
+      font-size: 28px;
+      padding: 0 10px;
+    }
+    
+    .header-skills,
+    .header-services {
+      font-size: 16px;
+      padding: 0.1em 0.2em;
+      min-width: 3em;
+    }
+    
+    .skills,
+    .services {
+      width: 98%;
+      padding: 10px 2px 0px 2px;
+      border-radius: 15px;
+    }
+    
+    .skills-slide img,
+    .services-slide img {
+      height: 40px;
+      margin: 0 15px;
+    }
+    
+    .skills:before,
+    .skills:after,
+    .services:before,
+    .services:after {
+      width: 80px;
+    }
+    
+    .service-item {
+      margin: 0 10px;
+    }
+    
+    .service-item span {
+      font-size: 12px;
+      margin-top: 3px;
+    }
+    
+    .skills-slide {
+      animation: 30s skillsMove infinite linear;
+    }
+    
+    .services-slide {
+      animation: 25s serviceMove infinite linear;
+    }
+    
+    .bottom-about-services {
+      font-size: 16px;
+      padding: 0.1em 0.2em;
+      min-width: 3em;
+    }
+  }
+
 </style>
 
 <div style="color: #FFFFFF;" class="animated-text">
@@ -262,9 +491,10 @@ repo-actions: false
 <img src="images/logos/HTML5_logo.svg" alt="HTML5" />
 <img src="images/logos/CSS3_logo.svg" alt="CSS3" />
 <img src="images/logos/javascript-icon.svg" alt="JavaScript" />
+<img src="images/logos/TypeScript.svg" alt="TypeScript" />
 <img src="images/logos/python-icon.svg" alt="Python" />
 <img src="images/logos/java-icon.svg" alt="Java" />
-<img src="images/logos/sql_logo.svg" alt="SQL" />
+<img src="images/logos/MaterialUI.svg" alt="Material UI" />
 <img src="images/logos/mysql_logo.svg" alt="MySQL" />
 <img src="images/logos/aws-dynamodb.svg" alt="DynamoDB" />
 <img src="images/logos/postgis_logo.svg" alt="PostGIS" />
@@ -272,8 +502,10 @@ repo-actions: false
 <img src="images/logos/mongodb_logo.svg" alt="MongoDB" />
 <img src="images/logos/IntelliJ_IDEA_Icon.svg" alt="IntelliJ IDEA" />
 <img src="images/logos/visualstudio_logo.svg" alt="Visual Studio" />
-<img src="images/logos/Eclipse-Luna-Logo.svg" alt="Eclipse Luna" />
-<img src="images/logos/Esri_Logo.svg" alt="Esri" />
+<img src="images/logos/EclipseIDE.svg" alt="Eclipse Luna" />
+<img src="images/logos/PyCharm.svg" alt="PyCharm" />
+<img src="images/logos/Jupyter.svg" alt="Jupyter" />
+<img src="images/logos/esri.svg" alt="Esri" />
 <img src="images/logos/QGIS_logo.svg" alt="QGIS" />
 <img src="images/logos/grasslogo.svg" alt="GRASS GIS" />
 <img src="images/logos/GDALLogoColor.svg" alt="GDAL" />
@@ -284,6 +516,7 @@ repo-actions: false
 <img src="images/logos/geemap_logo.png" alt="Geemap" />
 <img src="images/logos/leafmap_logo.png" alt="Leafmap" />
 <img src="images/logos/google_maps-icon.svg" alt="Google Maps" />
+<img src="images/logos/Google-Cloud.svg" alt="Google Cloud" />
 <img src="images/logos/googleearth-engine.svg" alt="Google Earth Engine" />
 <img src="images/logos/cesiumjs_logo.svg" alt="Cesium" />
 <img src="images/logos/reactjs_logo.svg" alt="React" />
@@ -291,6 +524,9 @@ repo-actions: false
 <img src="images/logos/Vaadin_Logo.svg" alt="Vaadin" />
 <img src="images/logos/bootstrap_logo.svg" alt="Bootstrap" />
 <img src="images/logos/vitejs_logo.svg" alt="Vite" />
+<img src="images/logos/Docker.svg" alt="Docker" />
+<img src="images/logos/vercel.svg" alt="Vercel" />
+<img src="images/logos/railway.svg" alt="Railway" />
 <img src="images/logos/IHS_Kingdom_logo.png" alt="IHS Kingdom" />
 <img src="images/logos/logo-eliis.svg" alt="Eliis" />
 <img src="images/logos/Petrel.svg" alt="Petrel" />
@@ -349,17 +585,14 @@ repo-actions: false
 <span>Paleogeographic Mapping</span>
 </div>
 <div class="service-item">
-<img src="images/logos/devops.png" alt="devops" />
+<img src="images/logos/devops.svg" alt="devops" />
 <span>DevOps</span>
 </div>
 
-
 </div>
 </div>
+<a href="about/about-this-me.html" class="bottom-about-services">click here if you want to learn more about me</a>
 </div>
-</div>
-
-
 
 <script>
 var copy = document.querySelector(".skills-slide").cloneNode(true);
@@ -367,5 +600,4 @@ document.querySelector(".skills").appendChild(copy);
 
 var copy = document.querySelector(".services-slide").cloneNode(true);
 document.querySelector(".services").appendChild(copy);
-
 </script>

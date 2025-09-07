@@ -3,7 +3,7 @@ title: "About me"
 categories: [about]
 ---
 
-![](/images/about/pedrologo.svg){width=35% align="center"}
+![](/images/about/pedrologo.svg){width=35% fig-align="center"}
 
 ## Professional Profile
 
@@ -111,6 +111,3 @@ Currently, I am actively looking for a new opportunity to work as a **WebGIS Dev
 #### Linkedin
   
 [linkedin.com/in/pedromartinezduran/](https://www.linkedin.com/in/pedromartinezduran/)
-
-
-

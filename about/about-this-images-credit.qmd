@@ -3,7 +3,7 @@ title: "About images credit"
 categories: [about, images-credit]
 ---
 
-![](/images/about/pedrologo.svg){width=35%}
+![](/images/about/pedrologo.svg){width=35% fig-align="center"}
 
 ### Images list
 
