@@ -12,7 +12,7 @@ repo-actions: false
 <style>
   /* Page-specific background for index only */
   body {
-    background-image: url('images/home/mosaic.png');
+    background-image: url('images/home/mosaic.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -95,8 +95,7 @@ repo-actions: false
     font-family: 'Cabin Sketch';
     font-weight: bold;
     font-size: 25px;
-    background: rgba(225, 215, 215, 0.6);
-    border: 0.5px solid #ddd;
+    background: rgba(225, 215, 215, 0.8);
     border-radius: 25px;
     z-index: 2;
   }
@@ -104,10 +103,9 @@ repo-actions: false
   .skills {
     overflow: hidden;
     padding: 20px 10px 0px 10px;
-    background: rgba(225, 215, 215, 0.4);
+    background: rgba(225, 215, 215, 0.6);
     white-space: nowrap;
     position: relative;
-    border: 1px solid rgba(225, 215, 215, 0.6);
     border-radius: 25px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     width: 100%;
@@ -141,7 +139,7 @@ repo-actions: false
 
   .skills-slide {
     display: inline-block;
-    animation: 60s skillsMove infinite linear;
+    animation: 70s skillsMove infinite linear;
   }
 
   .skills-slide img {
@@ -175,8 +173,7 @@ repo-actions: false
     font-family: 'Cabin Sketch';
     font-weight: bold;
     font-size: 25px;
-    background: rgba(225, 215, 215, 0.6);
-    border: 0.5px solid #ddd;
+    background: rgba(225, 215, 215, 0.8);
     border-radius: 25px;
     z-index: 4;
   }
@@ -194,8 +191,7 @@ repo-actions: false
     font-family: 'Cabin Sketch';
     font-weight: bold;
     font-size: 25px;
-    background: rgba(225, 215, 215, 0.6);
-    border: 0.5px solid #ddd;
+    background: rgba(225, 215, 215, 0.8);
     border-radius: 25px;
     z-index: 4;
     text-decoration: none;
@@ -217,7 +213,6 @@ repo-actions: false
     background: rgba(225, 215, 215, 0.6);
     white-space: nowrap;
     position: relative;
-    border: 1px solid rgba(225, 215, 215, 0.6);
     border-radius: 45px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
     margin: 15px auto;
@@ -338,9 +333,9 @@ repo-actions: false
     }
     
     .bottom-about-services {
-      font-size: 12px;
+      font-size: 14px;
       padding: 0.1em 0.3em;
-      min-width: 4em;
+      min-width: 5em;
     }
   }
   
@@ -466,9 +461,9 @@ repo-actions: false
     }
     
     .bottom-about-services {
-      font-size: 12px;
+      font-size: 20px;
       padding: 0.1em 0.2em;
-      min-width: 3em;
+      min-width: 5em;
     }
   }
 
