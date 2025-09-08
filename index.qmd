@@ -461,9 +461,9 @@ repo-actions: false
     }
     
     .bottom-about-services {
-      font-size: 20px;
+      font-size: 16px;
       padding: 0.1em 0.2em;
-      min-width: 5em;
+      min-width: 3em;
     }
   }
 

@@ -2,7 +2,7 @@ website:
   title: pedroGeoGISdev                 # Website title displayed in page headers and browser tab
   description: geology, GIS, remote sensing, geospatial analysis, WebGIS
   # logo: images/logos/pedrologo.png
-  favicon: images/logos/favicon.png
+  favicon: images/home/favicon.ico
   page-navigation: true    # Enable next/previous page navigation buttons (true/false)
   back-to-top-navigation: true  # Enable 'Back to Top' button on pages (true/false)
   site-url: https://pedrogeogisdev.com/
