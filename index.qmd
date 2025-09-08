@@ -540,6 +540,10 @@ repo-actions: false
 <div class="services">
 <div class="services-slide">
 <div class="service-item">
+<img src="images/logos/WebGis.png" alt="WebGIS" />
+<span>WebGIS Applications</span>
+</div>
+<div class="service-item">
 <img src="images/logos/cartography.svg" alt="cartography" />
 <span>Cartography</span>
 </div>
@@ -564,6 +568,10 @@ repo-actions: false
 <span>Geolocation Apps</span>
 </div>
 <div class="service-item">
+<img src="images/logos/WebGis.png" alt="WebGIS" />
+<span>WebGIS Applications</span>
+</div>
+<div class="service-item">
 <img src="images/logos/gis_eco.png" alt="giseco" />
 <span>GIS Ecology</span>
 </div>
@@ -578,6 +586,10 @@ repo-actions: false
 <div class="service-item">
 <img src="images/logos/seismic-attributes.gif" alt="seismicInterpretation" />
 <span>Seismic Attributes</span>
+</div>
+<div class="service-item">
+<img src="images/logos/geological_mapping.png" alt="geologicalmapping" />
+<span>Geological Mapping</span>
 </div>
 <div class="service-item">
 <img src="images/logos/paleogeographic_mapping.png" alt="paleogeographicmapping" />
