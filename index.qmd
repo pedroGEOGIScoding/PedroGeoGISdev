@@ -501,10 +501,10 @@ repo-actions: false
 <img src="images/logos/PyCharm.svg" alt="PyCharm" />
 <img src="images/logos/Jupyter.svg" alt="Jupyter" />
 <img src="images/logos/esri.svg" alt="Esri" />
-<img src="images/logos/QGIS_logo.svg" alt="QGIS" />
+<img src="images/logos/QGIS_logo_new.svg" alt="QGIS" />
 <img src="images/logos/grasslogo.svg" alt="GRASS GIS" />
 <img src="images/logos/GDALLogoColor.svg" alt="GDAL" />
-<img src="images/logos/GeoServer_Logo.svg" alt="GeoServer" />
+<img src="images/logos/GeoServer-icon.svg" alt="GeoServer" />
 <img src="images/logos/openlayers.svg" alt="OpenLayers" />
 <img src="images/logos/maplibre.svg" alt="MapLibre" />
 <img src="images/logos/leafletjs_logo.svg" alt="Leaflet" />
@@ -513,12 +513,12 @@ repo-actions: false
 <img src="images/logos/google_maps-icon.svg" alt="Google Maps" />
 <img src="images/logos/Google-Cloud.svg" alt="Google Cloud" />
 <img src="images/logos/googleearth-engine.svg" alt="Google Earth Engine" />
-<img src="images/logos/cesiumjs_logo.svg" alt="Cesium" />
+<img src="images/logos/cesium-icon.svg" alt="Cesium" />
 <img src="images/logos/reactjs_logo.svg" alt="React" />
-<img src="images/logos/springio_logo.svg" alt="Spring" />
+<img src="images/logos/springio-icon.svg" alt="Spring" />
 <img src="images/logos/Vaadin_Logo.svg" alt="Vaadin" />
 <img src="images/logos/bootstrap_logo.svg" alt="Bootstrap" />
-<img src="images/logos/vitejs_logo.svg" alt="Vite" />
+<img src="images/logos/vitejsdev-icon.svg" alt="Vite" />
 <img src="images/logos/Docker.svg" alt="Docker" />
 <img src="images/logos/vercel.svg" alt="Vercel" />
 <img src="images/logos/railway.svg" alt="Railway" />
@@ -572,8 +572,12 @@ repo-actions: false
 <span>GIS and Geology integration</span>
 </div>
 <div class="service-item">
-<img src="images/logos/banda.png" alt="seismicInterpretation" />
+<img src="images/logos/seismic.gif" alt="seismicInterpretation" />
 <span>2D & 3D Seismic Interpretation</span>
+</div>
+<div class="service-item">
+<img src="images/logos/seismic-attributes.gif" alt="seismicInterpretation" />
+<span>Seismic Attributes</span>
 </div>
 <div class="service-item">
 <img src="images/logos/paleogeographic_mapping.png" alt="paleogeographicmapping" />

@@ -5,6 +5,7 @@ categories: [about]
 
 ![](/images/about/pedrologo.svg){width=35% fig-align="center"}
 
+
 ## Professional Profile
 
 [Download CV](/about/CV-Pedro-Martinez.pdf){.highlight width="10%"}
