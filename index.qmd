@@ -474,57 +474,158 @@ repo-actions: false
 </div>
 
 <div class="skills-carousel">
-  <span class="header-skills">I am using these tools</span>
+  <span class="header-skills">I work with these tools</span>
 
 <div class="skills">
 <div class="skills-slide" style="vertical-align: middle !important;">
+
+<a href="https://aws.amazon.com/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/Amazon_Web_Services_Logo.svg" alt="AWS" />
+</a>
+<a href="https://github.com/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/GitHub_Logo.svg" alt="GitHub" />
+</a>
+<a href="https://git-scm.com/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/git_logo.svg" alt="Git" />
+</a>
+<a href="https://www.gnu.org/gnu/linux-and-gnu.en.html" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/gnu_bash.svg" alt="Bash" />
+</a>
+<a href="https://linuxmint.com/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/linux-icon.svg" alt="Linux" />
+</a>
+<a href="https://html.spec.whatwg.org/multipage/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/HTML5_logo.svg" alt="HTML5" />
+</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/CSS3_logo.svg" alt="CSS3" />
+</a>
+<a href="https://quarto.org/" target="_blank" rel="noopener noreferrer">
+<img src="images/logos/quarto.svg" alt="Quarto" />
+</a>
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/javascript-icon.svg" alt="JavaScript" />
+</a>
+<a href="https://www.typescriptlang.org/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/TypeScript.svg" alt="TypeScript" />
+</a>
+<a href="https://www.python.org/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/python-icon.svg" alt="Python" />
+</a>
+<a href="https://www.java.com/en/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/java-icon.svg" alt="Java" />
+</a>
+<a href="https://mui.com/material-ui/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/MaterialUI.svg" alt="Material UI" />
+</a>
+<a href="https://tailwindcss.com/" target="_blank" rel="noopener noreferrer">
+<img src="images/logos/Tailwind_CSS_Logo.svg" alt="Tailwind CSS" />
+</a>
+<a href="https://www.mysql.com/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/mysql_logo.svg" alt="MySQL" />
+</a>
+<a href="https://aws.amazon.com/dynamodb/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/aws-dynamodb.svg" alt="DynamoDB" />
+</a>
+<a href="https://postgis.net/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/postgis_logo.svg" alt="PostGIS" />
+</a>
+<a href="https://www.postgresql.org/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/postgresql_logo.svg" alt="PostgreSQL" />
+</a>
+<a href="https://www.mongodb.com/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/mongodb_logo.svg" alt="MongoDB" />
+</a>
+<a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/IntelliJ_IDEA_Icon.svg" alt="IntelliJ IDEA" />
+</a>
+<a href="https://code.visualstudio.com/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/visualstudio_logo.svg" alt="Visual Studio" />
+</a>
+<a href="https://eclipseide.org/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/EclipseIDE.svg" alt="Eclipse Luna" />
+</a>
+<a href="https://www.jetbrains.com/pycharm/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/PyCharm.svg" alt="PyCharm" />
+</a>
+<a href="https://jupyter.org/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/Jupyter.svg" alt="Jupyter" />
+</a>
+<a href="https://pro.arcgis.com/en/pro-app/latest/get-started/get-started.htm" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/esri.svg" alt="Esri" />
+</a>
+<a href="https://qgis.org/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/QGIS_logo_new.svg" alt="QGIS" />
+</a>
+<a href="https://grass.osgeo.org/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/grasslogo.svg" alt="GRASS GIS" />
+</a>
+<a href="https://gdal.org/en/stable/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/GDALLogoColor.svg" alt="GDAL" />
+</a>
+<a href="https://geoserver.org/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/GeoServer-icon.svg" alt="GeoServer" />
+</a>
+<a href="https://openlayers.org/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/openlayers.svg" alt="OpenLayers" />
+</a>
+<a href="https://maplibre.org/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/maplibre.svg" alt="MapLibre" />
+</a>
+<a href="https://leafletjs.com/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/leafletjs_logo.svg" alt="Leaflet" />
+</a>
+<a href="https://geemap.org/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/geemap_logo.png" alt="Geemap" />
+</a>
+<a href="https://leafmap.org/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/leafmap_logo.png" alt="Leafmap" />
-<img src="images/logos/google_maps-icon.svg" alt="Google Maps" />
+</a>
+<a href="https://mapsplatform.google.com/" target="_blank" rel="noopener noreferrer">
+<img src="images/logos/Google_Maps_Platform_Logo.svg" alt="Google Maps Platform" />
+</a>
+<a href="https://cloud.google.com/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/Google-Cloud.svg" alt="Google Cloud" />
+</a>
+<a href="https://earthengine.google.com/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/googleearth-engine.svg" alt="Google Earth Engine" />
+</a>
+<a href="https://cesium.com/platform/cesiumjs/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/cesium-icon.svg" alt="Cesium" />
+</a>
+<a href="https://react.dev/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/reactjs_logo.svg" alt="React" />
+</a>
+<a href="https://spring.io/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/springio-icon.svg" alt="Spring" />
+</a>
+<a href="https://vaadin.com/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/Vaadin_Logo.svg" alt="Vaadin" />
+</a>
+<a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/bootstrap_logo.svg" alt="Bootstrap" />
+</a>
+<a href="https://vite.dev/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/vitejsdev-icon.svg" alt="Vite" />
+</a>
+<a href="https://www.docker.com/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/Docker.svg" alt="Docker" />
+</a>
+<a href="https://vercel.com/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/vercel.svg" alt="Vercel" />
+</a>
+<a href="https://railway.com/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/railway.svg" alt="Railway" />
+</a>
+<a href="https://www.spglobal.com/commodity-insights/en/products-solutions/upstream-midstream-oil-gas/geoscience-software" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/IHS_Kingdom_logo.png" alt="IHS Kingdom" />
+</a>
+<a href="https://www.eliis-geo.com/paleoscan-overview-a.html" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/logo-eliis.svg" alt="Eliis" />
+</a>
+<a href="https://www.slb.com/products-and-services/delivering-digital-at-scale/software/petrel-subsurface-software/petrel" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/Petrel.svg" alt="Petrel" />
+</a>
 </div>
 </div>
 </div>

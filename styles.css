@@ -162,3 +162,21 @@ footer.footer,
   color: var(--success-green);
   border-radius: var(--border-radius);
 }
+
+/* ===== SKILLS CAROUSEL STYLES TO REMOVE DASH BLUE LINES IN THE SKILLS CAROUSEL ===== */
+.skills-slide a {
+  text-decoration: none !important;
+  color: inherit !important;
+  border: none !important;
+  outline: none !important;
+}
+
+.skills-slide a:hover {
+  text-decoration: none !important;
+  color: inherit !important;
+}
+
+.skills-slide img {
+  display: inline-block;
+  vertical-align: middle;
+}
