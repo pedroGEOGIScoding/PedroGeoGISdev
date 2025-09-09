@@ -12,7 +12,7 @@ repo-actions: false
 <style>
   /* Page-specific background for index only */
   body {
-    background-image: url('images/home/mosaic.png');
+    background-image: url('images/home/mosaic.jpg');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -551,14 +551,20 @@ repo-actions: false
 <a href="https://jupyter.org/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/Jupyter.svg" alt="Jupyter" />
 </a>
-<a href="https://pro.arcgis.com/en/pro-app/latest/get-started/get-started.htm" target="_blank" rel="noopener noreferrer">
+<a href="https://www.esri.com/en-us/home" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/esri.svg" alt="Esri" />
+</a>
+<a href="https://pro.arcgis.com/en/pro-app/latest/get-started/get-started.htm" target="_blank" rel="noopener noreferrer">
+<img src="images/logos/arcgis-pro.webp" alt="ArcGIS Pro" />
 </a>
 <a href="https://qgis.org/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/QGIS_logo_new.svg" alt="QGIS" />
 </a>
 <a href="https://grass.osgeo.org/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/grasslogo.svg" alt="GRASS GIS" />
+</a>
+<a href="https://saga-gis.sourceforge.io/en/index.html" target="_blank" rel="noopener noreferrer">
+<img src="images/logos/saga_icon.png" alt="SAGA GIS" />
 </a>
 <a href="https://gdal.org/en/stable/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/GDALLogoColor.svg" alt="GDAL" />
@@ -693,7 +699,7 @@ repo-actions: false
 <span>Geological Mapping</span>
 </div>
 <div class="service-item">
-<img src="images/logos/paleogeographic_mapping.png" alt="paleogeographicmapping" />
+<img src="images/logos/paleogeographic_mapping.gif" alt="paleogeographicmapping" />
 <span>Paleogeographic Mapping</span>
 </div>
 <div class="service-item">
