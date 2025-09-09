@@ -12,7 +12,7 @@ repo-actions: false
 <style>
   /* Page-specific background for index only */
   body {
-    background-image: url('images/home/mosaic.jpg');
+    background-image: url('images/home/mosaic.png');
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
