@@ -410,7 +410,7 @@ repo-actions: false
   }
   
   /* Extra small devices (up to 480px) */
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 625px) {
     .animated-text {
       font-size: 28px;
       padding: 0 10px;
@@ -461,9 +461,9 @@ repo-actions: false
     }
     
     .bottom-about-services {
-      font-size: 16px;
+      font-size: 14px;
       padding: 0.1em 0.2em;
-      min-width: 3em;
+      min-width: 22em;
     }
   }
 
