@@ -19,8 +19,6 @@ repo-actions: false
     background-attachment: fixed;
     min-height: 100vh;
     width: 100%;
-    overflow-x: visible;
-    overflow-y: visible;
   }
 
   /* Responsive background adjustments */
@@ -29,8 +27,6 @@ repo-actions: false
       background-attachment: scroll;
       background-size: cover;
       background-position: center center;
-      overflow-x: visible;
-      overflow-y: visible;
     }
   }
 
@@ -40,8 +36,6 @@ repo-actions: false
       background-size: cover;
       background-position: center center;
       min-height: 100vh;
-      overflow-x: visible;
-      overflow-y: visible;
     }
   }
 
@@ -51,14 +45,12 @@ repo-actions: false
       background-size: cover;
       background-position: center center;
       min-height: 100vh;
-      overflow-x: visible;
-      overflow-y: visible;
       }
   }
 
   .animated-text {
     font-size: 80px;
-    color: #fff;
+    color: #FFFFFF;
     font-family: 'Cabin Sketch';
     text-align: center;
     vertical-align: middle;
