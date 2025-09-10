@@ -13,7 +13,7 @@ repo-actions: false
   /* Page-specific background for index only */
   body {
     background-image: url('images/home/mosaic.jpg');
-    background-size: cover;
+    background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -26,15 +26,15 @@ repo-actions: false
   @media screen and (max-width: 768px) {
     body {
       background-attachment: scroll;
-      background-size: cover;
-      background-position: center top;
+      background-size: contain;
+      background-position: center center;
     }
   }
 
   @media screen and (max-width: 480px) {
     body {
       background-attachment: scroll;
-      background-size: cover;
+      background-size: contain;
       background-position: center center;
       min-height: 100vh;
     }
@@ -43,7 +43,7 @@ repo-actions: false
   /* Landscape orientation on mobile */
   @media screen and (max-width: 768px) and (orientation: landscape) {
     body {
-      background-size: cover;
+      background-size: contain;
       background-position: center center;
       min-height: 100vh;
     }
