@@ -2,6 +2,7 @@
 format:
   html:
     toc: false
+		page-footer: false
 repo-actions: false
 ---
 <!-- Password to open pdf books: 08081968 -->
