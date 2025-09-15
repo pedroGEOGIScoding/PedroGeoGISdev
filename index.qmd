@@ -615,7 +615,7 @@ repo-actions: false
 <img src="images/logos/springio-icon.svg" alt="Spring" />
 </a>
 <a href="https://vaadin.com/" target="_blank" rel="noopener noreferrer">
-<img src="images/logos/Vaadin_Logo.svg" alt="Vaadin" />
+<img src="images/logos/vaadin-original.svg" alt="Vaadin" />
 </a>
 <a href="https://getbootstrap.com/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/bootstrap_logo.svg" alt="Bootstrap" />
