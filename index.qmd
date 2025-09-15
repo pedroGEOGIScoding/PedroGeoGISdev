@@ -1,6 +1,6 @@
 ---
 format:
-  html:
+  html: 
     toc: false
 repo-actions: false
 ---
@@ -10,7 +10,10 @@ repo-actions: false
 <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-  /* Page-specific background for index only */
+  #quarto-footer,
+  footer,
+  section#quarto-footer {
+     display: none !important;}/* Page-specific background for index only */
   body {
     background-image: url('images/home/mosaic.jpg');
     background-size: cover;
@@ -578,7 +581,7 @@ repo-actions: false
 <img src="images/logos/maplibre2.svg" alt="MapLibre" />
 </a>
 <a href="https://leafletjs.com/" target="_blank" rel="noopener noreferrer">
-<img src="images/logos/leafletjs_logo.svg" alt="Leaflet" />
+<img src="images/logos/leafletjs-icon.png" alt="Leaflet" />
 </a>
 <a href="https://geemap.org/" target="_blank" rel="noopener noreferrer">
 <img src="images/logos/geemap_logo.png" alt="Geemap" />
