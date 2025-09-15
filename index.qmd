@@ -13,7 +13,12 @@ repo-actions: false
   #quarto-footer,
   footer,
   section#quarto-footer {
-     display: none !important;}
+     display: none !important;
+  }
+
+  .navbar {
+  background-color: var(--secondary-brown) !important;
+  }
   
   /* Page-specific background for index only */
   body {

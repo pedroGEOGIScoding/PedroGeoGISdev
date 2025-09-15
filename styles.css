@@ -1,6 +1,7 @@
 :root {
   /* Color Palette */
   --primary-brown: #4a3b30;
+  --secondary-brown: rgba (74, 59, 48, 0.5);
   --primary-blue: #33a0d6;
   --hover-white: #FFFFFF;
   --success-green: #117441;
@@ -36,8 +37,6 @@ background-color: #fbff00;  /* Highlight background */
 padding: 2px 5px;
 border-radius: 3px;
 }
-
-
 
 /* ===== NAVBAR TITLE STYLING ===== */
 .navbar {
