@@ -13,7 +13,9 @@ repo-actions: false
   #quarto-footer,
   footer,
   section#quarto-footer {
-     display: none !important;}/* Page-specific background for index only */
+     display: none !important;}
+  
+  /* Page-specific background for index only */
   body {
     background-image: url('images/home/mosaic.jpg');
     background-size: cover;
