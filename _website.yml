@@ -566,7 +566,7 @@ website:
   page-footer:
     background: primary
     left: "License: CC0 1.0 Universal" 
-    center: "Difficulties are just things to overcome, after all. <br> *Ernest Shackleton*"
+    center: "*Per aspera, ad astra*"
     right:
       - icon: github
         href: https://github.com/pedroGEOGIScoding/
