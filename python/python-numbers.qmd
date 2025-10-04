@@ -730,28 +730,3 @@ print("Your BMI is", bmi)
   - Use white spaces effectively. E.g. `x = x + 1` (instead of `x=x+1`).
 
 
-
-<!--- navLinks -->
-<br><br>
-<div class=row>
-<br>
-<div class='column left previous'>
-<br>
-[{{< fa solid arrow-left >}} Python: Basics](/python/python-basic-concepts.qmd)
-<br>
-</div>
-<br>
-<div class='column center'>
-<br>
-[{{< fa solid arrow-up >}} top](#top)
-<br>
-</div>
-<br>
-<div class='column right next'>
-<br>
-[Python: Numbers {{< fa solid arrow-right >}}](/python/python-numbers.qmd)
-<br>
-</div>
-<br>
-</div>
-
