@@ -1,0 +1,757 @@
+---
+title: "Python: Numbers"
+subtitle: Python Numbers
+author: pedromartinezduran
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: The file system is organized into a hierarchical structure, starting with the root directory
+categories: [python, numbers]
+toc: true
+number-sections: true
+highlight-style: pygments
+format:
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Numbers in Python**
+
+Python has built-in support for **numbers**, including integers, floating-point numbers, and complex numbers. This module focuses on working with numeric data types and operations in Python, covering everything from basic arithmetic to more advanced mathematical functions.
+
+:::
+
+---
+
+## Numbers
+
+- Numbers are a "simple" way to describe the world:
+  
+  - How many apples you sold.
+  - How much money you earned.
+  - How many minutes are in a year.
+  - Even a picture on your phone — it’s just millions of numbers for colors.
+
+---
+
+## Numbers
+
+- So when we teach computers to work with numbers, we’re giving them the building blocks to represent reality.
+  
+- Once we have numbers, we can automate represent and manipulate anything algebraic: sales, costs, scores, time, even images and music.
+  
+
+---
+
+## Supermarket Scale Cost
+
+- Automate cost calculation in a supermarket scale.
+- The same code can be reused every day by changing the variables.
+
+```python
+apple_kgs = 1.5
+apple_price_kg = 2
+
+cost = apple_kgs * apple_price_kg
+
+print("Cost:", cost, "e")
+```
+
+<div class="output">Cost: 3e </div>
+
+---
+
+## Tomato Stall
+
+- Automate net income (before IRPF) calculation in a market's day.
+
+```python
+tomatoes_kg_sold = 30
+price_per_kg = 1.5
+
+production_costs_day = 0.5  # Daily cost for water, fertilizer, pesticides...
+stall_rent_per_day = 20
+social_security_day = 200 / 30
+iva = 0.1  # %
+
+daily_revenue = tomatoes_kg_sold * price_per_kg
+expenses = production_costs_day + stall_rent_per_day + social_security_day
+income = daily_revenue - expenses
+net_b4_irpf = income / (1 + iva)
+
+print("Today's net (before IRPF):", net_b4_irpf, "e")
+```
+
+<div class="output">Today's net (before IRPF): 16.21e </div>
+
+---
+
+## Numbers in Python
+
+- int (integers)
+- float (floating-point)
+- <s>~~Decimal~~</s>
+- <s>~~Complex~~</s>
+
+---
+
+## Integers
+
+Whole numbers without decimal points:
+
+- positive
+- negative
+- zero
+
+```python
+print(type(4))
+print(type(0))
+print(type(-145))
+```
+
+<div class="output"><class 'int'><br><class 'int'><br><class 'int'></div>
+
+---
+
+Basic integer operations: addition, subtraction, multiplication, floor division, modulus, and exponentiation.
+
+```python
+x = 10
+y = 3
+
+print(x + y)  # addition
+```
+
+<div class="output">13</div>
+
+```python
+print(x - y)  # subtraction
+```
+
+<div class="output">7</div>
+
+```python
+print(x * y)  # multiplications
+```
+
+<div class="output">30</div>
+
+---
+
+- Integer division (or floor division) rounds down the result to the nearest whole number.
+  
+  ```python
+  print(x // y) # floor division
+  ```
+  
+  <div class="output">3</div>
+  
+
+```python
+print(x % y)  # modulus
+```
+
+<div class="output">1</div>
+
+- In other languages, a common operator for exponentiation is `^`, but this is not the case in Python!
+  
+  ```python
+  print(x ** y) # exponentiation
+  ```
+  
+  <div class="output">1000</div>
+  
+
+---
+
+## Floats
+
+Numbers with decimal points (floating-point numbers).
+
+```python
+x = 4.5
+y = 2.61
+
+print(x + y)  # addition
+```
+
+<div class="output">7.109999999999999</div>
+
+```python
+print(x - y)  # subtraction
+```
+
+<div class="output">1.8900000000000001</div>
+
+```python
+print(x * y)  # multiplications
+```
+
+<div class="output">11.745</div>
+
+---
+
+```python
+print(x / y)  # division
+```
+
+<div class="output">1.7241379310344829</div>
+
+```python
+print(x % y)  # modulus
+```
+
+<div class="output">1.8900000000000001</div>
+
+```python
+print(x ** y) # exponentiation
+```
+
+<div class="output">50.68560805900789</div>
+
+---
+
+- Limitations due to the way computers represent decimal numbers.
+- Ints and floats can be mixed, giving the most restrictive type as a result:
+
+```python
+x = 1   # this is an integer
+y = 2.8 # this is a float
+z = x + y
+
+print(z, type(z))
+```
+
+<div class="output">3.8 <class 'float'></div>
+
+---
+
+- There can be rounding errors:
+
+```python
+# This result should be 0.3
+print(0.1 + 0.2)
+```
+
+<div class="output">0.30000000000000004</div>
+
+---
+
+## Round
+
+- `round()` function rounds to the nearest whole number.
+
+```python
+print(round(2.4))
+```
+
+<div class="output">2</div>
+
+```python
+print(round(2.6))
+```
+
+<div class="output">3</div>
+
+---
+
+- If specified, rounds to a specific number of decimal places.
+
+```python
+# Round to 2 decimal places
+print(round(0.123456, 2))
+```
+
+<div class="output">0.12</div>
+
+```python
+# Round to 5 decimal places
+print(round(0.123456, 5))
+```
+
+<div class="output">0.12346</div>
+
+---
+
+## Underscore
+
+- Underscores `_` can be used as visual separator in numbers.
+- Improves readability of big numbers.
+- Has no impact on the value of the number.
+
+```python
+# Using underscores in integers for better readability
+one_million = 1_000_000
+one_billion = 1_000_000_000
+
+# Compare it without underscores, it is much more difficult to read
+one_million = 1000000
+one_billion = 1000000000
+```
+
+---
+
+## Type conversion
+
+- int to float:
+
+```python
+x = 10
+print(type(x))
+```
+
+<div class="output"><class 'int'></div>
+
+```python
+# Convert to float
+x = float(x)
+print(x, type(x))
+```
+
+<div class="output">10.0 <class 'float'></div>
+
+---
+
+- float to int:
+
+```python
+x = 4.6
+print(type(x))
+```
+
+<div class="output"><class 'float'></div>
+
+```python
+# Converting to int truncates the decimals
+x = int(x)
+print(x, type(x))
+```
+
+<div class="output">4 <class 'int'></div>
+
+---
+
+## Operation precedence
+
+- ()
+  
+  <!-- * \*\*
+  
+- -x -->
+- \*, /, //, % (same precedence, evaluated from left to right)
+- +, - (same precedence, evaluated from left to right)
+
+```python
+result = 2 + 3 * 4 - 1
+print(result)
+```
+
+- Result?
+  
+  <!-- <div class="output">13</div> -->
+  
+
+---
+
+```python
+result = (2 + 3) * (4 - 1)
+print(result)
+```
+
+- Result?
+  
+  <!-- <div class="output">15</div> -->
+  
+
+---
+
+## Booleans
+
+- Data type for representing true and false statements.
+
+```python
+is_true = True
+is_false = False
+```
+
+---
+
+Conversion to bool:
+
+- `bool(0)` → `False` (`True` for any number different than 0).
+  
+- `bool('')` → `False` (`True` for any other string).
+  
+
+<!-- - For collections (lists, tuples, sets, dictionaries), `bool(collection)` returns `False` if the collection is empty, and `True` otherwise. -->
+
+---
+
+- Internally, `True` is the integer `1` and `False` the integer `0`.
+
+```python
+print(True + 3)  # True is treated as 1, so the result is 1 + 3 = 4
+```
+
+<div class="output">4</div>
+
+```python
+print(False * 5)  # False is treated as 0, so the result is 0 * 5 = 0
+```
+
+<div class="output">0</div>
+
+---
+
+## Logical operators
+
+- Used for manipulating boolean values.
+- Python keywords: `and`, `or`, `not`.
+
+---
+
+## `and`
+
+- Is true when all the elements are true, and false otherwise.
+
+```python
+True and True   # True
+True and False  # False
+False and True  # False
+False and False # False
+```
+
+---
+
+## `or`
+
+- Is false when all the elements are false, and true otherwise.
+
+```python
+True or True   # True
+True or False  # True
+False or True  # True
+False or False # False
+```
+
+---
+
+## `not`
+
+- Negates the element.
+
+```python
+not True  # False
+not False # True
+```
+
+---
+
+- We can chain as many as we want:
+
+```python
+True and True and True and True # True
+True and True and True and False # False
+
+True or True or True or False # True
+False or False or False or False # False
+
+(True and True) or (True and False) # True
+```
+
+---
+
+## Precedence
+
+- Logical operators have lower precedence than arithmetic operators.
+
+- The precedence, highest to lowest:
+  
+  - `not`
+  - `and`
+  - `or`
+
+---
+
+- Logical operators have lower precedence than arithmetic operators.
+
+- The precedence, highest to lowest:
+  
+  - `not`
+  - `and`
+  - `or`
+- Is the following expression true or false?
+  
+
+``False or True and not True``
+
+---
+
+```python
+print(False or True and not True)
+```
+
+<div class="output">False</div>
+
+- The expression above is evaluated as if written like:
+
+``False or (True and (not True))``
+
+---
+
+## Comparison operators
+
+Evaluate relationship between values or expressions with `True` or `False`.
+
+- Equal to (`==`)
+  
+- Not equal to (`!=`)
+  
+- Less than (`<`)
+  
+- Greater than (`>`)
+  
+- Less than or equal to (`<=`)
+  
+- Greater than or equal to (`>=`)
+  
+
+---
+
+```python
+# Equal to
+
+5 == 5  # True
+5 == 6  # False
+```
+
+```python
+# Not equal to
+
+5 != 5  # False
+5 != 6  # True
+```
+
+---
+
+```python
+# Less than
+
+5 < 6  # True
+6 < 5  # False
+```
+
+```python
+# Greater than
+
+5 > 6  # False
+6 > 5  # True
+```
+
+---
+
+```python
+# Less than or equal to
+
+5 <= 5  # True
+5 <= 6  # True
+6 <= 5  # False
+```
+
+```python
+# Greater than or equal to
+
+5 >= 5  # True
+6 >= 5  # True
+5 >= 6  # False
+```
+
+---
+
+- Comparison operators can be combined with logical operators:
+
+```python
+x = 5
+y = 7
+
+print(x < y and y < 10)
+```
+
+<div class="output">True</div>
+
+- They can be chained with no limit:
+
+```python
+print(3 < 5 < 7)  # Equivalent to (3 < x) and (x < 7)
+```
+
+<div class="output">True</div>
+
+```python
+## Comparison operators precedence
+# - Higher precedence than logical operators (`not`, `and`, `or`).
+# - Lower precedence than arithmetic operators.
+# 
+# 3 < 5 * 2  # equivalent to 3 < (5 * 2)
+# 3 < 5 and 5 < 7  # equivalent to (3 < 5) and (5 < 7)
+```
+---
+
+## Python Standard Library
+
+- Only built-in elements are loaded by default.
+- Some libraries are in the Standard Library (no need to install anything).
+- The specification of the Standard Library can be found at: https://docs.python.org/3/library/
+
+---
+
+## Built-in functions
+
+```python
+# absolute value
+print(abs(-2))
+```
+
+<div class="output">2</div>
+
+```python
+# two to the power of 3
+print(pow(2, 3))
+```
+
+<div class="output">8.0</div>
+
+---
+
+```python
+# returns the minimum number
+print(min(2, 1, 4, 9, 5))
+```
+
+<div class="output">1</div>
+
+```python
+# returns the maximum number
+print(max(2, 1, 4, 9, 5))
+```
+
+<div class="output">9</div>
+
+---
+
+## Imports
+
+- Used to bring external code into your current program.
+
+```python
+import math
+```
+
+```python
+# Calculate square root
+print(math.sqrt(9))
+```
+
+<div class="output">3.0</div>
+
+```python
+# Show pi
+print(math.pi)
+```
+
+<div class="output">3.141592653589793</div>
+
+```python
+# Example of importing a single function from a module:
+# from math import sqrt
+# print(sqrt(9))
+
+# Example of importing multiple functions:
+# from math import sqrt, pi
+# print(sqrt(9))
+# print(pi)
+
+# Example of importing all functions (not recommended):
+# from math import *
+# print(sqrt(9))
+# print(pi)
+
+# Example of importing with aliases:
+# import math as m
+# print(m.sqrt(9))
+# 
+# from math import sqrt as square_root
+# print(square_root(9))
+```
+---
+
+- Python Standard Library: `math`, `random`, `statistics`, etc.
+  
+- `random` example:
+  
+
+```python
+import random
+
+# Generates a random integer between 1 and 10
+random_number = random.randint(1, 10)
+print(random_number)
+```
+
+<div class="output">7</div>
+
+---
+
+## Example
+
+Write a program in which the user enters his/her weight (in kg) and height (in m). The system then calculates the Body Mass Index as weight divided by height squared.
+
+```python
+# Calculate BMI
+
+weight = float(input("Enter your weight in kilograms:"))
+height = float(input("Enter your height in meters:"))
+
+bmi = weight / height ** 2
+print("Your BMI is", bmi)
+```
+
+---
+
+## Code readability
+
+- Essential for making your code easier to understand and maintain.
+- Start practicing with good coding as soon as possible.
+- First tips:
+  - Choose meaningful variable names. E.g. `user_name`.
+  - Use white spaces effectively. E.g. `x = x + 1` (instead of `x=x+1`).
+
+
+
+<!--- navLinks -->
+<br><br>
+<div class=row>
+<br>
+<div class='column left previous'>
+<br>
+[{{< fa solid arrow-left >}} Python: Basics](/python/python-basic-concepts.qmd)
+<br>
+</div>
+<br>
+<div class='column center'>
+<br>
+[{{< fa solid arrow-up >}} top](#top)
+<br>
+</div>
+<br>
+<div class='column right next'>
+<br>
+[Python: Numbers {{< fa solid arrow-right >}}](/python/python-numbers.qmd)
+<br>
+</div>
+<br>
+</div>
+

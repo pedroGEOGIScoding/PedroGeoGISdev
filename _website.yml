@@ -309,7 +309,7 @@ website:
         - section: "Python Basics"
           contents:
             - python/python-basic-concepts.qmd
-            - python/python-tips.qmd
+            - python/python-numbers.qmd
     - id: "js"
       title: "JavaScript"
       contents:
