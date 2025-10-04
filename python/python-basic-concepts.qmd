@@ -14,51 +14,709 @@ format:
   html
 ---
 
-::: {.summary}
+## Overview
+
+::: {.summary .container}
 
 📘 **Python**
 
-A **pipe** is a command that allows you to **redirect the output of one command as the input to another command**. 
-
-It is represented by the vertical bar symbol ``|``.
+**Python** is a high-level, interpreted programming language known for its simplicity and readability. Created by Guido van Rossum and first released in 1991, Python emphasizes code readability with its use of significant indentation. It supports multiple programming paradigms including procedural, object-oriented, and functional programming. Python is widely used in web development, data science, artificial intelligence, automation, and scientific computing.
 
 :::
 
 ---
 
-# Python
+## Main Programming and Python Concepts
 
-## Introduction
+## Displaying text
 
-*TODO* Create an example file that demonstrates the formatting and features of your format.
+`print()` built-in function:
 
-## More Information
+- Writes text to the console (or standard output).
+- Takes multiple arguments (between the parentheses) and displays them.
 
-You can learn more about controlling the appearance of HTML output here: <https://quarto.org/docs/output-formats/html-basics.html>
+```python
+print(3.1416)
+```
+
+<div class="output">3.1416</div>
+
+```python
+print("Hello world!")
+```
+
+<div class="output">Hello world!</div>
+
+---
+
+- By default, `print` adds a new line at the end of the string.
+
+```python
+print("Hello world!")
+print("This is a new line.")
+```
+
+<div class="output">Hello world!<br>This is a new line.</div>
+
+---
+
+- If values separated by commas, `print` automatically adds a space in between.
+
+```python
+print("Hello", "world!", "How are you?")
+```
+
+<div class="output">Hello world! How are you?</div>
 
 
+## Comments
 
-<!--- navLinks -->
-<br><br>
-<div class=row>
-<br>
-<div class='column left previous'>
-<br>
-[{{< fa solid arrow-left >}} Python: Basic Concepts](/python/python-basic-concepts.qmd)
-<br>
-</div>
-<br>
-<div class='column center'>
-<br>
-[{{< fa solid arrow-up >}} top](#top)
-<br>
-</div>
-<br>
-<div class='column right next'>
-<br>
-[Python: Basic Concepts {{< fa solid arrow-right >}}](/python/python-basic-concepts.qmd)
-<br>
-</div>
-<br>
-</div>
+- Code lines are executed from top to bottom.
+- Empty lines do nothing.
+- Comments are lines of text in between your code that are not executed.
+- Used for providing explanations, notes, descriptions…
+- 2 types:
+  - **Single-line** (#)
+  - **Multi-line comments** (enclosing text in `'''` or `"""`)
 
+---
+
+```python
+# This is a single-line comment
+print("Hello, world!")  # This is an inline comment
+
+# print(2 + 3)
+# The code above is commented out, so it won't be executed
+print(5 + 5)  # This line before this comment will be executed
+```
+
+<div class="output">Hello, world!<br>10</div>
+
+---
+
+```python
+"""
+This is a multi-line comment.
+You can write explanations or descriptions
+that span multiple lines.
+"""
+print("Hello, world!")
+```
+
+<div class="output">Hello, world!</div>
+
+---
+
+## Number operations
+
+```python
+print(2 + 3)   # addition (+)
+```
+
+<div class="output">5</div>
+
+```python
+print(3 - 1)   # subtraction (-)
+```
+
+<div class="output">2</div>
+
+```python
+print(2 * 3)   # multiplication (*)
+```
+
+<div class="output">6</div>
+
+---
+
+```python
+print(3 / 2)   # division (/)
+```
+
+<div class="output">1.5</div>
+
+```python
+print(3 // 2)  # floor division (//)
+```
+
+<div class="output">1</div>
+
+```python
+print(3 ** 2)  # exponential (**)
+```
+
+<div class="output">9</div>
+
+```python
+print(3 % 2)   # modulus (%)
+```
+
+<div class="output">1</div>
+
+---
+
+## Data types
+
+- Categories of values that share characteristics.
+- Dictate how values are stored, represented…
+- `type()` built-in function:
+
+---
+
+```python
+type(2)
+```
+
+<div class="output">['int']</div>
+
+```python
+type(2.5)
+```
+
+<div class="output">['float']</div>
+
+```python
+# string
+type('Hello world!')
+```
+
+<div class="output">['str']</div>
+
+---
+
+### Built-in types
+
+![Built-in types](assets/1.5.common_types.png)
+
+---
+
+Different types have different properties on how they interact between them:
+
+```python
+5 - 1
+```
+
+<div class="output">4</div>
+
+```python
+'a' - 'b'
+```
+
+<div class="output">TypeError: unsupported operand type(s) for +: 'int' and 'str'</div>
+
+---
+
+```python
+5 + 1
+```
+
+<div class="output">6</div>
+
+```python
+'a' + 'b'
+```
+
+<div class="output">'ab'</div>
+
+```python
+# Take care, this is a string!
+'5' + '1'
+```
+
+<div class="output">'51'</div>
+
+---
+
+```python
+# Cannot mix types
+5 + 'a'
+```
+
+<div class="output">TypeError: unsupported operand type(s) for +: 'int' and 'str'</div>
+
+---
+
+## Casting
+
+- Converting one type to another.
+- Using built-in functions `int()`, `float()`, `str()`, etc.
+
+```python
+# Type is string when a number is in quotes
+print(type('1'))
+```
+
+<div class="output"><class 'str'></div>
+
+```python
+# But we can convert it to integer by using the int() function
+print(type(int('1')))
+```
+
+<div class="output"><class 'int'></div>
+
+---
+
+```python
+# After converting the string to integer, we can operate on it
+print(3 + int('1'))
+```
+
+<div class="output">4</div>
+
+---
+
+```python
+# We can also do it the other way and transform an integer to a string
+print(type(1))
+print(type(str(1)))
+```
+
+<div class="output"><class 'int'><br><class 'str'></div>
+
+---
+
+```python
+# After converting the integer to string, we can operate on it
+print('abc' + str(1))
+print('5' + str(1))
+```
+
+<div class="output">abc1<br>51</div>
+
+---
+
+```python
+# Take care when converting floats to integers, as the decimal part will be removed
+print(int(3.14))
+print(int(3.99))
+```
+
+<div class="output">3<br>3</div>
+
+---
+
+## Variables
+
+- Used for storing and manipulating data.
+- Naming:
+  - Should start with a letter a-z or A-Z     or an underscore (_).
+  - They can also contain numbers, as long as a number is not the first character.
+  - Case-sensitive.
+- Assignation
+  - With `=`
+  - No need to specify data type (done automatically by Python).
+  - Reassignation is allowed at any time.
+
+---
+
+```python
+# Variable assignation examples:
+
+name = 'John Doe'
+age = 25
+is_student = True
+```
+
+---
+
+* Python automatically detects the data type based on the assigned value:
+
+```python
+print(type(name))
+print(type(age))
+print(type(is_student))
+```
+
+<div class="output"><class 'str'><br><class 'int'><br><class 'bool'></div>
+
+---
+
+* Use the value of the variables anywhere in the program:
+
+```python
+print(name)
+```
+
+<div class="output">John Doe</div>
+
+```python
+print(age)
+```
+
+<div class="output">25</div>
+
+---
+
+```python
+# You can also change the value of the variable,
+# so its value will be overwritten.
+name = 'Isaac'
+```
+
+```python
+print(name)
+```
+
+<div class="output">Isaac</div>
+
+---
+
+* We can operate with variables as if they were the values:
+
+```python
+number1 = 1
+number2 = 2
+
+print(number1 + number2)
+```
+
+<div class="output">3</div>
+
+```python
+print(number1 - number2)
+```
+
+<div class="output">-1</div>
+
+---
+
+```python
+surname = 'Newton'
+
+# Arguments in `print()` are automatically separated by a space.
+print(name, surname)
+```
+
+<div class="output">Isaac Newton</div>
+
+```python
+# With +, words are concatenated.
+print(name + surname)
+```
+
+<div class="output">IsaacNewton</div>
+
+---
+
+### Updating operation
+
+* For updating the value of a variable, we can do it in the classical way:
+
+```python
+x = 5
+
+# Add 1 to x
+x = x + 1
+print(x)
+```
+
+<div class="output">6</div>
+
+---
+
+* Shortcut for updating a variable:
+
+```python
+x = 5
+
+# Add 1 to x
+x += 1
+print(x)
+```
+
+<div class="output">6</div>
+
+```python
+# Subtract 2 from x
+x -= 2  # This is equivalent to x = x - 2
+print(x)
+```
+
+<div class="output">4</div>
+
+---
+
+```python
+# Multiply x by 3
+x *= 3  # This is equivalent to x = x * 3
+print(x)
+```
+
+<div class="output">12</div>
+
+```python
+# Divide x by 4
+x //= 4  # This is equivalent to x = x // 4
+print(x)
+```
+
+<div class="output">3</div>
+
+---
+
+### Convention variable names
+
+- **Snake Case:** Words separated by `_`. E.g., `is_student`, `user_name` or `name_and_surname`.
+
+---
+
+- **Camel Case:**
+  - **Lower Camel Case:** First word lowercase, subsequent words start with capital letter. E.g., `isStudent`, `userName`, `nameAndSurname`.
+  - **Upper Camel Case (Pascal Case):**  First word also capitalized. E.g., `IsStudent`, `UserName`, `NameAndSurname`.
+
+---
+
+## Keywords
+
+- Python's reserved words. They have a special purpose and functionality and cannot be used as identifiers (variable names, function names, class names, etc.).
+
+<table>
+  <tbody>
+    <tr>
+      <td>and</td>
+      <td>del</td>
+      <td>from</td>
+      <td>not</td>
+      <td>as</td>
+    </tr>
+    <tr>
+      <td>elif</td>
+      <td>global</td>
+      <td>or</td>
+      <td>assert</td>
+      <td>else</td>
+    </tr>
+    <tr>
+      <td>if</td>
+      <td>pass</td>
+      <td>async</td>
+      <td>except</td>
+      <td>import</td>
+    </tr>
+    <tr>
+      <td>raise</td>
+      <td>await</td>
+      <td>finally</td>
+      <td>in</td>
+      <td>return</td>
+    </tr>
+    <tr>
+      <td>break</td>
+      <td>for</td>
+      <td>is</td>
+      <td>try</td>
+      <td>class</td>
+    </tr>
+    <tr>
+      <td>with</td>
+      <td>lambda</td>
+      <td>while</td>
+      <td>continue</td>
+      <td>yield</td>
+    </tr>
+    <tr>
+      <td>nonlocal</td>
+      <td>def</td>
+      <td>False</td>
+      <td>None</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+```python
+# We get an error if we try to use 'break' as a variable name
+break = 3
+```
+
+<div class="output">SyntaxError: invalid syntax</div>
+
+```python
+# But we can use variations
+breac = 3
+print(breac)
+```
+
+<div class="output">3</div>
+
+---
+
+## Built-in functions
+
+- Built-in functions are globally available in any Python program.
+- Unlike reserved words, it is possible to use built-in function names as variable names, thus modifying the default behavior (NOT RECOMENDED!).
+
+---
+
+<table>
+  <tbody>
+    <tr>
+      <td>abs</td>
+      <td>all</td>
+      <td>any</td>
+      <td>ascii</td>
+      <td>bin</td>
+    </tr>
+    <tr>
+      <td>bool</td>
+      <td>breakpoint</td>
+      <td>bytearray</td>
+      <td>bytes</td>
+      <td>callable</td>
+    </tr>
+    <tr>
+      <td>chr</td>
+      <td>classmethod</td>
+      <td>compile</td>
+      <td>complex</td>
+      <td>delattr</td>
+    </tr>
+    <tr>
+      <td>dict</td>
+      <td>dir</td>
+      <td>divmod</td>
+      <td>enumerate</td>
+      <td>eval</td>
+    </tr>
+    <tr>
+      <td>exec</td>
+      <td>filter</td>
+      <td>float</td>
+      <td>format</td>
+      <td>frozenset</td>
+    </tr>
+    <tr>
+      <td>getattr</td>
+      <td>globals</td>
+      <td>hasattr</td>
+      <td>hash</td>
+      <td>help</td>
+    </tr>
+    <tr>
+      <td>hex</td>
+      <td>id</td>
+      <td>input</td>
+      <td>int</td>
+      <td>isinstance</td>
+    </tr>
+    <tr>
+      <td>issubclass</td>
+      <td>iter</td>
+      <td>len</td>
+      <td>list</td>
+      <td>locals</td>
+    </tr>
+    <tr>
+      <td>map</td>
+      <td>max</td>
+      <td>memoryview</td>
+      <td>min</td>
+      <td>next</td>
+    </tr>
+    <tr>
+      <td>object</td>
+      <td>oct</td>
+      <td>open</td>
+      <td>ord</td>
+      <td>pow</td>
+    </tr>
+    <tr>
+      <td>print</td>
+      <td>property</td>
+      <td>range</td>
+      <td>repr</td>
+      <td>reversed</td>
+    </tr>
+    <tr>
+      <td>round</td>
+      <td>set</td>
+      <td>setattr</td>
+      <td>slice</td>
+      <td>sorted</td>
+    </tr>
+    <tr>
+      <td>staticmethod</td>
+      <td>str</td>
+      <td>sum</td>
+      <td>super</td>
+      <td>tuple</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>vars</td>
+      <td>zip</td>
+      <td>__import__</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+---
+
+* Take care!
+
+```python
+print = 5
+a = print + 2   # `a` has the value 7
+print('Hello')  # Error because `print` is now the value 5
+```
+
+<div class="output">TypeError: 'int' object is not callable</div>
+
+---
+
+## User input
+
+- Reads text from the user.
+- Returns it as a **string**.
+
+```python
+name = input('Enter your name: ')
+print(name)
+```
+
+<div class="output">Enter your name: Isaac<br>Isaac</div>
+
+---
+
+```python
+# Take care because it returns a string
+age = input('Enter your age: ')
+print(age + 1)
+```
+
+<div class="output">TypeError: can only concatenate str (not "int") to str</div>
+
+---
+
+```python
+# This code works well, as we parse the input to an integer
+age = int(input('Enter your age: '))
+print(age + 1)
+```
+
+<div class="output">32</div>
+
+---
+
+## Example
+
+Write a program in which a user enters his/her name and age and the system prints a message with that information.
+
+---
+
+```python
+# Use input for processing the user name
+user_name = input('Enter your name: ')
+# Use input for processing the user age
+user_age = int(input('Enter your age: '))
+
+# Remember that, by default, the input function returns a string,
+# so we do not need to convert the age to integer for concatenating it
+print('Hello! You are ', user_name, ' and you are ', user_age, ' years old.')
+```
+
+<div class="output">Hello! You are Isaac and you are 31 years old.</div>
