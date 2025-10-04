@@ -600,14 +600,6 @@ print(3 < 5 < 7)  # Equivalent to (3 < x) and (x < 7)
 ```
 ---
 
-## Python Standard Library
-
-- Only built-in elements are loaded by default.
-- Some libraries are in the Standard Library (no need to install anything).
-- The specification of the Standard Library can be found at: https://docs.python.org/3/library/
-
----
-
 ## Built-in functions
 
 ```python
