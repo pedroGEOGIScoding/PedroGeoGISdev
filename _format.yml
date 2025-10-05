@@ -18,6 +18,6 @@ format:
     grid:
       sidebar-width: 400px   
       body-width: 1400px      
-      margin-width: 380px   
-      gutter-width: 1.5rem   
+      margin-width: 400px   
+      gutter-width: 2rem   
     page-layout: full        

@@ -12,6 +12,8 @@ number-sections: true
 highlight-style: pygments
 format:
   html
+filters:
+  - pyodide
 ---
 
 ## Overview
@@ -178,7 +180,7 @@ print(5 in {1, 3, 2})
 ## Union
 ::: columns
 
-::: {.column width=50%}
+::: {.column width="50%"}
 
 - With `|` or `union()`.
 
@@ -196,9 +198,9 @@ print(f'The union is: {union_result}')
 <div class="output">The union is: {1, 2, 3, 4, 5}</div>
 :::
 
-::: {.column width=50% style="text-align: center;"}
+::: {.column style="text-align: center;"}
 
-![Union operation in python](/images/python/python-set-union.png){width=50% .preview-image}
+![Union operation in python](/images/python/python-set-union.png)
 
 <center>From: https://www.learnbyexample.org/</center>
 
@@ -209,7 +211,7 @@ print(f'The union is: {union_result}')
 ## Intersection
 ::: columns
 
-::: {.column width=50%}
+::: {.column width="50%"}
 
 - With `&` or `intersection()`.
 
@@ -229,9 +231,9 @@ print(f'The intersection is: {intersection_result}')
 <div class="output">The intersection is: 3</div>
 :::
 
-::: {.column width=50% style="text-align: center;"}
+::: {.column style="text-align: center;"}
 
-![Intersection operation in python](/images/python/python-set-intersection.png){width=50% .preview-image}
+![Intersection operation in python](/images/python/python-set-intersection.png)
 
 <center>From: https://www.learnbyexample.org/</center>
 
@@ -241,7 +243,7 @@ print(f'The intersection is: {intersection_result}')
 ## Difference
 ::: columns
 
-::: {.column width=50%}
+::: {.column width="50%"}
 
 - With `-` or `difference()`.
 
@@ -261,9 +263,9 @@ print(f'The difference is: {difference_result}')
 <div class="output">The difference is: {1, 2}</div>
 :::
 
-::: {.column width=50% style="text-align: center;"}
+::: {.column style="text-align: center;"}
 
-![Difference operation in python](/images/python/python-set-difference.png){width=50% .preview-image}
+![Difference operation in python](/images/python/python-set-difference.png)
 
 <center>From: https://www.learnbyexample.org/</center>
 
@@ -273,7 +275,7 @@ print(f'The difference is: {difference_result}')
 ## Symmetric difference
 ::: columns
 
-::: {.column width=50%}
+::: {.column width="50%"}
 
 - With `^` or `symmetric_difference()`.
 
@@ -294,9 +296,9 @@ print(f'The symmetric difference is: {symmetric_difference_result}')
 
 :::
 
-::: {.column width=50% style="text-align: center;"}
+::: {.column style="text-align: center;"}
 
-![Symmetric difference operation in python](/images/python/python-set-symmetricdiff.png){width=50% .preview-image}
+![Symmetric difference operation in python](/images/python/python-set-symmetricdiff.png)
 
 <center>From: https://www.learnbyexample.org/</center>
 
@@ -394,4 +396,27 @@ print(distinct_words)
 ```
 
 <div class="output">{'two', 'go', 'three', 'one'}<br>4</div>
+---
+
+## Exercises
+
+For a demonstration of a line plot on a polar axis:
+
+```{pyodide-python}
+#| label: fig-polar
+#| fig-cap: "A line plot on a polar axis"
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(
+  subplot_kw = {'projection': 'polar'} 
+)
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
 
