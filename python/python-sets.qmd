@@ -383,12 +383,6 @@ print(even_set)
 
 Given a string, count the number of distinct words present in the string.
 
----
-
-## Example
-
-Given a string, count the number of distinct words present in the string.
-
 ```python
 text = "one two three three two one go"
 
