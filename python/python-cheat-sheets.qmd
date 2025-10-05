@@ -1,0 +1,31 @@
+---
+title: "Python: Cheat-Sheets"
+subtitle: Python Cheat-Sheets
+author: pedromartinezduran
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: The file system is organized into a hierarchical structure, starting with the root directory
+categories: [python, cheat-sheets]
+toc: true
+number-sections: true
+highlight-style: pygments
+format:
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Python Cheat-Sheets**
+
+[Download Python Cheat Sheet](/books/python3_cheat_sheet.pdf){.highlight width="50%"}
+<br>
+[Download Python Pocket Reference](/books/python-pocket-reference.pdf){.highlight width="10%"}
+<br>
+[Download Python Beginners Cheat Sheet](/books/beginners_python_cheat_sheet.pdf){.highlight width="10%"}
+<br>
+[Download Python Flash Cards](/books/Python Flash Cards.pdf){.highlight width="10%"}
+
+:::

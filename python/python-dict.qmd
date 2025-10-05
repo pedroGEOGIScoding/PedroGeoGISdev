@@ -1,0 +1,520 @@
+---
+title: "Python: Dictionaries"
+subtitle: Python Dictionaries
+author: Isaac Boixaderas
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: The file system is organized into a hierarchical structure, starting with the root directory
+categories: [python, dictionaries]
+toc: true
+number-sections: true
+highlight-style: pygments
+format:
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Dictionaries in Python**
+
+Python **dictionaries** are mutable, ordered, and built-in data structures that store data as key-value pairs. Each key in a dictionary is unique and immutable, meaning it can be of types such as strings, numbers, or tuples, but not mutable types like lists. Values associated with keys can be of any data type and duplicates are allowed. Dictionaries are mutable, so their contents can be changed after creation by adding, updating, or removing key-value pairs.
+
+Dictionaries are unordered in versions before Python 3.7, but from Python 3.7 onward, they maintain insertion order. Internally, dictionaries use a hash table to provide efficient operations such as lookup, insertion, and deletion with average constant time complexity. Keys must be hashable to enable this hashing mechanism. The structure is typically defined using curly braces where each key is separated from its value by a colon, and pairs are separated by commas.
+
+Dictionaries can be created using literals with curly braces, the dict() constructor, or comprehensions. They are versatile for associating data where keys serve as unique identifiers for their values, facilitating fast data retrieval and modification.
+
+:::
+
+## Dictionaries
+
+### Without dictionaries (option 1)
+
+- Suppose you want to store student names with their grades.
+- One option is to have two parallel lists:
+
+```python
+students = ["Alice", "Bob", "Charlie"]
+grades = [85, 92, 78]
+
+# To find Bob's grade:
+index = students.index("Bob")
+
+print(grades[index])
+```
+
+<div class="output">92</div>
+
+---
+
+### Problems
+
+- You need two lists in sync → easy to mess up if one changes.
+- Finding Bob’s grade requires searching (`.index()`), which is O(n).
+- Readability suffers — you always have to remember which list matches what.
+- Imagine storing more fields: email, surname, address...
+
+---
+
+### Without dictionaries (option 2)
+
+- Another option is to group students in sublists:
+
+```python
+records = [
+    ["Alice", 85],
+    ["Bob", 92],
+    ["Charlie", 78],
+]
+
+# To find Bob's grade:
+for record in records:
+    if record[0] == "Bob":
+        print(record[1])
+```
+
+<div class="output">92</div>
+
+---
+
+### Problems
+
+- All sublists must follow the same order: `[name, grade]`.
+- Finding Bob’s grade requires searching in O(n) again.
+- Still not very readable — you have to remember `record[0]` is the name.
+- Imagine storing more fields: email, surname, address...
+
+---
+
+## Dictionaries
+
+- Dictionaries (abbreviated as dicts) are mutable collection of key-value pairs.
+
+```python
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+
+print(my_dict)
+```
+
+<div class="output">{'key1': 1, 'key2': 2, 'key3': 3}</div>
+
+- Get value of specific key:
+  
+  ```python
+  print(my_dict['key1'])
+  ```
+  
+  <div class="output">1</div>
+  
+
+---
+
+- Now the student grades' code is more clear and efficient (O(1) on average):
+
+```python
+grades = {
+    'Alice': 85,
+    'Bob': 92,
+    'Charlie': 78
+}
+
+# To find Bob's grade:
+print(grades['Bob'])
+```
+
+<div class="output">92</div>
+
+---
+
+- With more fields we could do something like a dict of dicts:
+
+```python
+students = {
+    'ID1': {
+        'name': 'Alice',
+        'surname': 'Smith',
+        'email': 'alice.smith@...'
+        'grade': 85,
+    },
+    'ID2': {
+        'name': 'Bob',
+        'surname': 'Carpenter',
+        'email': 'bob.carpenter@...'
+        'grade': 92,
+    },
+}
+
+# To get Bob's grade:
+print(grades['ID2']['grade'])
+```
+
+<div class="output">92</div>
+
+---
+
+## Consider
+
+- Keys have to be **unique** and of an **immutable** type (e.g., `int`, `string`, `tuple`).
+- Values can have any type.
+
+---
+
+- Creating a dictionary with a mutable key type gives error.
+
+```python
+print({[1, 2]: 1})
+```
+
+<div class="output">TypeError: unhashable type: 'list'</div>
+
+---
+
+- With tuples it works just fine.
+
+```python
+print({(1, 2): 1})
+```
+
+<div class="output">{(1, 2): 1}</div>
+
+---
+
+- Values are overlapped if keys are the same, keeping the last one:
+
+```python
+print({'key1': 1, 'key1': 2, 'key3': 3})
+```
+
+<div class="output">{'key1': 2, 'key3': 3}</div>
+
+---
+
+- Use keys for accessing, updating and creating dict values:
+
+```python
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+
+# Access 'key3' value
+print(my_dict['key3'])
+```
+
+<div class="output">3</div>
+
+---
+
+```python
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+
+# Update 'key3' value
+my_dict['key3'] = 5
+print(my_dict)
+```
+
+<div class="output">{'key1': 1, 'key2': 2, 'key3': 5}</div>
+
+---
+
+```python
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+
+# Create a new key-value pair
+my_dict['key4'] = 4
+print(my_dict)
+```
+
+<div class="output">{'key1': 1, 'key2': 2, 'key3': 3, 'key4': 4}</div>
+
+---
+
+- If the key does not exist, it crashes:
+
+```python
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+
+print(my_dict['12345'])
+```
+
+<div class="output">KeyError: '12345'</div>
+
+---
+
+## Multiple types
+
+```python
+my_dict = {1001: 'hola', True: 2.6, (3, 1, 2): [1, 2, 3]}
+
+print(my_dict[True])
+print(my_dict[1001])
+print(my_dict[(3, 1, 2)])
+```
+
+<div class="output">2.6<br>'hola'<br>[1, 2, 3]</div>
+
+```python
+## Comparison
+- Dicts are equal if they have the same key-value pairs, even if “unordered”.
+```python
+print({'key1': 1, 'key2': 2} == {'key2': 2, 'key1': 1})
+```
+<div class="output">True</div>
+```python
+print({'key1': 1, 'key2': 2} == {'key1': 1, 'key2': 55})
+```
+<div class="output">False</div>
+```python
+print({'key1': 1, 'key2': 2, 'key3': 3} == {'key1': 1, 'key2': 2})
+```
+<div class="output">False</div>
+```
+
+---
+
+## Functions
+
+- Common built-in functions: `len()`.
+
+```python
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+
+print(len(my_dict))
+```
+
+<div class="output">3</div>
+
+---
+
+## Methods
+
+Dictionary methods: https://www.w3schools.com/python/python_ref_dictionary.asp
+
+---
+
+- `keys()`: Returns a view object displaying a list of all the keys in the dictionary.
+
+```python
+# Keys
+
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+
+# Gives the keys in a special view object
+print(my_dict.keys())
+
+# Convert to list for manipulating the keys
+print(list(my_dict.keys()))
+```
+
+<div class="output">dict_keys(['key1', 'key2', 'key3'])<br>['key1', 'key2', 'key3']</div>
+
+---
+
+- `values()`: Returns a view object displaying a list of all the values in the dictionary.
+
+```python
+# Values
+
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+
+# Gives the values in a spetial view object
+print(my_dict.values())
+
+# Convert to list for manipulating the values
+print(list(my_dict.values()))
+```
+
+<div class="output">dict_values([1, 2, 3])<br>[1, 2, 3]</div>
+
+---
+
+- `items()`: Returns a view object displaying a list of the dictionary's key-value pairs as tuples.
+
+```python
+# Items
+
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+
+# Gives the key-value pairs as tuples in a special view object
+print(my_dict.items())
+
+# Convert to list for manipulating the elements
+print(list(my_dict.items()))
+```
+
+<div class="output">dict_items([('key1', 1), ('key2', 2), ('key3', 3)])<br>[('key1', 1), ('key2', 2), ('key3', 3)]</div>
+
+---
+
+- As dictionaries are mutable, changing one of the them affects the other:
+
+```python
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+second_dict = my_dict
+
+# Both my_dict and second_dict refer to the same object
+my_dict['key1'] = 5
+
+# As my_dict has changed, so has second_dict
+print(second_dict)
+```
+
+<div class="output">{'key1': 5, 'key2': 2, 'key3': 3}</div>
+
+---
+
+- `copy()`: This method returns a shallow copy of the dictionary.
+
+```python
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+# second_dict is a copy of my_dict, but they refer to different objects
+second_dict = my_dict.copy()
+
+my_dict['key1'] = 5
+# Even if my_dict changes, second_dict remains the same
+print(second_dict)
+```
+
+<div class="output">{'key1': 1, 'key2': 2, 'key3': 3}</div>
+
+---
+
+- Update a dictionary with another dictionary with `.update()`
+- In case they have equal keys, the keys of the dict given in the update are used.
+
+```python
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+second_dict = {'key3': 10, 'key4': 4}
+
+my_dict.update(second_dict)
+print(my_dict)
+```
+
+<div class="output">{'key1': 1, 'key2': 2, 'key3': 10, 'key4': 4}</div>
+
+---
+
+- Accessing a non-existen key with indexing gives an error.
+- Avoid this error with `.get()`, as it returns `None` by default.
+- Optionally, a default value can be specified if the key does not exist.
+
+```python
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+
+print(my_dict.get('key1'))  # Returns value of 'key1'
+print(my_dict.get('key4'))  # Returns None because 'key4' doesn't exist
+print(my_dict.get('key4', 0))  # Returns 0 because 'key4' doesn't exist
+```
+
+<div class="output">1<br>None<br>0</div>
+
+---
+
+## `in`
+
+- The `in` keword can be used to verify if a key is found in a dictionary.
+
+```python
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+
+print('key2' in my_dict)
+print('abcd' in my_dict)
+```
+
+<div class="output">True<br>False</div>
+
+---
+
+## Iteration
+
+- Typically iterate through tuples of (key, value) pairs with `.items()`:
+
+```python
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+
+for key, value in my_dict.items():
+    print(f'The key is {key} and the value is {value}.')
+```
+
+<div class="output">The key is key1 and the value is 1.<br>The key is key2 and the value is 2.<br>The key is key3 and the value is 3.</div>
+
+---
+
+- Or keys only:
+
+```python
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+
+for key in my_dict.keys():
+    print(f'The key is {key} and the value is {my_dict[key]}.')
+```
+
+<div class="output">The key is key1 and the value is 1.<br>The key is key2 and the value is 2.<br>The key is key3 and the value is 3.</div>
+
+---
+
+- Or values only:
+
+```python
+my_dict = {'key1': 1, 'key2': 2, 'key3': 3}
+
+for value in my_dict.values():
+    print(f'The value is {value}.')
+```
+
+<div class="output">The value is 1.<br>The value is 2.<br>The value is 3.</div>
+
+---
+
+## Comprehension
+
+- Similar to lists, tuples and sets:
+
+```python
+even_dict = {i: i * 2 for i in range(5)}
+print(even_dict)
+```
+
+<div class="output">{0: 0, 1: 2, 2: 4, 3: 6, 4: 8}</div>
+
+---
+
+## Empty
+
+- By default, an empty `{}` in Python is an empty dictionary, not an empty set!
+
+```python
+print(type({}))
+```
+
+<div class="output">['dict']</div>
+
+---
+
+- If we want to create an empty set:
+
+```python
+a = set()
+```
+
+---
+
+## Example
+
+Given a string, create a dictionary with the frequency of each word in the string.
+
+```python
+text = "one two three four three two one and one"
+
+# Create empty dictionary for word frequency
+word_frequency = {}
+
+# Split text into words and iterate over each word
+for word in text.split(' '):
+    # Add word to dictionary if it doesn't exist with a
+    # default value of 0, otherwise increment count
+    word_frequency[word] = word_frequency.get(word, 0) + 1
+
+print(word_frequency)
+```
+
+<div class="output">{'one': 3, 'two': 2, 'three': 2, 'four': 1, 'and': 1}</div>

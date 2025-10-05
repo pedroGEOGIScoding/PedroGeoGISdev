@@ -310,6 +310,16 @@ website:
           contents:
             - python/python-basic-concepts.qmd
             - python/python-numbers.qmd
+            - python/python-strings.qmd
+            - python/python-conditionals.qmd
+            - python/python-lists-loops.qmd
+            - python/python-nested-loops.qmd
+            - python/python-tuples.qmd
+            - python/python-sets.qmd
+            - python/python-dict.qmd
+            - python/python-functions.qmd
+            - python/python-highorder-functions.qmd
+            - python/python-cheat-sheets.qmd
     - id: "js"
       title: "JavaScript"
       contents:

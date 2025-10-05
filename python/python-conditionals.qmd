@@ -1,0 +1,400 @@
+---
+title: "Python: Conditionals"
+subtitle: Python Conditionals
+author: Isaac Boixaderas
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: The file system is organized into a hierarchical structure, starting with the root directory
+categories: [python, strings]
+toc: true
+number-sections: true
+highlight-style: pygments
+format:
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Conditionals in Python**
+
+In Python, **conditionals** are constructs that control the flow of program execution by evaluating Boolean expressions and determining which code blocks should be run based on whether conditions are true or false. Conditionals allow us to control the flow of code execution, enabling the program to choose between different paths depending on some situation and making it more flexible and dynamic.
+
+:::
+
+---
+
+## Conditionals
+
+Structure of Conditionals
+
+- The primary decision-making tool is the "if" statement, which checks a given condition.
+- Using "if-else", the program can specify alternative code paths if the condition is false.
+- "elif" allows chaining of multiple mutually exclusive branches, where each is tested in order.
+
+### Logical and Relational Operations
+
+- Conditions are built using relational operators (such as <, >, ==) to compare values.
+- Compound conditions use logical operators like "and", "or", and "not", enabling more complex decision logic.
+
+### Truthiness and Flow Control
+
+- Python evaluates condition expressions for "truthiness", meaning any object can be tested for truth value: nonzero numbers, non-empty sequences, or objects evaluate as true, while zeros, empty sequences, or None evaluate as false.
+- Indentation (not braces) defines the scope of each conditional block, ensuring only the chosen code sections execute.
+
+### Ternary or Conditional Expressions
+
+```
+- Python provides a compact conditional expression (ternary operator) in the form: `<expr1> if <condition> else <expr2>`, allowing assignment or inline decisions without formal control structures.
+```
+
+- Only the necessary branch of a conditional expression is evaluated, supporting short-circuiting.
+
+### Advanced Conditional Constructs
+
+- In modern Python, the "match-case" statement allows pattern matching against values, similar to a switch statement in other languages.
+
+Conditionals thus enable Python programs to react to dynamic situations by selectively executing code based on logic and conditions, forming the basis for decision-making and branching in software.
+
+## `if` statements
+
+```
+if [condition]:
+    indented code block
+```
+
+---
+
+```python
+age = 18
+
+if age >= 18:
+    # Make sure there is indentation
+    print("You are eligible to vote.")
+    print("This line is also inside the `if` block.")
+print("This line is outside the `if` block.")
+```
+
+<div class="output">You are eligible to vote.<br>This line is also inside the `if` block.<br>This line is outside the `if` block.</div>
+
+---
+
+- If the condition is not met, the code inside it is not executed:
+
+```python
+age = 12
+
+if age >= 18:
+    print("You are eligible to vote.")
+    print("This line is also inside the `if` block.")
+print("This line is outside the `if` block.")
+```
+
+<div class="output">This line is outside the `if` block.</div>
+
+---
+
+## `if`-`else` statements
+
+- Allow to execute one block of code if the condition is `True`, and another block if the condition is `False`.
+- They never run together, it is just one or the other.
+
+```
+if [condition]:
+    code block
+else:
+    code block
+```
+
+---
+
+```python
+age = 16
+
+if age >= 18:
+    print("You are eligible to vote.")
+else:
+    print("You are not eligible to vote.")
+print('hi')
+```
+
+<div class="output">You are not eligible to vote.<br>hi</div>
+
+---
+
+- If the condition is met:
+
+```python
+age = 20
+
+if age >= 18:
+    print("You are eligible to vote.")
+else:
+    print("You are not eligible to vote.")
+print('hi')
+```
+
+<div class="output">You are eligible to vote.<br>hi</div>
+
+---
+
+## `Elif`
+
+- Chain multiple conditions.
+- Execute the **first block** of code with a `True` condition and ignore the rest.
+
+```
+if [condition]:
+    code block
+elif [condition]:
+    code block
+else:
+    code block
+```
+
+---
+
+- What does this print?
+
+```python
+grade = 75
+
+if grade >= 90:
+    print("A")
+elif grade >= 80:
+    print("B")
+elif grade >= 70:
+    print("C")
+else:
+    print("D or F")
+```
+
+---
+
+```python
+grade = 75
+
+if grade >= 90:
+    print("A")
+elif grade >= 80:
+    print("B")
+elif grade >= 70:
+    print("C")
+else:
+    print("D or F")
+```
+
+<div class="output">C</div>
+
+---
+
+- There must be an `if` before an `elif`.
+- Same for `else`.
+
+```python
+elif grade >= 80:
+    print("B")
+elif grade >= 70:
+    print("C")
+else:
+    print("D or F")
+```
+
+<div class="output">SyntaxError: invalid syntax</div>
+
+---
+
+## Nested conditionals
+
+- We can nest conditions inside conditions for more complexity in decision-making.
+- What does this print?
+
+```python
+age = 18
+citizenship = "Spain"
+
+if age >= 18:
+    if citizenship == "Spain":
+        print("You are eligible to vote.")
+    else:
+        print("You must be a Spain citizen to vote.")
+else:
+    print("You are not old enough to vote.")
+```
+
+---
+
+```python
+age = 18
+citizenship = "Spain"
+
+if age >= 18:
+    if citizenship == "Spain":
+        print("You are eligible to vote.")
+    else:
+        print("You must be a Spain citizen to vote.")
+else:
+    print("You are not old enough to vote.")
+```
+
+<div class="output">You are eligible to vote.</div>
+
+---
+
+- The same conditions can be expressed in multiple ways:
+
+```python
+age = 18
+citizenship = "Spain"
+
+if citizenship == "Spain":
+    if age >= 18:
+        print("You are eligible to vote.")
+    else:
+        print("You are not old enough to vote.")
+else:
+    print("You must be a Spain citizen to vote.")
+```
+
+<div class="output">You are eligible to vote.</div>
+
+---
+
+```python
+age = 18
+citizenship = "Spain"
+
+if citizenship != "Spain":
+    print("You must be a Spain citizen to vote.")
+else:
+    if age >= 18:
+        print("You are eligible to vote.")
+    else:
+        print("You are not old enough to vote.")
+```
+
+<div class="output">You are eligible to vote.</div>
+
+---
+
+- We could also write the code without nesting, although it is maybe a bit more difficult to understand:
+
+```python
+age = 18
+citizenship = "Spain"
+
+if age >= 18 and citizenship == "Spain":
+    print("You are eligible to vote.")
+elif age >= 18:
+    print("You must be a Spain citizen to vote.")
+else:
+    print("You are not old enough to vote.")
+```
+
+<div class="output">You are eligible to vote.</div>
+
+---
+
+```python
+age = 18
+citizenship = "Spain"
+
+if citizenship != "Spain":
+    print("You must be a Spain citizen to vote.")
+elif age >= 18:
+    print("You are eligible to vote.")
+else:
+    print("You are not old enough to vote.")
+```
+
+<div class="output">You are eligible to vote.</div>
+
+---
+
+## Conditional variable assignation
+
+- Set a value to a variable depending on a condition:
+
+```python
+age = 18
+
+if age >= 18:
+    eligibility = "eligible"
+else:
+    eligibility = "not eligible"
+
+print(f"You are {eligibility} to vote.")
+```
+
+<div class="output">You are eligible to vote.</div>
+
+---
+
+## Ternary operator
+
+- Shorter way to write if-else statements.
+- Use them only if the code is simple.
+- Same code as before but in a single line:
+
+```python
+age = 18
+eligibility = "eligible" if age >= 18 else "not eligible"
+
+print(f"You are {eligibility} to vote.")
+```
+
+<div class="output">You are eligible to vote.</div>
+
+---
+
+## Best practices
+
+- Keep code blocks simple and focused, handling one specific task or condition.
+  
+- Use parentheses for complex conditions to improve readability.
+  
+- If needed, you can write multi-line code in Python by using the `\` at the end of the line.
+  
+
+---
+
+## Example
+
+- Website membership levels and restrictions.
+- What does this print?
+
+```python
+membership_level = "premium"
+account_age_days = 45
+num_posts_created = 12
+
+# Check if user is allowed to create a post
+if (membership_level == "free" and num_posts_created < 10) or \
+   (membership_level == "basic" and num_posts_created < 30) or \
+   (membership_level == "premium" and num_posts_created < 100) or \
+   (membership_level == "unlimited" or account_age_days >= 365):
+    print("You are allowed to create more posts.")
+else:
+    print("You have reached your limit on the number of posts.")
+```
+
+---
+
+```python
+membership_level = "premium"
+account_age_days = 45
+num_posts_created = 12
+
+# Check if user is allowed to create a post
+if (membership_level == "free" and num_posts_created < 10) or \
+   (membership_level == "basic" and num_posts_created < 30) or \
+   (membership_level == "premium" and num_posts_created < 100) or \
+   (membership_level == "unlimited" or account_age_days >= 365):
+    print("You are allowed to create more posts.")
+else:
+    print("You have reached your limit on the number of posts.")
+```
+
+<div class="output">You are allowed to create more posts.</div>

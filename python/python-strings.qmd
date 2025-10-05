@@ -1,0 +1,620 @@
+---
+title: "Python: Strings"
+subtitle: Python Strings
+author: Isaac Boixaderas
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: The file system is organized into a hierarchical structure, starting with the root directory
+categories: [python, strings]
+toc: true
+number-sections: true
+highlight-style: pygments
+format:
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Strings in Python**
+
+In Python, **strings** are used for representing textual data. A string is a sequence of characters enclosed in either single quotes ('') or double quotes (“”). The Python language provides various built-in methods and functionalities to work with strings efficiently. Numbers tell computers how much or how many. Strings tell computers what — names, words, sentences, or any text. In other words, strings are how computers understand and manipulate tex
+
+:::
+
+---
+
+## Strings
+
+- With strings, a computer can:
+  
+  - Say hello to someone.
+    
+  - Store a name.
+    
+  - Send a message.
+    
+  - Print a receipt.
+    
+
+---
+
+## Strings in Python
+
+- Sequence of characters enclosed in single, double or triple quotes.
+
+```python
+string1 = 'Hello, World!'
+
+string2 = "Hello, World!"
+
+string3 = '''Multi-line
+string 
+example'''
+
+string4 = """Multi-line 2
+string 
+example"""
+```
+
+---
+
+- Take care when mixing quotes!
+
+```python
+failed_string = 'You're the best!'
+```
+
+<div class="output">SyntaxError: invalid syntax</div>
+
+---
+
+```python
+failed_string = "and then she said: "I love this Python course!""
+```
+
+<div class="output">SyntaxError: invalid syntax</div>
+
+---
+
+- Properly mixing them:
+
+```python
+successful_string = "You're the best!"
+```
+
+```python
+successful_string = 'she said: "I love this Python course!"'
+```
+
+---
+
+## Escape sequences
+
+- Include special characters in your strings by using backslash (`\`)
+  
+- Common escape sequences: `\'`, `\"`, `\\`, `\n`, `\t`.
+  
+
+```python
+# Using a single quote inside a string enclosed in single quotes
+print('You\'re the best!')
+```
+
+<div class="output">You're the best!</div>
+
+```python
+# Using a double quote inside a string enclosed in double quotes
+print("she said: \"I love this Python course!\"")
+```
+
+<div class="output">she said: "I love this Python course!"</div>
+
+---
+
+```python
+# Use a double backslash to show a single backslash
+print('C:\\Users\\Documents')
+```
+
+<div class="output">C:\Users\Documents</div>
+
+```python
+# Use \n to enter a new line
+print('Hello,\nWorld!')
+```
+
+<div class="output">Hello,<br>World!</div>
+
+```python
+# Use \t to add a tab
+print('Hello,\tWorld!')
+```
+
+<div class="output">Hello,       World!</div>
+
+
+## Raw strings
+* Create string literals without processing escape sequences
+* Add `r` or `R` before the string.
+* Useful when working with paths, regular expressions, etc.
+```python
+print(r'this string is \n not split.')
+```
+<div class="output">this string is \n not split.</div> -->
+
+
+```python
+# Without a raw string
+file_path = 'C:\\Users\\username\\Documents\\file.txt'
+print(file_path)
+# With a raw string
+file_path = r'C:\Users\username\Documents\file.txt'
+print(file_path)
+```
+<div class="output">C:\Users\username\Documents\file.txt<br>C:\Users\username\Documents\file.txt</div> -->
+
+---
+
+## Single or double quotes?
+
+- No defined rules.
+  
+- Some opinions:
+  
+  - Be consistent throughout your code, do not mix both types of quotes randomly, as this makes the code a bit more complex to read.
+    
+  - Do not use triple quotes if the string is not multi-line, as this makes the code a bit more complex to read.
+    
+
+---
+
+## Indexing
+
+- Access specific string characters by index.
+
+![String indexing in python](/images/python/string_indexing.png){width=60% .preview-image}
+<center>From: https://www.codespeedy.com/</center>
+
+---
+
+## Positive indexing
+
+- Use [index number] after the string, indicating the index to access.
+- Zero-based.
+
+```python
+greeting = 'Hello, World!'
+
+print(greeting[0])  # Access the 1st character
+print(greeting[2])  # Access the 3rd character
+print(greeting[11]) # Access 12th character
+```
+
+<div class="output">H<br>l<br>d</div>
+
+---
+
+## Negative indexing
+
+- For accessing the elements of a string "backwards".
+  
+- Use `-1` for accessing the last element, `-2` for the second to last, etc.
+  
+
+```python
+greeting = 'Hello, World!'
+
+print(greeting[-1])  # Access the last character
+print(greeting[-2])  # Access the second to last character
+print(greeting[-12]) # Access the 12th character starting from the end
+```
+
+<div class="output">!<br>d<br>e</div>
+
+---
+
+- We get an error if we specify an index outside the range.
+
+```python
+greeting = 'Hello, World!'
+
+print(greeting[12])
+```
+
+<div class="output">'!'</div>
+
+```python
+greeting[13]
+```
+
+<div class="output">IndexError: string index out of range</div>
+
+```python
+greeting[-15]
+```
+
+<div class="output">IndexError: string index out of range</div>
+
+---
+
+## Slicing
+
+- Extract a substring from a string.
+- Specify: start index, end index and step (optional).
+  - `substring = original_string[start:end:step]`
+- Start is included.
+- End is not included.
+- Step defaults to 1 if not provided.
+- Start and end default to 0 if not provided.
+
+---
+
+```python
+greeting = 'Hello, World!'
+
+# Extract the substring from index 0 to 4 (inclusive)
+print(greeting[0:5])
+```
+
+<div class="output">Hello</div>
+
+---
+
+```python
+# Extract the first four characters
+print(greeting[:4])
+```
+
+<div class="output">Hell</div>
+
+---
+
+```python
+# Extract the last three characters
+print(greeting[-3:])
+```
+
+<div class="output">ld!</div>
+
+---
+
+```python
+greeting = 'Hello, World!'
+
+# Extract characters with a step of 2
+print(greeting[::2])
+```
+
+<div class="output">Hlo ol!</div>
+
+---
+
+```python
+# Extract the substring from index 1 to 6 with a step of 2
+print(greeting[1:6:2])
+```
+
+<div class="output">el,</div>
+
+---
+
+```python
+# Trick for reversing a string
+print(greeting[::-1])
+```
+
+<div class="output">!dlroW ,olleH</div>
+
+---
+
+## Concatenation
+
+- With `+` operator:
+
+```python
+full_name = 'John' + ' ' + 'Doe'
+print(full_name)
+```
+
+<div class="output">John Doe</div>
+
+---
+
+## Repetition
+
+- With `*` operator:
+
+```python
+laugh = 'Ha' * 3
+print(laugh)
+
+laugh = 'Ha' * 10
+print(laugh)
+```
+
+<div class="output">HaHaHa<br>HaHaHaHaHaHaHaHaHaHa</div>
+
+---
+
+## Comparison
+
+- Standard comparison operators: `==`, `<`, `>=`, etc.
+- Comparison performed based on the Unicode code point (ordinal) value of each character. It is **similar to the way words are sorted in a dictionary**.
+
+```python
+print('a' < 'b')
+print('a' < 'A')
+print('a' < 'aa')
+print('abc' == 'abc')
+```
+
+<div class="output">True<br>False<br>True<br>True</div>
+
+---
+
+## Methods
+
+- Python provides a variety of functions, string methods, and keywords to make string manipulation easier.
+  
+- Built-in functions:
+  
+  - `len()`: Function that returns the length of the string.
+
+```python
+greeting = 'Hello, World!'
+
+print(len(greeting))
+```
+
+<div class="output">13</div>
+
+---
+
+- String methods:
+  - `upper()`: Converts the string to uppercase.
+  - `lower()`: Converts the string to lowercase.
+
+```python
+greeting = 'Hello, World!'
+
+print(greeting.lower())
+```
+
+<div class="output">hello, world!</div>
+
+```python
+print(greeting.upper())
+```
+
+<div class="output">HELLO, WORLD!</div>
+
+---
+
+- `find()`: Returns the index of the first occurrence of a substring.
+
+```python
+greeting = 'Hello, World!'
+
+print(greeting.find('Wo'))
+```
+
+<div class="output">7</div>
+
+---
+
+- `replace()`: Replaces a substring with another substring.
+
+```python
+greeting = 'Hello, World!'
+
+print(greeting.replace('World', 'Universe'))
+```
+
+<div class="output">Hello, Universe!</div>
+
+---
+
+- Trick to remove part of a string:
+
+```python
+greeting = 'Hello, World!'
+
+print(greeting.replace(', World', ''))
+```
+
+<div class="output">Hello!</div>
+
+---
+
+- Keywords:
+  - `in`: Checks if a specified substring is present within a given string. It returns `True` if the substring is found, and `False` otherwise.
+  - `not in`: Checks if a substring is not present in a given string.
+
+```python
+greeting = 'Hello, World!'
+
+print('Hello' in greeting)
+```
+
+<div class="output">True</div>
+
+```python
+print('Hello' not in greeting)
+```
+
+<div class="output">False</div>
+
+---
+
+## Formatting
+
+- Process of creating a new string by combining text with variables.
+- Several methods:
+  - %-formatting.
+  - .format() method.
+  - f-strings.
+
+---
+
+### %-formatting
+
+- Old-style formatting.
+- Use `%` inside the string with element specifier.
+- Use `%` after the string for adding the variables.
+- See specifiers at: https://docs.python.org/3/library/stdtypes.html#old-string-formatting
+
+```python
+name = 'John'
+age = 30
+formatted = 'My name is %s, and I am %i years old.' % (name, age)
+
+print(formatted)
+```
+
+<div class="output">My name is John, and I am 30 years old.</div>
+
+---
+
+### `format()` method
+
+- New-style formatting.
+- String method.
+- Use curly braces `{}` in text as placeholders for variables.
+- Specify variables as `format()` arguments.
+
+```python
+name = 'John'
+age = 30
+formatted = 'My name is {}, and I am {} years old.'.format(name, age)
+
+print(formatted)
+```
+
+<div class="output">My name is John, and I am 30 years old.</div>
+
+---
+
+### F-strings
+
+- Most recent.
+- Recommended.
+- Add `f` before the string.
+- Add variables inside text enclosed with curly braces `{}`.
+
+```python
+name = 'John'
+age = 30
+formatted = f'My name is {name}, and I am {age} years old.'
+
+print(formatted)
+```
+
+<div class="output">My name is John, and I am 30 years old.</div>
+
+---
+
+- F-strings allow nice options for formatting.
+- For example, rounding to a specific number of decimals by including `:.Xf`
+
+```python
+print(f'One divided by six is {1 / 6}')
+print(f'One divided by six rounded {1 / 6:.0f}')
+print(f'One divided by six with 1 decimal {1 / 6:.1f}')
+print(f'One divided by six with 2 decimals is {1 / 6:.2f}')
+```
+
+<div class="output">One divided by six is 0.16666666666666666<br>One divided by six rounded 0<br>One divided by six with 1 decimal 0.2<br>One divided by six with 2 decimals is 0.17</div>
+
+---
+
+- Or displaying a large integer number separating the thousands with commas to make it more readable:
+
+```python
+big_number = 1000000
+
+print(f'Big number difficult to visualize: {big_number}')
+print(f'Big number easy to visualize: {big_number:,}')
+```
+
+<div class="output">Big number difficult to visualize: 1000000<br>Big number easy to visualize: 1,000,000</div>
+
+- You can find some more formatting examples here: https://www.pythonmorsels.com/string-formatting/
+
+---
+
+## Immutability
+
+- In Python, strings are immutable.
+- Original string is never modified.
+- For changing a string, we have to create a new one.
+- It is forbidden to change strings using indexing:
+
+```python
+original_string = 'Hello, World!'
+
+# Strings are immutable,
+# trying to change 'H' for 'J' results in an error
+original_string[0] = 'J'
+```
+
+<div class="output">TypeError: 'str' object does not support item assignment</div>
+
+---
+
+- We should create a new string variable with the desired changes.
+- For example, using slicing and concatenation:
+
+```python
+original_string = 'Hello, World!'
+
+# Changing 'H' for 'J'
+new_string = 'J' + original_string[1:]
+
+print(new_string)
+```
+
+<div class="output">Jello, World!</div>
+
+---
+
+- Another common option is to use the `replace()` method:
+
+```python
+modified_string = original_string.replace('World', 'Python')
+
+print(original_string)  # has not changed
+print(modified_string)
+```
+
+<div class="output">Hello, World!<br>Hello, Python!</div>
+
+---
+
+- If the value returned by a method is not assigned to a variable, the result is lost:
+
+```python
+original_string = 'Hello, World!'
+# The resulting string is not assigned to a variable nor printed
+original_string.replace('World', 'Python')
+
+print(original_string)
+```
+
+<div class="output">Hello, World!</div>
+
+---
+
+## Unicode
+
+- Standard for representing characters from all languages.
+- Python strings support Unicode by default.
+- UTF-8 is the most common Unicode encoding for Python strings.
+
+```python
+japanese_greeting = "こんにちは"  # Japanese
+korean_greeting = "안녕하세요"  # Korean
+```
+

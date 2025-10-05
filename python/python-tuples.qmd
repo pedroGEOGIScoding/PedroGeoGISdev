@@ -1,0 +1,237 @@
+---
+title: "Python: Tuples"
+subtitle: Python Tuples
+author: Isaac Boixaderas
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: The file system is organized into a hierarchical structure, starting with the root directory
+categories: [python, tuples]
+toc: true
+number-sections: true
+highlight-style: pygments
+format:
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Tuples in Python**
+
+A **tuple** in Python is an immutable ordered collection of elements used to group multiple objects into a single variable or structure. Tuples are similar to lists but are defined using parentheses () instead of square brackets [] and cannot be modified after creation.
+
+:::
+
+---
+
+## Core Properties
+
+- Tuples are defined by listing elements separated by commas, usually within parentheses, although parentheses are optional but recommended for clarity.
+- Elements in a tuple are indexed, allowing access by position, and maintain the order in which they are specified.
+- The immutability of tuples means their content cannot be changed after creation; no addition, deletion, or modification of elements is allowed.
+- Tuples can store elements of mixed types, including other collections, functions, or objects.
+- Duplicate values are allowed within tuples since each element is indexed.
+
+### Typical Usage and Behavior
+
+- Tuples are preferred when an ordered group of items should remain constant and write-protected through the program.
+- Tuple packing is the process of grouping multiple objects into a tuple, while tuple unpacking refers to the assignment of tuple elements to multiple variables at once.
+- Because tuples are immutable, they are hashable and can be used as dictionary keys, unlike lists.
+- Single-element tuples require a trailing comma to distinguish them from just a parenthesized expression.
+
+### Differences from Other Collections
+
+- Unlike lists, which are mutable and offer a wider range of operations for changing contents, tuples are static after creation and support only operations that do not modify their contents.
+- Tuples are one of Python's four fundamental data structures for grouping values, with others being lists (mutable), sets (unordered, unique), and dictionaries (key/value), each suitable for different programming requirements.
+
+Tuples serve as an efficient, predictable means for fixed groups of heterogeneous items and data integrity in Python programs.
+
+## Tuples
+
+- Sequence of elements.
+- Very similar to lists.
+- Main difference: Tuples are immutable (size and elements cannot change).
+- Pros: Immutability help prevent accidental modifications.
+
+---
+
+```python
+my_tuple = (1, 4, 2, 3, 2, 2)
+
+# Tuples are immutable
+my_tuple[0] = 5
+```
+
+<div class="output">TypeError: 'tuple' object does not support item assignment</div>
+
+---
+
+- The same rules for indexing and slicing we saw in lists can be applied to tuples.
+- Because of their immutability, tuples lack a lot of the built-in methods that lists have (e.g., `append()` or `sort()`).
+
+---
+
+## Usefulness
+
+- Tuples are useful for storing elements that shouldn't change (i.e., are fixed).
+- Tuples provide safety against accidental modification of data
+- Usage examples:
+  - Geographical coordinates: (lat, long).
+  - RGB colors: (255, 0, 0).
+  - Database rows: ('Alice', 30, 'Engineer').
+  - Immutable configuration of server host and port: ('localhost', 8080).
+  - 2D/3D points in space: (3, 5) or (1, 2, 3).
+
+---
+
+## Tuples in Code
+
+```python
+my_tuple = (1, 4, 2, 3, 2, 2)
+
+print(f'The first element of my_tuple is {my_tuple[0]}.')
+print(f'The last element of my_tuple is {my_tuple[-1]}.')
+print(f'The first two elements of my_tuple are {my_tuple[:2]}.')
+print(f'The length of my_tuple is {len(my_tuple)}.')
+print(f'The number of 2s in my_tuple is {my_tuple.count(2)}.')
+print(f'The sum of my_tuple is {sum(my_tuple)}.')
+```
+
+<div class="output">The first element of my_tuple is 1.<br>The last element of my_tuple is 2.<br>The first two elements of my_tuple are (1, 4).<br>The length of my_tuple is 6.<br>The number of 2s in my_tuple is 3.<br>The sum of my_tuple is 14.</div>
+
+---
+
+- Multi-type tuples:
+
+```python
+my_multi_tuple = ('apple', 1, 2.5, True, [1, 2])
+```
+
+---
+
+- Convert lists to tuples and vice versa:
+
+```python
+list2tuple = tuple([1, 2, 3])
+tuple2list = list((1, 2, 3))
+```
+
+---
+
+## Operations
+
+- Like lists, concatenation with the `+` operator and repetition with the `*` operator.
+
+```python
+concat_tuple = (1, 2, 3) + (4, 5, 6)
+print(concat_tuple)
+```
+
+<div class="output">(1, 2, 3, 4, 5, 6)</div>
+
+```python
+rep_tuple = (1, 2, 3) * 3
+print(rep_tuple)
+```
+
+<div class="output">(1, 2, 3, 1, 2, 3, 1, 2, 3)</div>
+
+```python
+## Comparison
+Same as lists:
+- Elements compared in order one by one.
+- If a difference is found, the comparison gives `False`.
+```python
+print((1, 2, 3) == (1, 2, 3))
+print((1, 2, 3) == (1, 3, 2))
+print((1, 2, 3) == (1, 2, 4))
+```
+<div class="output">True<br>False<br>False</div>
+```
+
+---
+
+## `in`
+
+- Like lists, check if an element is inside a tuple:
+
+```python
+print(3 in (1, 3, 2, 1))
+```
+
+<div class="output">True</div>
+
+```python
+print(5 in (1, 3, 2, 1))
+```
+
+<div class="output">False</div>
+
+---
+
+## Iteration
+
+- Same as lists:
+
+```python
+for element in (1, 2, 3):
+    print(element)
+```
+
+<div class="output">1<br>2<br>3</div>
+
+---
+
+## `zip`
+
+- Combines multiple iterables (like lists or tuples) element-wise.
+- Given `iterable1` and `iterable2`, it returns tuples where the first item is from `iterable1` and the second is from `iterable2`.
+- If the input iterables are of uneven length, zip stops creating pairs when the shortest iterable is exhausted.
+
+---
+
+```python
+zipped = zip([1, 2, 3], [4, 5, 6])
+print(list(zipped))
+```
+
+<div class="output">[(1, 4), (2, 5), (3, 6)]</div>
+
+---
+
+```python
+for element1, element2 in zip([1, 2, 3], [4, 5, 6]):
+    print(element1, element2)
+```
+
+<div class="output">1 4<br>2 5<br>3 6</div>
+
+---
+
+- Practical example:
+
+```python
+students = ["Alice", "Bob", "Charlie", "David"]
+grades = [8.5, 9.2, 7.8, 9.0]
+
+for student, grade in zip(students, grades):
+    print(f"{student}: {grade}")
+```
+
+<div class="output">Alice: 8.5<br>Bob: 9.2<br>Charlie: 7.8<br>David: 9.0</div>
+
+---
+
+## Comprehension
+
+- Sequence comprehension for creating new tuples:
+
+```python
+even_tuple = tuple(i * 2 for i in range(5))
+print(even_tuple)
+```
+
+<div class="output">(0, 2, 4, 6, 8)</div>
+

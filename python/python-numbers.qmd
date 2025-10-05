@@ -1,7 +1,7 @@
 ---
 title: "Python: Numbers"
 subtitle: Python Numbers
-author: pedromartinezduran
+author: Isaac Boixaderas
 date: "06/01/2025"
 date-modified: last-modified
 date-format: full

@@ -1,0 +1,442 @@
+---
+title: "Python: Higher-order Functions"
+subtitle: Python Higher-order Functions
+author: Isaac Boixaderas
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: The file system is organized into a hierarchical structure, starting with the root directory
+categories: [python, functions]
+toc: true
+number-sections: true
+highlight-style: pygments
+format:
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Higher-order functions in Python**
+
+**Higher-order functions** in Python are functions that either take other functions as arguments, return functions as their result, or both. They are a fundamental concept in functional programming, enabling the creation of more modular, flexible, and reusable code by allowing functions to be treated as first-class citizens.
+
+These functions serve as a powerful abstraction tool since they facilitate **dynamic behavior**, such as applying different functions to data, generating new functions on-the-fly, or combining multiple functions in various ways. They can manipulate and operate on other functions, allowing for more expressive and concise code structures, and can be stored in variables, data structures, or used as return values from other functions.
+
+In practical terms, **higher-order functions** support operations like function composition, function chaining, and conditional function application, all of which contribute significantly to code clarity and efficiency. Examples include functions that accept other functions as parameters to define custom behaviors or those that generate new functions based on specific input parameters, thus enabling flexible and dynamic programming patterns.
+
+Overall, the power of higher-order functions stems from their ability to abstract over actions and behaviors, leading to code that is more modular, transparent, and adaptable to various programming tasks.
+
+:::
+
+## Higher-order Functions
+
+- They are functions that take functions as arguments and/or return a function.
+- Example of function that takes a function as an argument:
+
+```python
+def higher_order_fun(number, fun):
+    return fun(number)
+```
+
+---
+
+- Example of function that takes a function as an argument:
+
+```python
+def higher_order_fun(number, fun):
+    return fun(number)
+```
+
+```python
+def square(n):
+    return n ** 2
+
+output = higher_order_fun(5, square)
+print(output)
+```
+
+<div class="output">25</div>
+
+---
+
+- Example of function that returns a function:
+
+```python
+def higher_order_fun_2(number):
+
+    def inside_fun():
+        return number + 10
+
+    return inside_fun
+```
+
+---
+
+- Example of function that returns a function:
+
+```python
+def higher_order_fun_2(number):
+
+    def inside_fun(number2):
+        return number + number2 + 2
+
+    return inside_fun
+```
+
+```python
+output = higher_order_fun_2(5)
+print(output)  # output is a function
+```
+
+<div class="output"><function higher_order_fun_2.<locals>.inside_fun at 0x749cc3373130></div>
+
+```python
+nums_sum = output(1)
+print(nums_sum)
+```
+
+<div class="output">8</div>
+
+---
+
+## Lambdas
+
+- Also known as lambda functions.
+- Defined with the `lambda` keyword.
+- Small, anonymous functions.
+- Specially useful for higher-order functions (next slides).
+- Syntax:
+   `lambda arguments: expression`
+- The `expression` returns by default.
+
+---
+
+```python
+# this lambda returns an integer
+square = lambda x: x * x
+```
+
+```python
+print(square(5))
+print(square(10))
+```
+
+<div class="output">25<br>100</div>
+
+---
+
+```python
+greet = lambda name, age: f"Hello, {name}! You are {age} years old."
+```
+
+```python
+print(greet("Alice", 30))
+print(greet("Bob", 23))
+```
+
+<div class="output">Hello, Alice! You are 30 years old.<br>Hello, Bob! You are 23 years old.</div>
+
+---
+
+- We said lambda functions do not have names
+- But we are "naming" them by using the `square` and `greet` variable names.
+- This is just for the sake of the example.
+- If writting clean code, we prefer this, **not lambdas**:
+
+```python
+def square(x):
+    return x ** 2
+```
+
+```python
+def greet(name, age):
+    return f"Hello, {name}! You are {age} years old."
+```
+
+---
+
+## What Are Lambdas Useful For Then?
+
+- Perfect with higher-order functions.
+- Defined in a single line and without a name.
+- Ideal when the function is not reused anywhere else.
+- Think of them as: `funciones de usar y tirar`.
+
+---
+
+## Python's Higher-Order Functions
+
+- Common higher-order functions in Python:
+  - `sorted()`, `max()`, `map()`, `reduce()`, `filter()`...
+
+---
+
+### Sorted
+
+- The `sorted()` function has an optional `key` parameter.
+- It lets you customize the sort order by providing a function that returns a value to use for sorting purposes.
+
+---
+
+### Example 1: Sorting a List of Dictionaries
+
+- This crashes, as python cannot compare inequalities between dictionaries:
+
+```python
+data = [
+    {"name": "John", "age": 35},
+    {"name": "Doe", "age": 25},
+    {"name": "Jane", "age": 30}
+]
+
+sorted_data = sorted(data)
+```
+
+<div class="output">TypeError: '<' not supported between instances of 'dict' and 'dict'</div>
+
+---
+
+- Using the `key` parameter in `sorted()`.
+
+```python
+data = [
+    {"name": "John", "age": 35},
+    {"name": "Doe", "age": 25},
+    {"name": "Jane", "age": 30}
+]
+
+sorted_data = sorted(data, key=lambda x: x['age'])
+print(sorted_data)
+```
+
+<div class="output">[{'name': 'Doe', 'age': 25}, {'name': 'Jane', 'age': 30}, {'name': 'John', 'age': 35}]</div>
+
+---
+
+### Example 2: Sorting a List of Tuples
+
+```python
+data = [("apple", 3), ("banana", 1), ("cherry", 2)]
+
+sorted_data = sorted(data, key=lambda x: x[1])
+print(sorted_data)
+```
+
+<div class="output">[('banana', 1), ('cherry', 2), ('apple', 3)]</div>
+
+---
+
+- Or in reverse order using the `reverse` optional parameter:
+
+```python
+data = [("apple", 3), ("banana", 1), ("cherry", 2)]
+
+sorted_data = sorted(data, key=lambda x: x[1], reverse=True)
+print(sorted_data)
+```
+
+<div class="output">[('apple', 3), ('cherry', 2), ('banana', 1)]</div>
+
+---
+
+- How does this sort the data if we set `x[0]` instead of `x[1]` in the lambda?
+
+```python
+data = [("apple", 3), ("banana", 1), ("cherry", 2)]
+
+sorted_data = sorted(data, key=lambda x: x[0])
+print(sorted_data)
+```
+
+<div class="output">[('apple', 3), ('banana', 1), ('cherry', 2)]</div>
+
+---
+
+- How does this sort the data if we set `x[0]` instead of `x[1]` in the lambda?
+
+```python
+data = [("apple", 3), ("banana", 1), ("cherry", 2)]
+
+sorted_data = sorted(data, key=lambda x: x[0])
+print(sorted_data)
+```
+
+<div class="output">[('apple', 3), ('banana', 1), ('cherry', 2)]</div>
+
+---
+
+- Without lambdas things would be less comfortable (but doable).
+
+```python
+def get_first_element(seq):
+    return seq[0]
+
+data = [("apple", 3), ("banana", 1), ("cherry", 2)]
+
+sorted_data = sorted(data, key=get_first_element)
+print(sorted_data)
+```
+
+<div class="output">[('apple', 3), ('banana', 1), ('cherry', 2)]</div>
+
+---
+
+### Example 3: Sorting by Length of Strings
+
+```python
+data = ["apple", "banana", "pear"]
+
+sorted_data = sorted(data, key=lambda x: len(x))
+print(sorted_data)
+```
+
+<div class="output">['pear', 'apple', 'banana']</div>
+
+---
+
+- Equivalently, we could omit the lambda entirely:
+
+```python
+data = ["apple", "banana", "pear"]
+
+sorted_data = sorted(data, key=len)
+print(sorted_data)
+```
+
+<div class="output">['pear', 'apple', 'banana']</div>
+
+---
+
+## Max
+
+- By default, max of alphabetical order (the last one):
+
+```python
+data = ["apple", "banana", "pear"]
+
+max_word = max(data)
+print(max_word)
+```
+
+<div class="output">pear</div>
+
+---
+
+## Max
+
+- Accepts `key` argument.
+- Maximum in terms of length:
+
+```python
+data = ["apple", "banana", "pear"]
+
+max_word = max(data, key=len)
+print(max_word)
+```
+
+<div class="output">banana</div>
+
+---
+
+### Map
+
+- Applies a given function to each item in a sequence.
+- Returns an iterable (a map object).
+- You can convert the map object to a list or tuple if needed.
+- Syntax: `map(function, sequence)`
+- Converting to a list: `list(map(function, sequence))`
+
+---
+
+- Traditionally, for applying a function to each element we use a `for` loop.
+
+```python
+def doubler(num):
+    return num * 2
+
+items = [1, 2, 3, 4, 5]
+doubles = []
+for i in items:
+    doubles.append(doubler(i))
+
+doubles
+```
+
+<div class="output">[2, 4, 6, 8, 10]</div>
+
+---
+
+- Using `map()`:
+
+```python
+map_obj = map(lambda n: n * 2, items)
+# Convert the map object to a list
+doubles = list(map_obj)
+doubles
+```
+
+<div class="output">[2, 4, 6, 8, 10]</div>
+
+---
+
+- Or we could also use the `doubler` function if it is already defined:
+
+```python
+# Convert the map object to a list
+doubles = list(map(doubler, items))
+doubles
+```
+
+<div class="output">[2, 4, 6, 8, 10]</div>
+
+---
+
+### Filter
+
+- Filters the elements in a sequence based on a given function that returns a boolean value.
+- Keeps the elements for which the function returns `True` and discards the others.
+
+```python
+items = [1, 2, 3, 4, 5, 6]
+
+filter_obj = filter(lambda n: n % 2 == 0, items)
+even_numbers = list(filter_obj)
+even_numbers
+```
+
+<div class="output">[2, 4, 6]</div>
+
+---
+
+### Reduce
+
+::: columns
+
+::: {.column width=60%}
+
+- The `reduce` function is part of the `functools` module.
+- Applies a given function cumulatively to the items in a sequence from left to right.
+- Reduces the sequence to a single value.
+:::
+
+::: {.column width=40%}
+
+![Reduce function in python](/images/python/python-reduce.jpg){width=50% .preview-image}
+<center>From: https://www.alpharithms.com/</center>
+
+:::
+:::
+
+```python
+import functools
+items = [1, 2, 3, 4, 5]
+factorial = functools.reduce(lambda x, y: x * y, items)
+
+print(factorial)
+```
+<div class="output">120</div>
+
+
+

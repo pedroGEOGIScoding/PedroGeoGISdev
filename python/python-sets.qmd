@@ -1,0 +1,403 @@
+---
+title: "Python: Sets"
+subtitle: Python Sets
+author: Isaac Boixaderas
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: The file system is organized into a hierarchical structure, starting with the root directory
+categories: [python, sets]
+toc: true
+number-sections: true
+highlight-style: pygments
+format:
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Sets in Python**
+
+A **set** in Python is an unordered collection of unique elements, which means it cannot contain duplicate values. Sets are mutable, allowing for elements to be added or removed, but the elements themselves must be immutable types. Unlike lists or tuples, sets do not support indexing or slicing because they do not maintain any order among their elements.
+
+:::
+
+## Key characteristics of Python sets include:
+
+- Unordered: The elements are stored without any particular sequence.
+- Unique elements: Each element can appear only once in a set.
+- Mutable container: The set itself can be modified by adding or removing elements.
+- Elements must be hashable (immutable types such as numbers, strings, and tuples).
+- Sets support standard mathematical set operations such as union, intersection, difference, and symmetric difference.
+- Sets are commonly used for fast membership testing and eliminating duplicates from collections.
+
+Python sets can be created using curly braces `{}` or the `set()` constructor, the latter being necessary for creating an empty set. They can be constructed from any iterable, allowing conversion from lists, tuples, or other collections.
+
+Set manipulation methods include adding elements with `add()`, updating with multiple elements using `update()`, and removing elements with `remove()` or `discard()`.
+
+Overall, Python sets provide an efficient and convenient way to work with collections of distinct items with operations resembling those in mathematical set theory.
+
+---
+
+## Sets
+
+- **Unordered** collection of **unique** elements.
+- E.g., useful for guaranteeing no duplicates.
+
+---
+
+```python
+# Only unique elements are stored, so 2 is only stored once
+my_set = {1, 4, 2, 3, 2, 2}
+print(my_set)
+```
+
+<div class="output">{1, 2, 3, 4}</div>
+
+---
+
+## Indexing Not Allowed
+
+- Set elements are unordered, so we cannot access them using indices:
+
+```python
+my_set = {1, 4, 2, 3, 2, 2}
+print(my_set[1])
+```
+
+<div class="output">TypeError: 'set' object is not subscriptable</div>
+
+---
+
+## Mutability
+
+- `sets` are mutable.
+- To add elements to a set, use `add()` method.
+
+```python
+my_set = {1, 2, 2}
+my_set.add(5)
+print(my_set)
+```
+
+<div class="output">my_set = {1, 2, 5}</div>
+
+---
+
+- To remove elements, use `remove()` method.
+
+```python
+my_set = {1, 2, 5}
+my_set.remove(2)
+print(my_set)
+```
+
+<div class="output">my_set = {1, 5}</div>
+
+---
+
+- Multi-type:
+
+```python
+my_multi_set = {'apple', 1, 2.5, True}
+```
+
+---
+
+- However, only immutable types are allowed inside sets!
+
+```python
+print({'apple', 1, 2.5, [1, 2]})
+```
+
+<div class="output">TypeError: unhashable type: 'list'</div>
+
+```python
+print({'apple', 1, 2.5, True, (1, 2)})
+```
+
+<div class="output">{(1, 2), 1, 2.5, 'apple'}</div>
+
+---
+
+- Convert sets to lists or tuples and vice versa.
+- **Take care**: repeated elements from the list are removed when converting to a set.
+
+```python
+list2set = set([1, 2, 3, 3, 3])
+print(list2set)
+
+set2list = list({1, 2, 3})
+print(set2list)
+```
+
+<div class="output">{1, 2, 3}<br>[1, 2, 3]</div>
+
+---
+
+```python
+tuple2set = set((1, 2, 3, 3, 3))
+print(tuple2set)
+
+set2tuple = tuple({1, 2, 3})
+print(set2tuple)
+```
+
+<div class="output">{1, 2, 3}<br>(1, 2, 3)</div>
+
+---
+
+## `in`
+
+- Like lists, check if an element is inside a set:
+
+```python
+print(3 in {1, 3, 2})
+```
+
+<div class="output">True</div>
+
+```python
+print(5 in {1, 3, 2})
+```
+
+<div class="output">False</div>
+
+---
+
+## Operations
+
+<br><br>
+![String indexing in python](/images/python/python-set-operatioons.webp){width=60% .preview-image}
+<center>From: https://www.learnbyexample.org/python-set/</center>
+
+---
+
+## Union
+::: columns
+
+::: {.column width=50%}
+
+- With `|` or `union()`.
+
+```python
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+
+# Union
+union_result = set1 | set2
+# or
+union_result = set1.union(set2)
+print(f'The union is: {union_result}')
+```
+
+<div class="output">The union is: {1, 2, 3, 4, 5}</div>
+:::
+
+::: {.column width=50% style="text-align: center;"}
+
+![Union operation in python](/images/python/python-set-union.png){width=50% .preview-image}
+
+<center>From: https://www.learnbyexample.org/</center>
+
+:::
+
+:::
+
+## Intersection
+::: columns
+
+::: {.column width=50%}
+
+- With `&` or `intersection()`.
+
+```python
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+
+# Intersection
+intersection_result = set1 & set2
+
+# or
+intersection_result = set1.intersection(set2)
+
+print(f'The intersection is: {intersection_result}')
+```
+
+<div class="output">The intersection is: 3</div>
+:::
+
+::: {.column width=50% style="text-align: center;"}
+
+![Intersection operation in python](/images/python/python-set-intersection.png){width=50% .preview-image}
+
+<center>From: https://www.learnbyexample.org/</center>
+
+:::
+:::
+
+## Difference
+::: columns
+
+::: {.column width=50%}
+
+- With `-` or `difference()`.
+
+```python
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+
+# Difference
+difference_result = set1 - set2
+
+# or
+difference_result = set1.difference(set2)
+
+print(f'The difference is: {difference_result}')
+```
+
+<div class="output">The difference is: {1, 2}</div>
+:::
+
+::: {.column width=50% style="text-align: center;"}
+
+![Difference operation in python](/images/python/python-set-difference.png){width=50% .preview-image}
+
+<center>From: https://www.learnbyexample.org/</center>
+
+:::
+:::
+
+## Symmetric difference
+::: columns
+
+::: {.column width=50%}
+
+- With `^` or `symmetric_difference()`.
+
+```python
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+
+# Symmetric Difference
+symmetric_difference_result = set1 ^ set2
+
+# or
+symmetric_difference_result = set1.symmetric_difference(set2)
+
+print(f'The symmetric difference is: {symmetric_difference_result}')
+```
+
+<div class="output">The symmetric difference is: {1, 2, 4, 5}</div>
+
+:::
+
+::: {.column width=50% style="text-align: center;"}
+
+![Symmetric difference operation in python](/images/python/python-set-symmetricdiff.png){width=50% .preview-image}
+
+<center>From: https://www.learnbyexample.org/</center>
+
+:::
+:::
+
+## Functions and methods
+
+- Common built-in functions: `len()`, `sum()`, `max()`, etc.
+
+```python
+set1 = {1, 2, 3}
+
+print(f'The length of my_set is {len(set1)}.')
+print(f'The sum of my_set is {sum(set1)}.')
+print(f'The max of my_set is {max(set1)}.')
+```
+
+<div class="output">The length of my_set is 3.<br>The sum of my_set is 6.<br>The max of my_set is 3.</div>
+
+---
+
+- Other common methods: `issubset()`, `issuperset()`.
+
+```python
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+set3 = {3, 5}
+
+print(f'Is set3 a subset of set1? {set3.issubset(set1)}')
+print(f'Is set3 a subset of set2? {set3.issubset(set2)}')
+print(f'Is set2 a superset of set3? {set2.issuperset(set3)}')
+```
+
+<div class="output">Is set3 a subset of set1? False<br>Is set3 a subset of set2? True<br>Is set2 a superset of set3? True</div>
+
+---
+
+- More methods: https://www.w3schools.com/python/python_ref_set.asp.
+
+---
+
+## Update
+
+```python
+# Update set1 with the union of set1 and set2.
+# This modifies the content of set1.
+
+set1.update(set2)
+print(set1)
+```
+
+<div class="output">{1, 2, 3, 4, 5}</div>
+
+---
+
+## Iteration
+
+- The same as lists and tuples:
+
+```python
+for element in {1, 2, 3}:
+    print(element)
+```
+
+<div class="output">1<br>2<br>3</div>
+
+---
+
+## Comprehension
+
+- Similar to lists:
+
+```python
+even_set = {i * 2 for i in range(5)}
+print(even_set)
+```
+
+<div class="output">{0, 2, 4, 6, 8}</div>
+
+---
+
+## Example
+
+Given a string, count the number of distinct words present in the string.
+
+---
+
+## Example
+
+Given a string, count the number of distinct words present in the string.
+
+```python
+text = "one two three three two one go"
+
+unique_words = set(text.split())
+distinct_words = len(unique_words)
+
+print(unique_words)
+print(distinct_words)
+```
+
+<div class="output">{'two', 'go', 'three', 'one'}<br>4</div>
+

@@ -1,0 +1,323 @@
+---
+title: "Python: Nested Loops"
+subtitle: Python Nested Loops
+author: Isaac Boixaderas
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: The file system is organized into a hierarchical structure, starting with the root directory
+categories: [python, loops]
+toc: true
+number-sections: true
+highlight-style: pygments
+format:
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Nested loops in Python**
+
+A **nested loop** in Python refers to a construction where one loop (the inner loop) is placed inside the body of another loop (the outer loop). For each iteration of the outer loop, the inner loop runs all its iterations from beginning to end before the outer loop proceeds to its next iteration.
+
+:::
+
+---
+
+## Key Concepts
+- The outer loop acts as the main controller, and the inner loop completes its cycle entirely within each cycle of the outer loop.
+- Any type of loop (for or while) can be nested within another, with no formal limit on nesting depth.
+- Nested loops are widely used for tasks involving multi-dimensional or hierarchical data, such as traversing matrices, grids, or groups within groups.
+- The total number of iterations in a nested loop equals the product of the iteration counts of the inner and outer loops.
+- The design can be extended to multiple levels, creating deep layers of nested logic as needed.
+- Although powerful, nested loops may introduce performance or readability concerns, especially when deeply nested or used with large datasets.
+- This structure enables efficient handling of repetitive actions that require layered processing, like iterating over two-dimensional arrays or generating combinations.
+
+## Nested Loops
+
+- We can nest multiple loops inside one another:
+- What does this print?
+
+```python
+# Loop through the first two elements
+
+my_list = [5, 6]
+
+for element in my_list:
+    for i in range(2):
+        print(element, i)
+    print('---')
+print('Outside the loop')
+```
+
+---
+
+```python
+# Loop through the first two elements
+
+my_list = [5, 6]
+
+for element in my_list:
+    for i in range(2):
+        print(element, i)
+    print('---')
+print('Outside the loop')
+```
+
+<div class="output">5 0<br>5 1<br>---<br>6 0<br>6 1<br>Outside the loop</div>
+
+---
+
+- `break` only "breaks" the last (inner) loop. If this one is nested, the outer loops are not affected.
+  
+- What does the following code print?
+  
+
+```python
+# nested `break` example
+
+for num in range(1, 5):
+    for num2 in range(10, 15):
+        if num2 == 13:
+            # Break the inner loop
+            break
+        print(f'Inner num: {num2}')
+    if num == 3:
+        # Break the outer loop
+        break
+    print(f'Outer num: {num}')
+print('Outside the loop')
+```
+
+---
+
+## With list comprehension
+
+```python
+my_list = [x + y for x in range(1, 3) for y in range(1, 3)]
+print(my_list)
+```
+
+<div class="output">[2, 3, 3, 4]</div>
+
+## Matrices
+
+- Also known as **matrices**.
+- Example:
+  
+  ```python
+  matrix = [[3, 4], [1, 5], [2, 2]]
+  ```
+  
+- Normally visualized as rows and columns:
+
+| #   | Col 1 | Col 2 |
+| --- | --- | --- |
+| 0   | 3   | 4   |
+| 1   | 1   | 5   |
+| 2   | 2   | 2   |
+
+---
+
+## Accessing a row
+
+- For accessing a specific row, just use indexing for accessing the matrix element.
+
+```python
+matrix = [[3, 4], [1, 5], [2, 2]]
+
+print(matrix[0])
+print(matrix[1])
+```
+
+<div class="output">[3, 4]<br>[1, 5]</div>
+
+---
+
+## Accessing an element
+
+- For accessing a specific element in the matrix, just use "double" indexing.
+- The first index returns a row (which is a list), as seen before. We then access an element of that list with the second index.
+
+```python
+matrix = [[3, 4], [1, 5], [2, 2]]
+
+print(matrix[0][1])
+print(matrix[1][1])
+print(matrix[2][0])
+```
+
+<div class="output">4<br>5<br>2</div>
+
+---
+
+## Iterating row-wise
+
+- We can iterate through each element in the list, which corresponds to each row.
+  
+- Iterate through the matrix row-wise:
+  
+
+```python
+matrix = [[3, 4], [1, 5], [2, 2]]
+
+for row in matrix:
+    print(row)
+```
+
+<div class="output">[3, 4]<br>[1, 5]<br>[2, 2]</div>
+
+---
+
+- When we want to keep the row index:
+
+```python
+matrix = [[3, 4], [1, 5], [2, 2]]
+
+for i, row in enumerate(matrix):
+    print(i, row)
+```
+
+<div class="output">0, [3, 4]<br>1, [1, 5]<br>2, [2, 2]</div>
+
+---
+
+- Another option (more common in other languages).
+  
+- The length of the matrix is 3, as it contains 3 elements (rows).
+  
+
+```python
+matrix = [[3, 4], [1, 5], [2, 2]]
+
+for i in range(len(matrix)):
+    print(i, matrix[i])
+```
+
+<div class="output">0, [3, 4]<br>1, [1, 5]<br>2, [2, 2]</div>
+
+---
+
+- For iterating through each element we need a nested loop:
+
+```python
+matrix = [[3, 4], [1, 5], [2, 2]]
+
+for row in matrix:
+    for element in row:
+        print(element, end=' ')
+```
+
+<div class="output">3 4 1 5 2 2</div>
+
+---
+
+- Example, in a less pythonic way.
+
+```python
+matrix = [[3, 4], [1, 5], [2, 2]]
+
+num_rows = len(matrix)
+num_cols = len(matrix[0])
+
+for i in range(num_rows):
+    for j in range(num_cols):
+        print(matrix[i][j], end=' ')
+```
+
+<div class="output">3 4 1 5 2 2</div>
+
+---
+
+## Iterating column-wise
+
+- For iterating through each element column-wise:
+
+```python
+matrix = [[3, 4], [1, 5], [2, 2]]
+
+num_rows = len(matrix)
+num_cols = len(matrix[0])
+
+for j in range(num_cols):
+    for i in range(num_rows):
+        print(matrix[i][j], end=' ')
+```
+
+<div class="output">3 1 2 4 5 2</div>
+
+---
+
+- For iterating column-wise things get a bit more complex.
+
+```python
+matrix = [[3, 4], [1, 5], [2, 2]]
+
+num_rows = len(matrix)
+num_cols = len(matrix[0])
+
+for j in range(num_cols):
+    column = []
+    for i in range(num_rows):
+        column.append(matrix[i][j])
+    print(column)
+```
+
+<div class="output">[3, 1, 2]<br>[4, 5, 2]</div>
+
+---
+
+## Unpacking in loops
+
+- We can unpack elements in loops row-wise.
+
+```python
+matrix = [[3, 4], [1, 5], [2, 2]]
+
+for x, y in matrix:
+    print(x + y)
+```
+
+<div class="output">7<br>6<br>4</div>
+
+---
+
+- As many as we want, as long as each row contains the same number of elements.
+
+```python
+matrix = [[3, 4, 2, 3], [1, 5, 8, 7], [2, 2, 9, 6]]
+
+for x1, x2, x3, x4 in matrix:
+    print(x1, x2, x3, x4)
+```
+
+<div class="output">3 4 2 3<br>1 5 8 7<br>2 2 9 6</div>
+
+---
+
+## User choices example
+
+```python
+while True:
+    choice_text = '''Enter option: 
+    1. A
+    2. B
+    3. Exit
+
+    Option: '''
+
+    opt = int(input(choice_text))
+
+    if opt == 1:
+        print('A')
+    elif opt == 2:
+        print('B')
+    elif opt == 3:
+        print('Bye')
+        break
+    print()
+```
+
+<div class="output"></div>

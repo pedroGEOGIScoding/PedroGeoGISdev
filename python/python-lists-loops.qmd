@@ -1,0 +1,777 @@
+---
+title: "Python: Lists and Loops"
+subtitle: Python Lists and Loops
+author: Isaac Boixaderas
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: The file system is organized into a hierarchical structure, starting with the root directory
+categories: [python, lists, loops]
+toc: true
+number-sections: true
+highlight-style: pygments
+format:
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Lists and Loops in Python**
+
+**Lists** in Python are mutable, ordered sequences that can hold elements of different types, support indexing, and allow modifications like adding, removing, and changing items. **Loops** in Python, such as for and while, are control flow constructs that repeatedly execute a block of code over collections like lists or as long as a condition is met.
+
+:::
+
+---
+
+## Lists
+
+- Ordered collection.
+- Enclosed in square brackets and separated by commas.
+- It is allowed to store elements from multiple types.
+
+```python
+# list of integers
+my_list = [1, 4, 3, 2, 7]
+
+# list of mixed types
+my_mixed_list = [1, 'hello', 3.4, [8, 4, 6], ['a']]
+```
+
+---
+
+## Indexing and slicing
+
+- Indexing and slicing works like in strings.
+
+![List indexing in python](/images/python/python_list_indexing.png){width=80% .preview-image}
+<center>From: https://favtutor.com/blogs/get-list-index-python</center>
+
+---
+
+```python
+my_list = [1, 4, 3, 2, 7]
+
+print(my_list[0])
+print(my_list[-1])
+print(my_list[1:4])
+print(my_list[::2])
+```
+
+<div class="output">1<br>7<br>[4, 3, 2]<br>[1, 3, 7]</div>
+
+---
+
+## Operations
+
+- Like strings as well, with `+` for concatenation and `*` for repetition.
+
+```python
+my_list = [1, 2, 3]
+
+# The + operator concatenates lists
+print(my_list + [8, 9, 10])
+```
+
+<div class="output">[1, 2, 3, 8, 9, 10]</div>
+
+```python
+# The * operator repeats lists
+print(my_list * 3)
+```
+
+<div class="output">[1, 2, 3, 1, 2, 3, 1, 2, 3]</div>
+
+<!-- ---
+## Comparisons
+* Comparing the elements of 2 lists:
+    - Elements compared in order one by one.
+    - If a difference is found, the comparison gives `False`.
+```python
+print([1, 2, 3] == [1, 2, 3]) # True
+print([1, 2, 3] == [1, 3, 2]) # False
+print([1, 2, 3] == [1, 2, 4]) # False
+print([1, "abc", 3] == [1, "abc", 3]) # True
+```
+<div class="output">True<br>False<br>False<br>True</div> -->
+
+---
+
+### Empty
+
+- Check if a list is empty with `len`, `not`, and `[]`.
+
+```python
+# Using `len()`
+
+my_list = []
+
+if len(my_list) == 0:
+    print("The list is empty.")
+else:
+    print("The list contains elements.")
+```
+
+<div class="output">The list is empty.</div>
+
+---
+
+```python
+# Using `not`
+
+a = []
+
+if not a:
+    print("The list is empty.")
+else:
+    print("The list contains elements.")
+```
+
+<div class="output">The list is empty.</div>
+
+---
+
+```python
+# Using empty list
+
+my_list = []
+
+if my_list == []:
+    print("The list is empty.")
+else:
+    print("The list contains elements.")
+```
+
+<div class="output">The list is empty.</div>
+
+---
+
+## Updating
+
+- Lists are **mutable** (unlike strings)!
+
+```python
+my_list = [1, 2, 3]
+
+# Set the first element to 8
+my_list[0] = 8
+print(my_list)
+```
+
+<div class="output">[8, 2, 3]</div>
+
+---
+
+```python
+my_list = [1, 2, 3]
+
+# Set indices 1 to 3 (not included) to 9 and 10
+my_list[1:3] = [9, 10]
+print(my_list)
+```
+
+<div class="output">[1, 9, 10]</div>
+
+---
+
+## Adding elements
+
+We can add elements to a list using:
+
+- `append()`: Adds an element to the end of the list.
+
+---
+
+```python
+my_list = [1, 2, 3]
+
+# The list grows as we append elements
+my_list.append(4)
+print(my_list)
+```
+
+<div class="output">[1, 2, 3, 4]</div>
+
+```python
+my_list.append(5)
+print(my_list)
+```
+
+<div class="output">[1, 2, 3, 4, 5]</div>
+
+---
+
+- `extend()`: Adds multiple elements to the end of the list.
+
+```python
+my_list = [1, 2, 3]
+
+# The list grows as we extend it with another list
+my_list.extend([7, 8, 9])
+print(my_list)
+```
+
+<div class="output">[1, 2, 3, 7, 8, 9]</div>
+
+---
+
+- `insert()`: Adds an element at a specific index.
+
+```python
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+# Insert element 10 at index 5 
+my_list.insert(5, 10)
+print(my_list)
+```
+
+<div class="output">[1, 2, 3, 4, 5, 10, 6, 7, 8, 9]</div>
+
+---
+
+## Removing elements
+
+To remove elements from a list:
+
+- `remove()`: Deletes the first occurrence of a specified element.
+
+```python
+my_list = [1, 2, 'a', 3, 2, 'b']
+
+# Remove the first 2 you find
+my_list.remove(2)
+print(my_list)
+```
+
+<div class="output">[1, 'a', 3, 2, 'b']</div>
+
+---
+
+- It crashes if there is no equal element...
+
+```python
+my_list = [1, 2, 'a', 3, 2, 'b']
+
+# Remove non-existing element
+my_list.remove(8)
+print(my_list)
+```
+
+<div class="output">ValueError: list.remove(x): x not in list</div>
+
+---
+
+- `pop()`: Removes an element at a given index.
+
+```python
+my_list = [1, 2, 'a', 3, 2, 'b']
+
+# Remove the element at index 1
+my_list.pop(1)
+print(my_list)
+```
+
+<div class="output">[1, 'a', 3, 2, 'b']</div>
+
+---
+
+- If the index is not specified, it deletes the last element.
+
+```python
+my_list = [1, 2, 'a', 3, 2, 'b']
+
+# Remove the last element
+my_list.pop()
+print(my_list)
+```
+
+<div class="output">[1, 2, 'a', 3, 2]</div>
+
+---
+
+- The removed element is returned.
+- We can optionally store it in a variable.
+
+```python
+my_list = [1, 2, 'a', 3, 2, 'b']
+
+# The removed element is returned.
+# Previously we did not use them, but they were returned as well
+returned_element = my_list.pop()
+print(returned_element)
+print(my_list)
+```
+
+<div class="output">'b'<br>[1, 2, 'a', 3, 2]</div>
+
+```python
+- `del`: Keyword that removes elements based on their index or a slice.
+my_list = [1, 2, 'a', 3, 2, 'b']
+# Remove the element in the given index, it is not returned
+del my_list[2]
+print(my_list)
+```
+<div class="output">[1, 2, 3, 2, 'b']</div>
+
+---
+
+### When to use each?
+
+- `remove()`: When you only want to remove the first occurrence of an element.
+- `pop()`: When you want to remove by index **and** preserve the value in a variable.
+  - Also comfortable when you want to remove the last element.
+    
+    - `del`: When you want to remove by index. It is a bit more efficient than `pop()`.
+    
+  - You could also use `pop()` without storing the returned value though... 
+
+---
+
+## Other list methods
+
+Some of the most common are:
+
+- `index()`: Returns the index of the first occurrence of a specified element in the list.
+
+```python
+my_list = [1, 2, 2, 2, 3, 4, 2, 5]
+
+print(f'The index of the number 5 is: {my_list.index(5)}.')
+print(f'The index of the first occurrence of 2 is: {my_list.index(2)}.')
+```
+
+<div class="output">The index of the number 5 is: 7.<br>The index of the first occurrence of 2 is: 1.</div>
+
+---
+
+- `count()`: Counts the number of occurrences of a specified element in the list.
+  
+  ```python
+  my_list = [1, 2, 2, 2, 3, 4, 2, 5]
+  ```
+  
+
+print(f'The number 2 appears {my_list.count(2)} times.')
+
+````
+<div class="output">The number 2 appears 4 times.</div>
+
+---
+
+- `sort()`: Sorts the elements of the list in-place (modifies the original list).
+<!-- - `reverse()`: Reverses the elements of the list in-place (modifies the original list).
+- `copy()`: Returns a copy of the list. -->
+
+```python
+my_list = [1, 2, 2, 2, 3, 4, 2, 5]
+
+my_list.sort()
+print(my_list)
+````
+
+<div class="output">[1, 2, 2, 2, 2, 3, 4, 5]</div>
+
+---
+
+- Extensive explanation of list methods: https://docs.python.org/3/tutorial/datastructures.html.
+
+---
+
+## Built-in functions
+
+Some of the most common general built-in functions for lists are:
+
+- `len()`: Returns the number of elements in a list.
+- `sum()`: Returns the sum of all elements in a list (for numeric lists).
+- `max()`: Returns the maximum value in a list.
+- `min()`: Returns the minimum value in a list.
+- `sorted()`: Returns a sorted list (does not modify the original list).
+
+---
+
+```python
+my_list = [1, 4, 2, 7, 3]
+
+print(f'The length of the list is: {len(my_list)}.')
+print(f'The sum of all the elements is: {sum(my_list)}.')
+print(f'The maximum element is: {max(my_list)}.')
+
+# Unlike the `sort()` method,
+# `sorted()` returns another list without modifying the original one
+print(f'The list sorted in ascending order is: {sorted(my_list)}.')
+```
+
+<div class="output">The length of the list is: 5.<br>The sum of all the elements is: 17.<br>The maximum element is: 7.<br>The list sorted in ascending order is: [1, 2, 3, 4, 7].</div>
+
+---
+
+- What is printed?
+
+```python
+a = [1, 2, 3]
+b = a
+b[0] = 8
+
+print('a =', a)
+print('b =', b)
+```
+
+---
+
+- When setting a list as equal to another, both variables affect the same list.
+
+```python
+a = [1, 2, 3]
+b = a
+b[0] = 8
+
+# `a` and `b` are the same list
+# If we change `b`, then `a` changes as well
+print('a =', a)
+print('b =', b)
+```
+
+<div class="output">a = [8, 2, 3]<br>b = [8, 2, 3]</div>
+
+---
+
+- If we want independent lists we can use the `copy()` method:
+
+```python
+a = [1, 2, 3]
+# Make a copy of `a` and assign it to `b`
+b = a.copy()
+b[0] = 8
+
+# If we change `b`, then `a` does not change
+print('a =', a)
+print('b =', b)
+```
+
+<div class="output">a = [1, 2, 3]<br>b = [8, 2, 3]</div>
+
+---
+
+## `in` Keyword
+
+- Can be used for checking if a specific value is inside the sequence.
+- It also has a special usage in "for loops" (next slides).
+
+```python
+fruits = ['apple', 'banana', 'cherry', 'orange', 'kiwi', 'melon']
+
+print('apple' in fruits)
+```
+
+<div class="output">True</div>
+
+```python
+print('pear' in fruits)
+```
+
+<div class="output">False</div>
+
+---
+
+## Loops
+
+- Essential in programming.
+- They allow us to execute a block of code repeatedly.
+- Python supports two types: `for` and `while` loops.
+
+---
+
+### `for`
+
+- Iterate over a sequence, such as a list or a string.
+- Syntax:
+  
+  ```
+  for [variable_name] in [iterable_sequence]:
+    code block
+  ```
+  
+
+---
+
+### List iteration example
+
+```python
+my_list = [1, 2, 3]
+
+for element in my_list:
+    # This goes over each element in the list,
+    # executing this code block for each one
+    print(element)
+```
+
+<div class="output">1<br>2<br>3</div>
+
+---
+
+Commonly used built-in functions for `for` loops:
+
+- `enumerate()`: Gives back two variables: the *count* of the current iteration and the *value* of the item at the current iteration.
+
+```python
+# With the enumerate function we get the:
+#       index (iteration count)
+#       value of each element
+
+my_list = [3, 2, 1]
+
+for index, value in enumerate(my_list):
+    print(f'The element at index {index} is {value}.')
+```
+
+<div class="output">The element at index 0 is 3.<br>The element at index 1 is 2.<br>The element at index 2 is 1.</div>
+
+---
+
+- `range()`: Sequence of numbers. By default, starts from 0 and increments by 1. Stops before a specified number.
+
+```python
+# It starts at 0 (default) and ends at 4 (not included)
+for i in range(4):
+    print(i)
+```
+
+<div class="output">0<br>1<br>2<br>3</div>
+
+---
+
+```python
+# Starts at 2 and ends at 6 (not included)
+for i in range(2, 6):
+    print(i)
+```
+
+<div class="output">2<br>3<br>4<br>5</div>
+
+---
+
+```python
+# Starts at 0 and ends at 10 (not included), in increments of 2
+for i in range(0, 10, 2):
+    print(i)
+```
+
+<div class="output">0<br>2<br>4<br>6<br>8</div>
+
+---
+
+### String iteration example
+
+```python
+my_list = "Hello"
+
+for character in my_list:
+    # This goes over each character in the string
+    print(character)
+```
+
+<div class="output">H<br>e<br>l<br>l<br>o</div>
+
+---
+
+### While
+
+- Executes an iteration if condition remains `True`.
+- Syntax:
+  
+  ```
+  while [condition]:
+    code block
+  ```
+  
+
+---
+
+```python
+count = 0
+while count < 4:
+    print(f'{count} is less than 4.')
+    count += 1
+
+print(f'The loop ended because {count} is greater or equal to 4.')
+```
+
+<div class="output">0 is less than 4.<br>1 is less than 4.<br>2 is less than 4.<br>3 is less than 4.<br>The loop ended because 4 is greater or equal to 4.</div>
+
+---
+
+- We can chain as many conditions as we want:
+
+```python
+count = 0
+while count < 4 and count * 3 < 8:
+    print(f'{count} is less than 4 and {count * 3} is less than 8.')
+    count += 1
+
+print(f'{count} is greater or equal to 4 or {count * 3} is greater than 8.')
+```
+
+<div class="output">0 is less than 4 and 0 is less than 8.<br>1 is less than 4 and 3 is less than 8.<br>2 is less than 4 and 6 is less than 8.<br>3 is greater or equal to 4 or 9 is greater than 8.</div>
+
+---
+
+- Take care of infinite loops!
+- If the specified condition is never met, `while` will execute forever...
+- Raising a Python error (maybe after some time!).
+
+```python
+# Do not run this
+a = 5
+while a < 10:
+    print('Hi')
+```
+
+<div class="output">Error because of infinite loop</div>
+
+---
+
+## Example
+
+- Create a list that contains the squares of the first 5 integers.
+
+```python
+# Squares of the first 5 integers
+squares = []
+
+for x in range(1, 6):
+    squares.append(x**2)
+
+print(squares)
+```
+
+<div class="output">[1, 4, 9, 16, 25]</div>
+
+---
+
+## List comprehension
+
+- Concise way to create new lists based on existing ones.
+
+```python
+# Squares of the first 5 integers
+squares = [x**2 for x in range(1, 6)]
+print(squares)
+```
+
+<div class="output">[1, 4, 9, 16, 25]</div>
+
+---
+
+```python
+# With an `if` condition
+
+# Squares of the first 5 even integers
+even_squares = [x**2 for x in range(1, 6) if x % 2 == 0]
+print(even_squares)
+```
+
+<div class="output">[4, 16]</div>
+
+---
+
+## Loop control statements
+
+Allow us to change the flow of loops during execution.
+
+Keywords:
+
+- `break`: Terminates the current loop.
+- `continue`: Skips the remaining code in the current iteration and proceeds to the next one.
+
+---
+
+```python
+# `break` example
+
+for num in range(10):
+    if num == 5:
+        # Break the loop
+        break
+    print(num)
+print('Outside the loop')
+```
+
+<div class="output">0<br>1<br>2<br>3<br>4<br>Outside the loop</div>
+
+---
+
+```python
+# `continue` example
+
+for num in range(10):
+    if num % 2 == 0:
+        # Skip the rest of the code in this iteration,
+        # going to the next iteration
+        continue
+    print(num)
+print('Outside the loop')
+```
+
+<div class="output">1<br>3<br>5<br>7<br>9<br>Outside the loop</div>
+
+---
+
+## Unpacking
+
+- Taking the elements of a collection (list, string...) and assigning them to variables.
+
+```python
+l = [3, 4]
+a, b = l
+
+print(a)
+print(b)
+```
+
+<div class="output">3<br>4</div>
+
+---
+
+## Unpacking
+
+- Another example with strings.
+
+```python
+x, y, z = 'hey'
+
+print(x)
+print(y)
+print(z)
+```
+
+<div class="output">h<br>e<br>y</div>
+
+---
+
+## Example
+
+- Write a program that finds the common elements between two lists with the same length.
+  
+- Input:
+  
+  - `list1 = [1, 2, 3, 4, 5]`
+  - `list2 = [4, 5, 6, 7, 8]`
+- Output:
+  
+  - `[4, 5]`
+
+---
+
+```python
+list1 = [1, 2, 3, 4, 5]
+list2 = [4, 5, 6, 7, 8]
+common_elements = []
+
+for element in list1:
+    if element in list2:
+        common_elements.append(element)
+
+print(common_elements)
+```

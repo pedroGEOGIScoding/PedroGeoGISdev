@@ -1,0 +1,520 @@
+---
+title: "Python: Functions"
+subtitle: Python Functions
+author: Isaac Boixaderas
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: The file system is organized into a hierarchical structure, starting with the root directory
+categories: [python, functions]
+toc: true
+number-sections: true
+highlight-style: pygments
+format:
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Functions in Python**
+
+Python **functions** are blocks of code that perform a specific task and can be called by their name. Functions are defined using the `def` keyword, followed by the function name and parentheses. The code block within the function is indented and executed when the function is called. Functions can take parameters, which are values that are passed to the function when it is called. Functions can also return values, which are the results of the function's execution. Functions are a fundamental concept in programming and are used to break down complex problems into smaller, more manageable pieces.
+
+Dictionaries can be created using literals with curly braces, the dict() constructor, or comprehensions. They are versatile for associating data where keys serve as unique identifiers for their values, facilitating fast data retrieval and modification.
+
+:::
+
+## Functions
+Functions in Python are characterized by several key aspects:
+
+- **Definition and Structure**: Functions are defined using the `def` keyword, followed by a unique name and parentheses that may include parameters. The body of the function contains the code to execute, indented according to Python syntax rules.
+- **Parameters and Arguments**: Functions can accept input through parameters—values provided to the function when it is called. These parameters allow functions to operate on different data inputs dynamically. Python supports various argument types, such as positional, keyword, default, and variable-length arguments.
+- **Return Values**: Functions can produce output using the `return` statement, passing a value back to the caller. Not all functions need to return a value; some perform actions without returning data, such as printing to the console.
+- **Built-in vs User-defined**: Python offers built-in functions like `len()`, `type()`, `print()`, `int()` and `range()`, which perform common tasks. Users can also create their own functions, known as user-defined functions, tailored to specific needs.
+- **Function Types**:
+  - *Recursive functions* call themselves to solve problems through self-reference.
+  - *Anonymous (lambda) functions* are small, unnamed functions created with the `lambda` keyword, mainly for short operations.
+  - *Higher-order functions* accept other functions as parameters or return functions as results, enabling functional programming paradigms.
+- **Function Scope and Lifetime**: Functions define a scope—variables created within a function are local to that function unless declared otherwise. This encapsulation helps prevent unintended side effects.
+
+Overall, Python functions are central to writing clean, efficient, and maintainable code by encapsulating reusable logic, managing data flow, and supporting various programming styles, including procedural, functional, and object-oriented paradigms.
+
+## Function creation
+
+- Functions are defined using the `def` keyword.
+- Input variables (parameters/arguments), are specified between parentheses.
+
+```python
+# Define a function called `greet`
+# It has a `name` parameter
+
+def greet(name):
+    print(f"Hello, {name}!")
+```
+
+---
+
+- Function definition:
+  
+  ```python
+  def greet(name):
+    print(f"Hello, {name}!")
+  ```
+  
+  <br>
+  
+- This function can now be used anywhere in the code.
+  
+- Call our greet function with the argument "Alice".
+  
+
+```python
+greet("Alice")
+```
+
+<div class="output">Hello, Alice!</div>
+
+---
+
+- Optionally, use the `return` statement to return a value from the function:
+
+```python
+def greet(name):
+    # Return a string that says "Hello, {name}!"
+    return f"Hello, {name}!"
+```
+
+---
+
+- Now we can assign the returned value of `greet()` to a variable.
+- Notice that by default this prints nothing.
+
+```python
+alice_greet = greet("Alice")
+bob_greet = greet("Bob")
+```
+
+- We can print the variables:
+
+```python
+print(alice_greet)
+print(bob_greet)
+```
+
+<div class="output">Hello, Alice!<br>Hello, Bob!</div>
+
+---
+
+- When a value is returned, python exits the function, not executing the rest of the code in the function.
+
+```python
+def greet(name):
+    print("This code IS executed.")    
+    return f"Hello, {name}!"
+    print("This code is NOT executed.")
+    print("This code is NOT executed.")
+```
+
+```python
+alice_greet = greet("Alice")
+print(alice_greet)
+```
+
+<div class="output">This code IS executed.<br>Hello, Alice!</div>
+
+---
+
+- We could also use an "empty return" to exit the function.
+- This does not return any value.
+
+```python
+def greet(name):
+    if name == "Isaac":
+        print(f"Hi {name}. You're the professor.")
+        return
+    print(f"Hi {name}. You're a student.")
+```
+
+```python
+greet("Isaac")
+```
+
+<div class="output">Hi Isaac. You're the professor.</div>
+
+```python
+greet("Borja")
+```
+
+<div class="output">Hi Borja. You're a student.</div>
+
+---
+
+## Built-in Functions in Python
+
+- Built-in functions are regular functions that Python provides by default.
+- Example: how `sum()` could be implemented in Python:
+
+```python
+def sum(lst):
+    s = 0
+    for value in lst:
+        s += value
+    return s
+```
+
+---
+
+## Positional arguments
+
+- Positional arguments are passed in the order they are defined.
+
+```python
+def greet(name, age):
+    print(f"Hello, {name}! You are {age} years old.")
+```
+
+---
+
+- `"Aclie"` and `30` have the same order as `name` and `age` in the definition:
+
+```python
+greet("Alice", 30)
+```
+
+<div class="output">Hello, Alice! You are 30 years old.</div>
+
+---
+
+- If we swap the order of the arguments, `name` and `age` have different values inside the function:
+
+```python
+greet(30, "Alice")
+```
+
+<div class="output">Hello, 30! You are Alice years old.</div>
+
+---
+
+- We get an error if we don't pass in the correct number of arguments:
+
+```python
+greet("Alice")
+```
+
+<div class="output">TypeError: greet() missing 1 required positional argument: 'age'</div>
+
+<br>
+
+```python
+greet("Alice", 30, "Bob")
+```
+
+<div class="output">TypeError: greet() takes 2 positional arguments but 3 were given</div>
+
+---
+
+## Keyword arguments
+
+- Are passed by specifying the parameter name and its value.
+- When specifying the names, we can follow any order we like.
+
+```python
+greet(age=30, name="Alice") 
+```
+
+<div class="output">Hello, Alice! You are 30 years old.</div>
+
+---
+
+## Optional arguments
+
+- Have default values.
+- Don’t give an error if the optional argument is omitted.
+
+```python
+# 'age' is an optional argument with a default value of 25
+def greet(name, age=25):
+    print(f"Hello, {name}! You are {age} years old.")
+```
+
+---
+
+- When calling the greet function without providing a value for `age`, the function will use the default value instead:
+
+```python
+greet("Alice")
+```
+
+<div class="output">Hello, Alice! You are 25 years old.</div>
+
+```python
+greet("Alice", 30)
+```
+
+<div class="output">Hello, Alice! You are 30 years old.</div>
+
+---
+
+- We can define any number of optional arguments.
+- They must be defined at the tail of the function parameters:
+
+```python
+def greet(name, age=25, city="New York"):
+    print(f"Hello, {name}! You are {age} years old and you are from {city}.")
+
+greet("Alice")
+```
+
+<div class="output">Hello, Alice! You are 25 years old and you are from New York.</div>
+
+---
+
+- We get an error if we define a non-default argument (`name`) after a default one (`age`).
+
+```python
+def greet(age=25, name, city="New York"):
+    print(f"Hello, {name}! You are {age} years old and you are from {city}.")
+```
+
+<div class="output">SyntaxError: parameter without a default follows parameter with a default</div>
+
+---
+
+## Parameters vs Arguments
+
+In programming, particularly in Python, the terms "parameters" and "arguments" have distinct meanings:
+
+---
+
+- **Parameters**:
+  
+  - Variables defined within the parentheses of a function definition.
+  - Act as placeholders for the values that will be passed to the function.
+- **Arguments**:
+  
+  - Actual values passed to a function when it is called.
+  - Values are assigned to the corresponding parameters in the function definition.
+
+```python
+def greet(name):  # 'name' is a parameter
+    print(f"Hello, {name}!")
+
+greet("Alice")  # 'Alice' is an argument
+```
+
+<div class="output">Hello, Alice!</div>
+
+---
+
+- However, these terms are often used interchangeably in practice (a lot!).
+
+---
+
+## Variable scope
+
+- Determines the accessibility of a variable.
+- Local variables can only be accessed inside a particular function.
+- Global variables can be accessed throughout the entire program.
+
+---
+
+### Global Variable
+
+```python
+var = "I am a global variable."
+
+def print_global_var():
+    # Accessing the global variable within a function
+    print(var)
+
+print_global_var()
+# Accessing it outside the function
+print(var)
+```
+
+<div class="output">I am a global variable.<br>I am a global variable.</div>
+
+---
+
+### Local Variable
+
+```python
+def print_local_var():
+    var2 = "I am a local variable."
+    print(var2)
+
+print_local_var()
+print(var2)
+```
+
+<div class="output">I am a local variable.<br>NameError: name 'var2' is not defined.</div>
+
+---
+
+## Variables as Parameters
+
+- A function always uses the names defined as parameters.
+- Even if variable names are different outside the function.
+- May be confusing for beginners.
+
+---
+
+```python
+def greet(name, age):
+    print(f"Hello, {name}! You are {age} years old.")
+```
+
+```python
+user = "Alice"
+years_old = 30
+
+# We send variables `user` and `years_old` to `greet`.
+# `greet` will use the values of these variables "renamed" as `name` and `age`
+greet(user, years_old)
+```
+
+<div class="output">Hello, Alice! You are 30 years old.</div>
+
+```python
+# Outside the function we have to keep using the original names
+print(user, years_old)
+```
+
+<div class="output">Alice 30</div>
+
+---
+
+## Best practices
+
+- Use descriptive names for functions and parameters.
+- Follow the PEP 8 naming conventions
+  - Function names should be in snake case.
+- Each function should perform one specific task.
+- To make your functions easy to understand and use, document them.
+
+---
+
+## Example of function documentation
+
+```python
+def add(a, b):
+    """Add two numbers and return the result.
+
+    Args:
+        a (int): The first number.
+        b (int): The second number.
+
+    Returns:
+        int: The sum of the two numbers.
+    """
+    return a + b
+```
+## Recursion
+
+- Recursion is a technique in which a function calls itself.
+- Recursive functions need:
+  - **Base case**, which is the condition that stops the recursion.
+  - **Recursive case**, which is the part that calls the function itself.
+
+<!-- ---
+- Example of a recursive countdown function for calculating factorials:
+    1. Base case: If $n$ is $0$, return it.
+    2. Recursion case: If $n$ is not $0$, return $n - 1$. -->
+
+---
+
+- Example countdown:
+
+```python
+def countdown(n):
+    # Assume n >= 0
+    if n == 0:
+        # Base case
+        print("GO!!!")
+    else:
+        # Recursive case
+        print(n)
+        countdown(n - 1)
+```
+
+```python
+countdown(3)
+```
+
+<div class="output">3<br>2<br>1<br>GO!!!</div>
+
+---
+
+- Recursion should always have a base case to stop the recursion!
+- Otherwise, the function will call itself indefinitely, leading to an error:
+
+```python
+countdown(-1)
+```
+
+<div class="output">-1<br>-2<br>-3<br>...<br>-2967<br>-2968<br>-2969<br>RecursionError: maximum recursion depth exceeded while calling a Python object</div>
+
+---
+
+- Example factorial:
+
+```python
+def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+```
+
+```python
+print(factorial(5))
+```
+
+<div class="output">120</div>
+
+---
+
+- Example Fibonacci:
+
+```python
+def fibonacci(n):
+    if n == 1:
+        return [0]
+    if n == 2:
+        return [0, 1]
+
+    fib = fibonacci(n - 1)
+    fib.append(fib[-1] + fib[-2])
+    return fib
+```
+
+```python
+print(fibonacci(10))
+```
+
+<div class="output">[0, 1, 1, 2, 3, 5, 8, 13, 21, 34]</div>
+
+---
+
+## Type Hints
+
+- Also known as type annotations.
+- Programmer provides hints to the expected **types of** a function's **input parameters** and **return value** (->).
+- Help make the code:
+  - More readable.
+  - Self-documenting.
+  - Easier to maintain.
+  - Can be used by other tools: linters, code editors, static type checkers.
+
+---
+
+- Example:
+
+```python
+# Identify the type of the `name` (str), `age` (int), and `grades` (int)
+# And the return value (str)
+def greet(name: str, age: int, grades: list) -> str:
+    return f"Hello, {name}! Your average grade is {sum(grades) / len(grades)}."
+```
+
