@@ -399,23 +399,254 @@ print(distinct_words)
 
 ## Exercises
 
-For a demonstration of a line plot on a polar axis:
+### Set operations
+
+<p>
+Given two sets, you can perform various operations to analyze their relationships. Each operation provides different insights into how the sets relate to one another. Given two sets, display their:
+</p>
+
+<p>
+<ul>
+<li><strong>Union</strong> combines all unique elements from both sets.</li>
+<li><strong>Intersection</strong> finds elements that are present in both sets.</li>
+<li><strong>Difference</strong> identifies elements that are in the first set but not in the second.</li>
+<li><strong>Symmetric Difference</strong> includes elements that are in either of the sets but not in both.</li>
+</ul>
+</p>
+
+<br>
+<p><strong>Example 1</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong> <code>set1 = {1, 2, 3, 4, 5}</code>, <code>set2 = {4, 5, 6, 7, 8}</code><br>
+<strong>Output:</strong> Union: {1, 2, 3, 4, 5, 6, 7, 8}<br>
+Intersection: {4, 5}<br>
+Difference: {1, 2, 3}<br>
+Symmetric Difference: {1, 2, 3, 6, 7, 8}
+</div>
+
+<br>
+<p><strong>Example 2</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong> <code>set1 = {10, 20, 30}</code>, <code>set2 = {30, 40, 50}</code><br>
+<strong>Output:</strong> Union: {10, 20, 30, 40, 50}<br>
+Intersection: {30}<br>
+Difference: {10, 20}<br>
+Symmetric Difference: {10, 20, 40, 50}
+</div>
+
+<br>
+<p><strong>Example 3</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong> <code>set1 = {1, 2}</code>, <code>set2 = {1, 2}</code><br>
+<strong>Output:</strong> Union: {1, 2}<br>
+Intersection: {1, 2}<br>
+Difference: set()<br>
+Symmetric Difference: set()
+</div>
+
+<br><br>
 
 ```{pyodide-python}
-#| label: fig-polar
-#| fig-cap: "A line plot on a polar axis"
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
 
-import numpy as np
-import matplotlib.pyplot as plt
+print("Union:", set1 | set2)
+print("Intersection:", set1 & set2)
+print("Difference:", set1 - set2)
+print("Symmetric Difference:", set1 ^ set2)
+```
 
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(
-  subplot_kw = {'projection': 'polar'} 
-)
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
+### Membership
+
+<p>
+Given a set of integers and an element, check if the specified element is present in the set.
+</p>
+
+<br>
+<p><strong>Example 1</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong> my_set = {1, 2, 3, 4, 5}<br>
+<strong>Input:</strong> element = 3<br>
+<strong>Output:</strong> <code>True</code>
+</div>
+
+<br>
+<p><strong>Example 2</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong> my_set = {1, 2, 3, 4, 5}<br>
+<strong>Input:</strong> element = 6<br>
+<strong>Output:</strong> False
+</div>
+
+<br>
+<p><strong>Example 3</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong> my_set = {'apple', 'banana', 'cherry'}<br>
+<strong>Input:</strong> element = 'banana'<br>
+<strong>Output:</strong> True
+</div>
+
+<br><br>
+
+```{pyodide-python}
+my_set = {1, 2, 3, 4, 5}
+element = 3
+
+element in my_set
+```
+
+### Sub and superset
+
+<p>
+Given two sets, determine if the first set is a subset of the second set, and simultaneously check if the second set is a superset of the first set. A set is considered a subset of another set if all elements of the first set are contained within the second set. Conversely, a set is a superset of another set if it contains all elements of the first set.
+</p>
+
+<br>
+<p><strong>Example 1</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong> <code>set1 = {1, 2, 3}</br>set2 = {1, 2, 3, 4, 5}</code><br>
+<strong>Output:</strong> Set1 is a subset of Set2: True<br>
+<strong>Output:</strong> Set2 is a superset of Set1: True
+</div>
+
+<br>
+<p><strong>Example 2</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong> <code>set1 = {1, 2, 6}</br>set2 = {1, 2, 3, 4, 5}</code><br>
+<strong>Output:</strong> Set1 is a subset of Set2: False<br>
+<strong>Output:</strong> Set2 is a superset of Set1: False
+</div>
+
+<br><br>
+
+```{pyodide-python}
+set1 = {1, 2, 3}
+set2 = {1, 2, 3, 4, 5}
+
+print("Set1 is a subset of Set2:", set1.issubset(set2))
+print("Set2 is a superset of Set1:", set2.issuperset(set1))
+```
+
+### Unique elements
+
+<p>
+Given a list of elements, the task is to create a new list that contains only the unique elements from the original list. Use the <code>set</code> data structure to easily solve this problem.
+</p>
+
+<br>
+<p><strong>Example 1</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong> <code>my_list = [1, 2, 3, 2, 1, 4, 4, 5]</code><br>
+<strong>Output:</strong> <code>[1, 2, 3, 4, 5]</code>
+</div>
+
+<br>
+<p><strong>Example 2</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong> <code>my_list = ['apple', 'banana', 'apple', 'orange', 'banana']</code><br>
+<strong>Output:</strong> <code>['apple', 'banana', 'orange']</code>
+</div>
+
+<br>
+<p><strong>Example 3</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong> <code>my_list = [True, False, True, True]</code><br>
+<strong>Output:</strong> <code>[True, False]</code>
+</div>
+
+```{pyodide-python}
+my_list = [1, 2, 3, 2, 1, 4, 4, 5]
+
+unique_list = list(set(my_list))
+print(unique_list)
+```
+
+### Attendance
+
+<p>
+You have attendance lists for 3 different courses. Find students who assisted all classes.
+</p>
+
+<br>
+<p><strong>Example</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong><br>
+math = ["Alice", "Bob", "Charlie", "John", "Eve", "Abbott"]<br>
+physics = ["Bob", "Eve", "Charlie", "David", "Alice", "Susan"]<br>
+cs = ["Charlie", "Abbott", "Bob", "David", "Eve"]<br>
+<strong>Output:</strong> {'Charlie', 'Eve', 'Bob'}
+</div>
+
+```{pyodide-python}
+math = ["Alice", "Bob", "Charlie", "John", "Eve", "Abbott"]
+physics = ["Bob", "Eve", "Charlie", "David", "Alice", "Susan"]
+cs = ["Charlie", "Abbott", "Bob", "David", "Eve"]
+
+print(set(math) & set(physics) & set(cs))
+```
+
+### Disjoint sets
+
+<p>
+Given two sets, determine if they are disjoint, meaning they have no elements in common.
+</p>
+
+<br>
+<p><strong>Example 1</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong> <code>set1 = {1, 2, 3}</br>set2 = {4, 5, 6}</code><br>
+<strong>Output:</strong> Set1 and Set2 are disjoint: True
+</div>
+
+<br>
+<p><strong>Example 2</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong> <code>set1 = {1, 2, 3}</br>set2 = {3, 4, 5}</code><br>
+<strong>Output:</strong> Set1 and Set2 are disjoint: False
+</div>
+
+<br>
+<p><strong>Example 3</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong> <code>set1 = {'a', 'b', 'c'}</br>set2 = {'d', 'e', 'f'}</code><br>
+<strong>Output:</strong> Set1 and Set2 are disjoint: True
+</div>
+
+<br>
+<p><strong>Example 4</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong> <code>set1 = {1, 2, 3}</br>set2 = {2, 3, 4}</code><br>
+<strong>Output:</strong> Set1 and Set2 are disjoint: False
+</div>
+
+<br><br>
+
+```{pyodide-python}
+set1 = {1, 2, 3}
+set2 = {4, 5, 6}
+
+print("Set1 and Set2 are disjoint:", len(set1 & set2) == 0)
+```
+
+### Missing Numbers
+
+<p>
+You're given an integer <code>n</code> and a list of numbers that should contain all elements from 0 to <code>n</code>, in no specific order. However, some values have been lost. Display the missing elements in ascending order.
+</p>
+
+<br>
+<p><strong>Example</strong></p>
+<div class="problem-example-box">
+<strong>Input:</strong> n = 10; rng = [4, 8, 2, 1, 3, 9]<br>
+<strong>Output:</strong> [0, 5, 6, 7, 10]
+</div>
+
+```{pyodide-python}
+n = 10
+rng = [4, 8, 2, 1, 3, 9]
+
+full = set(range(n + 1))
+missing = full - set(rng)
+print(sorted(missing))
 ```
 
