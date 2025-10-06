@@ -11,9 +11,9 @@ toc: true
 number-sections: true
 highlight-style: pygments
 format:
-  html
-filters:
-  - coatless-quarto/pyodide
+  html:
+    filters:
+      - coatless-quarto/pyodide
 ---
 
 ## Overview
