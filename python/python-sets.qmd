@@ -13,7 +13,7 @@ highlight-style: pygments
 format:
   html
 filters:
-  - pyodide
+  - coatless-quarto/pyodide
 ---
 
 ## Overview
