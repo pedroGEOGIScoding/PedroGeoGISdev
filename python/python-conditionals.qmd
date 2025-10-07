@@ -11,10 +11,6 @@ toc: true
 number-sections: true
 highlight-style: pygments
 format: html
-filters:
-  - pyodide
-pyodide:
-  autorun: false
 ---
 
 ## Overview

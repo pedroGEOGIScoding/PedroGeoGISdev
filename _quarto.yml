@@ -19,7 +19,6 @@ execute:
 
 filters:
   - quarto-ext/fontawesome
-  - quarto-ext/pyodide
 
 lightbox: auto
 
