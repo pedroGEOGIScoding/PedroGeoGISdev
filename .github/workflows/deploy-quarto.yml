@@ -59,6 +59,7 @@ jobs:
     - name: Install Quarto Extensions
       run: |
         quarto add quarto-ext/fontawesome --no-prompt
+        quarto add coatless-quarto/pyodide --no-prompt
 
     - name: Render Quarto Project
       run: |
