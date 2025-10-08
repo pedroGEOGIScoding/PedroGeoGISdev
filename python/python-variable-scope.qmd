@@ -1,0 +1,173 @@
+---
+title: "Python: Variable Scope"
+subtitle: Python Variable Scope
+author: Isaac Boixaderas
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: Python Variable Scope
+categories: [python, variables, scope]
+toc: true
+number-sections: true
+highlight-style: pygments
+format: 
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Variable Scope**
+
+**Variable scope** in Python determines where a variable can be used within a program, and understanding this is key for writing clear, bug-free code. **Variable scope** in Python—a fundamental idea for understanding how your variables behave. In simple terms, the scope of a variable is the part of the program where you can access and use that variable. There are a few main types to know:
+
+- Local scope: Variables defined inside a function; only accessible within that function.
+- Global scope: Variables defined outside any function; accessible throughout the module.
+- Nonlocal scope: Variables defined in an enclosing function (not global, not local); accessible from nested (inner) functions using the nonlocal keyword.
+
+:::
+
+---
+
+## Variable Scope
+
+Variable scope in Python determines where a variable can be used within a program, and understanding this is key for writing clear, bug-free code. Python has four primary scope types: local, global, enclosing, and built-in.
+
+## Main Types of Variable Scope
+
+### Built-in
+
+- Python's built-in functions and modules.
+  - E.g., \`print()\`, \`len()\`, or \`range()\`.
+- These functions are always available everywhere.
+
+```python
+print("Hello, World!") # 'print' is a built-in function
+```
+
+<div class="output">Hello, World!</div>
+
+---
+
+### Global scope
+
+- Variables defined outside functions or classes.
+- Accessible from any function within the program.
+
+```python
+global_var = "I am a global variable"
+
+def print_glob():
+ # Accessing the global variable within a function
+ print(global_var)
+```
+
+---
+
+```python
+print_glob()
+```
+
+<div class="output">I am a global variable</div>
+
+```python
+# Accessing the global variable outside any function
+print(global_var)
+```
+
+<div class="output">I am a global variable</div>
+
+---
+
+### Local scope
+
+- Variables defined within a function.
+- Accessible only within the function.
+
+```python
+def local_variable_example():
+    local_var = "I am a local variable"
+    print(local_var)
+local_variable_example()
+```
+
+<div class="output">I am a local variable</div>
+
+- Trying to access \`local_var\` outside the function gives an error:
+
+```python
+print(local_var)
+```
+
+<div class="output">NameError: name 'local_var' is not defined</div>
+
+---
+
+### Enclosing scope
+
+- Exists when a function is nested within another function.
+- The inner function can access the variables of the outer function.
+- The outer function cannot access the inner function's variables.
+
+```python
+def outer_function():
+    enclosing_var = "I am in the enclosing scope"
+    def inner_function():
+        # Accessing the enclosing scope variable
+        print(enclosing_var)
+        local_var = "I am in the local scope"
+        print(local_var)
+    inner_function()
+    # Cannot access inner_function's variables --> Error
+    # print(local_var)
+outer_function()
+```
+
+<div class="output">I am in the enclosing scope<br>I am in the local scope</div>
+
+---
+
+## Shadowing
+
+- The local variable "shadows" the global variable when they have the same name.
+- The local variable takes precedence.
+- The global variable is not accessible within the function.
+
+```python
+global_var = "I am a global variable"
+def shadowing_example():
+    global_var = "I am a local variable"
+    # The local variable 'global_var' shadows the global variable
+    print(global_var)
+shadowing_example()
+print(global_var)
+```
+
+<div class="output">I am a local variable<br>I am a global variable</div>
+
+---
+
+## Loops and conditionals
+
+- Variables defined within an \`if\`, \`for\` or \`while\` block have the same scope as the surrounding context.
+  - If the \`if\` statement is in the global scope, the variable will have global scope.
+  - If the \`if\` statement is within a function, the variable will have local scope.
+- This is the case for Python, but not in other programming languages.
+  - E.g., in C++, Java, Rust, or Go, variables declared inside an \`if\`/\`for\`/\`while\` block are not accessible outside of it.
+
+---
+
+```python
+x = 5
+if x > 0:
+    result = "Positive"
+else:
+    result = "Non-positive"
+# 'result' has the same scope as the surrounding context (global in this case)
+print(result)
+```
+
+<div class="output">Positive</div>
+
+

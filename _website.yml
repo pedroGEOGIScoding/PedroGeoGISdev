@@ -319,6 +319,10 @@ website:
             - python/python-dict.qmd
             - python/python-functions.qmd
             - python/python-highorder-functions.qmd
+            - python/python-variable-scope.qmd
+            - python/python-variable-assigment.qmd
+            - python/python-none.qmd
+            - python/python-oop.qmd
             - python/python-cheat-sheets.qmd
     - id: "js"
       title: "JavaScript"

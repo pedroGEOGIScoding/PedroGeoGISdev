@@ -1,0 +1,154 @@
+---
+title: "Python: Variable Assigment"
+subtitle: Python Variable Assigment
+author: Isaac Boixaderas
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: Python Variable Assigment
+categories: [python, variables]
+toc: true
+number-sections: true
+highlight-style: pygments
+format: 
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Variable Assigment**
+
+In Python, **variable assignment** is the process where you use the assignment operator = to give a name (the variable) to a value (the object). Variables in Python do not have a fixed type; a variable can point to any kind of object, and you can reassign it to a different type later. This flexible behavior is called dynamic typing.
+
+:::
+
+---
+
+## Variable Assigment
+
+In Python, everything is an object (we will better define this in future lessons). Each object has a type, a value, and a unique identity (its address in memory). When using the assignment operator `=`, we are attaching a name to an object.
+
+For example:
+
+```python
+x = 10  # creates an object of type int in memory with a value of 10 and assigns it to the variable name x
+print(type(x))  # <class 'int'>
+# check memory location
+print(id(x))
+```
+
+Let's see a more complex example:
+
+```python
+a = 3
+b = a
+c = a
+```
+
+- An `int` with value 3 is stored in memory and assigned to the name `a`.
+- Name `b` is assigned to the same object in memory as `a`.
+- The same occurs with `c`; all three share the same memory address.
+
+```python
+print(id(a))
+print(id(b))
+print(id(c))
+# All outputs will be identical, showing they share the same address
+```
+
+If we reassign the variable `a` with a new value:
+
+- A new object with that value is allocated in memory
+- `a` now points to it
+- `b` and `c` remain unaltered, pointing to the original memory address
+
+```python
+a = "hello"
+print(id(a))
+print(id(b))
+print(id(c))
+# a now has a new id (address), b and c remain with the original id
+```
+
+If two or more names point to the same memory location and we modify the contents, the value is altered in all the variables:
+
+```python
+x = [1, 2, 3]
+y = x
+x[^0] = 5
+print(y)  # [5, 2, 3]
+```
+
+### The `is` Keyword
+
+Used for identity comparison.
+
+- `==` is used to compare the values of two objects to check if they are equal.
+- `is` checks if two variables refer to the same object in memory.
+
+Example:
+
+```python
+x = [1, 2, 3]
+y = [1, 2, 3]
+print(x == y)  # True, because values are equal
+print(x is y)  # False, because they are different objects in memory
+```
+
+### Memory Optimization of Immutables
+
+Python may optimize memory use by reusing the same memory location for multiple variables:
+
+- Occurs for some small `int`s, short strings, or short tuples.
+
+Example:
+
+```python
+a = "hello"
+b = "hello"
+print(a == b)  # True
+print(a is b)  # True
+```
+
+But for longer strings:
+
+```python
+a = "This is a longer string that won't be optimized"
+b = "This is a longer string that won't be optimized"
+print(a == b)  # True
+print(a is b)  # False
+```
+
+Typical reuse occurs with `int`s between -5 and 256:
+
+```python
+a = 5
+b = 5
+print(a is b)  # True
+
+a = 1000
+b = 1000
+print(a is b)  # False
+```
+
+## Garbage Collection (GC)
+
+- The garbage collector is a built-in system in Python that frees memory from objects no longer in use.
+- Works alongside reference counting.
+
+### Reference Counting
+
+- The main memory management technique in Python.
+- Objects have a count of references to them.
+- When the count drops to zero, memory is deallocated.
+
+Example:
+
+```python
+a = [1, 2, 3]  # List created, reference count = 1
+b = a          # Reference count increased to 2
+del a          # Reference count decreased to 1
+del b          # Reference count drops to 0, list memory deallocated
+```

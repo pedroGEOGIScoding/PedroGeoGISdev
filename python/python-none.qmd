@@ -1,0 +1,140 @@
+---
+title: "Python: None in Python"
+subtitle: Python None in Python
+author: Isaac Boixaderas
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: Python None in Python
+categories: [python, None]
+toc: true
+number-sections: true
+highlight-style: pygments
+format: 
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **None in Python**
+
+In Python, **None** is a special constant that represents the absence of a value or a null value. It is often used to initialize variables or to indicate that a variable has not been assigned a value yet. None is an object of its own data type, NoneType.
+
+:::
+
+---
+
+## None Keyword
+
+- `None` is a special constant representing the absence of a value or a null value.
+- It is commonly used as a placeholder to indicate that a variable should not have any value.
+
+Example:
+
+```python
+a = None
+print(type(a))  # <class 'NoneType'>
+```
+
+## Comparison with None
+
+- The recommended and idiomatic way to check if a variable is `None` is using the `is` keyword.
+- Using `==` works in most cases but can lead to incorrect results in some specific advanced cases.
+
+Example:
+
+```python
+x = None
+
+# Recommended way
+if x is None:
+    print("x is None.")
+```
+
+- The `is` keyword works because Python stores a single instance of `None` in memory.
+- Every variable equal to `None` points to the same memory location.
+
+```python
+print(id(None))
+x = None
+print(id(x))  # Both ids are identical
+```
+
+- To check if a variable is not `None`, use:
+
+```python
+if x is not None:
+    print("x is not None.")
+else:
+    print("x is None.")
+```
+
+## None Evaluates to False
+
+- `None` evaluates as `False` in boolean contexts, similar to `False`, empty strings `''`, or `0`.
+
+Example:
+
+```python
+x = None
+if not x:
+    print("x evaluated to False.")
+```
+
+## Returning None in Functions
+
+`None` is commonly used in function returns to indicate absence of value. There are different ways to return `None`:
+
+### No return statement
+
+- A function without a return statement implicitly returns `None`.
+- Useful when a function is meant to perform an action (like printing or updating), and the return value is not needed.
+
+```python
+def greet(name):
+    print(f"Hello, {name}!")
+
+returned_value = greet("Alice")
+print(returned_value, type(returned_value))  # None <class 'NoneType'>
+```
+
+### Return without expression
+
+- Writing `return` without a value also returns `None`.
+- Used to explicitly return early without any result.
+
+```python
+def process_data(data):
+    if not data:
+        print("No data to process.")
+        return  # returns None explicitly
+    return [x * 2 for x in data]
+
+input_data = []
+processed = process_data(input_data)
+```
+
+### Explicit `return None`
+
+- Makes it clear the function intentionally returns `None`.
+- Typically used to indicate an absence of a matching result or value.
+
+```python
+def find_contact_by_name(name, contacts):
+    for contact in contacts:
+        if contact["name"] == name:
+            return contact
+    return None
+
+contacts = [
+    {"name": "Alice", "phone": "555-1234"},
+    {"name": "Bob", "phone": "555-5678"},
+    {"name": "Charlie", "phone": "555-8765"},
+]
+search_name = "David"
+result = find_contact_by_name(search_name, contacts)
+print(result)  # None
+```
+
