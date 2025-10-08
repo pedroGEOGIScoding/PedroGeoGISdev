@@ -8,7 +8,9 @@ format:
     linestretch: 1.5                 
     toc: true
     toc-title: "On this page"
-    toc-depth: 10
+    toc-indent: 2em
+    toc-depth: 3
+    number-sections: true
     smooth-scroll: true
     background-color: black
     code-link: true
@@ -16,8 +18,8 @@ format:
     code-overflow: "wrap"
     code-annotations: below
     grid:
-      sidebar-width: 400px   
+      sidebar-width: 500px   
       body-width: 1400px      
-      margin-width: 400px   
-      gutter-width: 2rem   
-    page-layout: full        
+      margin-width: 500px   
+      gutter-width: 1rem   
+    page-layout: full
