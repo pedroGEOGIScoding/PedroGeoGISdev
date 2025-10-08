@@ -399,15 +399,233 @@ print(distinct_words)
 
 ## Exercises
 
-```{pyodide-python}
-import numpy as np
-import matplotlib.pyplot as plt
+### Set operations
 
-r = np.arange(0, 2, 0.01)
-theta = 2 * np.pi * r
-fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
-ax.plot(theta, r)
-ax.set_rticks([0.5, 1, 1.5, 2])
-ax.grid(True)
-plt.show()
+Given two sets, you can perform various operations to analyze their relationships. Each operation provides different insights into how the sets relate to one another. Given two sets, display their:
+
+- **Union** combines all unique elements from both sets.
+- **Intersection** finds elements that are present in both sets.
+- **Difference** identifies elements that are in the first set but not in the second.
+- **Symmetric Difference** includes elements that are in either of the sets but not in both.
+
+**Example 1**
+
+::: {.problem-example-box}
+**Input:** `set1 = {1, 2, 3, 4, 5}`, `set2 = {4, 5, 6, 7, 8}`  
+**Output:** Union: {1, 2, 3, 4, 5, 6, 7, 8}  
+Intersection: {4, 5}  
+Difference: {1, 2, 3}  
+Symmetric Difference: {1, 2, 3, 6, 7, 8}
+:::
+
+**Example 2**
+
+::: {.problem-example-box}
+**Input:** `set1 = {10, 20, 30}`, `set2 = {30, 40, 50}`  
+**Output:** Union: {10, 20, 30, 40, 50}  
+Intersection: {30}  
+Difference: {10, 20}  
+Symmetric Difference: {10, 20, 40, 50}
+:::
+
+**Example 3**
+
+::: {.problem-example-box}
+**Input:** `set1 = {1, 2}`, `set2 = {1, 2}`  
+**Output:** Union: {1, 2}  
+Intersection: {1, 2}  
+Difference: set()  
+Symmetric Difference: set()
+:::
+
+```{pyodide-python}
+set1 = {1, 2, 3, 4, 5}
+set2 = {4, 5, 6, 7, 8}
+
+print("Union:", set1 | set2)
+print("Intersection:", set1 & set2)
+print("Difference:", set1 - set2)
+print("Symmetric Difference:", set1 ^ set2)
+```
+
+### Membership
+
+Given a set of integers and an element, check if the specified element is present in the set.
+
+**Example 1**
+
+::: {.problem-example-box}
+**Input:** my_set = {1, 2, 3, 4, 5}  
+**Input:** element = 3  
+**Output:** `True`
+:::
+
+**Example 2**
+
+::: {.problem-example-box}
+**Input:** my_set = {1, 2, 3, 4, 5}  
+**Input:** element = 6  
+**Output:** False
+:::
+
+**Example 3**
+
+::: {.problem-example-box}
+**Input:** my_set = {'apple', 'banana', 'cherry'}  
+**Input:** element = 'banana'  
+**Output:** True
+:::
+
+```{pyodide-python}
+my_set = {1, 2, 3, 4, 5}
+element = 3
+
+element in my_set
+```
+
+### Sub and superset
+
+Given two sets, determine if the first set is a subset of the second set, and simultaneously check if the second set is a superset of the first set. A set is considered a subset of another set if all elements of the first set are contained within the second set. Conversely, a set is a superset of another set if it contains all elements of the first set.
+
+**Example 1**
+
+::: {.problem-example-box}
+**Input:** `set1 = {1, 2, 3}`  
+`set2 = {1, 2, 3, 4, 5}`  
+**Output:** Set1 is a subset of Set2: True  
+**Output:** Set2 is a superset of Set1: True
+:::
+
+**Example 2**
+
+::: {.problem-example-box}
+**Input:** `set1 = {1, 2, 6}`  
+`set2 = {1, 2, 3, 4, 5}`  
+**Output:** Set1 is a subset of Set2: False  
+**Output:** Set2 is a superset of Set1: False
+:::
+
+```{pyodide-python}
+set1 = {1, 2, 3}
+set2 = {1, 2, 3, 4, 5}
+
+print("Set1 is a subset of Set2:", set1.issubset(set2))
+print("Set2 is a superset of Set1:", set2.issuperset(set1))
+```
+
+### Unique elements
+
+Given a list of elements, the task is to create a new list that contains only the unique elements from the original list. Use the `set` data structure to easily solve this problem.
+
+**Example 1**
+
+::: {.problem-example-box}
+**Input:** `my_list = [1, 2, 3, 2, 1, 4, 4, 5]`  
+**Output:** `[1, 2, 3, 4, 5]`
+:::
+
+**Example 2**
+
+::: {.problem-example-box}
+**Input:** `my_list = ['apple', 'banana', 'apple', 'orange', 'banana']`  
+**Output:** `['apple', 'banana', 'orange']`
+:::
+
+**Example 3**
+
+::: {.problem-example-box}
+**Input:** `my_list = [True, False, True, True]`  
+**Output:** `[True, False]`
+:::
+
+```{pyodide-python}
+my_list = [1, 2, 3, 2, 1, 4, 4, 5]
+
+unique_list = list(set(my_list))
+print(unique_list)
+```
+
+### Attendance
+
+You have attendance lists for 3 different courses. Find students who assisted all classes.
+
+**Example**
+
+::: {.problem-example-box}
+**Input:**  
+math = ["Alice", "Bob", "Charlie", "John", "Eve", "Abbott"]  
+physics = ["Bob", "Eve", "Charlie", "David", "Alice", "Susan"]  
+cs = ["Charlie", "Abbott", "Bob", "David", "Eve"]  
+**Output:** {'Charlie', 'Eve', 'Bob'}
+:::
+
+```{pyodide-python}
+math = ["Alice", "Bob", "Charlie", "John", "Eve", "Abbott"]
+physics = ["Bob", "Eve", "Charlie", "David", "Alice", "Susan"]
+cs = ["Charlie", "Abbott", "Bob", "David", "Eve"]
+
+print(set(math) & set(physics) & set(cs))
+```
+
+### Disjoint sets
+
+Given two sets, determine if they are disjoint, meaning they have no elements in common.
+
+**Example 1**
+
+::: {.problem-example-box}
+**Input:** `set1 = {1, 2, 3}`  
+`set2 = {4, 5, 6}`  
+**Output:** Set1 and Set2 are disjoint: True
+:::
+
+**Example 2**
+
+::: {.problem-example-box}
+**Input:** `set1 = {1, 2, 3}`  
+`set2 = {3, 4, 5}`  
+**Output:** Set1 and Set2 are disjoint: False
+:::
+
+**Example 3**
+
+::: {.problem-example-box}
+**Input:** `set1 = {'a', 'b', 'c'}`  
+`set2 = {'d', 'e', 'f'}`  
+**Output:** Set1 and Set2 are disjoint: True
+:::
+
+**Example 4**
+
+::: {.problem-example-box}
+**Input:** `set1 = {1, 2, 3}`  
+`set2 = {2, 3, 4}`  
+**Output:** Set1 and Set2 are disjoint: False
+:::
+
+```{pyodide-python}
+set1 = {1, 2, 3}
+set2 = {4, 5, 6}
+
+print("Set1 and Set2 are disjoint:", len(set1 & set2) == 0)
+```
+
+### Missing Numbers
+
+You're given an integer `n` and a list of numbers that should contain all elements from 0 to `n`, in no specific order. However, some values have been lost. Display the missing elements in ascending order.
+
+**Example**
+
+::: {.problem-example-box}
+**Input:** n = 10; rng = [4, 8, 2, 1, 3, 9]  
+**Output:** [0, 5, 6, 7, 10]
+:::
+
+```{pyodide-python}
+n = 10
+rng = [4, 8, 2, 1, 3, 9]
+
+full = set(range(n + 1))
+missing = full - set(rng)
+print(sorted(missing))
 ```
