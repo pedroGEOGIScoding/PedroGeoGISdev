@@ -469,3 +469,13 @@ What is printed?
 from functools import reduce
 print(reduce(lambda x, y: x * y, [1, 2, 3, 4]))
 ```
+### Combinations
+
+Get the squared elements of a list, but only include those whose square results in an odd number. Use map() and filter() functions to solve this problem.
+```{pyodide-python}
+numbers = [0, 1, 2, 3, 4, 5]
+
+numbers_mapped = list(map(lambda x: x**2, numbers))
+num_filtered = list(filter(lambda y: y % 2 != 0, numbers_mapped))
+print(num_filtered)
+```
