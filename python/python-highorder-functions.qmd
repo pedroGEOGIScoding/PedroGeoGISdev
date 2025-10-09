@@ -456,6 +456,29 @@ What is printed?
 print(list(filter(lambda x: x % 3 == 0, [1, 2, 3, 4, 5, 6])))
 ```
 
+Filter all the prime numbers from a given integer list. You can use a function implemented for checking if a given number is prime or not.
+
+```{pyodide-python}
+numbers = list(range(1, 51))
+
+def s_prime(n):
+    import math
+    if n <= 1:
+        return False
+    if n == 2:
+        return True
+    elif n % 2 == 0:
+        return False
+    raiz = math.floor(math.sqrt(n))
+    for i in range(3, raiz + 1, 2):
+        if n % i == 0:
+            return False
+    return True
+
+prime_numbers = list(filter(s_prime, numbers))
+print(prime_numbers)
+```
+
 ### Reduce
 
 What is printed?
@@ -469,9 +492,20 @@ What is printed?
 from functools import reduce
 print(reduce(lambda x, y: x * y, [1, 2, 3, 4]))
 ```
+
+Use the `reduce` function from the functools module to find the longest word in a list of words. If there are multiple words with the same length, any of those words is fine.
+```{pyodide-python}
+words = ["apple", "banana", "kiwi", "grapefruit", "strawberry"]
+
+import functools
+
+words_length = functools.reduce(lambda x, y: x if len(x) > len(y) else y, words)
+print(words_length)
+```
+
 ### Combinations
 
-Get the squared elements of a list, but only include those whose square results in an odd number. Use map() and filter() functions to solve this problem.
+Get the squared elements of a list, but only include those whose square results in an odd number. Use `map()` and `filter()` functions to solve this problem.
 ```{pyodide-python}
 numbers = [0, 1, 2, 3, 4, 5]
 
