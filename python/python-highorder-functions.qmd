@@ -12,6 +12,8 @@ number-sections: true
 highlight-style: pygments
 format:
   html
+filters:
+- pyodide
 ---
 
 ## Overview
@@ -180,7 +182,7 @@ def greet(name, age):
 
 ---
 
-### Example 1: Sorting a List of Dictionaries
+#### Example 1: Sorting a List of Dictionaries
 
 - This crashes, as python cannot compare inequalities between dictionaries:
 
@@ -215,7 +217,7 @@ print(sorted_data)
 
 ---
 
-### Example 2: Sorting a List of Tuples
+#### Example 2: Sorting a List of Tuples
 
 ```python
 data = [("apple", 3), ("banana", 1), ("cherry", 2)]
@@ -283,7 +285,7 @@ print(sorted_data)
 
 ---
 
-### Example 3: Sorting by Length of Strings
+#### Example 3: Sorting by Length of Strings
 
 ```python
 data = ["apple", "banana", "pear"]
@@ -324,8 +326,6 @@ print(max_word)
 
 ---
 
-## Max
-
 - Accepts `key` argument.
 - Maximum in terms of length:
 
@@ -340,16 +340,13 @@ print(max_word)
 
 ---
 
-### Map
+## Map
 
 - Applies a given function to each item in a sequence.
 - Returns an iterable (a map object).
 - You can convert the map object to a list or tuple if needed.
 - Syntax: `map(function, sequence)`
 - Converting to a list: `list(map(function, sequence))`
-
----
-
 - Traditionally, for applying a function to each element we use a `for` loop.
 
 ```python
@@ -393,7 +390,7 @@ doubles
 
 ---
 
-### Filter
+## Filter
 
 - Filters the elements in a sequence based on a given function that returns a boolean value.
 - Keeps the elements for which the function returns `True` and discards the others.
@@ -410,7 +407,7 @@ even_numbers
 
 ---
 
-### Reduce
+## Reduce
 
 ::: columns
 
@@ -438,5 +435,37 @@ print(factorial)
 ```
 <div class="output">120</div>
 
+## Exercises
 
+### Map
 
+What is printed?
+```{pyodide-python}
+print(list(map(len, ['a', 'bc', 'defg'])))
+```
+
+What is printed?
+```{pyodide-python}
+print(list(map(lambda x: x * 2, range(3))))
+```
+
+### Filter
+
+What is printed?
+```{pyodide-python}
+print(list(filter(lambda x: x % 3 == 0, [1, 2, 3, 4, 5, 6])))
+```
+
+### Reduce
+
+What is printed?
+```{pyodide-python}
+from functools import reduce
+print(reduce(lambda x, y: x if x > y else y, [3, 7, 2, 5]))
+```
+
+What is printed?
+```{pyodide-python}
+from functools import reduce
+print(reduce(lambda x, y: x * y, [1, 2, 3, 4]))
+```
