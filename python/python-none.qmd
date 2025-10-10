@@ -1,17 +1,19 @@
 ---
-title: "Python: None in Python"
-subtitle: Python None in Python
+title: "Python: None keyword in Python"
+subtitle: None keyword in Python
 author: Isaac Boixaderas
 date: "06/01/2025"
 date-modified: last-modified
 date-format: full
-description: Python None in Python
+description: Python None keyword in Python
 categories: [python, None]
 toc: true
 number-sections: true
 highlight-style: pygments
 format: 
   html
+filters:
+- pyodide
 ---
 
 ## Overview
@@ -40,12 +42,13 @@ print(type(a))  # <class 'NoneType'>
 
 ## Comparison with None
 
-- The recommended and idiomatic way to check if a variable is `None` is using the `is` keyword.
-- Using `==` works in most cases but can lead to incorrect results in some specific advanced cases.
+* There are several ways to compare if a variable is None:
+  + The recommended and idiomatic way to check if a variable is `None` is using the `is` keyword.
+  + Using `==` works in most cases but can lead to incorrect results in some specific advanced cases.
 
 Example:
 
-```python
+```{pyodide-python}
 x = None
 
 # Recommended way
@@ -53,31 +56,32 @@ if x is None:
     print("x is None.")
 ```
 
-- The `is` keyword works because Python stores a single instance of `None` in memory.
-- Every variable equal to `None` points to the same memory location.
+The `is` keyword works because Python stores a single instance of `None` in memory.
+Every variable equal to `None` points to the same memory location.
 
-```python
+```{pyodide-python}
 print(id(None))
+```
+
+```{pyodide-python}
 x = None
 print(id(x))  # Both ids are identical
 ```
 
-- To check if a variable is not `None`, use:
+To check if a variable is not `None`, use a combination of `is not`:
 
-```python
+```{pyodide-python}
 if x is not None:
     print("x is not None.")
 else:
     print("x is None.")
 ```
 
-## None Evaluates to False
-
-- `None` evaluates as `False` in boolean contexts, similar to `False`, empty strings `''`, or `0`.
+`None` evaluates to `False` in a condition similar to `False`, empty strings `''`, or `0`.
 
 Example:
 
-```python
+```{pyodide-python}
 x = None
 if not x:
     print("x evaluated to False.")
@@ -85,27 +89,30 @@ if not x:
 
 ## Returning None in Functions
 
-`None` is commonly used in function returns to indicate absence of value. There are different ways to return `None`:
+`None` is commonly used in the context offunction returns to indicate absence of value. There are different ways to return `None`:
 
 ### No return statement
 
-- A function without a return statement implicitly returns `None`.
-- Useful when a function is meant to perform an action (like printing or updating), and the return value is not needed.
++ A function without a return statement implicitly returns `None`.
++ Good choice when the function is only meant to perform an action (like printing or updating), and the caller (`return`) does not need to use the return value.
 
-```python
+```{pyodide-python}
 def greet(name):
     print(f"Hello, {name}!")
 
 returned_value = greet("Alice")
+```
+---
+```{pyodide-python}
 print(returned_value, type(returned_value))  # None <class 'NoneType'>
 ```
 
-### Return without expression
+### Only `Return` (without expression)
 
-- Writing `return` without a value also returns `None`.
-- Used to explicitly return early without any result.
++ Writing `return` without a value also returns `None`.
++ Used to explicitly indicate the function should return early without any result.
 
-```python
+```{pyodide-python}
 def process_data(data):
     if not data:
         print("No data to process.")
@@ -114,14 +121,16 @@ def process_data(data):
 
 input_data = []
 processed = process_data(input_data)
+print(processed)
 ```
 
-### Explicit `return None`
+### Explicitly `return None`
 
-- Makes it clear the function intentionally returns `None`.
-- Typically used to indicate an absence of a matching result or value.
++ Explicitly returns `None`.
++ Makes it clear the function intentionally returns `None`.
++ Normally understood as not having any value.
 
-```python
+```{pyodide-python}
 def find_contact_by_name(name, contacts):
     for contact in contacts:
         if contact["name"] == name:
