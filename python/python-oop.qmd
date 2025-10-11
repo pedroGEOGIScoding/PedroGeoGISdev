@@ -10,8 +10,9 @@ categories: [python, oop, objects]
 toc: true
 number-sections: true
 highlight-style: pygments
-format: 
-  html
+format: html
+filters:
+- pyodide
 ---
 
 ## Overview
@@ -24,85 +25,115 @@ In Python, **Object Oriented Programming (OOP)** is a programming paradigm based
 
 :::
 
----
-
 ## Object Oriented Programming (OOP)
 
 - Organizes code like a community of interacting individuals.
 - Benefits: Manageable, maintainable, reusable code.
 
+
 ## Python Classes and Objects
 
-- **Classes:** Blueprints (like architectural plans).
-- **Objects:** Instances built from the blueprint (like houses).
+- **Classes**: Blueprints (like architectural plans).
+- **Objects**: Instances built from the blueprint (like houses).
 - Use a class blueprint to create multiple objects.
 - It is like building multiple houses (objects) from the same architectural plan (class).
 
-## Object Intuition
+## Object intuiton
+
+::: columns
+
+::: {.column width="50%"}
 
 - Objects represent "real-life" entities.
-- They have properties (attributes) and behaviors (methods/"functions").
-- Defined by the programmer.
+- They have properties (**attributes**) and behaviors (**methods** / "functions").
+  - Defined by the programmer.
+:::
 
-## Example 1: Tic-Tac-Toe Entities
+::: {.column style="text-align: center;"}
 
-### Classes:
+![OOP in python](/images/python/python-oop.png)
 
-- Player
-  Attributes: name
-  Methods: update name
-- Board
-  Attributes: number of squares (e.g., 3x3)
-  Methods: Display board, set piece, check legal moves
-- Game
-  Attributes: board, list of players
-  Methods: play game, reset game
+:::
 
-### Object Instances:
+:::
+
+### Example 1
+
+What abstract entities do we have in Tic-Tac-Toe?
+
+Classes:
+
+- **Player**
+  - Attributes: name.
+  - Methods: update name.
+- **Board**
+  - Attributes: num. squares (3x3?).
+  - Methods: Display board, set piece, check legal moves.
+- **Game**
+  - Attributes: board, list of players.
+  - Methods: play game, reset game.
+
+Object **instances** built from class definitions:
 
 - 2 players
 - 1 board
 - 1 game
 
-## Example 2: Store Entities
+---
 
-### Classes:
+### Example 2
 
-- Product
-  Attributes: quantity, description, brand
-  Methods: update stock, apply discount
-- Client
-  Attributes: name, phone number, client score, order history
-  Methods: update contact info, view order history
-- Employee
-  Attributes: name, phone number, bank account, salary, role
-  Methods: increase salary, update bank account
-- Order
-  Attributes: products, client, total price
-  Methods: add product, remove product, process payment
+What abstract entities do we have in a store?
 
-## Example 3: Python is Object-First
+Classes:
 
-- Everything in Python is an object.
-- Strings, integers, functions are objects.
+- **Product**
+  - Attributes: quantity, description, brand.
+  - Methods: update stock, apply discount.
+- **Client**
+  - Attributes: name, phone num., client score, order history.
+  - Methods: update contact info, view order history.
+- **Employee**
+  - Attributes: name, phone num., bank account, salary, role.
+  - Methods: increase salary, update bank account.
+- **Order**
+  - Attributes: products, client, total price.
+  - Methods: add product, remove product, process payment.
+- **Store**
+  - Attributes: clients, products, employees.
+  - Methods: add products, remove products, add employee.
+
+---
+
+### Example 3
+
+- Python is an **object-first** language.
+- This means we've been using objects all along.
+- Behind the scenes, everything is an object.
+- Strings are objects, integers are objects, functions are objects.
 - For example, creating a string object:
 
 ```python
 variable = str()   # Equivalent to: variable = ''
 ```
 
-## String Class Example
+#### String class:
 
-- Attributes: `__doc__`, `__class__`, ...
-- Methods: `lower()`, `replace()`, `count()`, ...
+- **Attributes**
+  - \_\_doc\_\_
+  - \_\_class\_\_
+  - ...
+- **Methods**
+  - lower()
+  - replace()
+  - count()
+  - ...
 
-## Defining a Class in Python
+---
 
-- Classes usually use UpperCamelCase names.
-- The class definition is the blueprint.
-- Instances are objects built from the blueprint.
-
-Example:
+- Defining a `Product` class in Python (preferably in upper camel case):
+- The `Product` class definition is the blueprint.
+- p1 and p2 are different instances of product built from the blueprint.
 
 ```python
 class Product:
@@ -110,108 +141,169 @@ class Product:
 
 p1 = Product()
 p2 = Product()
+
 print(p1)
-# <__main__.Product object at 0x7c2b933f7c10>
 ```
 
-## `__init__` Method
+<div class="output"><__main__.Product object at 0x7c2b933f7c10></div>
+
+
+## `__init__()`
 
 - Automatically called when a new object is created.
 - Initializes object attributes.
-- `self` refers to the instance being created.
-
-Example:
+- Why double underscores (`__`)?
+- What is this `self`?
 
 ```python
 class Product:
+
+    def __init__(self, name, quantity=1):
+        self.name = name
+        self.quantity = quantity
+        self.active = True
+```
+---
+
+```{pyodide-python}
+class Product:
+
     def __init__(self, name, quantity=1):
         self.name = name
         self.quantity = quantity
         self.active = True
 
 p = Product('Cake')
-print(p.name)      # Cake
-print(p.quantity)  # 1
-print(p.active)    # True
+print(p.name)
+print(p.quantity)
+print(p.active)
 ```
+<div class="output">Cake</div>
+<div class="output">1<br>True</div>
 
-## `self` Keyword
+## self
 
-- Refers to the object instance.
+- Refers to the object instance being created.
 - Used to access object attributes.
-- Think of `self` as a way for methods to refer to the object itself.
+- Think of `self` as a way to refer to the object instance **itself**.
 
-## Changing Object Attributes
-
-Example:
-
-```python
-p1 = Product('Cake', 5)
-p2 = Product('Soup', 2)
-p1.name = 'Milk'
-print(p1.name)  # Milk
-print(p2.name)  # Soup
-```
-
-- Changing `p1.name` does not affect `p2.name`.
-
-You can add new attributes to objects dynamically:
-
-```python
-p1.brand = 'Pascual'
-print(p1.brand)  # Pascual
-print(p2.brand)  # AttributeError: 'Product' object has no attribute 'brand'
-```
-
-## Class Attributes
-
-- Shared across all instances.
-
-Example:
-
-```python
+```{pyodide-python}
 class Product:
-    tax_rate = 0.21  # class attribute
+    tax_rate = 0.21   # class attribute
 
     def __init__(self, name, quantity=1):
         self.name = name
         self.quantity = quantity
         self.active = True
 
-p1 = Product('Cake')
-p2 = Product('Soup')
-print(p1.tax_rate)  # 0.21
-print(p2.tax_rate)  # 0.21
+# We can change object's attributes:
+
+p1 = Product('Cake', 5)
+p2 = Product('Soup', 2)
+
+p1.name = 'Milk'
+
+print(p1.name)
 ```
 
-- If you change a class attribute, all instances reflect the change:
+<div class="output">Milk</div>
+
+---
+
+And the other does not change, because `name` is in the `self`:
 
 ```python
-Product.tax_rate = 0.1
-print(p1.tax_rate)  # 0.1
-print(p2.tax_rate)  # 0.1
+print(p2.name)
 ```
 
-- Beware: Assigning to an instance attribute with the same name shadows the class attribute:
+<div class="output">Soup</div>
+
+---
+
+You can also add new attributes to the `self` without affecting other instances:
 
 ```python
-p1.tax_rate = 0.4
-print(p1.tax_rate)  # 0.4
-print(p2.tax_rate)  # 0.1
+p1 = Product('Cake', 5)
+p2 = Product('Soup', 2)
+
+p1.brand = 'Pascual'
+
+print(p1.brand)
 ```
 
-## Class Methods
+<div class="output">Pascual</div>
 
-- Define actions the object can take.
-- `self` must always be the first parameter.
+---
 
-Example:
+```python
+print(p2.brand)
+```
+
+<div class="output">AttributeError: 'Product' object has no attribute 'brand'</div>
+
+## Class attributes
+
+Are shared among all object instances.
 
 ```python
 class Product:
-    def __init__(self, name, brand, quantity=1):
+    tax_rate = 0.21   # class attribute
+
+    def __init__(self, name, quantity=1):
         self.name = name
-        self.brand = brand
+        self.quantity = quantity
+        self.active = True
+```
+
+- If you change a class attribute, all instances change:
+
+```python
+Product.tax_rate = 0.1
+
+print(p1.tax_rate)
+print(p2.tax_rate)
+```
+
+<div class="output">0.1<br>0.1</div>
+
+---
+
+- Take care!
+- If you do this, you're creating a new attribute inside the `self`.
+- It shadows the class attribute.
+- Now the class attribute `tax_rate` has no impact on `p1` anymore.
+
+```python
+p1.tax_rate = 0.4  # creates tax_rate instance attribute
+
+print(p1.tax_rate)
+print(p2.tax_rate)
+```
+
+<div class="output">0.4<br>0.1</div>
+
+---
+
+Parameter names in the `__init__()` function can have any name, they do not necesseraly have to be named equal to the :
+
+```python
+class Product:
+    def __init__(self, n, q=1):
+        self.name = n
+        self.quantity = q
+```
+
+## Class methods
+
+- Functions that define actions an object can take.
+- `self` always has to be the first parameter, as all methods can access it.
+- For example, `update_stock`:
+
+```python
+class Product:
+
+    def __init__(self, name, quantity=1):
+        self.name = name
         self.quantity = quantity
 
     def update_stock(self, amount):
@@ -219,19 +311,52 @@ class Product:
         print(f'New quantity: {self.quantity}')
 ```
 
-Creating an object:
+## Creating an Object
+
+Instantiate (build) using the class blueprint.
 
 ```python
-cake = Product('Cake', 'Pascual', 10)
-cake.update_stock(5)  # New quantity: 15
+cake = Product('Cake')
 ```
 
-When calling a method, you do not pass `self` explicitly; Python passes it behind the scenes.
+What is happening internally?
 
-## More Methods Example
+1. Memory is allocated for the new object.
+2. `__init__()` method is called automatically.
+3. Attributes set within `__init__()` are initialized.
+4. The new object (with its initialized attributes) is returned and assigned to the variable (`cake` in this case).
+
+---
+
+When a method changes an attribute in the `self`, it changes everywhere:
+
+```python
+cake.update_stock(5)
+```
+<div class="output">New quantity: 6</div>
+
+```python
+cake.update_stock(-2)
+```
+<div class="output">New quantity: 4</div>
+
+```python
+print(cake.quantity)
+```
+<div class="output">4</div>
+---
+
+**Note that...**
+
+- Notice that we don't write `self` when calling an object's methods.
+- However, every instance method must include `self` as its first parameter.
+- Python automatically passes the instance (`self`) behind the scenes when the method is called.
+
+## More methods
 
 ```python
 class Product:
+
     def __init__(self, name, unit_price, quantity=1):
         self.name = name
         self.unit_price = unit_price
@@ -248,47 +373,126 @@ class Product:
         print(self.name)
         print(f'Quantity: {self.quantity}')
         print(f'Unit price: {self.unit_price}€')
+```
 
+---
+
+```python
 cake = Product('Cake', unit_price=1.79, quantity=10)
+
 cake.describe()
 ```
 
-## Dunder (Double Underscore) Methods
+<div class="output">Cake<br>Quantity: 10<br>Unit price: 1.79€</div>
 
-- Special methods surrounded by double underscores.
-- Have specific purposes, like overriding Python behaviors.
-- `__init__` called automatically on object creation.
-- Examples: `__str__`, `__add__`.
 
-Example:
+## Multiple instances
+
+- We can create multiple instances of the same object type.
+- They remain independent.
+- Changing one does not (normally) influence the other.
+- For example:
+    - milk1 and milk2.
+    - Multiple pandas DataFrames.
+    - Multiple objects of the same class.
 
 ```python
-class Product:
-    # Other methods...
+carrot = Product('Carrot', 'Ametller', unit_price=0.1)
+pizza = Product('Pizza', 'Buittoni', unit_price=3.95, quantity=20)
 
-    def __str__(self):
-        return f'{self.name}: {self.quantity}'
+carrot.describe()
+pizza.describe()
 ```
+<div class="output">I'm Carrot from Ametller.<br>Quantity: 1<br>Unit price: 0.1€</div>
 
-Usage:
+<div class="output">I'm Pizza from Buittoni.<br>Quantity: 20<br>Unit price: 3.95€</div>
+
+
+## Dunder (double underscore) methods
+
+- These are commonly referred to as "dunder" (short for "double underscore").
+- Methods surrounded by double underscores are special methods in Python.
+- They have specific purposes and are used to override default behaviors in Python.
+- For example, `__init__()` is called automatically when an object is instantiated.
+- Other examples: `__str__()` or `__add__()`
+
+## str
+
+- Returns a human-readable string representation of the object.
+- By default, an object is not printable per se:
 
 ```python
 pizza = Product('Pizza', unit_price=3.95, quantity=20)
-print(pizza)  # Pizza: 20
-```
 
-## Operator Overloading
+print(pizza)
+````
 
-- Enables use of operators (+, -, *) with custom behaviors for objects.
-- By default, adding two custom objects results in a TypeError.
+<div class="output"><__main__.Product object at 0x7a3a16288af0></div>
 
-Example of enabling `+` operator:
+---
+
+After defining `__str_()` we can print it as we like:
 
 ```python
 class Product:
-    # Other methods...
+
+    def __init__(self, name, unit_price, quantity=1):
+        self.name = name
+        self.quantity = quantity
+        self.unit_price = unit_price
+
+    def update_stock(self, amount):
+        self.quantity += amount
+        print(f'New quantity: {self.quantity}')
+
+    def get_discounted_price(self, discount):
+        return self.unit_price - self.unit_price * discount
+
+    def describe(self):
+        print(self.name)
+        print(f'Quantity: {self.quantity}')
+        print(f'Unit price: {self.unit_price}€')
+
+    def __str__(self):
+        # Returns product's name and quantity
+        return f'{self.name}: {self.quantity}'
+```
+
+---
+
+```python
+pizza = Product('Pizza', unit_price=3.95, quantity=20)
+
+print(pizza)
+```
+
+<div class="output">Pizza: 20</div>
+
+## Operator Overloading
+
+- Using standard operators (like `+`, `-`, `*`) with custom logic for objects.
+- Intuitive operations for custom objects.
+- By default, we cannot add object instances:
+
+```python
+pizza + pizza
+```
+<div class="output">TypeError: unsupported operand type(s) for +: 'Product' and 'Product'</div>
+
+---
+
+After defining `__add_()` we can add them:
+
+```python
+class Product:
+    (...)
+
+    def __str__(self):
+        # Returns product's name and quantity
+        return f"{self.name}: {self.quantity}"
 
     def __add__(self, other):
+        # Behavior when adding Products
         same_name = self.name == other.name
         same_price = self.unit_price == other.unit_price
 
@@ -299,7 +503,7 @@ class Product:
             raise Exception("Cannot add these two products.")
 ```
 
-Example of use:
+---
 
 ```python
 pizza1 = Product('Pizza - Tarradellas', unit_price=3.95, quantity=8)
@@ -307,86 +511,208 @@ pizza2 = Product('Pizza - Tarradellas', unit_price=3.95, quantity=3)
 pizza3 = Product('Pizza - Buittoni', unit_price=4.10, quantity=10)
 
 new_pizza = pizza1 + pizza2
-print(new_pizza)  # Pizza - Tarradellas: 11
+
+print(new_pizza)
+```
+
+<div class="output">Pizza - Tarradellas: 11</div>
+
+---
+
+```python
+print(new_pizza.unit_price)
+```
+
+<div class="output">3.95</div>
+
+---
+
+```python
+pizza1 = Product('Pizza - Tarradellas', unit_price=3.95, quantity=8)
+pizza2 = Product('Pizza - Tarradellas', unit_price=3.95, quantity=3)
+pizza3 = Product('Pizza - Buittoni', unit_price=4.10, quantity=10)
 
 new_pizza = pizza1 + pizza3
-# Exception raised: Cannot add these two products.
 ```
 
-## Complex Example: Library System
+<div class="output">Exception: Cannot add these two products.</div>
 
-Classes for managing a book library:
+## Managing Invoices
 
-```python
-class Book:
-    def __init__(self, tit, auth):
-        self.title = tit
-        self.author = auth
-        self.availability = True
+Simple class Product (see example below)
 
-    def borrow(self):
-        if self.availability:
-            self.availability = False
-            print(f"{self.title} has been borrowed.")
-        else:
-            print(f"{self.title} is not available.")
-
-    def return_book(self):
-        self.availability = True
-        print(f"{self.title} has been returned.")
+```{pyodide-python}
+class Product:
+    def __init__(self, name, price):
+        self.name = name
+        self.price = price
 
     def __str__(self):
-        return f"{self.title} - {self.author}"
+        return self.name
 
-class Library:
-    def __init__(self, name, loc):
-        self.books = []
+class Invoice:
+    def __init__(self):
+        self.products = []
+
+    def add_product(self, product):
+        self.products.append(product)
+
+    def total(self):
+        return round(sum(p.price for p in self.products), 2)
+
+    def summary(self):
+        for p in self.products:
+            print(f"* {p.name}: {p.price:.2f} €")
+        print(f"Total: {self.total():.2f} €")
+
+    def __str__(self):
+        return f"Invoice total: {self.total()}€"
+
+inv = Invoice()
+
+# Create products
+pen = Product("Pen", 1.2)
+book = Product("Notebook", 3.5)
+
+# Add products
+inv.add_product(pen)
+inv.add_product(book)
+
+inv.summary()
+```
+
+## Exercises
+
+### Circle and Rectangle
+
+Create a `Circle` class that represents a circle with a specified radius. This class should have methods to calculate the area and circumference of the circle and return it. The area is calculated using the formula `π * radius²`, and the circumference is calculated using the formula `2 * π * radius`.
+
+Additionally, create a `Rectangle` class that represents a rectangle defined by its length and width. This class should include methods to calculate the area and perimeter of the rectangle and return their values. The area is calculated using the formula `length * width`, and the perimeter is calculated using the formula `2 * (length + width)`.
+
+```{pyodide-python}
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def area(self):
+        area = 3.14 * self.radius**2
+        print(f"Circle's area: {area}")
+        
+    def circumference(self):
+        circum = round((2 * 3.14 * self.radius), 2)
+        print(f"The circumference is: {circum}")
+
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+        
+    def area(self):
+        area = self.length * self.width
+        print(f"Rectangle's area: {area}")
+        
+    def perimeter(self):
+        perm = 2 * (self.length + self.width)
+        print(f"Rectangle's perimeter: {perm}")
+        
+
+circle1 = Circle(5)  
+circle1.area()
+circle1.circumference()
+
+rec1 = Rectangle(10, 5)
+rec1.area()
+rec1.perimeter()
+```
+
+
+### Shopping Cart
+
+Design a simple shopping cart system that includes a `Product` class and a `ShoppingCart` class. The `Product` class should have attributes for `product_id`, `product_name`, and `product_price`, along with a method `display_product_info()` to show the product details. The `ShoppingCart` class should maintain a list of products and provide methods to add products, remove products by their ID, and calculate the total cost of the items in the cart.
+
+```{pyodide-python}
+class Product:
+    def __init__(self, product_id, product_name, product_price):
+        self.product_id = product_id
+        self.product_name = product_name
+        self.product_price = product_price
+        
+    def display_product_info(self):
+        print(f'Product id: {self.product_id}')
+        print(f'Product name: {self.product_name}')
+        print(f'Product price: {self.product_price} €')
+
+apple = Product(1, "Apple", 0.5)
+banana = Product(2, "Banana", 0.3)
+apple.display_product_info()       
+        
+class ShoppingCart:
+    def __init__(self):
+        self.products = {}
+        
+    def add_product(self, product, quantity):
+        if product in self.products:
+            self.products[product] += quantity
+        else:
+            self.products[product] = quantity
+            
+    def remove_product(self, product, quantity):
+        if product in self.products:
+            self.products[product] -= quantity
+        if self.products[product] <= 0:
+            del self.products[product]
+            
+    def total_cost(self):
+        return round(sum(product.product_price * qty for product, qty in self.products.items()), 2)
+
+cart = ShoppingCart()
+cart.add_product(apple, 4)
+cart.add_product(banana, 3)
+cart.remove_product(apple, 1)
+
+print(f"Total cost: {cart.total_cost():.2f} €")
+```
+---
+
+### Flight Booking System
+
+Create two classes: `Passenger` and `Flight`. The `Passenger` class should store details such as `name`, `passport_number`. The `Flight` class should contain information like `flight_number`, `origin`, `destination`, and a list of passengers (which are instances of the `Passenger` class).
+
+Additionally, implement an external function `book_flight(flight, passenger)` (not part of any of the previous classes) that adds a passenger to a flight. This function should ensure that a passenger cannot be booked more than once, which is determined by checking their `passport_number`.
+
+```{pyodide-python}
+class Passenger:
+    def __init__(self, name, passport_number):
         self.name = name
-        self.location = loc
+        self.passport_number = passport_number
+               
+class Flight:
+    def __init__(self, flight_number, origin, destination):
+        self.flight_number = flight_number
+        self.origin = origin
+        self.destination = destination
+        self.passengers = []
+        
+def book_flight(flight, passenger):
+    passports = [p.passport_number for p in flight.passengers]
+    if passenger.passport_number not in passports:
+        flight.passengers.append(passenger)
+    else:
+        print("Passenger already booked!")
 
-    def add_book(self, book):
-        self.books.append(book)
-        return f"{book.title} added to the library."
+john = Passenger("John Doe", "P12345")
+jane = Passenger("Jane Smith", "P67890")
+flight1 = Flight("FL001", "NYC", "LA")
 
-    def get_book(self, title):
-        for book in self.books:
-            if book.title == title:
-                if book.availability:
-                    return book
-                else:
-                    print(f"{title} is currently borrowed.")
-                    return None
-        print(f"{title} not found in the library.")
-        return None
+book_flight(flight1, john)
+book_flight(flight1, jane)
+book_flight(flight1, john)  # Should print "Passenger already booked!"
+
+
+print(f"Flight {flight1.flight_number} from {flight1.origin} to {flight1.destination}")
+print("Has the following passengers:")
+for passenger in flight1.passengers:
+    print(passenger.name)
 ```
 
-Example usage:
-
-```python
-pilarin_bayes = Library("Pilarin Bayés", "Vic")
-joan_miro = Library("Joan Miró", "Barcelona")
-
-hp1 = Book("Harry Potter 1", "J.K. Rowling")
-hp2 = Book("Harry Potter 2", "J.K. Rowling")
-hp3 = Book("Harry Potter 3", "J.K. Rowling")
-hp4 = Book("Harry Potter 4", "J.K. Rowling")
-
-pilarin_bayes.add_book(hp1)
-pilarin_bayes.add_book(hp2)
-
-joan_miro.add_book(hp2)
-joan_miro.add_book(hp3)
-joan_miro.add_book(hp4)
-
-my_hp1 = joan_miro.get_book("Harry Potter 1")
-print(my_hp1)  # Harry Potter 1 not found in the library. None
-
-my_hp1 = pilarin_bayes.get_book("Harry Potter 1")
-print(my_hp1)  # Harry Potter 1 - J.K. Rowling
-
-my_hp1.borrow()  # Harry Potter 1 has been borrowed.
-
-my_hp1 = pilarin_bayes.get_book("Harry Potter 1")
-print(my_hp1)  # Harry Potter 1 is currently borrowed. None
-```
 

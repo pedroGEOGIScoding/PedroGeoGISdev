@@ -1,0 +1,531 @@
+---
+title: "Python: Inheritance and Polymorphism"
+subtitle: Python Inheritance and Polymorphism
+author: Isaac Boixaderas
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: Python Inheritance
+categories: [python, inheritance, polymorphism]
+toc: true
+number-sections: true
+highlight-style: pygments
+format: html
+filters:
+- pyodide
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Inheritance**
+
+In Python, **Inheritance** is a programming paradigm based on the concept of "objects", which can contain data in the form of fields (often known as attributes or properties), and code, in the form of procedures (often known as methods). Inheritance in Python is a key feature of object-oriented programming that allows a new class (child/subclass) to inherit attributes and methods from an existing class (parent/superclass). This mechanism promotes code reuse and models real-world hierarchical relationships. In other words, building on existing classes' code.
+
+:::
+
+## Main Aspects of Inheritance in Python
+
+- **Basic Concept**:
+  A child class inherits the behaviors (methods) and properties (attributes) of a parent class. The child class can use these inherited features directly or override them with its own implementations. This represents an "is-a" relationship (e.g., a Dog "is-a" Animal).
+- **Syntax**:
+  The child class is defined by placing the parent class name in parentheses after the child class name:
+
+```python
+class ParentClass:
+    # attributes and methods
+
+class ChildClass(ParentClass):
+    # additional or overridden attributes and methods
+```
+
+This tells Python the ChildClass inherits from ParentClass.
+
+- **Method Overriding**:
+  The child class can provide a new definition for a method inherited from the parent, changing its behavior while keeping the same method name. This is essential for customizing behavior.
+- **Using `super()`**:
+  The `super()` function allows a child class to call methods (like `__init__`) from its parent class, enabling proper initialization or method extension.
+- **Types of Inheritance**:
+  Python supports several inheritance types:
+  - Single Inheritance: One child, one parent.
+  - Multiple Inheritance: One child, multiple parents.
+  - Multilevel Inheritance: Chain of inheritance across multiple levels.
+  - Hierarchical Inheritance: Multiple children inheriting from one parent.
+- **Advantages**:
+  - Reuse existing code without duplication.
+  - Organize related classes into hierarchies.
+  - Easy maintenance and extensibility of code.
+  - Polymorphism: Child classes can be treated as instances of their parent class, enabling flexible code.
+
+### Simple Example
+
+```python
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def info(self):
+        print("Animal name:", self.name)
+
+class Dog(Animal):
+    def sound(self):
+        print(self.name, "barks")
+
+d = Dog("Buddy")
+d.info()   # inherited method
+d.sound()  # child method
+```
+
+Output:
+
+```
+Animal name: Buddy
+Buddy barks
+```
+
+This shows the child class `Dog` inheriting `info()` from `Animal` and adding its own `sound()` method.
+
+---
+
+### More Inheritance Examples
+
+```python
+class Vehicle:
+    # Generic vehicle class
+    def __init__(self, brand):
+        self.brand = brand
+
+    def has_wheels(self):
+        return True
+
+
+class Car(Vehicle):
+    # Car class inherits from Vehicle
+    def vehicle_type(self):
+        return "Car"
+```
+
+```python
+# Superclass (Vehicle) functions can be called
+# e.g. __init__() is inherited
+c = Car("Tesla")
+```
+
+---
+
+```python
+print(c.vehicle_type())
+```
+
+<div class="output">Car</div>
+
+```python
+print(c.has_wheels())
+```
+
+<div class="output">True</div>
+
+---
+
+## Multiple Class Inheritance
+
+```python
+class Electric:
+    # Generic class for electric devices
+
+    def power_source(self):
+        return "Electricity"
+
+
+class ElectricCar(Car, Electric):  # Multiple Inheritance
+    pass
+```
+
+---
+
+```python
+ec = ElectricCar("Tesla")
+
+print(ec.vehicle_type())
+```
+
+<div class="output">Car</div>
+
+```python
+print(ec.power_source())
+```
+
+<div class="output">Electricity</div>
+
+```python
+print(ec.has_wheels())
+```
+
+<div class="output">True</div>
+
+---
+
+## The `super()` Function
+
+- Call method from parent class.
+
+```python
+class Vehicle:
+
+    def __init__(self, brand, wheels):
+        self.brand = brand
+        self.wheels = wheels
+
+
+class Car(Vehicle):
+
+    def __init__(self, brand, wheels, doors):
+        # Call the parent constructor for reusing logic
+        super().__init__(brand, wheels)
+        # Add new attributes
+        self.doors = doors
+```
+
+---
+
+```python
+c = Car("Tesla", 4, 5)
+
+print(c.wheels)
+```
+
+<div class="output">4</div>
+
+```python
+print(c.doors)
+```
+
+<div class="output">5</div>
+
+---
+
+## Method Overriding
+
+- Modify or extend inherited behavior.
+
+---
+
+```python
+class Vehicle:
+
+    def __init__(self, brand, wheels):
+        self.brand = brand
+        self.wheels = wheels
+
+    def description(self):
+        print(f"A mode of transport on {self.wheels} wheels.")
+
+
+class Car(Vehicle):
+
+    def __init__(self, brand, wheels, doors):
+        super().__init__(brand, wheels)
+        self.doors = doors
+
+    def description(self):
+        # Override parent's method behavior
+        print(f"A personal mode of transport on {self.wheels} wheels.")
+```
+
+---
+
+```python
+c = Car("Tesla", 4, 5)
+bike = Vehicle("Brompton", 2)
+
+c.description()
+```
+
+<div class="output">A personal mode of transport on 4 wheels.</div>
+
+```python
+bike.description()
+```
+
+<div class="output">A mode of transport on 2 wheels.</div>
+
+---
+
+- A `Car` object is both of type `Vehicle` and `Car`:
+
+```python
+c = Car("Tesla", 4, 5)
+
+print(isinstance(c, Vehicle))
+```
+
+<div class="output">True</div>
+
+```python
+print(isinstance(c, Car))
+```
+
+<div class="output">True</div>
+
+---
+
+## Polymorphism
+
+- Polymorphism is an object-oriented programming concept.
+- Refers to the ability of a variable, function, or object to take on multiple forms.
+- Class objects with a common parent class may have functions with the same name, but with different behaviors.
+
+---
+
+```python
+class Vehicle:
+
+    def description(self):
+        print("Generic Vehicle")
+
+
+class Car(Vehicle):
+
+    def description(self):
+        print("Four-wheeled Vehicle")
+
+
+class Bike(Vehicle):
+
+    def description(self):
+        print("Two-wheeled Vehicle")
+```
+
+---
+
+- All instances have a `description()` method.
+
+```python
+c = Car()
+c.description()
+```
+
+<div class="output">Four-wheeled Vehicle</div>
+
+```python
+b = Bike()
+b.description()
+```
+
+<div class="output">Two-wheeled Vehicle</div>
+
+---
+
+## Example
+
+```python
+# Base class
+class Shape:
+    def area(self):
+        raise Exception('Method "area" must be implemented.')
+
+    def draw(self):
+        raise Exception('Method "draw" must be implemented.')
+
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return math.pi * self.radius ** 2
+
+    def draw(self):
+        print("O")
+```
+
+---
+
+```python
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        return self.width * self.height
+
+    def draw(self):
+        print("▭")
+
+
+class Triangle(Shape):
+    def __init__(self, base, height):
+        self.base = base
+        self.height = height
+
+    def area(self):
+        return (self.base * self.height) / 2
+
+    def draw(self):
+        print("▲")
+```
+
+---
+
+```{pyodide-python}
+# Function that takes any shape and works polymorphically
+def interact_with_shape(form):
+    print("Drawing the shape: ", end="")
+    form.draw()
+    print(f"Area: {form.area():.2f}")
+
+interact_with_shape(Circle(5))
+interact_with_shape(Rectangle(4, 6))
+```
+
+<div class="output">Drawing the shape: O<br>Area: 78.54</div>
+
+<div class="output">Drawing the shape: ▭<br>Area: 24</div>
+
+
+## More realistic example
+
+- HR program to track employees in a company.
+
+
+```python
+class Worker:
+    def __init__(self, id_card, phone_num, address, bank_iban):
+        self.id_card = id_card
+        self.phone_num = phone_num
+        self.address = address
+        self.bank_iban = bank_iban
+
+    @abstractmethod
+    def report_work(self):
+        pass
+
+    @abstractmethod
+    def calculate_monthly_salary(self):
+        pass
+
+    def get_contact_info(self):
+        return f"Phone: {self.phone_num}, Address: {self.address}"
+
+    def get_payment_details(self):
+        return f"IBAN: {self.bank_iban}, Address: {self.address}"
+
+    def change_bank_iban(self, new_iban, signed_certificate):
+        # Check valid signed certificate and, if valid, change IBAN
+        ...
+```
+
+---
+
+```python
+class Employee(Worker):
+    def __init__(self, id_card, phone_num, address,
+                 bank_iban, year_salary):
+        super().__init__(id_card, phone_num, address, bank_iban)
+        self.year_salary = year_salary
+
+    def report_work(self):
+        return "Employee reporting: I've worked 8 hours today."
+
+    def calculate_monthy_salary(self):
+        # Consider gross year salary, calculate monthly,
+        # subtract SS and IRPF, etc.
+        ...
+```
+
+---
+
+```python
+def Executive(Employee):
+    def __init__(self, id_card, phone_num, address,
+                 bank_iban, year_salary, incentive=None):
+        super().__init__(id_card, phone_num, address,
+                         bank_iban, year_salary)
+        self.incentive = incentive
+        self.tasks_completed = []
+
+    def report_work(self):
+        return "Executive reporting: I've completed objectives X, Y."
+
+    def calculate_monthly_salary(self):
+        fix_salary = super().calculate_monthly_salary()
+        # Add incentives
+        ...
+```
+
+---
+
+```python
+class Freelancer(Worker):
+    def __init__(self, id_card, phone_num, address,
+                 bank_iban, hourly_rate):
+        super().__init__(id_card, phone_num, address, bank_iban)
+        self.hourly_rate = hourly_rate
+
+    def report_work(self):
+        return "Freelancer reporting: I've worked 4 hours today."
+
+    def calculate_monthy_salary(self):
+        # Consider hourly_rate, hours worked this month, etc.
+        ...
+```
+
+---
+
+```python
+class Contractor(Worker):
+    def __init__(self, id_card, phone_num, address, bank_iban, contract_fee):
+        super().__init__(id_card, phone_num, address, bank_iban)
+        self.contract_fee = contract_fee
+
+    def report_work(self):
+        return "Contractor reporting: Project completed today."
+
+    def calculate_monthy_salary(self):
+        # Consider contract_fee, completion of the project, etc.
+        ...
+```
+
+---
+
+```python
+def PaymentSystem():
+
+    def process_payroll(workers):
+        """
+        Process payroll for a list of workers, regardless of their
+        specific type. This function uses polymorphism to call each
+        worker's own salary calculation method.
+        """
+        for worker in workers:
+            print(f"Processing payroll for {worker.id_card}")
+            salary = worker.calculate_monthly_salary()
+            print(f"Salary: {salary}")
+            payment_details = worker.get_payment_details()
+            print(f"Payment will be transferred to {payment_details}\n")
+            status = pay_monthly_salary(salary, payment_details)
+
+            if status:
+                print(f"{salary}€ correctly paid to {worker.id_card}")
+            else:
+                print(f"Payment error: {worker.id_card}.")
+```
+
+---
+
+## Bonus: Public, protected and private
+
+- Public, protected and private are not defined in Python.
+- In Python, everything is public by default.
+- Any attribute or method can be accessed from outside the class.
+
+### Convention
+
+- **Public**: Normal variable/method name without underscores.
+  - E.g., `self.name = 'Cake'`
+- **Protected**: Prefix with a single underscore.
+  - E.g., `self._discount = 0.1`
+- **Private**: Prefix with two underscores.
+  - E.g., `self.__secret = 'hidden'`

@@ -323,6 +323,7 @@ website:
             - python/python-variable-assigment.qmd
             - python/python-none.qmd
             - python/python-oop.qmd
+            - python/python-inheritance.qmd
             - python/python-cheat-sheets.qmd
     - id: "js"
       title: "JavaScript"
