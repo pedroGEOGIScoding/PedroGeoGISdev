@@ -1,0 +1,1003 @@
+---
+title: "Python: Abstraction"
+subtitle: Python Abstraction
+author: pedromartinezduran
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: Python Abstraction - Hiding complexity and showing only essential features
+categories: [python, abstraction, oop]
+toc: true
+number-sections: true
+highlight-style: pygments
+format: html
+filters:
+- pyodide
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Abstraction in Python**
+
+**Abstraction** is one of the fundamental principles of object-oriented programming (OOP). It refers to the concept of hiding the complex implementation details and showing only the essential features of an object. Abstraction allows programmers to focus on what an object does rather than how it does it. In Python, abstraction is achieved through abstract classes and interfaces, which define a blueprint for other classes without providing complete implementation.
+
+Abstract classes cannot be instantiated directly and are meant to be subclassed. They can contain abstract methods (methods without implementation) that must be implemented by any concrete subclass. This ensures that all subclasses follow a specific interface while allowing flexibility in implementation.
+
+:::
+
+## What is Abstraction?
+
+Abstraction is characterized by several key aspects:
+
+- **Hiding Complexity**: Internal implementation details are hidden from the user, exposing only what's necessary.
+- **Focus on Interface**: Users interact with objects through a well-defined interface without needing to understand internal workings.
+- **Code Organization**: Helps organize code by defining clear contracts between different parts of a system.
+- **Flexibility**: Allows different implementations of the same interface, enabling polymorphism.
+- **Maintainability**: Changes to implementation don't affect code that uses the abstraction.
+
+## Abstract Classes vs Regular Classes
+
+| Feature | Regular Class | Abstract Class |
+|---------|--------------|----------------|
+| Instantiation | Can be instantiated | Cannot be instantiated |
+| Abstract Methods | No abstract methods | Can have abstract methods |
+| Purpose | Create objects directly | Serve as blueprint for subclasses |
+| Implementation | Complete implementation | Partial or no implementation |
+
+---
+
+## The ABC Module
+
+Python provides the `abc` (Abstract Base Classes) module to work with abstraction:
+
+- `ABC`: Base class for creating abstract classes
+- `@abstractmethod`: Decorator to define abstract methods
+- `@abstractproperty`: Decorator for abstract properties (deprecated, use `@property` with `@abstractmethod`)
+
+```{pyodide-python}
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    """Abstract base class for animals"""
+    
+    @abstractmethod
+    def make_sound(self):
+        """Abstract method - must be implemented by subclasses"""
+        pass
+    
+    @abstractmethod
+    def move(self):
+        """Abstract method - must be implemented by subclasses"""
+        pass
+
+# Try to instantiate abstract class (will fail)
+try:
+    animal = Animal()
+except TypeError as e:
+    print(f"Error: {e}")
+```
+
+---
+
+## Implementing Abstract Classes
+
+Concrete classes must implement all abstract methods:
+
+```{pyodide-python}
+from abc import ABC, abstractmethod
+
+class Animal(ABC):
+    @abstractmethod
+    def make_sound(self):
+        pass
+    
+    @abstractmethod
+    def move(self):
+        pass
+
+class Dog(Animal):
+    def make_sound(self):
+        return "Woof! Woof!"
+    
+    def move(self):
+        return "Running on four legs"
+
+class Bird(Animal):
+    def make_sound(self):
+        return "Tweet! Tweet!"
+    
+    def move(self):
+        return "Flying in the sky"
+
+# Now we can create instances
+dog = Dog()
+print(f"Dog says: {dog.make_sound()}")
+print(f"Dog moves: {dog.move()}")
+
+bird = Bird()
+print(f"Bird says: {bird.make_sound()}")
+print(f"Bird moves: {bird.move()}")
+```
+
+---
+
+## Incomplete Implementation Error
+
+If a subclass doesn't implement all abstract methods, it cannot be instantiated:
+
+```{pyodide-python}
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+    @abstractmethod
+    def start(self):
+        pass
+    
+    @abstractmethod
+    def stop(self):
+        pass
+
+class IncompleteCar(Vehicle):
+    def start(self):
+        return "Car started"
+    # Missing stop() implementation
+
+# Try to instantiate incomplete class
+try:
+    car = IncompleteCar()
+except TypeError as e:
+    print(f"Error: {e}")
+
+# Complete implementation works
+class CompleteCar(Vehicle):
+    def start(self):
+        return "Car started"
+    
+    def stop(self):
+        return "Car stopped"
+
+car = CompleteCar()
+print(car.start())
+print(car.stop())
+```
+
+---
+
+## Abstract Classes with Concrete Methods
+
+Abstract classes can have both abstract and concrete methods:
+
+```{pyodide-python}
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    def __init__(self, color):
+        self.color = color
+    
+    @abstractmethod
+    def area(self):
+        """Abstract method - must be implemented"""
+        pass
+    
+    @abstractmethod
+    def perimeter(self):
+        """Abstract method - must be implemented"""
+        pass
+    
+    def describe(self):
+        """Concrete method - inherited by all subclasses"""
+        return f"I am a {self.color} shape"
+
+class Rectangle(Shape):
+    def __init__(self, color, width, height):
+        super().__init__(color)
+        self.width = width
+        self.height = height
+    
+    def area(self):
+        return self.width * self.height
+    
+    def perimeter(self):
+        return 2 * (self.width + self.height)
+
+class Circle(Shape):
+    def __init__(self, color, radius):
+        super().__init__(color)
+        self.radius = radius
+    
+    def area(self):
+        return 3.14159 * self.radius ** 2
+    
+    def perimeter(self):
+        return 2 * 3.14159 * self.radius
+
+# Test the shapes
+rect = Rectangle("red", 5, 10)
+print(rect.describe())
+print(f"Area: {rect.area()}")
+print(f"Perimeter: {rect.perimeter()}")
+
+circle = Circle("blue", 7)
+print(f"\n{circle.describe()}")
+print(f"Area: {circle.area():.2f}")
+print(f"Circumference: {circle.perimeter():.2f}")
+```
+
+---
+
+## Practical Example: Payment System
+
+A payment processing system with different payment methods:
+
+```{pyodide-python}
+from abc import ABC, abstractmethod
+
+class PaymentMethod(ABC):
+    """Abstract base class for payment methods"""
+    
+    def __init__(self, amount):
+        self.amount = amount
+    
+    @abstractmethod
+    def process_payment(self):
+        """Process the payment - must be implemented"""
+        pass
+    
+    @abstractmethod
+    def validate(self):
+        """Validate payment details - must be implemented"""
+        pass
+    
+    def get_receipt(self):
+        """Concrete method - common to all payment methods"""
+        return f"Payment of ${self.amount:.2f} processed successfully"
+
+class CreditCard(PaymentMethod):
+    def __init__(self, amount, card_number, cvv):
+        super().__init__(amount)
+        self.card_number = card_number
+        self.cvv = cvv
+    
+    def validate(self):
+        # Simplified validation
+        if len(self.card_number) == 16 and len(self.cvv) == 3:
+            return True
+        return False
+    
+    def process_payment(self):
+        if self.validate():
+            return f"Processing credit card payment of ${self.amount:.2f}"
+        return "Invalid credit card details"
+
+class PayPal(PaymentMethod):
+    def __init__(self, amount, email):
+        super().__init__(amount)
+        self.email = email
+    
+    def validate(self):
+        # Simplified validation
+        return '@' in self.email
+    
+    def process_payment(self):
+        if self.validate():
+            return f"Processing PayPal payment of ${self.amount:.2f} from {self.email}"
+        return "Invalid PayPal email"
+
+class BankTransfer(PaymentMethod):
+    def __init__(self, amount, account_number):
+        super().__init__(amount)
+        self.account_number = account_number
+    
+    def validate(self):
+        # Simplified validation
+        return len(self.account_number) >= 10
+    
+    def process_payment(self):
+        if self.validate():
+            return f"Processing bank transfer of ${self.amount:.2f}"
+        return "Invalid account number"
+
+# Process different payment methods
+payments = [
+    CreditCard(150.00, "1234567890123456", "123"),
+    PayPal(75.50, "user@example.com"),
+    BankTransfer(200.00, "1234567890")
+]
+
+for payment in payments:
+    print(payment.process_payment())
+    print(payment.get_receipt())
+    print()
+```
+
+---
+
+## Abstract Properties
+
+You can also define abstract properties:
+
+```{pyodide-python}
+from abc import ABC, abstractmethod
+
+class Employee(ABC):
+    def __init__(self, name, hours_worked):
+        self.name = name
+        self.hours_worked = hours_worked
+    
+    @property
+    @abstractmethod
+    def salary(self):
+        """Abstract property - must be implemented"""
+        pass
+    
+    @abstractmethod
+    def get_role(self):
+        """Abstract method"""
+        pass
+    
+    def display_info(self):
+        """Concrete method"""
+        return f"{self.name} - {self.get_role()} - Salary: ${self.salary:.2f}"
+
+class FullTimeEmployee(Employee):
+    def __init__(self, name, hours_worked, annual_salary):
+        super().__init__(name, hours_worked)
+        self.annual_salary = annual_salary
+    
+    @property
+    def salary(self):
+        return self.annual_salary / 12  # Monthly salary
+    
+    def get_role(self):
+        return "Full-Time Employee"
+
+class Contractor(Employee):
+    def __init__(self, name, hours_worked, hourly_rate):
+        super().__init__(name, hours_worked)
+        self.hourly_rate = hourly_rate
+    
+    @property
+    def salary(self):
+        return self.hours_worked * self.hourly_rate
+    
+    def get_role(self):
+        return "Contractor"
+
+# Create employees
+emp1 = FullTimeEmployee("Alice", 160, 60000)
+emp2 = Contractor("Bob", 120, 50)
+
+print(emp1.display_info())
+print(emp2.display_info())
+```
+
+---
+
+## Multiple Abstract Base Classes
+
+A class can inherit from multiple abstract base classes:
+
+```{pyodide-python}
+from abc import ABC, abstractmethod
+
+class Flyable(ABC):
+    @abstractmethod
+    def fly(self):
+        pass
+
+class Swimmable(ABC):
+    @abstractmethod
+    def swim(self):
+        pass
+
+class Duck(Flyable, Swimmable):
+    def fly(self):
+        return "Duck is flying"
+    
+    def swim(self):
+        return "Duck is swimming"
+
+class Penguin(Swimmable):
+    def swim(self):
+        return "Penguin is swimming"
+    
+    # Penguins don't fly, so we don't inherit from Flyable
+
+class Eagle(Flyable):
+    def fly(self):
+        return "Eagle is soaring high"
+    
+    # Eagles don't swim (well), so we don't inherit from Swimmable
+
+# Test the animals
+duck = Duck()
+print(duck.fly())
+print(duck.swim())
+
+penguin = Penguin()
+print(penguin.swim())
+
+eagle = Eagle()
+print(eagle.fly())
+```
+
+---
+
+## Practical Example: Database Connection
+
+Abstract database connection with different implementations:
+
+```{pyodide-python}
+from abc import ABC, abstractmethod
+
+class DatabaseConnection(ABC):
+    """Abstract base class for database connections"""
+    
+    def __init__(self, host, database):
+        self.host = host
+        self.database = database
+        self.connected = False
+    
+    @abstractmethod
+    def connect(self):
+        """Establish connection to database"""
+        pass
+    
+    @abstractmethod
+    def disconnect(self):
+        """Close database connection"""
+        pass
+    
+    @abstractmethod
+    def execute_query(self, query):
+        """Execute a database query"""
+        pass
+    
+    def get_status(self):
+        """Concrete method - common functionality"""
+        status = "Connected" if self.connected else "Disconnected"
+        return f"Database: {self.database} at {self.host} - {status}"
+
+class MySQLConnection(DatabaseConnection):
+    def connect(self):
+        self.connected = True
+        return f"Connected to MySQL database '{self.database}' at {self.host}"
+    
+    def disconnect(self):
+        self.connected = False
+        return "MySQL connection closed"
+    
+    def execute_query(self, query):
+        if not self.connected:
+            return "Error: Not connected to database"
+        return f"MySQL executing: {query}"
+
+class PostgreSQLConnection(DatabaseConnection):
+    def connect(self):
+        self.connected = True
+        return f"Connected to PostgreSQL database '{self.database}' at {self.host}"
+    
+    def disconnect(self):
+        self.connected = False
+        return "PostgreSQL connection closed"
+    
+    def execute_query(self, query):
+        if not self.connected:
+            return "Error: Not connected to database"
+        return f"PostgreSQL executing: {query}"
+
+class MongoDBConnection(DatabaseConnection):
+    def connect(self):
+        self.connected = True
+        return f"Connected to MongoDB database '{self.database}' at {self.host}"
+    
+    def disconnect(self):
+        self.connected = False
+        return "MongoDB connection closed"
+    
+    def execute_query(self, query):
+        if not self.connected:
+            return "Error: Not connected to database"
+        return f"MongoDB executing: {query}"
+
+# Test different database connections
+databases = [
+    MySQLConnection("localhost", "myapp_db"),
+    PostgreSQLConnection("192.168.1.100", "analytics_db"),
+    MongoDBConnection("cloud.mongodb.com", "users_db")
+]
+
+for db in databases:
+    print(db.connect())
+    print(db.get_status())
+    print(db.execute_query("SELECT * FROM users"))
+    print(db.disconnect())
+    print()
+```
+
+---
+
+## Practical Example: File Handler
+
+Abstract file handler for different file formats:
+
+```{pyodide-python}
+from abc import ABC, abstractmethod
+
+class FileHandler(ABC):
+    """Abstract base class for file handlers"""
+    
+    def __init__(self, filename):
+        self.filename = filename
+    
+    @abstractmethod
+    def read(self):
+        """Read file content"""
+        pass
+    
+    @abstractmethod
+    def write(self, content):
+        """Write content to file"""
+        pass
+    
+    @abstractmethod
+    def validate(self):
+        """Validate file format"""
+        pass
+    
+    def get_extension(self):
+        """Concrete method - get file extension"""
+        return self.filename.split('.')[-1] if '.' in self.filename else ''
+
+class CSVHandler(FileHandler):
+    def validate(self):
+        return self.get_extension() == 'csv'
+    
+    def read(self):
+        if not self.validate():
+            return "Error: Not a CSV file"
+        return f"Reading CSV file: {self.filename}"
+    
+    def write(self, content):
+        if not self.validate():
+            return "Error: Not a CSV file"
+        return f"Writing to CSV file: {self.filename}\nContent: {content}"
+
+class JSONHandler(FileHandler):
+    def validate(self):
+        return self.get_extension() == 'json'
+    
+    def read(self):
+        if not self.validate():
+            return "Error: Not a JSON file"
+        return f"Reading JSON file: {self.filename}"
+    
+    def write(self, content):
+        if not self.validate():
+            return "Error: Not a JSON file"
+        return f"Writing to JSON file: {self.filename}\nContent: {content}"
+
+class XMLHandler(FileHandler):
+    def validate(self):
+        return self.get_extension() == 'xml'
+    
+    def read(self):
+        if not self.validate():
+            return "Error: Not a XML file"
+        return f"Reading XML file: {self.filename}"
+    
+    def write(self, content):
+        if not self.validate():
+            return "Error: Not a XML file"
+        return f"Writing to XML file: {self.filename}\nContent: {content}"
+
+# Test file handlers
+handlers = [
+    CSVHandler("data.csv"),
+    JSONHandler("config.json"),
+    XMLHandler("document.xml")
+]
+
+for handler in handlers:
+    print(f"File: {handler.filename} (Extension: {handler.get_extension()})")
+    print(handler.read())
+    print(handler.write("Sample data"))
+    print()
+```
+
+---
+
+## Abstraction vs Encapsulation
+
+While both are OOP principles, they serve different purposes:
+
+| Aspect | Abstraction | Encapsulation |
+|--------|-------------|---------------|
+| Purpose | Hide complexity | Hide data |
+| Focus | What an object does | How data is protected |
+| Implementation | Abstract classes, interfaces | Access modifiers, properties |
+| Goal | Simplify interface | Data security |
+| Example | Payment method interface | Private attributes with getters/setters |
+
+```{pyodide-python}
+from abc import ABC, abstractmethod
+
+class BankAccount(ABC):
+    """Demonstrates both abstraction and encapsulation"""
+    
+    def __init__(self, account_number, balance):
+        self._account_number = account_number  # Encapsulation (protected)
+        self.__balance = balance                # Encapsulation (private)
+    
+    @abstractmethod
+    def calculate_interest(self):
+        """Abstraction - must be implemented by subclasses"""
+        pass
+    
+    @property
+    def balance(self):
+        """Encapsulation - controlled access to private data"""
+        return self.__balance
+    
+    def deposit(self, amount):
+        """Concrete method with encapsulation"""
+        if amount > 0:
+            self.__balance += amount
+            return f"Deposited ${amount}. New balance: ${self.__balance}"
+        return "Invalid amount"
+
+class SavingsAccount(BankAccount):
+    def __init__(self, account_number, balance, interest_rate):
+        super().__init__(account_number, balance)
+        self.interest_rate = interest_rate
+    
+    def calculate_interest(self):
+        """Implementation of abstract method"""
+        interest = self.balance * (self.interest_rate / 100)
+        return f"Interest: ${interest:.2f}"
+
+class CheckingAccount(BankAccount):
+    def __init__(self, account_number, balance):
+        super().__init__(account_number, balance)
+    
+    def calculate_interest(self):
+        """Checking accounts typically don't earn interest"""
+        return "No interest for checking accounts"
+
+# Test accounts
+savings = SavingsAccount("SAV001", 1000, 2.5)
+checking = CheckingAccount("CHK001", 500)
+
+print(f"Savings balance: ${savings.balance}")
+print(savings.calculate_interest())
+print(savings.deposit(200))
+
+print(f"\nChecking balance: ${checking.balance}")
+print(checking.calculate_interest())
+```
+
+---
+
+## Benefits of Abstraction
+
+1. **Simplifies Complex Systems**: Users interact with simple interfaces without worrying about complexity.
+2. **Promotes Code Reusability**: Abstract classes define common behavior that can be reused.
+3. **Enforces Contracts**: Ensures subclasses implement required methods.
+4. **Enables Polymorphism**: Different implementations can be used interchangeably.
+5. **Improves Maintainability**: Changes to implementation don't affect the interface.
+6. **Better Organization**: Separates interface from implementation.
+
+---
+
+## When to Use Abstraction
+
+Use abstraction when:
+
+- You want to define a common interface for multiple related classes
+- You need to enforce that certain methods must be implemented by subclasses
+- You're designing a framework or library where others will extend your classes
+- You want to achieve polymorphism with guaranteed method signatures
+- You need to separate interface from implementation
+
+---
+
+## Exercises
+
+### Exercise 1: Media Player
+
+Create an abstract `MediaPlayer` class with different implementations:
+
+- Abstract methods: `play()`, `pause()`, `stop()`
+- Concrete method: `get_status()`
+- Implementations: `AudioPlayer`, `VideoPlayer`
+
+```{pyodide-python}
+from abc import ABC, abstractmethod
+
+class MediaPlayer(ABC):
+    def __init__(self, filename):
+        self.filename = filename
+        self.is_playing = False
+        self.is_paused = False
+    
+    @abstractmethod
+    def play(self):
+        pass
+    
+    @abstractmethod
+    def pause(self):
+        pass
+    
+    @abstractmethod
+    def stop(self):
+        pass
+    
+    def get_status(self):
+        if self.is_playing and not self.is_paused:
+            return f"Playing: {self.filename}"
+        elif self.is_paused:
+            return f"Paused: {self.filename}"
+        else:
+            return f"Stopped: {self.filename}"
+
+class AudioPlayer(MediaPlayer):
+    def play(self):
+        self.is_playing = True
+        self.is_paused = False
+        return f"🎵 Playing audio: {self.filename}"
+    
+    def pause(self):
+        if self.is_playing:
+            self.is_paused = True
+            return f"⏸️ Audio paused: {self.filename}"
+        return "Cannot pause - not playing"
+    
+    def stop(self):
+        self.is_playing = False
+        self.is_paused = False
+        return f"⏹️ Audio stopped: {self.filename}"
+
+class VideoPlayer(MediaPlayer):
+    def play(self):
+        self.is_playing = True
+        self.is_paused = False
+        return f"🎬 Playing video: {self.filename}"
+    
+    def pause(self):
+        if self.is_playing:
+            self.is_paused = True
+            return f"⏸️ Video paused: {self.filename}"
+        return "Cannot pause - not playing"
+    
+    def stop(self):
+        self.is_playing = False
+        self.is_paused = False
+        return f"⏹️ Video stopped: {self.filename}"
+
+# Test media players
+audio = AudioPlayer("song.mp3")
+video = VideoPlayer("movie.mp4")
+
+print(audio.play())
+print(audio.get_status())
+print(audio.pause())
+print(audio.get_status())
+print(audio.stop())
+print(audio.get_status())
+
+print(f"\n{video.play()}")
+print(video.get_status())
+print(video.pause())
+print(video.stop())
+```
+
+---
+
+### Exercise 2: Notification System
+
+Create an abstract `Notification` class for different notification types:
+
+- Abstract methods: `send()`, `format_message()`
+- Concrete method: `log()`
+- Implementations: `EmailNotification`, `SMSNotification`, `PushNotification`
+
+```{pyodide-python}
+from abc import ABC, abstractmethod
+from datetime import datetime
+
+class Notification(ABC):
+    def __init__(self, recipient, message):
+        self.recipient = recipient
+        self.message = message
+        self.timestamp = datetime.now()
+    
+    @abstractmethod
+    def send(self):
+        """Send the notification"""
+        pass
+    
+    @abstractmethod
+    def format_message(self):
+        """Format the message for the specific notification type"""
+        pass
+    
+    def log(self):
+        """Concrete method - log notification"""
+        return f"[{self.timestamp.strftime('%Y-%m-%d %H:%M:%S')}] Notification to {self.recipient}"
+
+class EmailNotification(Notification):
+    def __init__(self, recipient, message, subject):
+        super().__init__(recipient, message)
+        self.subject = subject
+    
+    def format_message(self):
+        return f"Subject: {self.subject}\n\n{self.message}"
+    
+    def send(self):
+        formatted = self.format_message()
+        return f"📧 Email sent to {self.recipient}\n{formatted}"
+
+class SMSNotification(Notification):
+    def format_message(self):
+        # SMS has character limit
+        max_length = 160
+        if len(self.message) > max_length:
+            return self.message[:max_length-3] + "..."
+        return self.message
+    
+    def send(self):
+        formatted = self.format_message()
+        return f"📱 SMS sent to {self.recipient}: {formatted}"
+
+class PushNotification(Notification):
+    def __init__(self, recipient, message, app_name):
+        super().__init__(recipient, message)
+        self.app_name = app_name
+    
+    def format_message(self):
+        return f"[{self.app_name}] {self.message}"
+    
+    def send(self):
+        formatted = self.format_message()
+        return f"🔔 Push notification sent to {self.recipient}: {formatted}"
+
+# Test notification system
+notifications = [
+    EmailNotification("user@example.com", "Your order has shipped!", "Order Update"),
+    SMSNotification("+1234567890", "Your verification code is 123456"),
+    PushNotification("user123", "You have a new message", "ChatApp")
+]
+
+for notification in notifications:
+    print(notification.log())
+    print(notification.send())
+    print()
+```
+
+---
+
+### Exercise 3: Report Generator
+
+Create an abstract `Report` class for generating different report formats:
+
+- Abstract methods: `generate()`, `save()`
+- Abstract property: `file_extension`
+- Concrete method: `get_filename()`
+- Implementations: `PDFReport`, `ExcelReport`, `HTMLReport`
+
+```{pyodide-python}
+from abc import ABC, abstractmethod
+
+class Report(ABC):
+    def __init__(self, title, data):
+        self.title = title
+        self.data = data
+    
+    @property
+    @abstractmethod
+    def file_extension(self):
+        """File extension for this report type"""
+        pass
+    
+    @abstractmethod
+    def generate(self):
+        """Generate the report content"""
+        pass
+    
+    @abstractmethod
+    def save(self, filename):
+        """Save the report to a file"""
+        pass
+    
+    def get_filename(self):
+        """Concrete method - generate filename"""
+        return f"{self.title.replace(' ', '_')}.{self.file_extension}"
+
+class PDFReport(Report):
+    @property
+    def file_extension(self):
+        return "pdf"
+    
+    def generate(self):
+        content = f"PDF Report: {self.title}\n"
+        content += "=" * 50 + "\n"
+        for item in self.data:
+            content += f"• {item}\n"
+        return content
+    
+    def save(self, filename=None):
+        if filename is None:
+            filename = self.get_filename()
+        content = self.generate()
+        return f"📄 Saving PDF report to {filename}\n{content}"
+
+class ExcelReport(Report):
+    @property
+    def file_extension(self):
+        return "xlsx"
+    
+    def generate(self):
+        content = f"Excel Report: {self.title}\n"
+        content += "=" * 50 + "\n"
+        content += "Row | Data\n"
+        content += "-" * 50 + "\n"
+        for i, item in enumerate(self.data, 1):
+            content += f"{i:3d} | {item}\n"
+        return content
+    
+    def save(self, filename=None):
+        if filename is None:
+            filename = self.get_filename()
+        content = self.generate()
+        return f"📊 Saving Excel report to {filename}\n{content}"
+
+class HTMLReport(Report):
+    @property
+    def file_extension(self):
+        return "html"
+    
+    def generate(self):
+        content = f"<html>\n<head><title>{self.title}</title></head>\n<body>\n"
+        content += f"<h1>{self.title}</h1>\n<ul>\n"
+        for item in self.data:
+            content += f"  <li>{item}</li>\n"
+        content += "</ul>\n</body>\n</html>"
+        return content
+    
+    def save(self, filename=None):
+        if filename is None:
+            filename = self.get_filename()
+        content = self.generate()
+        return f"🌐 Saving HTML report to {filename}\n{content}"
+
+# Test report generation
+data = ["Sales: $10,000", "Expenses: $5,000", "Profit: $5,000"]
+
+reports = [
+    PDFReport("Monthly Financial Report", data),
+    ExcelReport("Monthly Financial Report", data),
+    HTMLReport("Monthly Financial Report", data)
+]
+
+for report in reports:
+    print(f"Filename: {report.get_filename()}")
+    print(report.save())
+    print()
+```
+
+---
+
+## Summary
+
+Abstraction is a fundamental OOP principle that:
+
+- **Hides complexity** by exposing only essential features
+- **Defines contracts** through abstract methods that subclasses must implement
+- **Enables polymorphism** by allowing different implementations of the same interface
+- **Improves code organization** by separating interface from implementation
+- **Promotes flexibility** by allowing easy addition of new implementations
+- **Enhances maintainability** by reducing dependencies on specific implementations
+
+Python implements abstraction through the `abc` module with abstract base classes (`ABC`) and the `@abstractmethod` decorator, providing a powerful way to design flexible and maintainable object-oriented systems.

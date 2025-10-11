@@ -1,0 +1,794 @@
+---
+title: "Python: Encapsulation"
+subtitle: Python Encapsulation
+author: pedromartinezduran
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: Python Encapsulation - Protecting and controlling access to class data
+categories: [python, encapsulation, oop]
+toc: true
+number-sections: true
+highlight-style: pygments
+format: html
+filters:
+- pyodide
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Encapsulation in Python**
+
+**Encapsulation** is one of the fundamental principles of object-oriented programming (OOP). It refers to the bundling of data (attributes) and methods that operate on that data within a single unit (class), while restricting direct access to some of the object's components. This is a means of preventing accidental interference and misuse of the data. Encapsulation helps to hide the internal state of an object and requires all interaction to be performed through an object's methods, providing better control over the data and reducing system complexity.
+
+In Python, encapsulation is achieved through access modifiers (public, protected, and private) and property decorators that control how attributes are accessed and modified.
+
+:::
+
+## What is Encapsulation?
+
+Encapsulation is characterized by several key aspects:
+
+- **Data Hiding**: Internal object details are hidden from the outside world. Only the object itself can directly access its internal state.
+- **Controlled Access**: Access to data is controlled through public methods (getters and setters), allowing validation and logic to be applied when reading or modifying data.
+- **Abstraction**: Users of a class don't need to know how it works internally; they only need to know what methods are available.
+- **Modularity**: Encapsulated code is more modular and easier to maintain, test, and debug.
+- **Security**: Prevents unauthorized or unintended modifications to sensitive data.
+
+## Access Modifiers in Python
+
+Unlike languages like Java or C++, Python doesn't have strict access modifiers. Instead, it uses naming conventions:
+
+- **Public**: No underscore prefix. Accessible from anywhere.
+  - Example: `self.name`
+- **Protected**: Single underscore prefix (`_`). Intended for internal use within the class and its subclasses.
+  - Example: `self._balance`
+- **Private**: Double underscore prefix (`__`). Name mangling is applied to make it harder to access from outside.
+  - Example: `self.__secret`
+
+---
+
+### Public Attributes
+
+- Public attributes can be accessed and modified from anywhere.
+- This is the default behavior in Python.
+
+```{pyodide-python}
+class Person:
+    def __init__(self, name, age):
+        self.name = name  # Public attribute
+        self.age = age    # Public attribute
+
+person = Person("Alice", 30)
+print(f"Name: {person.name}")
+print(f"Age: {person.age}")
+
+# We can modify public attributes directly
+person.age = 31
+print(f"New age: {person.age}")
+```
+
+---
+
+### Protected Attributes
+
+- Protected attributes use a single underscore prefix (`_`).
+- This is a convention indicating "internal use" - not enforced by Python.
+- Can still be accessed, but signals to other developers not to access it directly.
+
+```{pyodide-python}
+class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self._balance = balance  # Protected attribute
+    
+    def get_balance(self):
+        return self._balance
+    
+    def deposit(self, amount):
+        if amount > 0:
+            self._balance += amount
+            print(f"Deposited {amount}. New balance: {self._balance}")
+        else:
+            print("Invalid deposit amount")
+
+account = BankAccount("Bob", 1000)
+print(f"Balance: {account.get_balance()}")
+
+# Still accessible (but shouldn't be used directly)
+print(f"Direct access: {account._balance}")
+
+account.deposit(500)
+```
+
+---
+
+### Private Attributes
+
+- Private attributes use a double underscore prefix (`__`).
+- Python applies name mangling: `__attribute` becomes `_ClassName__attribute`.
+- Makes it harder (but not impossible) to access from outside the class.
+
+```{pyodide-python}
+class SecureAccount:
+    def __init__(self, owner, pin):
+        self.owner = owner
+        self.__pin = pin  # Private attribute
+    
+    def verify_pin(self, pin):
+        return self.__pin == pin
+    
+    def change_pin(self, old_pin, new_pin):
+        if self.verify_pin(old_pin):
+            self.__pin = new_pin
+            print("PIN changed successfully")
+        else:
+            print("Incorrect PIN")
+
+account = SecureAccount("Charlie", 1234)
+
+# This works - using public method
+print(account.verify_pin(1234))
+print(account.verify_pin(5678))
+
+# This will cause an error
+try:
+    print(account.__pin)
+except AttributeError as e:
+    print(f"Error: {e}")
+
+# Name mangling allows access (but shouldn't be used)
+print(f"Accessing via name mangling: {account._SecureAccount__pin}")
+```
+
+---
+
+## Getters and Setters
+
+Getters and setters are methods that provide controlled access to private attributes:
+
+- **Getter**: Method that returns the value of a private attribute.
+- **Setter**: Method that sets or updates the value of a private attribute with validation.
+
+```{pyodide-python}
+class Employee:
+    def __init__(self, name, salary):
+        self.__name = name
+        self.__salary = salary
+    
+    # Getter for name
+    def get_name(self):
+        return self.__name
+    
+    # Getter for salary
+    def get_salary(self):
+        return self.__salary
+    
+    # Setter for salary with validation
+    def set_salary(self, salary):
+        if salary < 0:
+            print("Salary cannot be negative!")
+        else:
+            self.__salary = salary
+            print(f"Salary updated to {self.__salary}")
+
+emp = Employee("Diana", 50000)
+print(f"Employee: {emp.get_name()}")
+print(f"Salary: {emp.get_salary()}")
+
+emp.set_salary(55000)
+emp.set_salary(-1000)  # Validation prevents invalid value
+```
+
+---
+
+## The @property Decorator
+
+Python provides the `@property` decorator for a more Pythonic way to implement getters and setters:
+
+- Makes methods accessible like attributes.
+- Provides cleaner syntax.
+- Allows adding logic to attribute access without changing the interface.
+
+```{pyodide-python}
+class Rectangle:
+    def __init__(self, width, height):
+        self.__width = width
+        self.__height = height
+    
+    @property
+    def width(self):
+        """Getter for width"""
+        return self.__width
+    
+    @width.setter
+    def width(self, value):
+        """Setter for width with validation"""
+        if value <= 0:
+            print("Width must be positive!")
+        else:
+            self.__width = value
+    
+    @property
+    def height(self):
+        """Getter for height"""
+        return self.__height
+    
+    @height.setter
+    def height(self, value):
+        """Setter for height with validation"""
+        if value <= 0:
+            print("Height must be positive!")
+        else:
+            self.__height = value
+    
+    @property
+    def area(self):
+        """Computed property - no setter needed"""
+        return self.__width * self.__height
+
+rect = Rectangle(5, 10)
+print(f"Width: {rect.width}")
+print(f"Height: {rect.height}")
+print(f"Area: {rect.area}")
+
+# Using setters (looks like direct assignment)
+rect.width = 7
+rect.height = 12
+print(f"New area: {rect.area}")
+
+# Validation in action
+rect.width = -5
+```
+
+---
+
+## Read-Only Properties
+
+You can create read-only properties by defining only a getter without a setter:
+
+```{pyodide-python}
+class Circle:
+    def __init__(self, radius):
+        self.__radius = radius
+    
+    @property
+    def radius(self):
+        return self.__radius
+    
+    @property
+    def diameter(self):
+        """Read-only property"""
+        return self.__radius * 2
+    
+    @property
+    def area(self):
+        """Read-only property"""
+        return 3.14159 * self.__radius ** 2
+    
+    @property
+    def circumference(self):
+        """Read-only property"""
+        return 2 * 3.14159 * self.__radius
+
+circle = Circle(5)
+print(f"Radius: {circle.radius}")
+print(f"Diameter: {circle.diameter}")
+print(f"Area: {circle.area:.2f}")
+print(f"Circumference: {circle.circumference:.2f}")
+
+# Trying to set a read-only property causes an error
+try:
+    circle.area = 100
+except AttributeError as e:
+    print(f"Error: {e}")
+```
+
+---
+
+## Practical Example: Temperature Class
+
+A class that stores temperature and provides conversion between Celsius and Fahrenheit:
+
+```{pyodide-python}
+class Temperature:
+    def __init__(self, celsius=0):
+        self.__celsius = celsius
+    
+    @property
+    def celsius(self):
+        """Get temperature in Celsius"""
+        return self.__celsius
+    
+    @celsius.setter
+    def celsius(self, value):
+        """Set temperature in Celsius with validation"""
+        if value < -273.15:
+            print("Temperature cannot be below absolute zero!")
+        else:
+            self.__celsius = value
+    
+    @property
+    def fahrenheit(self):
+        """Get temperature in Fahrenheit"""
+        return (self.__celsius * 9/5) + 32
+    
+    @fahrenheit.setter
+    def fahrenheit(self, value):
+        """Set temperature using Fahrenheit"""
+        celsius = (value - 32) * 5/9
+        if celsius < -273.15:
+            print("Temperature cannot be below absolute zero!")
+        else:
+            self.__celsius = celsius
+    
+    def __str__(self):
+        return f"{self.__celsius}°C ({self.fahrenheit}°F)"
+
+temp = Temperature(25)
+print(temp)
+
+temp.celsius = 30
+print(f"Updated: {temp}")
+
+temp.fahrenheit = 86
+print(f"Set via Fahrenheit: {temp}")
+
+# Validation
+temp.celsius = -300
+```
+
+---
+
+## Practical Example: Bank Account
+
+A more complete bank account example with encapsulation:
+
+```{pyodide-python}
+class BankAccount:
+    def __init__(self, account_number, owner, initial_balance=0):
+        self.__account_number = account_number  # Private
+        self.__owner = owner                    # Private
+        self.__balance = initial_balance        # Private
+        self.__transaction_history = []         # Private
+    
+    @property
+    def account_number(self):
+        """Read-only account number"""
+        return self.__account_number
+    
+    @property
+    def owner(self):
+        """Read-only owner name"""
+        return self.__owner
+    
+    @property
+    def balance(self):
+        """Read-only balance"""
+        return self.__balance
+    
+    def deposit(self, amount):
+        """Deposit money with validation"""
+        if amount <= 0:
+            print("Deposit amount must be positive!")
+            return False
+        
+        self.__balance += amount
+        self.__transaction_history.append(f"Deposit: +{amount}")
+        print(f"Deposited {amount}. New balance: {self.__balance}")
+        return True
+    
+    def withdraw(self, amount):
+        """Withdraw money with validation"""
+        if amount <= 0:
+            print("Withdrawal amount must be positive!")
+            return False
+        
+        if amount > self.__balance:
+            print("Insufficient funds!")
+            return False
+        
+        self.__balance -= amount
+        self.__transaction_history.append(f"Withdrawal: -{amount}")
+        print(f"Withdrew {amount}. New balance: {self.__balance}")
+        return True
+    
+    def get_transaction_history(self):
+        """Return copy of transaction history"""
+        return self.__transaction_history.copy()
+    
+    def __str__(self):
+        return f"Account {self.__account_number} ({self.__owner}): ${self.__balance}"
+
+# Create account
+account = BankAccount("ACC001", "Emma", 1000)
+print(account)
+
+# Deposit and withdraw
+account.deposit(500)
+account.withdraw(200)
+account.withdraw(2000)  # Insufficient funds
+
+# Access read-only properties
+print(f"\nAccount Number: {account.account_number}")
+print(f"Owner: {account.owner}")
+print(f"Balance: ${account.balance}")
+
+# View transaction history
+print("\nTransaction History:")
+for transaction in account.get_transaction_history():
+    print(f"  - {transaction}")
+```
+
+---
+
+## Why Use Encapsulation?
+
+### 1. Data Validation
+
+```{pyodide-python}
+class Student:
+    def __init__(self, name, age):
+        self.__name = name
+        self.__age = age
+    
+    @property
+    def age(self):
+        return self.__age
+    
+    @age.setter
+    def age(self, value):
+        if not isinstance(value, int):
+            print("Age must be an integer!")
+        elif value < 0 or value > 150:
+            print("Age must be between 0 and 150!")
+        else:
+            self.__age = value
+
+student = Student("Frank", 20)
+print(f"Age: {student.age}")
+
+student.age = 25
+print(f"Updated age: {student.age}")
+
+student.age = -5
+student.age = 200
+student.age = "twenty"
+```
+
+---
+
+### 2. Maintaining Invariants
+
+```{pyodide-python}
+class Square:
+    def __init__(self, side):
+        self.__side = side
+    
+    @property
+    def side(self):
+        return self.__side
+    
+    @side.setter
+    def side(self, value):
+        if value <= 0:
+            print("Side must be positive!")
+        else:
+            self.__side = value
+    
+    @property
+    def area(self):
+        """Area is always side²"""
+        return self.__side ** 2
+    
+    @property
+    def perimeter(self):
+        """Perimeter is always 4 × side"""
+        return 4 * self.__side
+
+square = Square(5)
+print(f"Side: {square.side}")
+print(f"Area: {square.area}")
+print(f"Perimeter: {square.perimeter}")
+
+square.side = 10
+print(f"\nAfter changing side to 10:")
+print(f"Area: {square.area}")
+print(f"Perimeter: {square.perimeter}")
+```
+
+---
+
+### 3. Flexibility to Change Implementation
+
+```{pyodide-python}
+class Product:
+    def __init__(self, name, price_cents):
+        self.__name = name
+        self.__price_cents = price_cents  # Store as cents internally
+    
+    @property
+    def price(self):
+        """Return price in dollars"""
+        return self.__price_cents / 100
+    
+    @price.setter
+    def price(self, dollars):
+        """Set price using dollars"""
+        self.__price_cents = int(dollars * 100)
+    
+    @property
+    def price_cents(self):
+        """Direct access to cents if needed"""
+        return self.__price_cents
+    
+    def __str__(self):
+        return f"{self.__name}: ${self.price:.2f}"
+
+product = Product("Widget", 1250)  # 12.50 in cents
+print(product)
+
+product.price = 15.99
+print(f"Updated: {product}")
+print(f"Price in cents: {product.price_cents}")
+```
+
+---
+
+## Encapsulation Best Practices
+
+1. **Use private attributes for internal state** that shouldn't be modified directly.
+2. **Provide public methods** for controlled access to private data.
+3. **Use @property decorator** for Pythonic getters and setters.
+4. **Validate data** in setters to maintain object integrity.
+5. **Make computed properties read-only** when they depend on other attributes.
+6. **Document your interface** so users know which methods are public.
+7. **Follow naming conventions**: single underscore for protected, double for private.
+
+---
+
+## Exercises
+
+### Exercise 1: Person Class
+
+Create a `Person` class with encapsulation:
+
+- Private attributes: `__name`, `__age`, `__email`
+- Use `@property` decorators for getters
+- Validate age (must be between 0 and 150)
+- Validate email (must contain '@')
+
+```{pyodide-python}
+class Person:
+    def __init__(self, name, age, email):
+        self.__name = name
+        self.__age = None
+        self.__email = None
+        self.age = age      # Use setter for validation
+        self.email = email  # Use setter for validation
+    
+    @property
+    def name(self):
+        return self.__name
+    
+    @property
+    def age(self):
+        return self.__age
+    
+    @age.setter
+    def age(self, value):
+        if not isinstance(value, int) or value < 0 or value > 150:
+            print("Invalid age! Must be between 0 and 150.")
+        else:
+            self.__age = value
+    
+    @property
+    def email(self):
+        return self.__email
+    
+    @email.setter
+    def email(self, value):
+        if '@' not in value:
+            print("Invalid email! Must contain '@'.")
+        else:
+            self.__email = value
+    
+    def __str__(self):
+        return f"{self.__name}, {self.__age} years old, {self.__email}"
+
+# Test the class
+person = Person("Grace", 28, "grace@example.com")
+print(person)
+
+person.age = 30
+print(f"Updated age: {person.age}")
+
+person.age = 200  # Invalid
+person.email = "invalid-email"  # Invalid
+```
+
+---
+
+### Exercise 2: Car Class
+
+Create a `Car` class with:
+
+- Private attributes: `__brand`, `__model`, `__speed`, `__max_speed`
+- Methods: `accelerate(amount)`, `brake(amount)`
+- Speed cannot be negative or exceed max_speed
+- Read-only property for `status` that returns a description
+
+```{pyodide-python}
+class Car:
+    def __init__(self, brand, model, max_speed=200):
+        self.__brand = brand
+        self.__model = model
+        self.__max_speed = max_speed
+        self.__speed = 0
+    
+    @property
+    def brand(self):
+        return self.__brand
+    
+    @property
+    def model(self):
+        return self.__model
+    
+    @property
+    def speed(self):
+        return self.__speed
+    
+    @property
+    def max_speed(self):
+        return self.__max_speed
+    
+    @property
+    def status(self):
+        if self.__speed == 0:
+            return "Stopped"
+        elif self.__speed < 50:
+            return "Moving slowly"
+        elif self.__speed < 100:
+            return "Cruising"
+        else:
+            return "Moving fast"
+    
+    def accelerate(self, amount):
+        if amount < 0:
+            print("Use brake() to slow down!")
+            return
+        
+        new_speed = self.__speed + amount
+        if new_speed > self.__max_speed:
+            self.__speed = self.__max_speed
+            print(f"Maximum speed reached: {self.__max_speed} km/h")
+        else:
+            self.__speed = new_speed
+            print(f"Accelerated to {self.__speed} km/h")
+    
+    def brake(self, amount):
+        if amount < 0:
+            print("Brake amount must be positive!")
+            return
+        
+        new_speed = self.__speed - amount
+        if new_speed < 0:
+            self.__speed = 0
+            print("Car stopped")
+        else:
+            self.__speed = new_speed
+            print(f"Slowed down to {self.__speed} km/h")
+    
+    def __str__(self):
+        return f"{self.__brand} {self.__model} - Speed: {self.__speed} km/h ({self.status})"
+
+# Test the car
+car = Car("Tesla", "Model 3", 250)
+print(car)
+
+car.accelerate(50)
+print(car)
+
+car.accelerate(80)
+print(car)
+
+car.accelerate(200)  # Will hit max speed
+print(car)
+
+car.brake(100)
+print(car)
+
+car.brake(200)  # Will stop
+print(car)
+```
+
+---
+
+### Exercise 3: Library Book System
+
+Create a `Book` class with encapsulation for a library system:
+
+- Private attributes: `__title`, `__author`, `__isbn`, `__is_borrowed`
+- Methods: `borrow()`, `return_book()`
+- Read-only properties for title, author, isbn
+- Property `available` that returns borrowing status
+
+```{pyodide-python}
+class Book:
+    def __init__(self, title, author, isbn):
+        self.__title = title
+        self.__author = author
+        self.__isbn = isbn
+        self.__is_borrowed = False
+    
+    @property
+    def title(self):
+        return self.__title
+    
+    @property
+    def author(self):
+        return self.__author
+    
+    @property
+    def isbn(self):
+        return self.__isbn
+    
+    @property
+    def available(self):
+        return not self.__is_borrowed
+    
+    def borrow(self):
+        if self.__is_borrowed:
+            print(f"'{self.__title}' is already borrowed!")
+            return False
+        else:
+            self.__is_borrowed = True
+            print(f"'{self.__title}' has been borrowed.")
+            return True
+    
+    def return_book(self):
+        if not self.__is_borrowed:
+            print(f"'{self.__title}' was not borrowed!")
+            return False
+        else:
+            self.__is_borrowed = False
+            print(f"'{self.__title}' has been returned.")
+            return True
+    
+    def __str__(self):
+        status = "Available" if self.available else "Borrowed"
+        return f"'{self.__title}' by {self.__author} [{status}]"
+
+# Test the library system
+book1 = Book("1984", "George Orwell", "978-0451524935")
+book2 = Book("To Kill a Mockingbird", "Harper Lee", "978-0061120084")
+
+print(book1)
+print(book2)
+
+book1.borrow()
+print(book1)
+
+book1.borrow()  # Already borrowed
+
+book1.return_book()
+print(book1)
+
+book1.return_book()  # Not borrowed
+```
+
+---
+
+## Summary
+
+Encapsulation is a fundamental OOP principle that:
+
+- **Protects data** from unauthorized access and modification
+- **Provides controlled access** through methods and properties
+- **Enables validation** to maintain data integrity
+- **Improves maintainability** by hiding implementation details
+- **Increases flexibility** to change internal implementation without affecting external code
+
+Python uses naming conventions (single and double underscores) and the `@property` decorator to implement encapsulation in a Pythonic way.

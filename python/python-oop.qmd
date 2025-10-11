@@ -715,4 +715,41 @@ for passenger in flight1.passengers:
     print(passenger.name)
 ```
 
+### Sports League
+
+Implement a simple system for managing a sports league, where each team has several players with individual performance scores.
+
++ Class `Player`: should include attributes such as `name`, `position`, and `performance_score`.
++ Class `Team`: should include attributes like `team_name` and a list of `Player` objects.
++ External function `best_player(team)`: this function must not be part of any class. It should receive a Team object as parameter, iterate through its list of players, and return the Player with the highest performance_score. Check the example code to see how to implement your classes and the external function correctly.
+
+```{pyodide-python}
+class Player:
+    
+    def __init__(self, name, position, performance_score):
+        self.name = name
+        self.position = position
+        self.performance_score = performance_score
+        
+class Team:
+    
+    def __init__(self, team_name):
+        self.team_name = team_name 
+        self.players = []
+        
+def best_player(team):
+    highest_score = max(p.performance_score for p in team.players)
+    best_player = [p.name for p in team.players if p.performance_score == highest_score]
+    return best_player
+        
+player1 = Player("Alice", "Forward", 8.5)
+player2 = Player("Bob", "Guard", 9.0)
+player3 = Player("Charlie", "Center", 9.0)
+
+teamA = Team("Team A")
+teamA.players.extend([player1, player2, player3])
+
+print(best_player(teamA))
+```
+
 
