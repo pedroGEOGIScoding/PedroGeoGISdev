@@ -624,7 +624,7 @@ rec1 = Rectangle(10, 5)
 rec1.area()
 rec1.perimeter()
 ```
-
+---
 
 ### Shopping Cart
 
@@ -714,6 +714,7 @@ print("Has the following passengers:")
 for passenger in flight1.passengers:
     print(passenger.name)
 ```
+---
 
 ### Sports League
 
@@ -751,5 +752,243 @@ teamA.players.extend([player1, player2, player3])
 
 print(best_player(teamA))
 ```
+---
+
+### School Management
+
+Implement a simple system to manage a school, keeping track of students and the courses they are enrolled in.
+
++ Class `Course`: should represent a subject (e.g., Mathematics, Science) and include attributes such as `course_name` and `course_code`.
++ Class `Student`: should include attributes like `student_id`, `name`, and `enrolled_courses` (a list of `Course` objects).
++ External function `is_enrolled(student, course_code)`: this function must not be part of any class. It should receive a `Student` object and a `course_code`, and return `True` if the student is enrolled in that course, or `False` otherwise.
+
+```{pyodide-python}
+class Course:
+    def __init__(self, course_name, course_code):
+        self.course_name = course_name
+        self.course_code = course_code
+class Student:
+    def __init__(self, student_id, name):
+        self.student_id = student_id
+        self.name = name
+        self.enrolled_courses = []
+def is_enrolled(student, course_code):
+    """
+    To use the enrolled_courses list from the student class in the function
+    is_enrolled, it should be called and prefixed for its class: `student.enrolled_courses`
+    """
+    course_code_lst = [c.course_code for c in student.enrolled_courses]
+    # As course_code is a parameter of the function, it has not been called or prefixed for its class
+    if course_code in course_code_lst:
+        return True
+    return False
+    
+# Definition of two courses
+math = Course("Mathematics", "MATH_1")
+english = Course("English", "ENG_1")
+
+# Creation of two students
+alice = Student(1, "Alice")
+bob = Student(2, "Bob")
+
+# Enroll two students to courses
+alice.enrolled_courses.append(math)
+bob.enrolled_courses.extend([math, english])
+
+# Check enrollment
+# Draw attention on how the function is_enrolled is used with the conditional with the print function
+print(f"Is Alice enrolled in MATH_1? {'Yes' if is_enrolled(alice, 'MATH_1') else 'No'}")
+print(f"Is Bob enrolled in ENG_1? {'Yes' if is_enrolled(bob, 'ENG_1') else 'No'}")
+print(f"Is Bob enrolled in ENG_1? {'Yes' if is_enrolled(bob, 'ENG_1') else 'No'}")
+```
+---
+
+### Robot Dance Party
+
+Hosting a **Robot Dance Party** is needed to design two classes that work together to simulate the event:
+
++ Class `RobotDancer`: represents a single robot dancer. Each robot should have:
+    + `robot_id`: a unique identifier for the robot.
+    + `name`: the robot's name.
+    + `dance_move`: the name of its dance move (e.g., "Moonwalk", "Robot Wave").
+    + The class should include a method `dance()` that prints a message like:
+    + R2D2 is doing the Moonwalk!
++ Class `DanceFloor`: represents the dance floor where robots perform. It should:
+    + Store a list of `RobotDancer` objects.
+    + Include a method `add_robot(robot)` to add a new robot to the floor.
+    + Include a method `display_robots()` that lists the name of the robots currently on the dance floor. Print a special message in case there are no robots on the dance floor.
+    + Include a method `start_dancing()` that makes all robots perform their dance moves by calling each robot's `dance()` method. Print a special message in case there are no robots on the dance floor.
+
+```{pyodide-python}
+class RobotDancer:
+    def __init__(self, robot_id, name, dance_move):
+        self.robot_id = robot_id
+        self.name = name
+        self.dance_move = dance_move
+
+    def dance(self):
+        print(f"{self.name} is doing the {self.dance_move}!")
+
+class DanceFloor:
+    def __init__(self):
+        self.robots = []
+
+    def add_robot(self, robot):
+        self.robots.append(robot)
+        print(f"{robot.name} has entered the dance floor.")
+
+    def display_robots(self):
+        print("\n--- Robots on the Dance Floor ---")
+        if not self.robots:
+            print("No robots on the floor yet.")
+        else:
+            print("Robots on the dance floor:")
+            for robot in self.robots:
+                print(f"\t{robot.name}")
+
+    def start_dancing(self):
+        if not self.robots:
+            print("No robots to dance yet!")
+            return
+        print("\n--- Let the Dance Party Begin! ---")
+        for robot in self.robots:
+            robot.dance()
+
+# Example usage
+
+# This should consider that there are no robots on the dance floor
+dance_floor = DanceFloor()
+dance_floor.display_robots()
+dance_floor.start_dancing()
+
+# Robot Dancers
+r2d2 = RobotDancer(1, "R2D2", "Moonwalk")
+wall_e = RobotDancer(2, "Wall-E", "Robot Wave")
+bender = RobotDancer(3, "Bender", "Circuit Salsa")
+
+# Dance Floor Setup
+dance_floor.add_robot(r2d2)
+dance_floor.add_robot(wall_e)
+dance_floor.add_robot(bender)
+
+# Party Time!
+dance_floor.display_robots()
+dance_floor.start_dancing()
+```
+### Inventory Management System
+
+Design an inventory management system for a local store called **MiniMart**. The goal is to help the store track products, manage stock, and generate simple sales reports. In this system, the **MiniMart** class is responsible for keeping track of how many units of each product are in stock. Each product itself only describes what it is and how much it costs.
+
+* Class `Product`: represents an item that can be sold by the store. Each product should have:
+  + `product_id`: a unique identifier.
+  + `name`: the product’s name (e.g., "Apple").
+  + `price`: the price per unit.
+
+This class does not manage stock quantities — the store does.
+
+* Class `MiniMart`: represents the store and manages:
+  + The available products and their current quantities. The store keeps track of available products and their quantities using a dictionary. Each key is a product ID, and its value is another dictionary containing the product object under the key "product" and the current stock under the key "quantity"
+  + Adding new products to the store inventory. Consider a product might already be in the store, so you should not be able to add it.
+  + Selling products (reducing stock and increasing total revenue). When attempting to sell a product, if the requested quantity exceeds the available stock, the sale should be blocked — the stock should remain unchanged, and an error message should be displayed indicating insufficient stock. Also, display an error message if the product to be sold is not in the store.
+  + Restocking products (increasing stock).
+  + Generating sales reports that display total revenue and list products that are low in stock (less than 5 units).
+
+```{pyodide-python}
+class Product:
+    def __init__(self, product_id, name, price):
+        self.product_id = product_id
+        self.name = name
+        self.price = price
 
 
+class MiniMart:
+    def __init__(self):
+        # Store inventory: key = product_id, value = {"product": Product, "quantity": int}
+        self.inventory = {}
+        self.total_revenue = 0.0
+
+    def add_product(self, product, initial_quantity=0):
+        if product.product_id in self.inventory:
+            print(f"{product.name} is already in inventory. Cannot add again.")
+            return
+        self.inventory[product.product_id] = {
+            "product": product,
+            "quantity": initial_quantity
+        }
+        print(f"{product.name} added to inventory with {initial_quantity} units.")
+
+    def sell_product(self, product_id, amount):
+        if product_id not in self.inventory:
+            print(f"Product ID {product_id} not found in store.")
+            return
+
+        product_info = self.inventory[product_id]
+        product = product_info["product"]
+        current_stock = product_info["quantity"]
+
+        if amount > current_stock:
+            print(f"Not enough {product.name} in stock!")
+            return
+
+        product_info["quantity"] -= amount
+        revenue = amount * product.price
+        self.total_revenue += revenue
+        print(f"Sold {amount}x {product.name} for {revenue:.2f}€.")
+
+    def restock_product(self, product_id, amount):
+        if product_id not in self.inventory:
+            print(f"Product ID {self.product_id} not found in store.")
+            return
+        self.inventory[product_id]["quantity"] += amount
+        product = self.inventory[product_id]["product"]
+        print(f"{product.name} restocked by {amount} units (now {self.inventory[product_id]['quantity']} in stock).")
+
+    def generate_sales_report(self):
+        print("\n--- MiniMart Sales Report ---")
+        print(f"Total revenue: {self.total_revenue:.2f}€")
+
+        low_stock = [
+            info for info in self.inventory.values() if info["quantity"] < 5
+        ]
+        print("\nProducts low in stock (<5 units):")
+        if not low_stock:
+            print("All products sufficiently stocked.")
+        else:
+            for info in low_stock:
+                product = info["product"]
+                print(f" - {product.name}: {info['quantity']} units remaining")
+
+
+# Example usage
+
+# Create products
+apple = Product(1, "Apple", 0.5)
+banana = Product(2, "Banana", 0.3)
+orange = Product(3, "Orange", 0.75)
+
+# Create the store
+store = MiniMart()
+
+# Add products with initial stock
+store.add_product(apple, 100)
+store.add_product(banana, 50)
+store.add_product(orange, 5)
+
+# Sell some products
+store.sell_product(apple.product_id, 20)
+store.sell_product(banana.product_id, 48)
+store.sell_product(orange.product_id, 2)
+
+# Restock oranges
+store.restock_product(orange.product_id, 10)
+
+# Attempt to add an existing product
+store.add_product(apple, 30)  # Should not add again
+
+# Attempt to sell more than available
+store.sell_product(orange.product_id, 50)  # Error message of insufficient stock
+melon = Product(4, "Melon", 1.5)
+store.sell_product(melon.product_id, 4)  # Error message of product not available
+
+store.generate_sales_report()
+```
