@@ -41,12 +41,18 @@ Encapsulation is characterized by several key aspects:
 
 Unlike languages like Java or C++, Python doesn't have strict access modifiers. Instead, it uses naming conventions:
 
-- **Public**: No underscore prefix. Accessible from anywhere.
-  - Example: `self.name`
-- **Protected**: Single underscore prefix (`_`). Intended for internal use within the class and its subclasses.
-  - Example: `self._balance`
-- **Private**: Double underscore prefix (`__`). Name mangling is applied to make it harder to access from outside.
-  - Example: `self.__secret`
+  + Public, protected and private are not defined in Python.
+  + In Python, everything is public by default.
+  + Any attribute or method can be accessed from outside the class.
+
+### Convention
+
+- **Public**: No underscore prefix. Accessible from anywhere. Normal variable/method name without underscores.
+  - E.g., `self.name = 'Cake'`
+- **Protected**: Prefix with a single underscore (`_`). Intended for internal use within the class and its subclasses.
+  - E.g., `self._discount = 0.1`
+- **Private**: Prefix with double underscores (`__`). Name mangling is applied to make it harder to access from outside.
+  - E.g., `self.__secret = 'hidden'`
 
 ---
 

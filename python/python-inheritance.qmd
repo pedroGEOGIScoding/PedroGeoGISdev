@@ -319,7 +319,10 @@ b.description()
 
 ## Example
 
-```python
+```{pyodide-python}
+
+import math
+
 # Base class
 class Shape:
     def area(self):
@@ -327,7 +330,6 @@ class Shape:
 
     def draw(self):
         raise Exception('Method "draw" must be implemented.')
-
 
 class Circle(Shape):
     def __init__(self, radius):
@@ -338,11 +340,7 @@ class Circle(Shape):
 
     def draw(self):
         print("O")
-```
 
----
-
-```python
 class Rectangle(Shape):
     def __init__(self, width, height):
         self.width = width
@@ -354,7 +352,6 @@ class Rectangle(Shape):
     def draw(self):
         print("▭")
 
-
 class Triangle(Shape):
     def __init__(self, base, height):
         self.base = base
@@ -365,11 +362,7 @@ class Triangle(Shape):
 
     def draw(self):
         print("▲")
-```
 
----
-
-```{pyodide-python}
 # Function that takes any shape and works polymorphically
 def interact_with_shape(form):
     print("Drawing the shape: ", end="")
@@ -387,7 +380,7 @@ interact_with_shape(Rectangle(4, 6))
 
 ## More realistic example
 
-- HR program to track employees in a company.
+HR program to track employees in a company.
 
 
 ```python
@@ -512,20 +505,3 @@ def PaymentSystem():
             else:
                 print(f"Payment error: {worker.id_card}.")
 ```
-
----
-
-## Bonus: Public, protected and private
-
-- Public, protected and private are not defined in Python.
-- In Python, everything is public by default.
-- Any attribute or method can be accessed from outside the class.
-
-### Convention
-
-- **Public**: Normal variable/method name without underscores.
-  - E.g., `self.name = 'Cake'`
-- **Protected**: Prefix with a single underscore.
-  - E.g., `self._discount = 0.1`
-- **Private**: Prefix with two underscores.
-  - E.g., `self.__secret = 'hidden'`
