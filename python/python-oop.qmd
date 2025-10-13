@@ -730,6 +730,11 @@ class Player:
     def __init__(self, name, position, performance_score):
         self.name = name
         self.position = position
+class Player:
+    
+    def __init__(self, name, position, performance_score):
+        self.name = name
+        self.position = position
         self.performance_score = performance_score
         
 class Team:
@@ -739,18 +744,21 @@ class Team:
         self.players = []
         
 def best_player(team):
-    highest_score = max(p.performance_score for p in team.players)
-    best_player = [p.name for p in team.players if p.performance_score == highest_score]
-    return best_player
-        
+    return max(team.players, key=lambda player: player.performance_score)
+             
+            
 player1 = Player("Alice", "Forward", 8.5)
 player2 = Player("Bob", "Guard", 9.0)
-player3 = Player("Charlie", "Center", 9.0)
+player3 = Player("Charlie", "Center", 7.0)
 
 teamA = Team("Team A")
 teamA.players.extend([player1, player2, player3])
 
-print(best_player(teamA))
+# Find the best player
+# the variable star is an object of the Player class
+star = best_player(teamA)
+print(f"The best player in {teamA.team_name} is {star.name}.")
+print(f"He/She is a {star.position} and his/her score is {star.performance_score}.")
 ```
 ---
 
