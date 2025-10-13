@@ -1,0 +1,646 @@
+---
+title: "JavaScript: Objects"
+subtitle: JavaScript Objects
+author: Pedro GeoGIS
+date: "01/13/2025"
+date-modified: last-modified
+date-format: full
+description: JavaScript Objects - Creating, Accessing, and Manipulating Objects
+categories: [javascript, objects, data-structures]
+toc: true
+number-sections: true
+highlight-style: pygments
+format: 
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Objects**
+
+**Objects** are used to store keyed collections of various data and more complex entities. Unlike primitive types that contain only a single value, objects can store multiple values as properties. An object is a collection of key-value pairs where keys are strings (or Symbols) and values can be of any type. Objects are fundamental to JavaScript and penetrate almost every aspect of the language.
+
+:::
+
+---
+
+## Creating Objects
+
+An object can be created with curly brackets `{...}` with an optional list of properties.
+
+### Object Literal Syntax
+
+```javascript
+let user = {};  // empty object
+```
+
+### Object Constructor Syntax
+
+```javascript
+let user = new Object();  // empty object
+```
+
+**Recommendation**: Use object literal syntax `{}` as it's more concise and commonly used.
+
+---
+
+## Literals and Properties
+
+We can immediately put some properties into `{...}` as "key: value" pairs:
+
+```javascript
+let user = {
+  name: "John",    // by key "name" store value "John"
+  age: 30          // by key "age" store value 30
+};
+```
+
+A property has a **key** (also known as "name" or "identifier") before the colon `:` and a **value** to the right of it.
+
+---
+
+## Accessing Properties
+
+### Dot Notation
+
+Property values are accessible using the dot notation:
+
+```javascript
+let user = {
+  name: "John",
+  age: 30
+};
+
+alert(user.name);  // John
+alert(user.age);   // 30
+```
+
+---
+
+### Adding Properties
+
+```javascript
+user.isAdmin = true;
+```
+
+---
+
+### Removing Properties
+
+To remove a property, use the `delete` operator:
+
+```javascript
+delete user.age;
+```
+
+---
+
+### Multiword Property Names
+
+We can use multiword property names, but they must be quoted:
+
+```javascript
+let user = {
+  name: "John",
+  age: 30,
+  "likes birds": true  // multiword property name must be quoted
+};
+```
+
+---
+
+### Trailing Comma
+
+The last property in the list may end with a comma:
+
+```javascript
+let user = {
+  name: "John",
+  age: 30,  // trailing comma
+};
+```
+
+This makes it easier to add/remove/move around properties.
+
+---
+
+## Square Bracket Notation
+
+For multiword properties, the dot access doesn't work:
+
+```javascript
+// This would give a syntax error
+user.likes birds = true
+```
+
+Use **square bracket notation** instead:
+
+```javascript
+let user = {};
+
+// set
+user["likes birds"] = true;
+
+// get
+alert(user["likes birds"]);  // true
+
+// delete
+delete user["likes birds"];
+```
+
+---
+
+### Dynamic Property Access
+
+Square brackets provide a way to obtain the property name from a variable:
+
+```javascript
+let user = {
+  name: "John",
+  age: 30
+};
+
+let key = prompt("What do you want to know about the user?", "name");
+
+// access by variable
+alert(user[key]);  // John (if enter "name")
+```
+
+The dot notation cannot be used this way:
+
+```javascript
+let key = "name";
+alert(user.key);  // undefined (looks for property named "key")
+```
+
+---
+
+## Computed Properties
+
+We can use square brackets in an object literal when creating an object. That's called **computed properties**.
+
+```javascript
+let fruit = prompt("Which fruit to buy?", "apple");
+
+let bag = {
+  [fruit]: 5,  // the name of the property is taken from the variable fruit
+};
+
+alert(bag.apple);  // 5 if fruit="apple"
+```
+
+This is the same as:
+
+```javascript
+let fruit = prompt("Which fruit to buy?", "apple");
+let bag = {};
+bag[fruit] = 5;
+```
+
+---
+
+### Complex Expressions
+
+```javascript
+let fruit = 'apple';
+let bag = {
+  [fruit + 'Computers']: 5  // bag.appleComputers = 5
+};
+```
+
+---
+
+## Property Value Shorthand
+
+In real code, we often use existing variables as values for property names:
+
+```javascript
+function makeUser(name, age) {
+  return {
+    name: name,
+    age: age,
+  };
+}
+
+let user = makeUser("John", 30);
+alert(user.name);  // John
+```
+
+---
+
+### Shorthand
+
+When property name and variable name are the same, we can use **property value shorthand**:
+
+```javascript
+function makeUser(name, age) {
+  return {
+    name,  // same as name: name
+    age,   // same as age: age
+  };
+}
+```
+
+We can use both normal properties and shorthands in the same object:
+
+```javascript
+let user = {
+  name,      // same as name:name
+  age: 30
+};
+```
+
+---
+
+## Property Names Limitations
+
+A variable cannot have a name equal to one of the language-reserved words like "for", "let", "return", etc.
+
+But for an object property, there's no such restriction:
+
+```javascript
+let obj = {
+  for: 1,
+  let: 2,
+  return: 3
+};
+
+alert(obj.for + obj.let + obj.return);  // 6
+```
+
+---
+
+### Special Property: __proto__
+
+There's a minor gotcha with a special property named `__proto__`. We can't set it to a non-object value:
+
+```javascript
+let obj = {};
+obj.__proto__ = 5;  // assign a number
+alert(obj.__proto__);  // [object Object] - didn't work as intended
+```
+
+---
+
+## Property Existence Test
+
+A notable feature of objects in JavaScript is that it's possible to access any property. There will be no error if the property doesn't exist!
+
+Reading a non-existing property just returns `undefined`:
+
+```javascript
+let user = {};
+alert(user.noSuchProperty === undefined);  // true means "no such property"
+```
+
+---
+
+### The "in" Operator
+
+There's a special operator `"in"` for checking property existence:
+
+```javascript
+let user = { name: "John", age: 30 };
+
+alert("age" in user);      // true, user.age exists
+alert("blabla" in user);   // false, user.blabla doesn't exist
+```
+
+Note that on the left side of `in` there must be a **property name** (usually a quoted string).
+
+---
+
+### Why Use "in"?
+
+Usually, the comparison with `undefined` works fine. But there's a special case when it fails:
+
+```javascript
+let obj = {
+  test: undefined
+};
+
+alert(obj.test);           // undefined, so property doesn't exist?
+alert("test" in obj);      // true, the property does exist!
+```
+
+---
+
+## The "for...in" Loop
+
+To walk over all keys of an object, use the `for...in` loop:
+
+```javascript
+for (key in object) {
+  // executes the body for each key among object properties
+}
+```
+
+---
+
+### Example
+
+```javascript
+let user = {
+  name: "John",
+  age: 30,
+  isAdmin: true
+};
+
+for (let key in user) {
+  // keys
+  alert(key);         // name, age, isAdmin
+  // values for the keys
+  alert(user[key]);   // John, 30, true
+}
+```
+
+---
+
+## Object References and Copying
+
+One of the fundamental differences between objects and primitives is that objects are stored and copied **"by reference"**, whereas primitive values are copied **"as a whole value"**.
+
+```javascript
+let message = "Hello!";
+let phrase = message;  // copied by value
+```
+
+With objects:
+
+```javascript
+let user = { name: "John" };
+let admin = user;  // copy the reference
+
+admin.name = 'Pete';  // changed by the "admin" reference
+alert(user.name);     // 'Pete', changes are seen from the "user" reference
+```
+
+---
+
+### Comparison by Reference
+
+Two objects are equal only if they are the same object:
+
+```javascript
+let a = {};
+let b = a;  // copy the reference
+
+alert(a == b);   // true, both variables reference the same object
+alert(a === b);  // true
+```
+
+But two independent objects are not equal:
+
+```javascript
+let a = {};
+let b = {};  // two independent objects
+
+alert(a == b);  // false
+```
+
+---
+
+## Cloning Objects
+
+### Manual Cloning
+
+```javascript
+let user = {
+  name: "John",
+  age: 30
+};
+
+let clone = {};  // the new empty object
+
+// let's copy all user properties into it
+for (let key in user) {
+  clone[key] = user[key];
+}
+
+// now clone is a fully independent object
+clone.name = "Pete";
+alert(user.name);  // still John in the original object
+```
+
+---
+
+### Object.assign
+
+We can use `Object.assign` for cloning:
+
+```javascript
+Object.assign(dest, ...sources)
+```
+
+Example:
+
+```javascript
+let user = { name: "John" };
+
+let permissions1 = { canView: true };
+let permissions2 = { canEdit: true };
+
+// copies all properties from permissions1 and permissions2 into user
+Object.assign(user, permissions1, permissions2);
+
+// now user = { name: "John", canView: true, canEdit: true }
+```
+
+---
+
+### Simple Cloning
+
+```javascript
+let user = {
+  name: "John",
+  age: 30
+};
+
+let clone = Object.assign({}, user);
+```
+
+---
+
+## Nested Objects
+
+Objects can contain other objects as properties:
+
+```javascript
+let user = {
+  name: "John",
+  sizes: {
+    height: 182,
+    width: 50
+  }
+};
+
+alert(user.sizes.height);  // 182
+```
+
+---
+
+### Deep Cloning
+
+For nested objects, simple cloning doesn't work:
+
+```javascript
+let user = {
+  name: "John",
+  sizes: {
+    height: 182,
+    width: 50
+  }
+};
+
+let clone = Object.assign({}, user);
+
+alert(user.sizes === clone.sizes);  // true, same object
+
+// user and clone share sizes
+user.sizes.width = 60;
+alert(clone.sizes.width);  // 60, changed from the other object
+```
+
+Use `structuredClone` for deep cloning:
+
+```javascript
+let clone = structuredClone(user);
+
+alert(user.sizes === clone.sizes);  // false, different objects
+
+user.sizes.width = 60;
+alert(clone.sizes.width);  // 50, not affected
+```
+
+---
+
+## Examples
+
+### Example 1: User Object
+
+```javascript
+let user = {
+  name: "John",
+  age: 30,
+  email: "john@example.com",
+  isAdmin: false
+};
+
+console.log(user.name);   // John
+console.log(user["age"]); // 30
+```
+
+---
+
+### Example 2: Modifying Properties
+
+```javascript
+let user = {
+  name: "John",
+  age: 30
+};
+
+user.age = 31;
+user.city = "New York";
+delete user.age;
+
+console.log(user);  // { name: "John", city: "New York" }
+```
+
+---
+
+### Example 3: Methods in Objects
+
+```javascript
+let user = {
+  name: "John",
+  age: 30,
+  sayHi: function() {
+    alert("Hello!");
+  }
+};
+
+user.sayHi();  // Hello!
+
+// Method shorthand
+let user2 = {
+  name: "John",
+  sayHi() {  // same as sayHi: function()
+    alert("Hello!");
+  }
+};
+```
+
+---
+
+### Example 4: this Keyword
+
+```javascript
+let user = {
+  name: "John",
+  age: 30,
+  sayHi() {
+    alert(this.name);  // "this" refers to the current object
+  }
+};
+
+user.sayHi();  // John
+```
+
+---
+
+### Example 5: Iterating Over Properties
+
+```javascript
+let user = {
+  name: "John",
+  age: 30,
+  city: "New York"
+};
+
+for (let key in user) {
+  console.log(`${key}: ${user[key]}`);
+}
+// Output:
+// name: John
+// age: 30
+// city: New York
+```
+
+---
+
+### Example 6: Object as Function Parameter
+
+```javascript
+function printUser(user) {
+  console.log(`Name: ${user.name}`);
+  console.log(`Age: ${user.age}`);
+}
+
+let user = {
+  name: "Alice",
+  age: 25
+};
+
+printUser(user);
+```
+
+---
+
+## Summary
+
+- Objects are collections of key-value pairs
+- Create objects with `{}` or `new Object()`
+- Access properties with dot notation (`obj.prop`) or square brackets (`obj["prop"]`)
+- Square brackets allow dynamic property access
+- Use `delete` to remove properties
+- Use `in` operator to check if property exists
+- Use `for...in` loop to iterate over object properties
+- Objects are stored and copied by reference
+- Use `Object.assign()` for shallow cloning
+- Use `structuredClone()` for deep cloning
+- Property names can be any string (including reserved words)
+- Objects can contain other objects (nested objects)
+- Objects can have methods (functions as properties)

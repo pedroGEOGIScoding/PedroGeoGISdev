@@ -1,0 +1,719 @@
+---
+title: "JavaScript: Functions"
+subtitle: JavaScript Functions
+author: Pedro GeoGIS
+date: "01/13/2025"
+date-modified: last-modified
+date-format: full
+description: JavaScript Functions - Declaration, Expressions, Parameters, and Return Values
+categories: [javascript, functions]
+toc: true
+number-sections: true
+highlight-style: pygments
+format: 
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Functions**
+
+**Functions** are the main "building blocks" of programs. They allow code to be called many times without repetition. Functions can accept parameters (inputs), perform actions, and return values (outputs). JavaScript supports multiple ways to define functions: function declarations, function expressions, and arrow functions. Functions help organize code, make it reusable, and improve maintainability.
+
+:::
+
+---
+
+## Function Declaration
+
+To create a function, we can use a **function declaration**:
+
+```javascript
+function showMessage() {
+  alert('Hello everyone!');
+}
+```
+
+The `function` keyword goes first, then the **name** of the function, then a list of **parameters** between parentheses (comma-separated), and finally the **function body** between curly braces.
+
+---
+
+### Syntax
+
+```javascript
+function name(parameter1, parameter2, ...parameterN) {
+  // body
+}
+```
+
+---
+
+### Calling a Function
+
+Our new function can be called by its name:
+
+```javascript
+function showMessage() {
+  alert('Hello everyone!');
+}
+
+showMessage();  // Hello everyone!
+showMessage();  // Hello everyone!
+```
+
+The call `showMessage()` executes the code of the function.
+
+---
+
+## Local Variables
+
+A variable declared inside a function is only visible inside that function.
+
+```javascript
+function showMessage() {
+  let message = "Hello, I'm JavaScript!";  // local variable
+  alert(message);
+}
+
+showMessage();  // Hello, I'm JavaScript!
+
+alert(message);  // Error! The variable is local to the function
+```
+
+---
+
+## Outer Variables
+
+A function can access an outer variable as well:
+
+```javascript
+let userName = 'John';
+
+function showMessage() {
+  let message = 'Hello, ' + userName;
+  alert(message);
+}
+
+showMessage();  // Hello, John
+```
+
+---
+
+### Modifying Outer Variables
+
+The function has full access to the outer variable and can modify it:
+
+```javascript
+let userName = 'John';
+
+function showMessage() {
+  userName = "Bob";  // changed the outer variable
+  let message = 'Hello, ' + userName;
+  alert(message);
+}
+
+alert(userName);  // John before the function call
+showMessage();    // Hello, Bob
+alert(userName);  // Bob, the value was modified by the function
+```
+
+---
+
+### Variable Shadowing
+
+If a same-named variable is declared inside the function, it **shadows** the outer one:
+
+```javascript
+let userName = 'John';
+
+function showMessage() {
+  let userName = "Bob";  // declare a local variable
+  let message = 'Hello, ' + userName;  // Bob
+  alert(message);
+}
+
+showMessage();       // Hello, Bob
+alert(userName);     // John, unchanged
+```
+
+---
+
+### Global Variables
+
+Variables declared outside of any function are called **global**.
+
+Global variables are visible from any function (unless shadowed by locals).
+
+**Best Practice**: Minimize the use of global variables. Modern code has few or no globals. Most variables should reside in their functions.
+
+---
+
+## Parameters
+
+We can pass arbitrary data to functions using **parameters**.
+
+```javascript
+function showMessage(from, text) {  // parameters: from, text
+  alert(from + ': ' + text);
+}
+
+showMessage('Ann', 'Hello!');      // Ann: Hello!
+showMessage('Ann', "What's up?");  // Ann: What's up?
+```
+
+When the function is called, the given values are copied to local variables `from` and `text`.
+
+---
+
+### Parameters vs Arguments
+
+- **Parameter**: The variable listed inside the parentheses in the function declaration (declaration time)
+- **Argument**: The value that is passed to the function when it is called (call time)
+
+```javascript
+function showMessage(from, text) {  // from, text are parameters
+  alert(from + ': ' + text);
+}
+
+showMessage('Ann', 'Hello!');  // 'Ann', 'Hello!' are arguments
+```
+
+---
+
+### Parameters are Copied
+
+A function always gets a **copy** of the value:
+
+```javascript
+function showMessage(from, text) {
+  from = '*' + from + '*';  // make "from" look nicer
+  alert(from + ': ' + text);
+}
+
+let from = "Ann";
+showMessage(from, "Hello");  // *Ann*: Hello
+
+alert(from);  // Ann (unchanged, function modified a local copy)
+```
+
+---
+
+## Default Values
+
+If a parameter is not provided, its value becomes `undefined`.
+
+```javascript
+function showMessage(from, text) {
+  alert(from + ": " + text);
+}
+
+showMessage("Ann");  // Ann: undefined
+```
+
+---
+
+### Setting Default Values
+
+We can specify a default value using `=`:
+
+```javascript
+function showMessage(from, text = "no text given") {
+  alert(from + ": " + text);
+}
+
+showMessage("Ann");  // Ann: no text given
+```
+
+---
+
+### Default Value Expressions
+
+The default value can be a more complex expression:
+
+```javascript
+function showMessage(from, text = anotherFunction()) {
+  // anotherFunction() only executed if no text given
+}
+```
+
+---
+
+### Alternative Default Parameters
+
+Old JavaScript code might use alternative ways to check for default values:
+
+```javascript
+function showMessage(from, text) {
+  if (text === undefined) {
+    text = 'no text given';
+  }
+  alert(from + ": " + text);
+}
+```
+
+Or using the `||` operator:
+
+```javascript
+function showMessage(from, text) {
+  text = text || 'no text given';
+  alert(from + ": " + text);
+}
+```
+
+Modern approach with nullish coalescing `??`:
+
+```javascript
+function showCount(count) {
+  alert(count ?? "unknown");
+}
+
+showCount(0);     // 0
+showCount(null);  // unknown
+showCount();      // undefined
+```
+
+---
+
+## Returning a Value
+
+A function can return a value back into the calling code as the result.
+
+```javascript
+function sum(a, b) {
+  return a + b;
+}
+
+let result = sum(1, 2);
+alert(result);  // 3
+```
+
+The directive `return` can be in any place of the function. When execution reaches it, the function stops, and the value is returned.
+
+---
+
+### Multiple Returns
+
+There may be many occurrences of `return` in a single function:
+
+```javascript
+function checkAge(age) {
+  if (age >= 18) {
+    return true;
+  } else {
+    return confirm('Do you have permission from your parents?');
+  }
+}
+
+let age = prompt('How old are you?', 18);
+
+if (checkAge(age)) {
+  alert('Access granted');
+} else {
+  alert('Access denied');
+}
+```
+
+---
+
+### Return Without a Value
+
+It's possible to use `return` without a value to exit immediately:
+
+```javascript
+function showMovie(age) {
+  if (!checkAge(age)) {
+    return;  // exit function
+  }
+  
+  alert("Showing you the movie");
+  // ...
+}
+```
+
+---
+
+### Empty Return Returns undefined
+
+If a function does not return a value, it returns `undefined`:
+
+```javascript
+function doNothing() {
+  /* empty */
+}
+
+alert(doNothing() === undefined);  // true
+```
+
+An empty `return` is also the same as `return undefined`:
+
+```javascript
+function doNothing() {
+  return;
+}
+
+alert(doNothing() === undefined);  // true
+```
+
+---
+
+::: {.callout-warning}
+**Never add a newline between return and the value**
+
+```javascript
+return
+ (some + long + expression);
+```
+
+JavaScript assumes a semicolon after `return`, so this becomes:
+
+```javascript
+return;
+(some + long + expression);
+```
+
+If you want to wrap the returned expression across multiple lines, start it on the same line as `return`:
+
+```javascript
+return (
+  some + long + expression
+);
+```
+:::
+
+---
+
+## Function Expressions
+
+A **Function Expression** allows us to create a function in the middle of any expression.
+
+```javascript
+let sayHi = function() {
+  alert("Hello");
+};
+```
+
+Here, the function is created and assigned to the variable explicitly, like any other value.
+
+---
+
+### Function is a Value
+
+No matter how the function is created, a function is a value. We can copy it to another variable:
+
+```javascript
+function sayHi() {
+  alert("Hello");
+}
+
+let func = sayHi;  // copy
+
+func();    // Hello
+sayHi();   // Hello
+```
+
+---
+
+## Function Declaration vs Function Expression
+
+### Function Declaration
+
+```javascript
+function sum(a, b) {
+  return a + b;
+}
+```
+
+- Can be called earlier than it is defined (hoisting)
+- Block-scoped in strict mode
+
+---
+
+### Function Expression
+
+```javascript
+let sum = function(a, b) {
+  return a + b;
+};
+```
+
+- Created when execution reaches it
+- Can only be called after it's defined
+
+---
+
+### Example: Hoisting
+
+```javascript
+// Function Declaration - works!
+sayHi("John");  // Hello, John
+
+function sayHi(name) {
+  alert(`Hello, ${name}`);
+}
+```
+
+```javascript
+// Function Expression - error!
+sayHi("John");  // Error: sayHi is not a function
+
+let sayHi = function(name) {
+  alert(`Hello, ${name}`);
+};
+```
+
+---
+
+## Arrow Functions
+
+Arrow functions provide a shorter syntax for writing function expressions:
+
+```javascript
+let sum = (a, b) => a + b;
+
+// Same as:
+// let sum = function(a, b) {
+//   return a + b;
+// };
+
+alert(sum(1, 2));  // 3
+```
+
+---
+
+### Arrow Function Syntax
+
+```javascript
+// Single parameter, no parentheses needed
+let double = n => n * 2;
+alert(double(3));  // 6
+
+// Multiple parameters, parentheses required
+let sum = (a, b) => a + b;
+alert(sum(1, 2));  // 3
+
+// No parameters, empty parentheses
+let sayHi = () => alert("Hello!");
+sayHi();
+
+// Multiline arrow function, explicit return
+let sum = (a, b) => {
+  let result = a + b;
+  return result;
+};
+```
+
+---
+
+## Naming Functions
+
+Functions are actions, so their name is usually a verb. It should be brief, as accurate as possible, and describe what the function does.
+
+### Common Prefixes
+
+- `"get…"` – return a value
+- `"calc…"` – calculate something
+- `"create…"` – create something
+- `"check…"` – check something and return a boolean
+
+Examples:
+
+```javascript
+showMessage()     // shows a message
+getAge()          // returns the age
+calcSum()         // calculates a sum and returns the result
+createForm()      // creates a form
+checkPermission() // checks permission, returns true/false
+```
+
+---
+
+### One Function – One Action
+
+A function should do exactly what is suggested by its name, no more.
+
+Two independent actions usually deserve two functions, even if they are usually called together.
+
+**Bad examples:**
+- `getAge` – would be bad if it shows an `alert` with the age (should only get)
+- `createForm` – would be bad if it modifies the document (should only create and return)
+- `checkPermission` – would be bad if it displays the access granted/denied message (should only check)
+
+---
+
+## Examples
+
+### Example 1: Simple Function
+
+```javascript
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+console.log(greet("Alice"));  // Hello, Alice!
+console.log(greet("Bob"));    // Hello, Bob!
+```
+
+---
+
+### Example 2: Function with Multiple Parameters
+
+```javascript
+function calculateArea(width, height) {
+  return width * height;
+}
+
+let area = calculateArea(5, 10);
+console.log(`Area: ${area}`);  // Area: 50
+```
+
+---
+
+### Example 3: Function with Default Parameters
+
+```javascript
+function greet(name = "Guest", greeting = "Hello") {
+  return `${greeting}, ${name}!`;
+}
+
+console.log(greet());                    // Hello, Guest!
+console.log(greet("Alice"));             // Hello, Alice!
+console.log(greet("Bob", "Hi"));         // Hi, Bob!
+```
+
+---
+
+### Example 4: Function Returning Boolean
+
+```javascript
+function isEven(number) {
+  return number % 2 === 0;
+}
+
+console.log(isEven(4));   // true
+console.log(isEven(7));   // false
+```
+
+---
+
+### Example 5: Function with Early Return
+
+```javascript
+function checkAge(age) {
+  if (age < 0) {
+    return "Invalid age";
+  }
+  if (age < 18) {
+    return "Minor";
+  }
+  if (age < 65) {
+    return "Adult";
+  }
+  return "Senior";
+}
+
+console.log(checkAge(15));   // Minor
+console.log(checkAge(30));   // Adult
+console.log(checkAge(70));   // Senior
+```
+
+---
+
+### Example 6: Calculator Functions
+
+```javascript
+function add(a, b) {
+  return a + b;
+}
+
+function subtract(a, b) {
+  return a - b;
+}
+
+function multiply(a, b) {
+  return a * b;
+}
+
+function divide(a, b) {
+  if (b === 0) {
+    return "Cannot divide by zero";
+  }
+  return a / b;
+}
+
+console.log(add(5, 3));       // 8
+console.log(subtract(5, 3));  // 2
+console.log(multiply(5, 3));  // 15
+console.log(divide(6, 3));    // 2
+console.log(divide(5, 0));    // Cannot divide by zero
+```
+
+---
+
+### Example 7: Arrow Functions
+
+```javascript
+// Traditional function
+function square(x) {
+  return x * x;
+}
+
+// Arrow function
+const squareArrow = x => x * x;
+
+console.log(square(5));       // 25
+console.log(squareArrow(5));  // 25
+
+// Multiple parameters
+const add = (a, b) => a + b;
+console.log(add(3, 4));  // 7
+
+// Multiline arrow function
+const greet = name => {
+  let message = `Hello, ${name}!`;
+  return message;
+};
+console.log(greet("Alice"));  // Hello, Alice!
+```
+
+---
+
+### Example 8: Function as Value
+
+```javascript
+function ask(question, yes, no) {
+  if (confirm(question)) {
+    yes();
+  } else {
+    no();
+  }
+}
+
+function showOk() {
+  alert("You agreed.");
+}
+
+function showCancel() {
+  alert("You canceled.");
+}
+
+ask("Do you agree?", showOk, showCancel);
+```
+
+---
+
+## Summary
+
+- Functions are declared with the `function` keyword
+- Functions can have parameters (inputs) and return values (outputs)
+- Variables declared inside a function are local to that function
+- Functions can access outer variables and modify them
+- Use descriptive names for functions (verbs that describe the action)
+- One function should do one thing
+- Function Declarations are hoisted (can be called before declaration)
+- Function Expressions are created when execution reaches them
+- Arrow functions provide a shorter syntax: `(a, b) => a + b`
+- Default parameter values can be specified with `=`
+- `return` without a value returns `undefined`
+- Functions are values and can be assigned to variables or passed as arguments

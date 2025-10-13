@@ -1,0 +1,416 @@
+---
+title: "JavaScript: Variables"
+subtitle: JavaScript Variables
+author: Pedro GeoGIS
+date: "01/13/2025"
+date-modified: last-modified
+date-format: full
+description: JavaScript Variables - Declaration, Naming, and Constants
+categories: [javascript, variables]
+toc: true
+number-sections: true
+highlight-style: pygments
+format: 
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Variables**
+
+**Variables** are named storage locations for data in JavaScript. They allow you to store, retrieve, and manipulate values throughout your program. JavaScript uses `let`, `const`, and `var` (legacy) keywords to declare variables. Variables in JavaScript are dynamically typed, meaning they can hold values of any type and can be reassigned to different types during execution.
+
+:::
+
+---
+
+## A Variable
+
+A variable is a "named storage" for data. We can use variables to store information like user data, shopping cart items, messages, and much more.
+
+To create a variable in JavaScript, use the `let` keyword:
+
+```javascript
+let message;
+```
+
+Now we can put data into it using the assignment operator `=`:
+
+```javascript
+let message;
+message = 'Hello'; // store the string 'Hello' in the variable
+```
+
+The string is now saved into the memory area associated with the variable. We can access it using the variable name:
+
+```javascript
+let message;
+message = 'Hello!';
+alert(message); // shows the variable content: Hello!
+```
+
+---
+
+### Combined Declaration and Assignment
+
+To be concise, we can combine the variable declaration and assignment into a single line:
+
+```javascript
+let message = 'Hello!'; // define the variable and assign the value
+alert(message); // Hello!
+```
+
+---
+
+### Multiple Variables
+
+We can declare multiple variables in one line:
+
+```javascript
+let user = 'John', age = 25, message = 'Hello';
+```
+
+However, for better readability, it's recommended to use a single line per variable:
+
+```javascript
+let user = 'John';
+let age = 25;
+let message = 'Hello';
+```
+
+---
+
+### Variable Reassignment
+
+We can change the value of a variable at any time:
+
+```javascript
+let message = 'Hello';
+message = 'World'; // value changed
+alert(message); // World
+```
+
+When the value is changed, the old data is removed from the variable:
+
+```javascript
+let message = 'Hello!';
+message = 'World!'; // 'Hello!' is replaced with 'World!'
+```
+
+---
+
+### Copying Variables
+
+We can also copy data from one variable to another:
+
+```javascript
+let hello = 'Hello world!';
+let message;
+
+message = hello; // copy 'Hello world' from hello into message
+alert(hello);    // Hello world!
+alert(message);  // Hello world!
+```
+
+---
+
+## Variable Naming
+
+There are two limitations on variable names in JavaScript:
+
+1. The name must contain only **letters**, **digits**, or the symbols **$** and **_**
+2. The first character must **not be a digit**
+
+---
+
+### Valid Names
+
+Examples of valid variable names:
+
+```javascript
+let userName;
+let test123;
+let $ = 1;
+let _ = 2;
+let _privateVar = 'secret';
+let $jquery = 'library';
+```
+
+---
+
+### camelCase Convention
+
+When the name contains multiple words, **camelCase** is commonly used. Words go one after another, each word except the first starting with a capital letter:
+
+```javascript
+let myVeryLongName = 'value';
+let firstName = 'John';
+let lastName = 'Doe';
+let isUserLoggedIn = true;
+```
+
+---
+
+### Invalid Names
+
+Examples of incorrect variable names:
+
+```javascript
+let 1a;        // cannot start with a digit
+let my-name;   // hyphens '-' aren't allowed
+let my name;   // spaces aren't allowed
+```
+
+---
+
+### Case Sensitivity
+
+Variable names are case-sensitive. Variables named `apple` and `APPLE` are two different variables:
+
+```javascript
+let apple = 'fruit';
+let APPLE = 'FRUIT';
+alert(apple);  // fruit
+alert(APPLE);  // FRUIT
+```
+
+---
+
+### Reserved Words
+
+There is a list of reserved words that cannot be used as variable names because they are used by the language itself.
+
+Examples: `let`, `class`, `return`, `function`, `if`, `else`, `for`, `while`, etc.
+
+```javascript
+let let = 5;      // ERROR: can't name a variable "let"
+let return = 5;   // ERROR: can't name it "return"
+let class = 'A';  // ERROR: "class" is reserved
+```
+
+---
+
+## Constants
+
+To declare a constant (unchanging) variable, use `const` instead of `let`:
+
+```javascript
+const myBirthday = '18.04.1982';
+```
+
+Variables declared using `const` are called "constants". They cannot be reassigned. An attempt to do so would cause an error:
+
+```javascript
+const myBirthday = '18.04.1982';
+myBirthday = '01.01.2001'; // ERROR: can't reassign the constant!
+```
+
+---
+
+### When to Use const
+
+Use `const` when you're sure that a variable will never change. This:
+- Guarantees the value won't be modified
+- Communicates intent to other developers
+- Helps prevent bugs from accidental reassignment
+
+```javascript
+const PI = 3.14159;
+const MAX_USERS = 100;
+const API_URL = 'https://api.example.com';
+```
+
+---
+
+### Uppercase Constants
+
+There is a widespread practice to use constants as aliases for difficult-to-remember values that are known **before execution**.
+
+Such constants are named using **CAPITAL LETTERS** and **UNDERSCORES**:
+
+```javascript
+const COLOR_RED = "#F00";
+const COLOR_GREEN = "#0F0";
+const COLOR_BLUE = "#00F";
+const COLOR_ORANGE = "#FF7F00";
+
+// When we need to pick a color
+let color = COLOR_ORANGE;
+alert(color); // #FF7F00
+```
+
+**Benefits:**
+- `COLOR_ORANGE` is easier to remember than `"#FF7F00"`
+- Less prone to typos
+- More meaningful when reading code
+
+---
+
+### Runtime Constants
+
+Constants calculated at runtime but not changed after assignment use normal naming:
+
+```javascript
+const pageLoadTime = calculateLoadTime(); // calculated at runtime
+const userAge = 2025 - birthYear;         // calculated, but constant
+```
+
+**Rule of thumb:** Capital-named constants are only used as aliases for "hard-coded" values known before execution.
+
+---
+
+## var (Legacy)
+
+In older scripts, you may find another keyword: `var` instead of `let`:
+
+```javascript
+var message = 'Hello';
+```
+
+The `var` keyword is **almost** the same as `let`, but it declares a variable in the "old-school" way with some important differences:
+
+- `var` has no block scope (function-scoped or global)
+- `var` declarations are processed at function start (hoisting)
+- `var` allows redeclaration
+
+**Recommendation:** Use `let` and `const` in modern code. Avoid `var`.
+
+---
+
+## Variable Scope
+
+### Block Scope (let and const)
+
+Variables declared with `let` and `const` are block-scoped:
+
+```javascript
+{
+  let message = 'Hello';
+  alert(message); // Hello
+}
+
+alert(message); // ERROR: message is not defined
+```
+
+---
+
+### Function Scope
+
+Variables declared inside a function are only accessible within that function:
+
+```javascript
+function showMessage() {
+  let message = 'Hello';
+  alert(message);
+}
+
+showMessage(); // Hello
+alert(message); // ERROR: message is not defined
+```
+
+---
+
+### Global Scope
+
+Variables declared outside any function or block are global:
+
+```javascript
+let userName = 'John';
+
+function showUser() {
+  alert(userName); // can access global variable
+}
+
+showUser(); // John
+```
+
+---
+
+## Best Practices
+
+1. **Use descriptive names**: `userName` is better than `u` or `data`
+2. **Use camelCase**: `firstName`, `isLoggedIn`, `getUserData`
+3. **Prefer const**: Use `const` by default, `let` only when reassignment is needed
+4. **Avoid var**: Use modern `let` and `const` instead
+5. **One variable per line**: Easier to read and maintain
+6. **Use UPPERCASE for hard-coded constants**: `MAX_SIZE`, `API_KEY`
+
+---
+
+## Examples
+
+### Example 1: User Information
+
+```javascript
+let firstName = 'John';
+let lastName = 'Doe';
+let age = 30;
+let isStudent = false;
+
+console.log(`${firstName} ${lastName} is ${age} years old.`);
+// Output: John Doe is 30 years old.
+```
+
+---
+
+### Example 2: Constants
+
+```javascript
+const SECONDS_IN_MINUTE = 60;
+const MINUTES_IN_HOUR = 60;
+const HOURS_IN_DAY = 24;
+
+const SECONDS_IN_DAY = SECONDS_IN_MINUTE * MINUTES_IN_HOUR * HOURS_IN_DAY;
+console.log(`There are ${SECONDS_IN_DAY} seconds in a day.`);
+// Output: There are 86400 seconds in a day.
+```
+
+---
+
+### Example 3: Variable Reassignment
+
+```javascript
+let counter = 0;
+console.log(counter); // 0
+
+counter = counter + 1;
+console.log(counter); // 1
+
+counter = counter + 5;
+console.log(counter); // 6
+```
+
+---
+
+### Example 4: Swapping Variables
+
+```javascript
+let a = 5;
+let b = 10;
+
+console.log(`Before swap: a = ${a}, b = ${b}`);
+
+// Swap using a temporary variable
+let temp = a;
+a = b;
+b = temp;
+
+console.log(`After swap: a = ${a}, b = ${b}`);
+// Output: After swap: a = 10, b = 5
+```
+
+---
+
+## Summary
+
+- Variables are named storage for data
+- Use `let` to declare variables that can be reassigned
+- Use `const` to declare constants that cannot be reassigned
+- Variable names must start with a letter, `$`, or `_`
+- Use camelCase for variable names
+- Use UPPERCASE_WITH_UNDERSCORES for hard-coded constants
+- Avoid using `var` in modern JavaScript
+- Variables are case-sensitive
+- Cannot use reserved words as variable names

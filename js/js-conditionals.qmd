@@ -1,0 +1,537 @@
+---
+title: "JavaScript: Conditionals"
+subtitle: JavaScript Conditional Statements
+author: Pedro GeoGIS
+date: "01/13/2025"
+date-modified: last-modified
+date-format: full
+description: JavaScript Conditionals - if/else, Ternary Operator, and Switch Statements
+categories: [javascript, conditionals, control-flow]
+toc: true
+number-sections: true
+highlight-style: pygments
+format: 
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Conditionals**
+
+**Conditional statements** allow you to execute different code blocks based on different conditions. JavaScript provides several ways to implement conditional logic: the `if` statement for basic conditions, `else if` for multiple conditions, the ternary operator `?` for concise conditional assignments, and the `switch` statement for handling multiple specific values. These control structures are fundamental for creating dynamic and responsive programs.
+
+:::
+
+---
+
+## The "if" Statement
+
+The `if` statement evaluates a condition in parentheses and, if the result is `true`, executes a block of code.
+
+```javascript
+let year = prompt('In which year was ECMAScript-2015 specification published?', '');
+
+if (year == 2015) {
+  alert('You are right!');
+}
+```
+
+---
+
+### Multiple Statements
+
+If you want to execute more than one statement, wrap your code block inside curly braces:
+
+```javascript
+if (year == 2015) {
+  alert("That's correct!");
+  alert("You're so smart!");
+}
+```
+
+---
+
+::: {.callout-tip}
+**Best Practice**: Always use curly braces `{}` even if there is only one statement. This improves readability and prevents errors.
+
+```javascript
+// Good
+if (condition) {
+  doSomething();
+}
+
+// Avoid
+if (condition) doSomething();
+```
+:::
+
+---
+
+## Boolean Conversion
+
+The `if (...)` statement evaluates the expression in its parentheses and converts the result to a boolean.
+
+**Falsy values** (become `false`):
+- `0`
+- `""` (empty string)
+- `null`
+- `undefined`
+- `NaN`
+
+**Truthy values** (become `true`):
+- All other values
+
+---
+
+### Examples
+
+```javascript
+if (0) {
+  // This code never executes (0 is falsy)
+}
+
+if (1) {
+  // This code always executes (1 is truthy)
+}
+
+if ("hello") {
+  // This code executes (non-empty string is truthy)
+}
+```
+
+---
+
+## The "else" Clause
+
+The `if` statement may contain an optional `else` block. It executes when the condition is falsy.
+
+```javascript
+let year = prompt('In which year was the ECMAScript-2015 specification published?', '');
+
+if (year == 2015) {
+  alert('You guessed it right!');
+} else {
+  alert('How can you be so wrong?');
+}
+```
+
+---
+
+## Several Conditions: "else if"
+
+Sometimes we need to test several variants of a condition. The `else if` clause lets us do that.
+
+```javascript
+let year = prompt('In which year was the ECMAScript-2015 specification published?', '');
+
+if (year < 2015) {
+  alert('Too early...');
+} else if (year > 2015) {
+  alert('Too late');
+} else {
+  alert('Exactly!');
+}
+```
+
+There can be multiple `else if` blocks. The final `else` is optional.
+
+---
+
+## Conditional (Ternary) Operator '?'
+
+Sometimes we need to assign a variable depending on a condition. The **ternary operator** provides a shorter and simpler way.
+
+### Syntax
+
+```javascript
+let result = condition ? value1 : value2;
+```
+
+- The `condition` is evaluated
+- If it's truthy, `value1` is returned
+- Otherwise, `value2` is returned
+
+---
+
+### Example
+
+```javascript
+let age = prompt('How old are you?', '');
+let accessAllowed = (age > 18) ? true : false;
+
+alert(accessAllowed);
+```
+
+Since the comparison itself returns `true`/`false`, we can simplify:
+
+```javascript
+let accessAllowed = age > 18; // same result
+```
+
+---
+
+### Multiple '?'
+
+A sequence of question mark operators can return a value that depends on more than one condition:
+
+```javascript
+let age = prompt('age?', 18);
+
+let message = (age < 3) ? 'Hi, baby!' :
+  (age < 18) ? 'Hello!' :
+  (age < 100) ? 'Greetings!' :
+  'What an unusual age!';
+
+alert(message);
+```
+
+This is equivalent to:
+
+```javascript
+if (age < 3) {
+  message = 'Hi, baby!';
+} else if (age < 18) {
+  message = 'Hello!';
+} else if (age < 100) {
+  message = 'Greetings!';
+} else {
+  message = 'What an unusual age!';
+}
+```
+
+---
+
+::: {.callout-warning}
+**Use ternary operator for assignment, not replacement of `if`**
+
+The ternary operator is great for conditional assignments but can reduce readability when used for complex logic. Use `if/else` for better clarity in such cases.
+:::
+
+---
+
+## The "switch" Statement
+
+The `switch` statement can replace multiple `if` checks. It provides a more descriptive way to compare a value with multiple variants.
+
+### Syntax
+
+```javascript
+switch(x) {
+  case 'value1':  // if (x === 'value1')
+    ...
+    break;
+  case 'value2':  // if (x === 'value2')
+    ...
+    break;
+  default:
+    ...
+    break;
+}
+```
+
+---
+
+### How it Works
+
+1. The value of `x` is checked for **strict equality** (`===`) with the value from the first `case`
+2. If equality is found, `switch` executes the code starting from that `case` until the nearest `break`
+3. If no case is matched, the `default` code is executed (if it exists)
+
+---
+
+### Example
+
+```javascript
+let a = 2 + 2;
+
+switch (a) {
+  case 3:
+    alert('Too small');
+    break;
+  case 4:
+    alert('Exactly!');
+    break;
+  case 5:
+    alert('Too big');
+    break;
+  default:
+    alert("I don't know such values");
+}
+```
+
+---
+
+### The Importance of break
+
+If there is no `break`, execution continues with the next `case` without any checks (fall-through):
+
+```javascript
+let a = 2 + 2;
+
+switch (a) {
+  case 3:
+    alert('Too small');
+  case 4:
+    alert('Exactly!');
+  case 5:
+    alert('Too big');
+  default:
+    alert("I don't know such values");
+}
+```
+
+This will output:
+- "Exactly!"
+- "Too big"
+- "I don't know such values"
+
+---
+
+### Grouping Cases
+
+Several variants of `case` which share the same code can be grouped:
+
+```javascript
+let a = 3;
+
+switch (a) {
+  case 4:
+    alert('Right!');
+    break;
+    
+  case 3:  // grouped two cases
+  case 5:
+    alert('Wrong!');
+    alert("Why don't you take a math class?");
+    break;
+    
+  default:
+    alert('The result is strange. Really.');
+}
+```
+
+Now both `3` and `5` show the same message.
+
+---
+
+### Type Matters
+
+The equality check in `switch` is always **strict** (`===`). The values must be of the same type to match.
+
+```javascript
+let arg = prompt("Enter a value?");
+
+switch (arg) {
+  case '0':
+  case '1':
+    alert('One or zero');
+    break;
+    
+  case '2':
+    alert('Two');
+    break;
+    
+  case 3:
+    alert('Never executes!'); // prompt returns string, not number
+    break;
+    
+  default:
+    alert('An unknown value');
+}
+```
+
+---
+
+## Comparison: if vs switch
+
+### Use `if/else` when:
+- You have complex conditions
+- You need to check ranges (e.g., `age > 18`)
+- You have boolean logic
+
+### Use `switch` when:
+- You have multiple specific values to check
+- You want cleaner code for many equality checks
+- You need to group similar cases
+
+---
+
+## Examples
+
+### Example 1: Grade Calculator
+
+```javascript
+let score = prompt('Enter your score (0-100):', '');
+score = Number(score);
+
+if (score >= 90) {
+  alert('Grade: A');
+} else if (score >= 80) {
+  alert('Grade: B');
+} else if (score >= 70) {
+  alert('Grade: C');
+} else if (score >= 60) {
+  alert('Grade: D');
+} else {
+  alert('Grade: F');
+}
+```
+
+---
+
+### Example 2: Day of Week
+
+```javascript
+let day = prompt('Enter a day number (1-7):', '');
+day = Number(day);
+
+switch (day) {
+  case 1:
+    alert('Monday');
+    break;
+  case 2:
+    alert('Tuesday');
+    break;
+  case 3:
+    alert('Wednesday');
+    break;
+  case 4:
+    alert('Thursday');
+    break;
+  case 5:
+    alert('Friday');
+    break;
+  case 6:
+  case 7:
+    alert('Weekend!');
+    break;
+  default:
+    alert('Invalid day number');
+}
+```
+
+---
+
+### Example 3: Ternary Operator
+
+```javascript
+let age = 20;
+
+// Simple ternary
+let status = (age >= 18) ? 'Adult' : 'Minor';
+console.log(status); // Adult
+
+// Nested ternary
+let category = (age < 13) ? 'Child' :
+               (age < 20) ? 'Teenager' :
+               (age < 60) ? 'Adult' : 'Senior';
+console.log(category); // Adult
+```
+
+---
+
+### Example 4: Login System
+
+```javascript
+let username = prompt('Enter username:', '');
+let password = prompt('Enter password:', '');
+
+if (username === 'admin' && password === 'secret123') {
+  alert('Welcome, Admin!');
+} else if (username === 'admin') {
+  alert('Wrong password!');
+} else if (password === 'secret123') {
+  alert('Wrong username!');
+} else {
+  alert('Invalid credentials!');
+}
+```
+
+---
+
+### Example 5: Calculator with Switch
+
+```javascript
+let num1 = Number(prompt('Enter first number:', ''));
+let operator = prompt('Enter operator (+, -, *, /):', '');
+let num2 = Number(prompt('Enter second number:', ''));
+
+let result;
+
+switch (operator) {
+  case '+':
+    result = num1 + num2;
+    break;
+  case '-':
+    result = num1 - num2;
+    break;
+  case '*':
+    result = num1 * num2;
+    break;
+  case '/':
+    if (num2 !== 0) {
+      result = num1 / num2;
+    } else {
+      alert('Cannot divide by zero!');
+      result = 'Error';
+    }
+    break;
+  default:
+    alert('Invalid operator!');
+    result = 'Error';
+}
+
+if (result !== 'Error') {
+  alert(`Result: ${num1} ${operator} ${num2} = ${result}`);
+}
+```
+
+---
+
+### Example 6: Season Checker
+
+```javascript
+let month = prompt('Enter month (1-12):', '');
+month = Number(month);
+
+switch (month) {
+  case 12:
+  case 1:
+  case 2:
+    alert('Winter');
+    break;
+  case 3:
+  case 4:
+  case 5:
+    alert('Spring');
+    break;
+  case 6:
+  case 7:
+  case 8:
+    alert('Summer');
+    break;
+  case 9:
+  case 10:
+  case 11:
+    alert('Fall');
+    break;
+  default:
+    alert('Invalid month!');
+}
+```
+
+---
+
+## Summary
+
+- Use `if` to test conditions and execute code blocks
+- Use `else` to handle the opposite condition
+- Use `else if` to test multiple conditions sequentially
+- The ternary operator `? :` is a concise way to assign values based on conditions
+- Use `switch` for multiple equality checks against a single value
+- `switch` uses strict equality (`===`)
+- Always use `break` in `switch` unless you want fall-through behavior
+- Group similar `case` statements to share code
+- Choose `if/else` for complex conditions, `switch` for multiple specific values

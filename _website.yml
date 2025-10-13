@@ -334,8 +334,15 @@ website:
         - text: "---"
         - section: "JavaScript Basics"
           contents:
-            - js/js-basic-concepts.qmd
-            - js/js-tips.qmd
+            - js/js-fundamentals.qmd
+            - js/js-data-types.qmd
+            - js/js-variables.qmd
+            - js/js-operators.qmd
+            - js/js-conditionals.qmd
+            - js/js-loops.qmd
+            - js/js-functions.qmd
+            - js/js-arrays.qmd
+            - js/js-objects.qmd
         - text: "---"
         - section: "React Framework"
           contents:

@@ -1,0 +1,624 @@
+---
+title: "JavaScript: Loops"
+subtitle: JavaScript Loops
+author: Pedro GeoGIS
+date: "01/13/2025"
+date-modified: last-modified
+date-format: full
+description: JavaScript Loops - while, do...while, and for loops
+categories: [javascript, loops, iteration]
+toc: true
+number-sections: true
+highlight-style: pygments
+format: 
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Loops**
+
+**Loops** are used to repeat the same code multiple times. JavaScript provides several loop structures: the `while` loop for repeating code while a condition is true, the `do...while` loop for executing code at least once before checking the condition, and the `for` loop for iterating a specific number of times. Loops can be controlled with `break` (exit loop) and `continue` (skip to next iteration) statements.
+
+:::
+
+---
+
+## The "while" Loop
+
+The `while` loop has the following syntax:
+
+```javascript
+while (condition) {
+  // code
+  // so-called "loop body"
+}
+```
+
+While the `condition` is truthy, the `code` from the loop body is executed.
+
+---
+
+### Example
+
+```javascript
+let i = 0;
+while (i < 3) {  // shows 0, then 1, then 2
+  alert(i);
+  i++;
+}
+```
+
+A single execution of the loop body is called an **iteration**. The loop above makes three iterations.
+
+---
+
+::: {.callout-warning}
+**Infinite Loops**
+
+If `i++` was missing from the example above, the loop would repeat forever. Always ensure your loop has a way to terminate!
+
+```javascript
+let i = 0;
+while (i < 3) {
+  alert(i);
+  // Missing i++, infinite loop!
+}
+```
+:::
+
+---
+
+### Condition Evaluation
+
+Any expression or variable can be a loop condition, not just comparisons. The condition is evaluated and converted to a boolean by `while`.
+
+A shorter way to write `while (i != 0)` is `while (i)`:
+
+```javascript
+let i = 3;
+while (i) {  // when i becomes 0, the condition becomes falsy
+  alert(i);
+  i--;
+}
+```
+
+---
+
+### Single Statement
+
+If the loop body has a single statement, we can omit the curly braces (though not recommended):
+
+```javascript
+let i = 3;
+while (i) alert(i--);
+```
+
+---
+
+## The "do...while" Loop
+
+The condition check can be moved **below** the loop body using the `do...while` syntax:
+
+```javascript
+do {
+  // loop body
+} while (condition);
+```
+
+The loop will first execute the body, then check the condition, and while it's truthy, execute it again and again.
+
+---
+
+### Example
+
+```javascript
+let i = 0;
+do {
+  alert(i);
+  i++;
+} while (i < 3);
+```
+
+---
+
+### When to Use
+
+This form of syntax should only be used when you want the body of the loop to execute **at least once** regardless of the condition being truthy.
+
+```javascript
+let num;
+do {
+  num = prompt("Enter a number greater than 100?", 0);
+} while (num <= 100 && num);
+```
+
+Usually, the other form is preferred: `while(...) {...}`.
+
+---
+
+## The "for" Loop
+
+The `for` loop is more complex, but it's also the most commonly used loop.
+
+### Syntax
+
+```javascript
+for (begin; condition; step) {
+  // ... loop body ...
+}
+```
+
+---
+
+### Example
+
+```javascript
+for (let i = 0; i < 3; i++) {  // shows 0, then 1, then 2
+  alert(i);
+}
+```
+
+---
+
+### Parts of the for Loop
+
+| Part | Description | Example |
+|------|-------------|---------|
+| **begin** | Executes once upon entering the loop | `let i = 0` |
+| **condition** | Checked before every loop iteration | `i < 3` |
+| **body** | Runs again and again while condition is truthy | `alert(i)` |
+| **step** | Executes after the body on each iteration | `i++` |
+
+---
+
+### Loop Algorithm
+
+```
+Run begin
+→ (if condition → run body and run step)
+→ (if condition → run body and run step)
+→ (if condition → run body and run step)
+→ ...
+```
+
+That is, `begin` executes once, and then it iterates: after each `condition` test, `body` and `step` are executed.
+
+---
+
+### Step-by-Step Execution
+
+```javascript
+// for (let i = 0; i < 3; i++) alert(i)
+
+// run begin
+let i = 0
+
+// if condition → run body and run step
+if (i < 3) { alert(i); i++ }
+
+// if condition → run body and run step
+if (i < 3) { alert(i); i++ }
+
+// if condition → run body and run step
+if (i < 3) { alert(i); i++ }
+
+// ...finish, because now i == 3
+```
+
+---
+
+### Inline Variable Declaration
+
+The "counter" variable `i` is declared right in the loop. This is called an "inline" variable declaration. Such variables are visible only inside the loop.
+
+```javascript
+for (let i = 0; i < 3; i++) {
+  alert(i);  // 0, 1, 2
+}
+alert(i);  // error, no such variable
+```
+
+---
+
+### Using Existing Variable
+
+Instead of defining a variable, we could use an existing one:
+
+```javascript
+let i = 0;
+
+for (i = 0; i < 3; i++) {  // use an existing variable
+  alert(i);  // 0, 1, 2
+}
+
+alert(i);  // 3, visible, because declared outside of the loop
+```
+
+---
+
+## Skipping Parts
+
+Any part of `for` can be skipped.
+
+### Omitting begin
+
+```javascript
+let i = 0;  // we have i already declared and assigned
+
+for (; i < 3; i++) {  // no need for "begin"
+  alert(i);  // 0, 1, 2
+}
+```
+
+---
+
+### Omitting step
+
+```javascript
+let i = 0;
+
+for (; i < 3;) {
+  alert(i++);
+}
+```
+
+This makes the loop identical to `while (i < 3)`.
+
+---
+
+### Omitting everything
+
+```javascript
+for (;;) {
+  // repeats without limits
+}
+```
+
+This creates an infinite loop. The two `for` semicolons `;` must be present, otherwise there would be a syntax error.
+
+---
+
+## Breaking the Loop
+
+Normally, a loop exits when its condition becomes falsy. But we can force the exit at any time using the special `break` directive.
+
+```javascript
+let sum = 0;
+
+while (true) {
+  let value = +prompt("Enter a number", '');
+  
+  if (!value) break;  // (*)
+  
+  sum += value;
+}
+
+alert('Sum: ' + sum);
+```
+
+The `break` directive is activated at line `(*)` if the user enters an empty line or cancels the input.
+
+---
+
+### Infinite Loop + break
+
+The combination "infinite loop + break as needed" is great for situations when a loop's condition must be checked not in the beginning or end of the loop, but in the middle or even in several places of its body.
+
+```javascript
+while (true) {
+  // do something
+  if (condition) break;
+  // do something else
+}
+```
+
+---
+
+## Continue to the Next Iteration
+
+The `continue` directive is a "lighter version" of `break`. It doesn't stop the whole loop. Instead, it stops the current iteration and forces the loop to start a new one (if the condition allows).
+
+---
+
+### Example: Output Odd Numbers
+
+```javascript
+for (let i = 0; i < 10; i++) {
+  // if true, skip the remaining part of the body
+  if (i % 2 == 0) continue;
+  
+  alert(i);  // 1, then 3, 5, 7, 9
+}
+```
+
+For even values of `i`, the `continue` directive stops executing the body and passes control to the next iteration of `for`.
+
+---
+
+### Alternative Without continue
+
+```javascript
+for (let i = 0; i < 10; i++) {
+  if (i % 2) {
+    alert(i);
+  }
+}
+```
+
+From a technical point of view, this is identical to the example above. But using `continue` helps avoid extra nesting.
+
+---
+
+::: {.callout-important}
+**No break/continue with ternary operator**
+
+Syntax constructs that are not expressions cannot be used with the ternary operator `?`. In particular, directives such as `break`/`continue` aren't allowed there.
+
+```javascript
+// This doesn't work:
+(i > 5) ? alert(i) : continue;  // continue isn't allowed here
+```
+
+Use `if` instead.
+:::
+
+---
+
+## Labels for break/continue
+
+Sometimes we need to break out from multiple nested loops at once.
+
+A **label** is an identifier with a colon before a loop:
+
+```javascript
+labelName: for (...) {
+  ...
+}
+```
+
+---
+
+### Example
+
+```javascript
+outer: for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
+    let input = prompt(`Value at coords (${i},${j})`, '');
+    
+    // if an empty string or canceled, then break out of both loops
+    if (!input) break outer;  // (*)
+  }
+}
+
+alert('Done!');
+```
+
+The `break outer` looks upwards for the label named `outer` and breaks out of that loop.
+
+---
+
+### continue with Labels
+
+```javascript
+outer: for (let i = 0; i < 3; i++) {
+  for (let j = 0; j < 3; j++) {
+    if (j == 1) continue outer;
+    alert(`i=${i}, j=${j}`);
+  }
+}
+```
+
+---
+
+::: {.callout-note}
+**Labels don't allow "jumping" anywhere**
+
+Labels do not allow us to jump into an arbitrary place in the code. A `break` directive must be inside a code block. Technically, any labeled code block will do:
+
+```javascript
+label: {
+  // ...
+  break label;  // works
+  // ...
+}
+```
+:::
+
+---
+
+## Loop Comparison
+
+| Loop Type | When to Use |
+|-----------|-------------|
+| **while** | When you don't know how many iterations you need |
+| **do...while** | When you need at least one iteration |
+| **for** | When you know how many iterations you need |
+
+---
+
+## Examples
+
+### Example 1: Sum Numbers
+
+```javascript
+let sum = 0;
+let n = 10;
+
+for (let i = 1; i <= n; i++) {
+  sum += i;
+}
+
+console.log(`Sum of numbers from 1 to ${n} is ${sum}`);
+// Output: Sum of numbers from 1 to 10 is 55
+```
+
+---
+
+### Example 2: Factorial
+
+```javascript
+let n = 5;
+let factorial = 1;
+
+for (let i = 1; i <= n; i++) {
+  factorial *= i;
+}
+
+console.log(`${n}! = ${factorial}`);
+// Output: 5! = 120
+```
+
+---
+
+### Example 3: Countdown
+
+```javascript
+let count = 5;
+
+while (count > 0) {
+  console.log(count);
+  count--;
+}
+console.log("Blast off!");
+
+// Output: 5, 4, 3, 2, 1, Blast off!
+```
+
+---
+
+### Example 4: Input Validation
+
+```javascript
+let password;
+
+do {
+  password = prompt('Enter password (min 6 characters):', '');
+} while (password.length < 6);
+
+alert('Password accepted!');
+```
+
+---
+
+### Example 5: Multiplication Table
+
+```javascript
+let num = 7;
+
+console.log(`Multiplication table for ${num}:`);
+for (let i = 1; i <= 10; i++) {
+  console.log(`${num} x ${i} = ${num * i}`);
+}
+```
+
+---
+
+### Example 6: Find First Even Number
+
+```javascript
+let numbers = [1, 3, 5, 8, 9, 10, 11];
+let firstEven;
+
+for (let i = 0; i < numbers.length; i++) {
+  if (numbers[i] % 2 === 0) {
+    firstEven = numbers[i];
+    break;  // Exit loop once found
+  }
+}
+
+console.log(`First even number: ${firstEven}`);
+// Output: First even number: 8
+```
+
+---
+
+### Example 7: Skip Multiples of 3
+
+```javascript
+for (let i = 1; i <= 10; i++) {
+  if (i % 3 === 0) continue;  // Skip multiples of 3
+  console.log(i);
+}
+// Output: 1, 2, 4, 5, 7, 8, 10
+```
+
+---
+
+### Example 8: Nested Loops - Pattern
+
+```javascript
+let rows = 5;
+
+for (let i = 1; i <= rows; i++) {
+  let pattern = '';
+  for (let j = 1; j <= i; j++) {
+    pattern += '* ';
+  }
+  console.log(pattern);
+}
+
+// Output:
+// * 
+// * * 
+// * * * 
+// * * * * 
+// * * * * *
+```
+
+---
+
+### Example 9: Prime Number Checker
+
+```javascript
+let num = 17;
+let isPrime = true;
+
+if (num <= 1) {
+  isPrime = false;
+} else {
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      isPrime = false;
+      break;
+    }
+  }
+}
+
+console.log(`${num} is ${isPrime ? 'prime' : 'not prime'}`);
+// Output: 17 is prime
+```
+
+---
+
+### Example 10: FizzBuzz
+
+```javascript
+for (let i = 1; i <= 20; i++) {
+  if (i % 15 === 0) {
+    console.log('FizzBuzz');
+  } else if (i % 3 === 0) {
+    console.log('Fizz');
+  } else if (i % 5 === 0) {
+    console.log('Buzz');
+  } else {
+    console.log(i);
+  }
+}
+```
+
+---
+
+## Summary
+
+- **while** – The condition is checked before each iteration
+- **do...while** – The condition is checked after each iteration (executes at least once)
+- **for** – The condition is checked before each iteration, with additional settings
+- Use `break` to exit a loop immediately
+- Use `continue` to skip the current iteration and move to the next one
+- Labels allow breaking out of nested loops
+- Infinite loops can be created with `while (true)` or `for (;;)`
+- Always ensure your loops have a termination condition to avoid infinite loops
+- Choose the appropriate loop type based on your needs

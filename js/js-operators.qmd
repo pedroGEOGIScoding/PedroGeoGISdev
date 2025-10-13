@@ -1,0 +1,591 @@
+---
+title: "JavaScript: Operators"
+subtitle: JavaScript Operators and Type Conversions
+author: Pedro GeoGIS
+date: "01/13/2025"
+date-modified: last-modified
+date-format: full
+description: JavaScript Operators - Arithmetic, Assignment, Comparison, and Type Conversions
+categories: [javascript, operators, type-conversion]
+toc: true
+number-sections: true
+highlight-style: pygments
+format: 
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Operators**
+
+**Operators** are symbols that perform operations on values and variables in JavaScript. They include arithmetic operators (+, -, *, /), assignment operators (=, +=, -=), comparison operators (==, ===, !=), logical operators (&&, ||, !), and more. JavaScript also performs automatic type conversions when operators are applied to different data types, which is important to understand for writing correct code.
+
+:::
+
+---
+
+## Terms: Unary, Binary, Operand
+
+Before we dive into operators, let's understand some terminology:
+
+- **Operand**: What operators are applied to. In `5 * 2`, there are two operands: `5` (left) and `2` (right)
+- **Unary operator**: Has a single operand. Example: `-x` (negation)
+- **Binary operator**: Has two operands. Example: `x - y` (subtraction)
+
+---
+
+### Unary Operator Example
+
+```javascript
+let x = 1;
+x = -x;
+alert(x); // -1, unary negation was applied
+```
+
+---
+
+### Binary Operator Example
+
+```javascript
+let x = 1, y = 3;
+alert(y - x); // 2, binary minus subtracts values
+```
+
+---
+
+## Arithmetic Operators
+
+The following math operations are supported:
+
+- **Addition**: `+`
+- **Subtraction**: `-`
+- **Multiplication**: `*`
+- **Division**: `/`
+- **Remainder**: `%`
+- **Exponentiation**: `**`
+
+---
+
+### Basic Operations
+
+```javascript
+alert(5 + 2);  // 7  (addition)
+alert(5 - 2);  // 3  (subtraction)
+alert(5 * 2);  // 10 (multiplication)
+alert(5 / 2);  // 2.5 (division)
+```
+
+---
+
+### Remainder %
+
+The remainder operator `%` returns the remainder of integer division:
+
+```javascript
+alert(5 % 2);  // 1 (remainder of 5 divided by 2)
+alert(8 % 3);  // 2 (remainder of 8 divided by 3)
+alert(10 % 5); // 0 (no remainder)
+```
+
+---
+
+### Exponentiation **
+
+The exponentiation operator `**` raises a number to a power:
+
+```javascript
+alert(2 ** 2); // 4  (2 squared)
+alert(2 ** 3); // 8  (2 cubed)
+alert(2 ** 4); // 16 (2 to the power of 4)
+```
+
+It also works with non-integer powers:
+
+```javascript
+alert(4 ** (1/2)); // 2 (square root of 4)
+alert(8 ** (1/3)); // 2 (cube root of 8)
+```
+
+---
+
+## String Concatenation with Binary +
+
+Usually, the plus operator `+` sums numbers. But if the binary `+` is applied to strings, it merges (concatenates) them:
+
+```javascript
+let s = "my" + "string";
+alert(s); // mystring
+```
+
+---
+
+### String + Number
+
+If **any** of the operands is a string, the other one is converted to a string too:
+
+```javascript
+alert('1' + 2);  // "12"
+alert(2 + '1');  // "21"
+```
+
+---
+
+### Order Matters
+
+```javascript
+alert(2 + 2 + '1'); // "41" and not "221"
+```
+
+Here, operators work left to right. First `2 + 2 = 4`, then `4 + '1' = "41"`.
+
+```javascript
+alert('1' + 2 + 2); // "122" and not "14"
+```
+
+Here, the first operand is a string, so all operands are treated as strings: `'1' + 2 = "12"`, then `"12" + 2 = "122"`.
+
+---
+
+::: {.callout-important}
+**The binary `+` is the only operator that supports strings this way.** Other arithmetic operators work only with numbers and always convert their operands to numbers.
+
+```javascript
+alert(6 - '2');   // 4, converts '2' to a number
+alert('6' / '2'); // 3, converts both operands to numbers
+```
+:::
+
+---
+
+## Numeric Conversion: Unary +
+
+The unary plus `+` applied to a single value doesn't do anything to numbers. But if the operand is not a number, it converts it into a number:
+
+```javascript
+// No effect on numbers
+let x = 1;
+alert(+x); // 1
+
+let y = -2;
+alert(+y); // -2
+
+// Converts non-numbers
+alert(+true);  // 1
+alert(+"");    // 0
+alert(+"123"); // 123
+```
+
+It does the same thing as `Number(...)`, but is shorter.
+
+---
+
+### Practical Example
+
+```javascript
+let apples = "2";
+let oranges = "3";
+
+alert(apples + oranges); // "23", the binary plus concatenates strings
+
+// Convert and then sum
+alert(+apples + +oranges); // 5
+
+// Longer variant
+alert(Number(apples) + Number(oranges)); // 5
+```
+
+---
+
+## Assignment Operator
+
+The assignment operator `=` assigns a value to a variable:
+
+```javascript
+let x = 5;
+let y = 10;
+```
+
+---
+
+### Assignment Returns a Value
+
+The assignment `=` returns a value. The call `x = value` writes the `value` into `x` and then returns it:
+
+```javascript
+let a = 1;
+let b = 2;
+
+let c = 3 - (a = b + 1);
+
+alert(a); // 3
+alert(c); // 0
+```
+
+---
+
+### Chaining Assignments
+
+```javascript
+let a, b, c;
+
+a = b = c = 2 + 2;
+
+alert(a); // 4
+alert(b); // 4
+alert(c); // 4
+```
+
+Chained assignments evaluate from right to left: `c = 4`, then `b = 4`, then `a = 4`.
+
+---
+
+## Modify-in-Place
+
+We often need to apply an operator to a variable and store the result in that same variable:
+
+```javascript
+let n = 2;
+n = n + 5;
+n = n * 2;
+```
+
+This can be shortened using `+=` and `*=`:
+
+```javascript
+let n = 2;
+n += 5; // now n = 7 (same as n = n + 5)
+n *= 2; // now n = 14 (same as n = n * 2)
+alert(n); // 14
+```
+
+---
+
+### All Modify-and-Assign Operators
+
+Short "modify-and-assign" operators exist for all arithmetic operators:
+
+```javascript
+let n = 10;
+
+n += 5;  // n = n + 5  → 15
+n -= 3;  // n = n - 3  → 12
+n *= 2;  // n = n * 2  → 24
+n /= 4;  // n = n / 4  → 6
+n %= 4;  // n = n % 4  → 2
+n **= 3; // n = n ** 3 → 8
+```
+
+---
+
+## Increment/Decrement
+
+Increasing or decreasing a number by one is very common, so there are special operators:
+
+- **Increment `++`**: increases a variable by 1
+- **Decrement `--`**: decreases a variable by 1
+
+```javascript
+let counter = 2;
+counter++;        // works the same as counter = counter + 1
+alert(counter);   // 3
+
+counter--;        // works the same as counter = counter - 1
+alert(counter);   // 2
+```
+
+---
+
+::: {.callout-warning}
+Increment/decrement can only be applied to variables. Using it on a value like `5++` will give an error.
+:::
+
+---
+
+### Prefix vs Postfix
+
+The operators `++` and `--` can be placed either before or after a variable:
+
+- **Postfix form**: `counter++` (operator after variable)
+- **Prefix form**: `++counter` (operator before variable)
+
+Both increase `counter` by 1, but there's a difference in the **returned value**.
+
+---
+
+### Prefix Form
+
+The prefix form returns the **new value**:
+
+```javascript
+let counter = 1;
+let a = ++counter; // prefix increments and returns new value
+alert(a); // 2
+```
+
+---
+
+### Postfix Form
+
+The postfix form returns the **old value** (prior to increment):
+
+```javascript
+let counter = 1;
+let a = counter++; // postfix increments but returns old value
+alert(a); // 1
+alert(counter); // 2
+```
+
+---
+
+### When to Use Which
+
+- If you don't use the returned value, both forms are the same:
+
+```javascript
+let counter = 0;
+counter++;
+++counter;
+alert(counter); // 2
+```
+
+- Use **prefix** if you want to increase and immediately use the new value:
+
+```javascript
+let counter = 0;
+alert(++counter); // 1
+```
+
+- Use **postfix** if you want to use the old value:
+
+```javascript
+let counter = 0;
+alert(counter++); // 0
+alert(counter);   // 1
+```
+
+---
+
+## Operator Precedence
+
+If an expression has more than one operator, the execution order is defined by their **precedence**.
+
+From highest to lowest:
+
+| Precedence | Operator | Description |
+|------------|----------|-------------|
+| 14 | `++`, `--` | Increment/Decrement (prefix) |
+| 13 | `**` | Exponentiation |
+| 12 | `*`, `/`, `%` | Multiplication, Division, Remainder |
+| 11 | `+`, `-` | Addition, Subtraction |
+| 2 | `=` | Assignment |
+
+---
+
+### Example
+
+```javascript
+let x = 2 * 2 + 1;
+alert(x); // 5 (multiplication first, then addition)
+
+let y = 2 + 2 * 2;
+alert(y); // 6 (multiplication first, then addition)
+```
+
+---
+
+## Type Conversions
+
+JavaScript automatically converts types when needed. This is called **implicit type conversion** or **type coercion**.
+
+---
+
+### String Conversion
+
+Occurs when we output something. Can be performed explicitly with `String(value)`:
+
+```javascript
+let value = true;
+alert(typeof value); // boolean
+
+value = String(value); // now value is a string "true"
+alert(typeof value); // string
+```
+
+---
+
+### Numeric Conversion
+
+Happens automatically in mathematical operations. Can be performed explicitly with `Number(value)`:
+
+```javascript
+alert("6" / "2"); // 3, strings are converted to numbers
+```
+
+Explicit conversion:
+
+```javascript
+let str = "123";
+alert(typeof str); // string
+
+let num = Number(str); // becomes a number 123
+alert(typeof num); // number
+```
+
+---
+
+### Numeric Conversion Rules
+
+| Value | Becomes |
+|-------|---------|
+| `undefined` | `NaN` |
+| `null` | `0` |
+| `true` | `1` |
+| `false` | `0` |
+| `""` (empty string) | `0` |
+| `"  "` (whitespace) | `0` |
+| `"123"` | `123` |
+| `"123abc"` | `NaN` |
+
+```javascript
+alert(Number("   123   ")); // 123
+alert(Number("123z"));      // NaN (error reading a number at "z")
+alert(Number(true));        // 1
+alert(Number(false));       // 0
+alert(Number(null));        // 0
+alert(Number(undefined));   // NaN
+```
+
+---
+
+### Boolean Conversion
+
+Happens in logical operations. Can be performed explicitly with `Boolean(value)`:
+
+**Rules:**
+- Values that are intuitively "empty" (`0`, `""`, `null`, `undefined`, `NaN`) become `false`
+- Other values become `true`
+
+```javascript
+alert(Boolean(1));          // true
+alert(Boolean(0));          // false
+alert(Boolean("hello"));    // true
+alert(Boolean(""));         // false
+alert(Boolean("0"));        // true (non-empty string)
+alert(Boolean(" "));        // true (space is non-empty)
+```
+
+---
+
+## Comparison Operators
+
+Comparison operators return a boolean value:
+
+- **Greater/less than**: `a > b`, `a < b`
+- **Greater/less than or equals**: `a >= b`, `a <= b`
+- **Equality**: `a == b` (with type coercion)
+- **Strict equality**: `a === b` (without type coercion)
+- **Not equal**: `a != b`
+- **Strict not equal**: `a !== b`
+
+---
+
+### String Comparison
+
+Strings are compared letter-by-letter in "dictionary" order:
+
+```javascript
+alert('Z' > 'A'); // true
+alert('Glow' > 'Glee'); // true
+alert('Bee' > 'Be'); // true
+```
+
+---
+
+### Different Types Comparison
+
+When comparing values of different types, JavaScript converts them to numbers:
+
+```javascript
+alert('2' > 1);  // true, string '2' becomes number 2
+alert('01' == 1); // true, string '01' becomes number 1
+alert(true == 1); // true
+alert(false == 0); // true
+```
+
+---
+
+### Strict Equality ===
+
+The regular equality check `==` has a problem – it cannot differentiate `0` from `false`:
+
+```javascript
+alert(0 == false); // true
+```
+
+The **strict equality operator `===`** checks equality without type conversion:
+
+```javascript
+alert(0 === false); // false, because types are different
+```
+
+---
+
+## Examples
+
+### Example 1: Calculator
+
+```javascript
+let a = 10;
+let b = 5;
+
+console.log(`${a} + ${b} = ${a + b}`);   // 10 + 5 = 15
+console.log(`${a} - ${b} = ${a - b}`);   // 10 - 5 = 5
+console.log(`${a} * ${b} = ${a * b}`);   // 10 * 5 = 50
+console.log(`${a} / ${b} = ${a / b}`);   // 10 / 5 = 2
+console.log(`${a} % ${b} = ${a % b}`);   // 10 % 5 = 0
+console.log(`${a} ** ${b} = ${a ** b}`); // 10 ** 5 = 100000
+```
+
+---
+
+### Example 2: Type Coercion
+
+```javascript
+console.log("5" + 3);      // "53" (string concatenation)
+console.log("5" - 3);      // 2 (numeric subtraction)
+console.log("5" * "2");    // 10 (numeric multiplication)
+console.log(true + 1);     // 2 (true becomes 1)
+console.log(false + 1);    // 1 (false becomes 0)
+console.log(null + 1);     // 1 (null becomes 0)
+console.log(undefined + 1); // NaN (undefined becomes NaN)
+```
+
+---
+
+### Example 3: Increment/Decrement
+
+```javascript
+let x = 5;
+console.log(x++); // 5 (returns old value, then increments)
+console.log(x);   // 6
+
+let y = 5;
+console.log(++y); // 6 (increments, then returns new value)
+console.log(y);   // 6
+```
+
+---
+
+## Summary
+
+- JavaScript supports standard arithmetic operators: `+`, `-`, `*`, `/`, `%`, `**`
+- Binary `+` concatenates strings if any operand is a string
+- Unary `+` converts values to numbers
+- Modify-in-place operators: `+=`, `-=`, `*=`, `/=`, etc.
+- Increment `++` and decrement `--` have prefix and postfix forms
+- Prefix returns new value, postfix returns old value
+- Type conversions happen automatically or can be done explicitly
+- Use `===` for strict equality (no type conversion)
+- Use `==` for equality with type conversion

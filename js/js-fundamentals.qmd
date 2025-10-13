@@ -1,0 +1,274 @@
+---
+title: "JavaScript: Fundamentals"
+subtitle: JavaScript Fundamentals
+author: Pedro GeoGIS
+date: "01/13/2025"
+date-modified: last-modified
+date-format: full
+description: JavaScript Fundamentals - Hello World, Code Structure, and Basic Syntax
+categories: [javascript, fundamentals, basics]
+toc: true
+number-sections: true
+highlight-style: pygments
+format: 
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **JavaScript Fundamentals**
+
+**JavaScript** is a high-level, interpreted programming language that is one of the core technologies of the World Wide Web. Created by Brendan Eich in 1995, JavaScript enables interactive web pages and is an essential part of web applications. It supports event-driven, functional, and imperative programming styles. JavaScript runs in the browser and on servers (Node.js), making it versatile for both front-end and back-end development.
+
+:::
+
+---
+
+## Hello, World!
+
+JavaScript programs can be inserted into HTML documents using the `<script>` tag.
+
+```javascript
+<!DOCTYPE HTML>
+<html>
+<body>
+  <p>Before the script...</p>
+  
+  <script>
+    alert('Hello, world!');
+  </script>
+  
+  <p>...After the script.</p>
+</body>
+</html>
+```
+
+The `<script>` tag contains JavaScript code which is automatically executed when the browser processes the tag.
+
+---
+
+## External Scripts
+
+If we have a lot of JavaScript code, we can put it into a separate file. Script files are attached to HTML with the `src` attribute:
+
+```html
+<script src="/path/to/script.js"></script>
+```
+
+You can provide:
+- **Absolute path**: `/path/to/script.js` from the site root
+- **Relative path**: `script.js` or `./script.js` in the current folder
+- **Full URL**: `https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.js`
+
+**Benefits of separate files:**
+- Browser downloads and caches the file
+- Other pages can reuse the cached file
+- Reduces traffic and makes pages faster
+
+---
+
+::: {.callout-warning}
+A single `<script>` tag cannot have both the `src` attribute and code inside. You must choose one or the other.
+:::
+
+---
+
+## Code Structure
+
+### Statements
+
+Statements are syntax constructs and commands that perform actions.
+
+```javascript
+alert('Hello');
+alert('World');
+```
+
+We can have as many statements as we want, separated by semicolons.
+
+---
+
+### Semicolons
+
+A semicolon may be omitted in most cases when a line break exists:
+
+```javascript
+alert('Hello')
+alert('World')
+```
+
+However, there are cases where JavaScript fails to assume a semicolon. It's recommended to put semicolons between statements even if they are separated by newlines.
+
+---
+
+## Comments
+
+Comments are used to explain code and make it more readable. They are not executed.
+
+### Single-line Comments
+
+```javascript
+// This is a single-line comment
+alert('Hello'); // This comment follows the statement
+```
+
+---
+
+### Multi-line Comments
+
+```javascript
+/* This is a multi-line comment
+   that spans multiple lines
+   and explains complex code */
+alert('Hello');
+```
+
+---
+
+::: {.callout-tip}
+**Nested comments are not supported!**
+
+```javascript
+/* 
+  /* nested comment */ // ERROR!
+*/
+```
+:::
+
+---
+
+## The Modern Mode: "use strict"
+
+For a long time, JavaScript evolved without compatibility issues. New features were added while old functionality didn't change.
+
+In 2009, ECMAScript 5 (ES5) appeared with new features and modifications to existing ones. To keep old code working, most modifications are off by default. You need to explicitly enable them with `"use strict"`.
+
+```javascript
+"use strict";
+
+// This code works the modern way
+```
+
+---
+
+### Placing "use strict"
+
+The directive must be at the top of a script or at the beginning of a function body:
+
+```javascript
+"use strict";
+
+// Code works in modern mode
+alert("Modern JavaScript");
+```
+
+---
+
+::: {.callout-important}
+**There's no way to cancel "use strict"**
+
+Once we enter strict mode, there's no going back. Modern JavaScript supports "classes" and "modules" that enable `"use strict"` automatically.
+:::
+
+---
+
+## Console Output
+
+While `alert()` shows messages in the browser, `console.log()` outputs to the browser's developer console:
+
+```javascript
+console.log('Hello, World!');
+console.log('This appears in the console');
+```
+
+---
+
+### Multiple Values
+
+You can log multiple values separated by commas:
+
+```javascript
+console.log('Hello', 'World', 2025);
+// Output: Hello World 2025
+```
+
+---
+
+## Browser Interaction
+
+### alert
+
+Shows a message and waits for the user to press "OK":
+
+```javascript
+alert("Hello!");
+```
+
+---
+
+### prompt
+
+Shows a modal window with a text message, an input field, and OK/Cancel buttons:
+
+```javascript
+let age = prompt('How old are you?', 100);
+alert(`You are ${age} years old!`);
+```
+
+The second parameter is optional and represents the initial value for the input field.
+
+---
+
+### confirm
+
+Shows a modal window with a question and two buttons: OK and Cancel:
+
+```javascript
+let isBoss = confirm("Are you the boss?");
+alert(isBoss); // true if OK is pressed, false if Cancel
+```
+
+---
+
+## Code Quality Tips
+
+1. **Use meaningful names**: Variables and functions should have clear, descriptive names
+2. **Keep functions small**: Each function should do one thing
+3. **Add comments**: Explain "why" not "what" the code does
+4. **Use consistent style**: Follow a style guide (e.g., Airbnb, Google)
+5. **Enable strict mode**: Always use `"use strict"`
+
+---
+
+## Example: Simple Calculator
+
+```javascript
+"use strict";
+
+// Get two numbers from user
+let num1 = prompt('Enter first number:', '0');
+let num2 = prompt('Enter second number:', '0');
+
+// Convert strings to numbers
+num1 = Number(num1);
+num2 = Number(num2);
+
+// Calculate and display results
+console.log('Sum:', num1 + num2);
+console.log('Difference:', num1 - num2);
+console.log('Product:', num1 * num2);
+console.log('Quotient:', num1 / num2);
+```
+
+---
+
+## Summary
+
+- JavaScript can be embedded in HTML using `<script>` tags or loaded from external files
+- Statements are separated by semicolons (recommended even with line breaks)
+- Comments can be single-line (`//`) or multi-line (`/* */`)
+- `"use strict"` enables modern JavaScript features
+- Browser provides `alert()`, `prompt()`, and `confirm()` for user interaction
+- `console.log()` outputs to the developer console

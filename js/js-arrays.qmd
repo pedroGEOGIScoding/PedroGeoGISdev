@@ -1,0 +1,732 @@
+---
+title: "JavaScript: Arrays"
+subtitle: JavaScript Arrays
+author: Pedro GeoGIS
+date: "01/13/2025"
+date-modified: last-modified
+date-format: full
+description: JavaScript Arrays - Creating, Manipulating, and Iterating Over Arrays
+categories: [javascript, arrays, data-structures]
+toc: true
+number-sections: true
+highlight-style: pygments
+format: 
+  html
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Arrays**
+
+**Arrays** are special data structures used to store ordered collections of values. Unlike objects which store keyed collections, arrays maintain the order of elements and provide methods to manage that order. Arrays can hold values of any type and are zero-indexed (the first element is at index 0). They are essential for working with lists of data like users, products, or any sequential information.
+
+:::
+
+---
+
+## Creating Arrays
+
+There are two syntaxes for creating an empty array:
+
+```javascript
+let arr = new Array();
+let arr = [];
+```
+
+**Recommendation**: Use the square brackets `[]` syntax as it's shorter and more common.
+
+---
+
+### Array with Initial Elements
+
+```javascript
+let fruits = ["Apple", "Orange", "Plum"];
+```
+
+Array elements are numbered, starting with zero. We can get an element by its number in square brackets:
+
+```javascript
+let fruits = ["Apple", "Orange", "Plum"];
+
+alert(fruits[0]);  // Apple
+alert(fruits[1]);  // Orange
+alert(fruits[2]);  // Plum
+```
+
+---
+
+### Modifying Elements
+
+```javascript
+fruits[2] = 'Pear';  // now ["Apple", "Orange", "Pear"]
+```
+
+---
+
+### Adding New Elements
+
+```javascript
+fruits[3] = 'Lemon';  // now ["Apple", "Orange", "Pear", "Lemon"]
+```
+
+---
+
+### Array Length
+
+The total count of elements in the array is its `length`:
+
+```javascript
+let fruits = ["Apple", "Orange", "Plum"];
+alert(fruits.length);  // 3
+```
+
+---
+
+### Displaying the Whole Array
+
+```javascript
+let fruits = ["Apple", "Orange", "Plum"];
+alert(fruits);  // Apple,Orange,Plum
+```
+
+---
+
+### Mixed Types
+
+An array can store elements of any type:
+
+```javascript
+let arr = [
+  'Apple',
+  { name: 'John' },
+  true,
+  function() { alert('hello'); }
+];
+
+// get the object at index 1 and show its name
+alert(arr[1].name);  // John
+
+// get the function at index 3 and run it
+arr[3]();  // hello
+```
+
+---
+
+## Get Last Elements with "at"
+
+To get the last element, we can use negative indices with the `at()` method:
+
+```javascript
+let fruits = ["Apple", "Orange", "Plum"];
+
+alert(fruits.at(-1));  // Plum (last element)
+alert(fruits.at(-2));  // Orange (second to last)
+```
+
+This is the same as:
+
+```javascript
+alert(fruits[fruits.length - 1]);  // Plum
+```
+
+---
+
+## Methods pop/push, shift/unshift
+
+Arrays in JavaScript can work both as a **queue** and as a **stack**.
+
+### Queue (FIFO - First In First Out)
+
+- `push` – appends an element to the end
+- `shift` – gets an element from the beginning
+
+### Stack (LIFO - Last In First Out)
+
+- `push` – adds an element to the end
+- `pop` – takes an element from the end
+
+---
+
+### pop
+
+Extracts the last element of the array and returns it:
+
+```javascript
+let fruits = ["Apple", "Orange", "Pear"];
+
+alert(fruits.pop());  // remove "Pear" and alert it
+alert(fruits);        // Apple, Orange
+```
+
+Both `fruits.pop()` and `fruits.at(-1)` return the last element, but `fruits.pop()` also modifies the array by removing it.
+
+---
+
+### push
+
+Appends the element to the end of the array:
+
+```javascript
+let fruits = ["Apple", "Orange"];
+
+fruits.push("Pear");
+
+alert(fruits);  // Apple, Orange, Pear
+```
+
+The call `fruits.push(...)` is equal to `fruits[fruits.length] = ...`.
+
+---
+
+### shift
+
+Extracts the first element of the array and returns it:
+
+```javascript
+let fruits = ["Apple", "Orange", "Pear"];
+
+alert(fruits.shift());  // remove Apple and alert it
+alert(fruits);          // Orange, Pear
+```
+
+---
+
+### unshift
+
+Adds the element to the beginning of the array:
+
+```javascript
+let fruits = ["Orange", "Pear"];
+
+fruits.unshift('Apple');
+
+alert(fruits);  // Apple, Orange, Pear
+```
+
+---
+
+### Multiple Elements
+
+Methods `push` and `unshift` can add multiple elements at once:
+
+```javascript
+let fruits = ["Apple"];
+
+fruits.push("Orange", "Peach");
+fruits.unshift("Pineapple", "Lemon");
+
+alert(fruits);  // Pineapple, Lemon, Apple, Orange, Peach
+```
+
+---
+
+## Performance
+
+Methods `push`/`pop` are fast, while `shift`/`unshift` are slow.
+
+**Why?**
+
+- `push`/`pop` work with the end of the array (no need to renumber other elements)
+- `shift`/`unshift` work with the beginning (all elements need to be renumbered)
+
+The more elements in the array, the more time to move them, more in-memory operations.
+
+---
+
+## Loops
+
+### for Loop
+
+The most common way to loop over array elements:
+
+```javascript
+let fruits = ["Apple", "Orange", "Plum"];
+
+for (let i = 0; i < fruits.length; i++) {
+  alert(fruits[i]);
+}
+```
+
+---
+
+### for...of Loop
+
+A special form of loop for iterating over array values:
+
+```javascript
+let fruits = ["Apple", "Orange", "Plum"];
+
+for (let fruit of fruits) {
+  alert(fruit);
+}
+```
+
+The `for...of` doesn't give access to the index, just the value. But that's enough for most cases.
+
+---
+
+### for...in Loop (Not Recommended)
+
+Technically, because arrays are objects, it's possible to use `for...in`:
+
+```javascript
+let arr = ["Apple", "Orange", "Pear"];
+
+for (let key in arr) {
+  alert(arr[key]);  // Apple, Orange, Pear
+}
+```
+
+**But this is a bad idea** because:
+1. `for...in` iterates over all properties, not only numeric ones
+2. `for...in` is optimized for generic objects, not arrays (10-100 times slower)
+
+Use `for...of` or regular `for` loop for arrays.
+
+---
+
+## Array Length
+
+The `length` property automatically updates when we modify the array. It's not the count of values, but the greatest numeric index plus one:
+
+```javascript
+let fruits = [];
+fruits[123] = "Apple";
+
+alert(fruits.length);  // 124
+```
+
+---
+
+### Clearing an Array
+
+The simplest way to clear an array is:
+
+```javascript
+arr.length = 0;
+```
+
+---
+
+## new Array()
+
+There's one more syntax to create an array:
+
+```javascript
+let arr = new Array("Apple", "Pear", "etc");
+```
+
+It's rarely used because square brackets `[]` are shorter.
+
+**Gotcha**: If `new Array` is called with a single numeric argument, it creates an array without items, but with the given length:
+
+```javascript
+let arr = new Array(2);  // will it create an array of [2]?
+
+alert(arr[0]);     // undefined! no elements.
+alert(arr.length); // length 2
+```
+
+---
+
+## Multidimensional Arrays
+
+Arrays can have items that are also arrays. We can use it for multidimensional arrays:
+
+```javascript
+let matrix = [
+  [1, 2, 3],
+  [4, 5, 6],
+  [7, 8, 9]
+];
+
+alert(matrix[1][1]);  // 5, the central element
+```
+
+---
+
+## toString
+
+Arrays have their own implementation of `toString` method that returns a comma-separated list of elements:
+
+```javascript
+let arr = [1, 2, 3];
+
+alert(arr);           // 1,2,3
+alert(String(arr));   // 1,2,3
+alert(arr.toString()); // 1,2,3
+```
+
+---
+
+## Don't Compare Arrays with ==
+
+Arrays in JavaScript shouldn't be compared with operator `==`.
+
+This operator has no special treatment for arrays, it works with them as with any objects.
+
+```javascript
+alert([] == []);   // false
+alert([0] == [0]); // false
+```
+
+Arrays are objects, so they are compared by reference. Two independent arrays are never equal.
+
+---
+
+### Comparison with Primitives
+
+```javascript
+alert(0 == []);    // true
+alert('0' == []);  // false
+```
+
+When an array is compared with a primitive, it's converted to a primitive for comparison.
+
+**Recommendation**: Don't use `==` with arrays. Instead, compare them item-by-item, or use iteration methods.
+
+---
+
+## Common Array Methods
+
+### splice
+
+The `splice()` method can insert, remove and replace elements:
+
+```javascript
+arr.splice(start, deleteCount, elem1, ..., elemN)
+```
+
+Examples:
+
+```javascript
+let arr = ["I", "study", "JavaScript"];
+
+// remove 1 element from index 1
+arr.splice(1, 1);
+alert(arr);  // ["I", "JavaScript"]
+```
+
+```javascript
+let arr = ["I", "study", "JavaScript", "right", "now"];
+
+// remove 3 first elements and replace them with another
+arr.splice(0, 3, "Let's", "dance");
+alert(arr);  // ["Let's", "dance", "right", "now"]
+```
+
+---
+
+### slice
+
+Returns a new array copying all items from index `start` to `end` (not including `end`):
+
+```javascript
+arr.slice([start], [end])
+```
+
+```javascript
+let arr = ["t", "e", "s", "t"];
+
+alert(arr.slice(1, 3));  // e,s (copy from 1 to 3)
+alert(arr.slice(-2));    // s,t (copy from -2 till the end)
+```
+
+---
+
+### concat
+
+Creates a new array that includes values from other arrays and additional items:
+
+```javascript
+arr.concat(arg1, arg2...)
+```
+
+```javascript
+let arr = [1, 2];
+
+alert(arr.concat([3, 4]));        // 1,2,3,4
+alert(arr.concat([3, 4], [5, 6])); // 1,2,3,4,5,6
+alert(arr.concat([3, 4], 5, 6));   // 1,2,3,4,5,6
+```
+
+---
+
+### indexOf / lastIndexOf / includes
+
+- `arr.indexOf(item, from)` – looks for `item` starting from index `from`, returns the index or `-1`
+- `arr.lastIndexOf(item, from)` – same, but looks from right to left
+- `arr.includes(item, from)` – looks for `item` starting from index `from`, returns `true` if found
+
+```javascript
+let arr = [1, 0, false];
+
+alert(arr.indexOf(0));     // 1
+alert(arr.indexOf(false)); // 2
+alert(arr.indexOf(null));  // -1
+
+alert(arr.includes(1));    // true
+```
+
+---
+
+### find and findIndex
+
+Used to find objects with specific conditions:
+
+```javascript
+let result = arr.find(function(item, index, array) {
+  // should return true if the item is what we are looking for
+});
+```
+
+```javascript
+let users = [
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 3, name: "Mary"}
+];
+
+let user = users.find(item => item.id == 1);
+
+alert(user.name);  // John
+```
+
+---
+
+### filter
+
+Returns an array of all matching elements:
+
+```javascript
+let results = arr.filter(function(item, index, array) {
+  // should return true if the item passes the filter
+});
+```
+
+```javascript
+let users = [
+  {id: 1, name: "John"},
+  {id: 2, name: "Pete"},
+  {id: 3, name: "Mary"}
+];
+
+let someUsers = users.filter(item => item.id < 3);
+
+alert(someUsers.length);  // 2
+```
+
+---
+
+### map
+
+Calls the function for each element and returns the array of results:
+
+```javascript
+let result = arr.map(function(item, index, array) {
+  // returns the new value instead of item
+});
+```
+
+```javascript
+let lengths = ["Bilbo", "Gandalf", "Nazgul"].map(item => item.length);
+alert(lengths);  // 5,7,6
+```
+
+---
+
+### sort
+
+Sorts the array in place, changing element order:
+
+```javascript
+let arr = [1, 2, 15];
+
+arr.sort();
+alert(arr);  // 1, 15, 2
+```
+
+**Note**: Items are sorted as strings by default.
+
+To sort numbers correctly:
+
+```javascript
+let arr = [1, 2, 15];
+
+arr.sort((a, b) => a - b);
+alert(arr);  // 1, 2, 15
+```
+
+---
+
+### reverse
+
+Reverses the order of elements in the array:
+
+```javascript
+let arr = [1, 2, 3, 4, 5];
+arr.reverse();
+
+alert(arr);  // 5,4,3,2,1
+```
+
+---
+
+### split and join
+
+`str.split(delim)` splits the string into an array by the given delimiter:
+
+```javascript
+let names = 'Bilbo, Gandalf, Nazgul';
+let arr = names.split(', ');
+
+for (let name of arr) {
+  alert(`A message to ${name}.`);
+}
+```
+
+`arr.join(glue)` does the reverse – creates a string from array items glued by `glue`:
+
+```javascript
+let arr = ['Bilbo', 'Gandalf', 'Nazgul'];
+let str = arr.join(';');
+
+alert(str);  // Bilbo;Gandalf;Nazgul
+```
+
+---
+
+### reduce
+
+Used to calculate a single value based on the array:
+
+```javascript
+let value = arr.reduce(function(accumulator, item, index, array) {
+  // ...
+}, [initial]);
+```
+
+```javascript
+let arr = [1, 2, 3, 4, 5];
+
+let result = arr.reduce((sum, current) => sum + current, 0);
+
+alert(result);  // 15
+```
+
+---
+
+## Examples
+
+### Example 1: Basic Array Operations
+
+```javascript
+let fruits = ["Apple", "Banana", "Orange"];
+
+console.log(fruits[0]);      // Apple
+console.log(fruits.length);  // 3
+
+fruits.push("Mango");
+console.log(fruits);  // ["Apple", "Banana", "Orange", "Mango"]
+
+fruits.pop();
+console.log(fruits);  // ["Apple", "Banana", "Orange"]
+```
+
+---
+
+### Example 2: Iterating Over Arrays
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+
+// for loop
+for (let i = 0; i < numbers.length; i++) {
+  console.log(numbers[i]);
+}
+
+// for...of loop
+for (let num of numbers) {
+  console.log(num);
+}
+```
+
+---
+
+### Example 3: Array Methods
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+
+// map - double each number
+let doubled = numbers.map(n => n * 2);
+console.log(doubled);  // [2, 4, 6, 8, 10]
+
+// filter - get even numbers
+let evens = numbers.filter(n => n % 2 === 0);
+console.log(evens);  // [2, 4]
+
+// reduce - sum all numbers
+let sum = numbers.reduce((total, n) => total + n, 0);
+console.log(sum);  // 15
+```
+
+---
+
+### Example 4: Finding Elements
+
+```javascript
+let users = [
+  { id: 1, name: "John", age: 25 },
+  { id: 2, name: "Jane", age: 30 },
+  { id: 3, name: "Bob", age: 35 }
+];
+
+// find user with id 2
+let user = users.find(u => u.id === 2);
+console.log(user.name);  // Jane
+
+// filter users over 25
+let adults = users.filter(u => u.age > 25);
+console.log(adults.length);  // 2
+```
+
+---
+
+### Example 5: Sorting
+
+```javascript
+let numbers = [3, 1, 4, 1, 5, 9, 2, 6];
+
+// sort ascending
+numbers.sort((a, b) => a - b);
+console.log(numbers);  // [1, 1, 2, 3, 4, 5, 6, 9]
+
+// sort descending
+numbers.sort((a, b) => b - a);
+console.log(numbers);  // [9, 6, 5, 4, 3, 2, 1, 1]
+```
+
+---
+
+## Summary
+
+- Arrays are ordered collections of values
+- Create arrays with `[]` or `new Array()`
+- Access elements by index: `arr[0]`, `arr[1]`, etc.
+- Arrays are zero-indexed (first element is at index 0)
+- Use `length` property to get the number of elements
+- `push`/`pop` work with the end of the array
+- `shift`/`unshift` work with the beginning of the array
+- Use `for...of` to iterate over array values
+- Use `map()` to transform array elements
+- Use `filter()` to select elements that match a condition
+- Use `find()` to find a single element
+- Use `reduce()` to calculate a single value from the array
+- Use `sort()` to sort array elements
+- Use `splice()` to insert, remove, or replace elements
+- Use `slice()` to copy a portion of an array
+- Use `concat()` to merge arrays
+- Don't compare arrays with `==` operator
