@@ -326,6 +326,7 @@ website:
             - python/python-inheritance.qmd
             - python/python-encapsulation.qmd
             - python/python-abstraction.qmd
+            - python/python-exceptions.qmd
             - python/python-cheat-sheets.qmd
     - id: "js"
       title: "JavaScript"

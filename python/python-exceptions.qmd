@@ -1,0 +1,519 @@
+---
+title: "Python: Exceptions"
+subtitle: Exceptions in Python
+author: Isaac Boixaderas
+date: "06/01/2025"
+date-modified: last-modified
+date-format: full
+description: The file system is organized into a hierarchical structure, starting with the root directory
+categories: [python, exception]
+toc: true
+number-sections: true
+highlight-style: pygments
+format: html
+filters:
+- pyodide
+---
+
+## Overview
+
+::: {.summary .container}
+
+📘 **Exceptions in Python**
+
+In Python, `exceptions` are events that disrupt the normal flow of a program when an error occurs during execution. They differ from syntax errors, which are detected before the code runs. Exceptions signal that something unexpected happened while the program was running—such as dividing by zero, accessing a missing file, or using an undefined variable—and allow developers to handle these situations gracefully rather than letting the program crash.​
+
+Python provides a structured mechanism to deal with such errors through `try` and `except` blocks. The `try` block encloses potentially error-prone code, while the `except` block contains instructions for handling specific exceptions if they occur. You can also use `else` (which runs when no errors occur) and `finally` (which always executes) to manage code execution more precisely
+
+:::
+
+## Why Handle Exceptions?
+
++ Prevent application crashes
++ Provide user-friendly messages
++ Safely recover from errors
++ Ensure clean resource management 
+
+## Common Exceptions
+
+**ValueError:** Invalid value.
+
+```python
+int('hola')
+```
+
+ValueError: invalid literal for int() with base 10: 'hola'
+
+
+**TypeError:** Incorrect data type.
+
+```python
+1 + '123'
+```
+
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+
+**IndexError:** List/Tuple index out of range.
+
+```python
+x = [1, 2, 3]
+x[^5]
+```
+
+IndexError: list index out of range
+
+**KeyError:** Dictionary key not found.
+
+```python
+d = {'a': 1, 'b': 2}
+d['c']
+```
+
+KeyError: 'c'
+
+## Try-Except Block
+
++ Used to capture and handle exceptions.
++ Different exceptions, different logic.
++ Allows for graceful failure.
++ Improves user experience: No unexpected crashes.
+
+Fatal error, the whole program stops:
+
+```python
+result = 10 / 0
+print("This is not printed.")
+```
+
+ZeroDivisionError: division by zero
+
+Handle potential errors gracefully:
+
+```python
+try:
+    result = 10 / 0
+except ZeroDivisionError:
+    print("Can't divide by zero!")
+print("Program continues to run...")
+```
+
+Output:
+
+```
+Can't divide by zero!
+Program continues to run...
+```
+Without proper error handling, our programs will crash anyway.
+
+```python
+try:
+    a = [1, 2, 3]
+    print(a[4])
+except ZeroDivisionError:
+    print("ZeroDivisionError not ocurring...")
+print("Program crashes... This is not printed.")
+```
+
+Output:
+
+```
+IndexError: list index out of range
+
+```
+
+Handling Any Exception
+
+```python
+try:
+    result = 10 / 0
+except:
+    print("An error occurred")
+```
+
+Output:
+
+```
+An error occurred
+```
+
+```python
+try:
+    result = [1, 2, 3]
+    print(result[5])
+except:
+    print("An error occurred")
+```
+
+Output:
+
+```
+An error occurred
+```
+Handle as many code as we want in a try-except block
+
+```python
+def complicated_function(): 
+  # Assume a function that is very complicated
+  # # and can raise many different exceptions a = [1, 2, 3] return a[4] / 0 + "hello"
+  a = [1, 2, 3]
+  return a[4] / 0 + "hello"
+try: 
+  print("Can handle a lot of code")
+  complicated_function()
+  print("This will not be printed")
+except: 
+  print("An error occurred")
+```
+
+Output:
+
+```
+Can handle a lot of code
+An error occurred
+```
+
+## Multiple Errors Exception
+
+Handle multiple types of exceptions at once applying the same logic.
+
+```python
+try:
+    # risky code
+except (ValueError, TypeError):
+    # handle exception
+```
+
+## Multiple or Separate Exception Blocks
+
++ Handle different exceptions separately.
++ More precise error handling.
+
+```python
+try:
+    # risky code
+except ValueError:
+    # handle ValueError
+except TypeError:
+    # handle TypeError
+```
+
+## Using "as" in Except
+
+Use `as [variable name]` to access the original error message object.
+
+```python
+# Use `as` to access the error message and type
+try:
+    result = 10 / 0
+except ZeroDivisionError as e:
+    print("Can't divide by zero!")
+    # Access the error message
+    print(f"Original error message: \"{e}\"")
+    # Access the error type
+    print("Error type:", type(e))
+```
+
+Output:
+
+```
+Can't divide by zero!
+Original error message: "division by zero"
+Error type: <class 'ZeroDivisionError'>
+```
+
+## Else Block
+
++ `else`: Executes when the `try` block doesn't raise exceptions.
++ Useful for code that should run only when no errors occurred.
+
+```python
+try:
+    print("Try block code")
+except ZeroDivisionError:
+    print("Handle ValueError")
+else:
+    print("No exception raised!")
+```
+
+Output:
+
+```
+Try block code
+No exception raised!
+```
+
+## Finally Block
+
++ `finally`: Always runs, whether an exception was raised or not.
++ Essential for cleanup tasks, like closing files or releasing resources.
+
+```python
+try:
+    print("Try block code")
+except ZeroDivisionError:
+    print("Handle ValueError")
+finally:
+    print("Always runs!")
+```
+
+Output:
+
+```
+Try block code
+Always runs!
+```
+
+With an error.
+```python
+try:
+result = 10 / 0
+except ZeroDivisionError:
+print("Handle ValueError")
+finally:
+print("Always runs!")
+```
+
+Output:
+
+```
+Handle ValueError
+Always runs!
+```
+With an unhandled error.
+
+```python
+try:
+  a = [1, 2, 3] 
+  result = a[5]
+
+except ZeroDivisionError: 
+  print("Handle ValueError")
+finally:
+  print("Always runs!")
+  print("Even if the exception is not caught.")
+```
+
+Output:
+
+```
+Always runs!
+Even if the exception is not caught.
+```
+Everything together.
+
+```python
+try: 
+  print("Try block code")
+except ZeroDivisionError: 
+    print("Handle ValueError")
+else: 
+    print("No exception raised!")
+finally: 
+    print("Always runs!")
+```
+
+Output:
+
+```
+Try block code
+No exception raised!
+Always runs!
+```
+ANother example.
+
+```python
+try: 
+  result = 10 / 0
+  except ZeroDivisionError: 
+    print("Handle ZeroDivisionError")
+  except Exception as e: 
+    print("Handle any other exceptions") 
+    print(e)
+  else:
+    print("No exception raised!")
+  finally: 
+    print("Always runs!")
+```
+
+Output:
+
+```
+Handle ZeroDivisionError
+Always runs!
+```
+
+## Raising Exceptions
+
++ Allows developers to define specific error conditions.
++ Can be used to notify other parts of the software about issues.
++ Promotes building more predictable and safer programs.
+
+```python
+def calculate_birth_year(age):
+    if age < 0:
+        raise ValueError("Age cannot be negative!")
+    current_year = datetime.datetime.now().year
+    return current_year - age
+
+birth_year = calculate_birth_year(-1)
+```
+
+Error:
+
+```
+Age cannot be negative!
+```
+
+or.
+
+```python
+def calculate_birth_year(age): 
+  if age < 0: 
+    raise ValueError("Age cannot be negative!") 
+  if age > 120: 
+    raise ValueError(f"Are you sure the person is that old ({age})?!") 
+  current_year = datetime.datetime.now().year 
+  return current_year - age
+birth_year = calculate_birth_year(125)
+```
+
+Error:
+
+```
+Are you sure the person is that old (125)?!
+```
+
+## Custom Exceptions
+
++ Define specific error types for your application.
++ Inherit from `Exception` for user-defined exceptions.
++ Improves error categorization and handling.
+
+```python
+class AgeNegativeError(Exception):
+    """Raised when the age is negative."""
+    pass
+
+def calculate_birth_year(age):
+    if age < 0:
+      # We can raise a custom error with a message
+      raise AgeNegativeError("Age should not be negative!")
+
+try:
+    birth_year = calculate_birth_year(-5)
+
+except AgeNegativeError as e:
+    print(f"Error: {e}")
+    birth_year = None
+
+if birth_year is not None:
+    print(f"Birth year: {birth_year[0]} or {birth_year[1]}")
+```
+
+Output:
+
+```
+Error: Age should not be negative!
+```
+
+## Assert Statement
+
++ Debugging aid that tests a condition.
++ Ensure that an expression is `True`.
++ If `assert` condition evaluates to `False`, an `AssertionError` is raised.
++ Syntax: `assert [expression], ["Optional error message"]`
+
+Not raises exception:
+```python
+x = 10
+assert x == 10, "Value of x should be 10"
+```
+
+If failed, it raises exception:
+
+```python
+x = 5
+assert x == 10, "Value of x should be 10"
+```
+**Behind the scenes**
+
++ `assert` is mostly just syntactic shorthand for a `raise`.
++ It works like the following:
+
+```python
+# Equivalent to: assert x == 10, "Value of x should be 10"
+x = 5
+if x != 10:
+    raise AssertionError("Value of x should be 10")
+```
+
+## Common Use Cases
+
++ **Sanity checks**: Ensure code behaves as expected.
++ **Preconditions**: Validate input or environment before executing.
++ **Postconditions**: Confirm the output or effect of a function.
++ **Testing**: Used in testing frameworks for validating the correctness of a function.
+
+## Example 1: Precondition
+
+```python
+def square_root(n):
+    assert n > 0, "Input should be a positive number"
+    return n ** 0.5
+```
+
+## Example 2: Test Assertion
+
+```python
+def add(a, b):
+    return a + b
+
+def test_add():
+    result = add(2, 3)
+    assert result == 5, f"Expected 5, but got {result}"
+
+test_add()
+print("Tests passed!")
+```
+
+Output:
+
+```
+Tests passed!
+```
+## Dangers
+
++ `assert` can be globally disabled with the `-O` (optimize) command line switch.
++ Not suitable for production error handling.
++ Use exceptions for errors that shouldn't be ignored.
+
+## Exception Design Tips
+
+* Use `try-except`:
+
++ For operations that fail often (e.g., socket calls, file opens, etc.)
++ For unpredictable user inputs (e.g., using a string when it should be an int.)
++ For unreliable third-party libraries (e.g., API calls.)
++ For long-running systems that must not crash (e.g., bank transactions (milions per day...).)
+
+For simple scripts you may want failures to kill your program.
+
+Example:
+
+```python
+for transaction in transactions:
+    try:
+        process_transaction(transaction)
+    except DatabaseConnectionError:
+        time.sleep(60)
+        retry_transaction(transaction)
+    except SuspiciousTransactionError as e:
+        flag_transaction(transaction, reason=e)
+    except Exception as e:
+        log_error(e)
+        move_to_failed_queue(transaction)
+    finally:
+        update_transaction_status(transaction)
+        close_transaction(transaction)
+```
