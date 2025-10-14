@@ -10,8 +10,9 @@ categories: [python, lists, loops]
 toc: true
 number-sections: true
 highlight-style: pygments
-format:
-  html
+format: html
+filters:
+- pyodide
 ---
 
 ## Overview
@@ -24,7 +25,7 @@ format:
 
 :::
 
----
+***
 
 ## Lists
 
@@ -40,7 +41,7 @@ my_list = [1, 4, 3, 2, 7]
 my_mixed_list = [1, 'hello', 3.4, [8, 4, 6], ['a']]
 ```
 
----
+***
 
 ## Indexing and slicing
 
@@ -49,7 +50,7 @@ my_mixed_list = [1, 'hello', 3.4, [8, 4, 6], ['a']]
 ![List indexing in python](/images/python/python_list_indexing.png){width=80% .preview-image}
 <center>From: https://favtutor.com/blogs/get-list-index-python</center>
 
----
+***
 
 ```python
 my_list = [1, 4, 3, 2, 7]
@@ -62,7 +63,7 @@ print(my_list[::2])
 
 <div class="output">1<br>7<br>[4, 3, 2]<br>[1, 3, 7]</div>
 
----
+***
 
 ## Operations
 
@@ -97,7 +98,7 @@ print([1, "abc", 3] == [1, "abc", 3]) # True
 ```
 <div class="output">True<br>False<br>False<br>True</div> -->
 
----
+***
 
 ### Empty
 
@@ -116,7 +117,7 @@ else:
 
 <div class="output">The list is empty.</div>
 
----
+***
 
 ```python
 # Using `not`
@@ -131,7 +132,7 @@ else:
 
 <div class="output">The list is empty.</div>
 
----
+***
 
 ```python
 # Using empty list
@@ -146,7 +147,7 @@ else:
 
 <div class="output">The list is empty.</div>
 
----
+***
 
 ## Updating
 
@@ -162,7 +163,7 @@ print(my_list)
 
 <div class="output">[8, 2, 3]</div>
 
----
+***
 
 ```python
 my_list = [1, 2, 3]
@@ -174,7 +175,7 @@ print(my_list)
 
 <div class="output">[1, 9, 10]</div>
 
----
+***
 
 ## Adding elements
 
@@ -182,7 +183,7 @@ We can add elements to a list using:
 
 - `append()`: Adds an element to the end of the list.
 
----
+***
 
 ```python
 my_list = [1, 2, 3]
@@ -201,7 +202,7 @@ print(my_list)
 
 <div class="output">[1, 2, 3, 4, 5]</div>
 
----
+***
 
 - `extend()`: Adds multiple elements to the end of the list.
 
@@ -215,7 +216,7 @@ print(my_list)
 
 <div class="output">[1, 2, 3, 7, 8, 9]</div>
 
----
+***
 
 - `insert()`: Adds an element at a specific index.
 
@@ -229,7 +230,7 @@ print(my_list)
 
 <div class="output">[1, 2, 3, 4, 5, 10, 6, 7, 8, 9]</div>
 
----
+***
 
 ## Removing elements
 
@@ -247,7 +248,7 @@ print(my_list)
 
 <div class="output">[1, 'a', 3, 2, 'b']</div>
 
----
+***
 
 - It crashes if there is no equal element...
 
@@ -261,7 +262,7 @@ print(my_list)
 
 <div class="output">ValueError: list.remove(x): x not in list</div>
 
----
+***
 
 - `pop()`: Removes an element at a given index.
 
@@ -275,7 +276,7 @@ print(my_list)
 
 <div class="output">[1, 'a', 3, 2, 'b']</div>
 
----
+***
 
 - If the index is not specified, it deletes the last element.
 
@@ -289,7 +290,7 @@ print(my_list)
 
 <div class="output">[1, 2, 'a', 3, 2]</div>
 
----
+***
 
 - The removed element is returned.
 - We can optionally store it in a variable.
@@ -315,7 +316,7 @@ print(my_list)
 ```
 <div class="output">[1, 2, 3, 2, 'b']</div>
 
----
+***
 
 ### When to use each?
 
@@ -327,7 +328,7 @@ print(my_list)
     
   - You could also use `pop()` without storing the returned value though... 
 
----
+***
 
 ## Other list methods
 
@@ -344,7 +345,7 @@ print(f'The index of the first occurrence of 2 is: {my_list.index(2)}.')
 
 <div class="output">The index of the number 5 is: 7.<br>The index of the first occurrence of 2 is: 1.</div>
 
----
+***
 
 - `count()`: Counts the number of occurrences of a specified element in the list.
   
@@ -358,7 +359,7 @@ print(f'The number 2 appears {my_list.count(2)} times.')
 ````
 <div class="output">The number 2 appears 4 times.</div>
 
----
+***
 
 - `sort()`: Sorts the elements of the list in-place (modifies the original list).
 <!-- - `reverse()`: Reverses the elements of the list in-place (modifies the original list).
@@ -373,11 +374,11 @@ print(my_list)
 
 <div class="output">[1, 2, 2, 2, 2, 3, 4, 5]</div>
 
----
+***
 
 - Extensive explanation of list methods: https://docs.python.org/3/tutorial/datastructures.html.
 
----
+***
 
 ## Built-in functions
 
@@ -389,7 +390,7 @@ Some of the most common general built-in functions for lists are:
 - `min()`: Returns the minimum value in a list.
 - `sorted()`: Returns a sorted list (does not modify the original list).
 
----
+***
 
 ```python
 my_list = [1, 4, 2, 7, 3]
@@ -405,7 +406,7 @@ print(f'The list sorted in ascending order is: {sorted(my_list)}.')
 
 <div class="output">The length of the list is: 5.<br>The sum of all the elements is: 17.<br>The maximum element is: 7.<br>The list sorted in ascending order is: [1, 2, 3, 4, 7].</div>
 
----
+***
 
 - What is printed?
 
@@ -418,7 +419,7 @@ print('a =', a)
 print('b =', b)
 ```
 
----
+***
 
 - When setting a list as equal to another, both variables affect the same list.
 
@@ -435,7 +436,7 @@ print('b =', b)
 
 <div class="output">a = [8, 2, 3]<br>b = [8, 2, 3]</div>
 
----
+***
 
 - If we want independent lists we can use the `copy()` method:
 
@@ -452,7 +453,7 @@ print('b =', b)
 
 <div class="output">a = [1, 2, 3]<br>b = [8, 2, 3]</div>
 
----
+***
 
 ## `in` Keyword
 
@@ -473,7 +474,7 @@ print('pear' in fruits)
 
 <div class="output">False</div>
 
----
+***
 
 ## Loops
 
@@ -481,7 +482,7 @@ print('pear' in fruits)
 - They allow us to execute a block of code repeatedly.
 - Python supports two types: `for` and `while` loops.
 
----
+***
 
 ### `for`
 
@@ -494,7 +495,7 @@ print('pear' in fruits)
   ```
   
 
----
+***
 
 ### List iteration example
 
@@ -509,7 +510,7 @@ for element in my_list:
 
 <div class="output">1<br>2<br>3</div>
 
----
+***
 
 Commonly used built-in functions for `for` loops:
 
@@ -528,7 +529,7 @@ for index, value in enumerate(my_list):
 
 <div class="output">The element at index 0 is 3.<br>The element at index 1 is 2.<br>The element at index 2 is 1.</div>
 
----
+***
 
 - `range()`: Sequence of numbers. By default, starts from 0 and increments by 1. Stops before a specified number.
 
@@ -540,7 +541,7 @@ for i in range(4):
 
 <div class="output">0<br>1<br>2<br>3</div>
 
----
+***
 
 ```python
 # Starts at 2 and ends at 6 (not included)
@@ -550,7 +551,7 @@ for i in range(2, 6):
 
 <div class="output">2<br>3<br>4<br>5</div>
 
----
+***
 
 ```python
 # Starts at 0 and ends at 10 (not included), in increments of 2
@@ -560,7 +561,7 @@ for i in range(0, 10, 2):
 
 <div class="output">0<br>2<br>4<br>6<br>8</div>
 
----
+***
 
 ### String iteration example
 
@@ -574,7 +575,7 @@ for character in my_list:
 
 <div class="output">H<br>e<br>l<br>l<br>o</div>
 
----
+***
 
 ### While
 
@@ -587,7 +588,7 @@ for character in my_list:
   ```
   
 
----
+***
 
 ```python
 count = 0
@@ -600,7 +601,7 @@ print(f'The loop ended because {count} is greater or equal to 4.')
 
 <div class="output">0 is less than 4.<br>1 is less than 4.<br>2 is less than 4.<br>3 is less than 4.<br>The loop ended because 4 is greater or equal to 4.</div>
 
----
+***
 
 - We can chain as many conditions as we want:
 
@@ -615,7 +616,7 @@ print(f'{count} is greater or equal to 4 or {count * 3} is greater than 8.')
 
 <div class="output">0 is less than 4 and 0 is less than 8.<br>1 is less than 4 and 3 is less than 8.<br>2 is less than 4 and 6 is less than 8.<br>3 is greater or equal to 4 or 9 is greater than 8.</div>
 
----
+***
 
 - Take care of infinite loops!
 - If the specified condition is never met, `while` will execute forever...
@@ -630,7 +631,7 @@ while a < 10:
 
 <div class="output">Error because of infinite loop</div>
 
----
+***
 
 ## Example
 
@@ -648,7 +649,7 @@ print(squares)
 
 <div class="output">[1, 4, 9, 16, 25]</div>
 
----
+***
 
 ## List comprehension
 
@@ -672,8 +673,8 @@ print(squares)
 
 <div class="output">[1, 4, 9, 16, 25]</div>
 
----
-```{pyodidepython
+***
+```{pyodide-python
 numbers = [1, 2, 3, 4]
 doubled_numbers = [num * 2 for num in numbers]
 print(doubled_numbers)
@@ -693,7 +694,7 @@ print(even_squares)
 
 <div class="output">[4, 16]</div>
 
----
+***
 
 ## Loop control statements
 
@@ -704,7 +705,7 @@ Keywords:
 - `break`: Terminates the current loop.
 - `continue`: Skips the remaining code in the current iteration and proceeds to the next one.
 
----
+***
 
 ```python
 # `break` example
@@ -719,7 +720,7 @@ print('Outside the loop')
 
 <div class="output">0<br>1<br>2<br>3<br>4<br>Outside the loop</div>
 
----
+***
 
 ```python
 # `continue` example
@@ -735,7 +736,7 @@ print('Outside the loop')
 
 <div class="output">1<br>3<br>5<br>7<br>9<br>Outside the loop</div>
 
----
+***
 
 ## Unpacking
 
@@ -751,7 +752,7 @@ print(b)
 
 <div class="output">3<br>4</div>
 
----
+***
 
 ## Unpacking
 
@@ -767,7 +768,7 @@ print(z)
 
 <div class="output">h<br>e<br>y</div>
 
----
+***
 
 ## Example
 
@@ -781,7 +782,7 @@ print(z)
   
   - `[4, 5]`
 
----
+***
 
 ```python
 list1 = [1, 2, 3, 4, 5]
