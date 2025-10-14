@@ -235,3 +235,14 @@ print(even_tuple)
 
 <div class="output">(0, 2, 4, 6, 8)</div>
 
+This code creates a **tuple** containing even numbers from 0 up to 8 by
+multiplying each number in the range 0 to 4 (inclusive) by 2, and then
+prints the tuple.
+
+* How the Code Works:
+1. `range(5)` produces the sequence 0, 1, 2, 3, 4.
+2. The generator expression `i * 2 for i in range(5)` calculates 0, 2, 4, 6,
+and 8.
+3. The `tuple()` function collects these values into a tuple: (0, 2, 4, 6, 8).
+4. `print(even_tuple)` outputs this tuple.
+

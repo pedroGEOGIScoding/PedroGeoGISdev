@@ -652,7 +652,17 @@ print(squares)
 
 ## List comprehension
 
-- Concise way to create new lists based on existing ones.
+List comprehension is a concise way to create a new list by performing an operation on every element of an existing iterable (like a list, tuple, or range). It can also include a condition to filter which items are included. The Syntax:
+
+```
+newlist = [expression for item in iterable if condition == True]
+```
+*The return value is a new list, leaving the old list unchanged.
+
++ `expression`: What you want to do with each item (e.g., multiply by 2).
++ `item`: The current element from the iterable.
++ `iterable`: The list, range, or other object you are looping over.
++ `if condition`: (optional) Only include items that meet this condition.
 
 ```python
 # Squares of the first 5 integers
@@ -663,6 +673,15 @@ print(squares)
 <div class="output">[1, 4, 9, 16, 25]</div>
 
 ---
+```{pyodidepython
+numbers = [1, 2, 3, 4]
+doubled_numbers = [num * 2 for num in numbers]
+print(doubled_numbers)
+```
+
+<div class="output">[2, 4, 6, 8]</div>
+
+In this example, num * 2 is the expression, num is each item from numbers, and numbers is the iterable.
 
 ```python
 # With an `if` condition
