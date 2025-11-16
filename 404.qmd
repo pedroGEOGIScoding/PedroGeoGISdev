@@ -1,5 +1,5 @@
 ---
-title: Page Not Found <img src="/images/404/person.png" alt="Person" width="120" height="120">
+title: Page Not Found <img src="/images/home/person.png" alt="Person" width="120" height="120">
 ---
 <center>
 ## Perhaps the page you are after was moved or renamed :(
@@ -7,13 +7,13 @@ title: Page Not Found <img src="/images/404/person.png" alt="Person" width="120"
 
 <p>
   <center style="font-size: 20px;">
-    Please, try again by using the <strong style="color: #4a3b30; font-size: 20px;">above <img src="/images/404/finger.png" alt="Search" width="35" height="35"> navigation bar</strong>
+    Please, try again by using the <strong style="color: #4a3b30; font-size: 20px;">above <img src="/images/home/finger.png" alt="Search" width="35" height="35"> navigation bar</strong>
   </center>
 </p>
 
 <center>
 <div style="width: 50%;">
-![](/images/404/404a.gif)
+![](/images/home/404a.gif)
 </div>
 </center>
 
